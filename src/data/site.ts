@@ -32,35 +32,38 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  name: "Example Laboratory",
-  shortName: "Example Lab",
-  pi: "Jane Doe, PhD",
-  institution: "Your Institution",
-  university: "Your University",
+  name: "TelecomAI Lab",
+  shortName: "TelecomAI",
+  pi: "Vu Nguyen HA",
+  institution: "Interdisciplinary Centre for Security, Reliability and Trust (SnT)", 
+  university: "University of Luxembourg",
   // Your production URL (used for canonical links + sitemap). Set your domain.
   url: "https://example.com",
   description:
-    "One or two sentences describing what your lab studies and why it matters. " +
-    "This shows as the homepage lead and the default meta description.",
-  email: "lab@example.edu",
-  phone: "000-000-0000",
+    "The TelecomAI-Lab is a cutting-edge research hub dedicated to advancing artificial intelligence for next-generation telecommunications." + 
+    "Our mission is to develop intelligent, energy-efficient solutions for wireless and satellite communication systems by leveraging the synergy of AI " + 
+    "with cloud and edge computing.", 
+  email: "vu-nguyen.ha@uni.lu",
+  phone: "+352 46 66 44 6855",
   address: [
-    "Example Laboratory",
-    "Your Department",
-    "123 University Way",
-    "City, ST 00000",
+    "Université du Luxembourg",
+    "SnT, JFK Building",
+    "29, avenue John F. Kennedy, ",
+    "L-1855 Luxembourg",
   ],
-  mapQuery: "123 University Way, City, ST 00000",
+  mapQuery: "SnT JFK Building University of Luxembourg",
   social: {
-    scholar: "https://scholar.google.com/citations?user=XXXXXXXX&hl=en",
+    scholar: "https://scholar.google.com/citations?user=ZKYvTCgAAAAJ&hl=en",
     // twitter: "https://twitter.com/yourhandle",
-    // github: "https://github.com/yourorg",
+    github: "https://github.com/TelecomAILab",
   },
   nav: [
     { label: "People", href: "/people" },
     { label: "Research", href: "/research" },
+    { label: "Funding", href: "/funding" },
     { label: "Publications", href: "/publications" },
     { label: "Figures", href: "/figures" },
+    { label: "Materials & Resources", href: "/mare" },
     { label: "Lab Life", href: "/lab-life" },
     { label: "Contact", href: "/contact" },
   ],
