@@ -107,6 +107,7 @@
       "Machine learning"
     ],
     "biography": "duc-dung-tran",
+    "headshot": "../assets/people/duc-dung-tran.png",
     "sourceUrls": [
       "https://www.uni.lu/snt-en/people/duc-dung-tran/",
       "https://orbilu.uni.lu/bitstream/10993/62354/1/2410.21916v1.pdf"
@@ -445,23 +446,26 @@
   },
   {
     "id": 2020,
-    "name": "Zoe Campbell",
+    "name": "Thanh-Dung Le",
     "status": "alumni",
     "group": "Former Members",
     "role": "Former Postdoctoral Researcher",
     "publicationRole": "senior",
     "title": "Former Postdoctoral Researcher",
-    "affiliation": "TelecomAI Lab · demo profile",
+    "affiliation": "Texas A&M University-Corpus Christi",
     "researchInterests": [
-      "Satellite communications",
-      "Non-terrestrial networks"
+      "Numerical simulation and modeling",
+      "Machine learning and Data Analytics",
+      "Applied Artificial Intelligence"
     ],
-    "biography": "2020",
-    "headshot": "../assets/people/demo-2020.svg",
+    "biography": "thanh-dung-le",
+    "headshot": "../assets/people/thanh-dung-le.png",
     "links": {
-      "email": "demo-2020@example.com",
-      "website": "https://example.com/people/2020",
-      "scholar": "https://example.com/scholar/2020"
+      "email": "thanh-dung.le@uni.lu",
+      "website": "https://ltdung.github.io/",
+      "scholar": "https://scholar.google.com/citations?user=mSdI7nMAAAAJ&hl=en",
+      "github": "https://github.com/ltdung",
+      "orcid": "https://orcid.org/0000-0003-0782-8698"
     },
     "order": 23,
     "featured": false,
