@@ -80,7 +80,8 @@ image. A talk's end time is optional, but needed for Add to Calendar features.
 - **Lab Life Category:** Conferences, Workshops & Seminars, Lab Activities, Research
   Visits, Celebrations, Team Events. Image Kind is Photo or Illustration.
 - Use `Yes` / `No` for other choice flags. Dates use **YYYY-MM-DD**, for example
-  `2026-11-10`. Publication Year is just `2026`. Times use 24-hour **HH:MM** and a
+  `2026-11-10`. For Lab Life, a known year such as `2026` plus a seasonal label in
+  Review Notes is sufficient when the exact date is unknown. Publication Year is just `2026`. Times use 24-hour **HH:MM** and a
   named zone such as **Europe/Luxembourg**, not an ambiguous abbreviation like CET.
   Give End Date for an overnight event; otherwise blank End Date means the start day
   when End Time is supplied. Do not guess an unknown end time or duration.
@@ -113,6 +114,9 @@ when useful; the website editor will choose supported public formats.
 
 For multiple Lab Life photos, list filenames and captions in matching semicolon order:
 `activity-01.jpg; activity-02.jpg` and `First photo caption; Second photo caption`.
+One row represents one event album; no per-photo Markdown files are needed.
+The website editor sets cover-photo choices and the independent Home selection in
+the event JSON; the Featured column is only a cover-selection hint.
 Include photographer credit and publication permission for each image. Do not supply
 confidential data, unapproved photos, or documents whose redistribution is prohibited.
 Example filenames in these CSVs are placeholders; no example attachments are included.

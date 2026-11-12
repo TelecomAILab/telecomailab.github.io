@@ -1,31 +1,43 @@
 ---
-import { Image, getImage } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { personDisplayName } from "../lib/people-schema";
+import { galleryDate } from "../lib/gallery-schema";
+import { prepareGalleryPhoto } from "../lib/gallery-images";
+import { selectGalleryPhoto } from "../lib/gallery-selection";
 interface Props { items: CollectionEntry<"gallery">[] }
 const { items } = Astro.props;
-const people = new Map((await getCollection("people")).map((person) => [person.id, person]));
-for (const item of items) for (const member of item.data.members) if (!people.has(member.id)) throw new Error(`Unknown gallery member ${member.id}`);
-const date = (value: Date) => value.toLocaleDateString("en-GB", { month: "short", year: "numeric", timeZone: "UTC" });
-const categories = [...new Set(items.map((item) => item.data.category))];
-const full = await Promise.all(items.map((item) => getImage({ src: item.data.image, width: 1600 })));
+const people = new Map((await getCollection("people")).map(person => [person.id, person]));
+const categories = [...new Set(items.map(item => item.data.category))];
+const albums = await Promise.all(items.map(async item => ({
+  id: item.id, title: item.data.title, date: galleryDate(item.data),
+  photos: await Promise.all(item.data.photos.map(prepareGalleryPhoto)),
+})));
 const chip = "rounded-full border border-slate-200 px-3 py-2 text-sm text-slate-600 hover:border-primary-300 hover:bg-primary-50 aria-pressed:border-primary-600 aria-pressed:bg-primary-600 aria-pressed:text-white";
 ---
 <div data-gallery-root>
-  <div class="mb-5 flex flex-wrap gap-2" aria-label="Gallery categories"><button type="button" data-gallery-category="all" aria-pressed="true" class={chip}>All moments <span class="ml-1 opacity-70">{items.length}</span></button>{categories.map((category) => <button type="button" data-gallery-category={category} aria-pressed="false" class={chip}>{category}</button>)}</div>
-  <p data-gallery-count class="mb-7 text-sm text-slate-500" role="status" aria-live="polite">{items.length} moments</p>
+  <script type="application/json" data-gallery-albums set:html={JSON.stringify(albums).replace(/</g, "\\u003c")} />
+  <div class="mb-5 flex flex-wrap gap-2" aria-label="Event categories"><button type="button" data-gallery-category="all" aria-pressed="true" class={chip}>All events <span class="ml-1 opacity-70">{items.length}</span></button>{categories.map(category => <button type="button" data-gallery-category={category} aria-pressed="false" class={chip}>{category}</button>)}</div>
+  <p data-gallery-count class="mb-7 text-sm text-slate-500" role="status" aria-live="polite">{items.length} events</p>
   <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    {items.map((item, index) => <figure data-gallery-item data-category={item.data.category} class="group min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md">
-      <button type="button" data-lightbox data-full={full[index].src} data-caption={item.data.caption} data-date={date(item.data.date)} class="relative block w-full cursor-zoom-in overflow-hidden bg-primary-50" aria-label={`View ${item.data.kind}: ${item.data.title ?? item.data.caption}`}>
-        <Image src={item.data.image} alt={item.data.caption} widths={[400, 800]} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 95vw" class="aspect-[4/3] w-full object-cover transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.025]" />
-        {item.data.kind === "illustration" && <span class="absolute bottom-3 left-3 rounded-full bg-white/95 px-2.5 py-1 text-xs font-medium text-primary-700">Illustration</span>}
-        <span class="absolute right-3 bottom-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-primary-700" aria-hidden="true">↗</span>
-      </button>
-      <figcaption class="p-5"><div class="flex flex-wrap justify-between gap-2 text-xs"><span class="font-medium text-accent-700">{item.data.category}</span><time datetime={item.data.date.toISOString()} class="text-slate-500">{date(item.data.date)}</time></div><h3 class="mt-3 font-serif text-xl leading-snug">{item.data.title ?? item.data.caption}</h3><p class="mt-2 text-xs leading-relaxed text-slate-500">{item.data.caption}</p>{item.data.members.length > 0 && <p class="mt-4 flex flex-wrap gap-x-3 gap-y-1 border-t border-slate-100 pt-3 text-xs">{item.data.members.map((member) => <a href={`/people/${member.id}`} class="text-primary-700 hover:underline">{personDisplayName(people.get(member.id)!.data)}</a>)}</p>}</figcaption>
-    </figure>)}
+    {items.map((item, index) => {
+      const album = albums[index];
+      // Stable, useful initial HTML; the browser chooses a fresh random cover on load.
+      const cover = selectGalleryPhoto(album.photos, "cover", () => 0)!.photo;
+      return <figure id={`event-${item.id}`} data-gallery-item data-category={item.data.category} class="group min-w-0 scroll-mt-24 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+        <button type="button" data-lightbox data-album={item.id} aria-haspopup="dialog" aria-controls="lightbox" class="relative block w-full cursor-zoom-in overflow-hidden bg-primary-50" aria-label={`Open album: ${item.data.title}, ${album.photos.length} photos`}>
+          <img src={cover.thumbnail} srcset={cover.srcset} alt={cover.alt} width={cover.width} height={cover.height} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 95vw" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.025]" />
+          <span class="absolute bottom-3 left-3 rounded-full bg-white/95 px-2.5 py-1 text-xs font-medium text-primary-700">{album.photos.length} photos</span>
+          <span class="absolute right-3 bottom-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-primary-700" aria-hidden="true">↗</span>
+        </button>
+        <figcaption class="p-5"><div class="flex flex-wrap justify-between gap-2 text-xs"><span class="font-medium text-accent-700">{item.data.category}</span><time datetime={item.data.date} class="text-slate-500">{album.date}</time></div><h3 class="mt-3 font-serif text-xl leading-snug">{item.data.title}</h3>{item.data.description && <p class="mt-2 text-sm leading-relaxed text-slate-500">{item.data.description}</p>}{item.data.location && <p class="mt-2 text-xs text-slate-500">{item.data.location}</p>}{item.data.eventUrl && <a href={item.data.eventUrl} class="mt-3 inline-block text-sm text-primary-700 hover:underline">Event website ↗</a>}{item.data.members.length > 0 && <p class="mt-4 flex flex-wrap gap-x-3 gap-y-1 border-t border-slate-100 pt-3 text-xs">{item.data.members.map(member => <a href={`/people/${member.id}`} class="text-primary-700 hover:underline">{personDisplayName(people.get(member.id)!.data)}</a>)}</p>}</figcaption>
+      </figure>;
+    })}
   </div>
-  <dialog id="lightbox" class="m-auto max-h-[95vh] w-[calc(100%-2rem)] max-w-5xl overflow-auto rounded-2xl bg-white p-0 backdrop:bg-slate-950/80" aria-label="Gallery viewer">
-    <div class="relative"><button type="button" id="lightbox-close" class="absolute top-3 right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-slate-900/75 text-xl text-white hover:bg-slate-900" aria-label="Close gallery viewer">×</button><img id="lightbox-img" alt="" class="block max-h-[73vh] w-full bg-slate-50 object-contain" /><div class="flex items-center gap-3 p-4"><button type="button" data-gallery-prev class="h-11 w-11 shrink-0 rounded-full border border-slate-200 text-primary-700 hover:bg-primary-50 disabled:opacity-30" aria-label="Previous image">←</button><p id="lightbox-caption" class="min-w-0 flex-1 text-sm leading-relaxed text-slate-600"></p><button type="button" data-gallery-next class="h-11 w-11 shrink-0 rounded-full border border-slate-200 text-primary-700 hover:bg-primary-50 disabled:opacity-30" aria-label="Next image">→</button></div></div>
+  <dialog id="lightbox" class="m-auto max-h-[95dvh] w-[calc(100%-2rem)] max-w-5xl overflow-auto rounded-2xl bg-white p-0 backdrop:bg-slate-950/80" aria-labelledby="lightbox-title">
+    <header class="flex items-start justify-between gap-4 p-4 sm:px-6"><div><h2 id="lightbox-title" class="font-serif text-xl text-slate-900"></h2><p id="lightbox-date" class="mt-1 text-xs text-slate-500"></p></div><button type="button" id="lightbox-close" class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xl text-white hover:bg-slate-800" aria-label="Close event album" autofocus>×</button></header>
+    <img id="lightbox-img" alt="" decoding="async" class="block max-h-[58dvh] w-full bg-slate-50 object-contain" />
+    <div class="flex items-center gap-3 px-4 py-3"><button type="button" data-gallery-prev class="h-11 w-11 shrink-0 rounded-full border border-slate-200 text-primary-700 hover:bg-primary-50 disabled:opacity-30" aria-label="Previous photo in this event">←</button><div class="min-w-0 flex-1 text-center"><p id="lightbox-caption" class="text-sm leading-relaxed text-slate-600"></p><p data-gallery-position class="mt-1 text-xs text-slate-500" role="status" aria-live="polite"></p></div><button type="button" data-gallery-next class="h-11 w-11 shrink-0 rounded-full border border-slate-200 text-primary-700 hover:bg-primary-50 disabled:opacity-30" aria-label="Next photo in this event">→</button></div>
+    <div data-gallery-thumbnails class="flex gap-2 overflow-x-auto px-4 pt-1 pb-4" role="group" aria-label="Photos in this event"></div>
   </dialog>
 </div>
 <script>
@@ -33,4 +45,5 @@ const chip = "rounded-full border border-slate-200 px-3 py-2 text-sm text-slate-
 </script>
 <style>
   [data-gallery-item][hidden] { display: none; }
+  :global(html:has(#lightbox[open])) { overflow: hidden; }
 </style>

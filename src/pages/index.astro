@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import HomeLabLifeImage from "../components/HomeLabLifeImage.astro";
 import BaseLayout from "../components/BaseLayout.astro";
 import { site } from "../data/site";
 import { getCollection } from "astro:content";
@@ -13,7 +13,6 @@ import PubList from "../components/PubList.astro";
 import { getNews } from "../lib/editorial";
 import NewsList from "../components/NewsList.astro";
 
-const labMoment = (await getCollection("gallery")).sort((a,b) => Number(b.data.featured) - Number(a.data.featured) || b.data.date.getTime() - a.data.date.getTime())[0];
 const allNews = await getNews();
 const news = allNews.slice(0, 6);
 
@@ -145,19 +144,7 @@ const themes = (await getCollection("research")).sort((a, b) => a.data.order - b
             >
           </a>
         </div>
-        {labMoment && <a
-          href="/about#lab-life"
-          class="group block overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
-        >
-          <Image
-            src={labMoment.data.image}
-            alt={labMoment.data.caption}
-            widths={[600, 1000]}
-            sizes="(min-width: 1024px) 45vw, 90vw"
-            class="aspect-[16/9] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-          />
-          {labMoment.data.kind === "illustration" && <p class="bg-white px-4 py-2 text-xs text-slate-500">Illustration · {labMoment.data.title}</p>}
-        </a>}
+        <HomeLabLifeImage />
       </div>
     </div>
   </section>

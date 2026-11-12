@@ -19,7 +19,7 @@ development displays the sample records directly, without fixture mode.
 | News | `src/data/news.json` | `src/lib/editorial-schema.ts` | `/news#news-<id>` |
 | Talks & Seminars | `src/data/talks.json` | `src/lib/editorial-schema.ts` | `/talks#talk-<id>` |
 | Blog / Notes | `src/content/blog/**/*.md`, `src/content/notes/**/*.md` | `src/lib/editorial-schema.ts` | `/blog/<slug>`, `/notes/<slug>` |
-| Lab Life | `src/content/gallery/**/*.md` | `src/content.config.ts` | `/about#lab-life` |
+| Lab Life albums | `src/data/gallery.json` | `src/lib/gallery-schema.ts` | `/about#lab-life`, `/about#event-<id>` |
 | Figures | `src/content/figures/**/*.md` | `src/content.config.ts` | `/figures` |
 
 Keep IDs stable. New People/Publications IDs are positive integers; legacy string
@@ -39,7 +39,8 @@ the intended researcher. Correct uncertain mappings manually, never by fuzzy mat
 
 Current visible samples include 26 people, 14 papers (two per type, 2020–2026), five
 Research directions, three funders/six projects, 12 resources, eight News items,
-eight Talks, four Blog articles, three Notes, and eight gallery illustrations.
+eight Talks, four Blog articles, and three Notes. Lab Life separately uses three real
+event albums with nine uploaded photos from 2025/2026; its old mock entries were removed.
 They are fictional, marked `isMock` and record-specific demo/illustration labels.
 Preserve these when appending PI records; omit unknown fields in real records.
 Do not add a global demo banner or hide samples from normal local viewing/search.
@@ -375,47 +376,93 @@ Run build/check and `npm run test:editorial`; a valid draft being absent from th
 website is expected. Do not put private material in draft source intended for public
 version control simply because no route is generated.
 
-## Lab Life and figures
+## Lab Life event albums
 
-Gallery Markdown requires local `image`, `caption`, and date. Optional title, category,
-explicit `members` IDs, kind (photo/illustration), featured, and isMock extend it.
-Categories: Conferences, Workshops & Seminars, Lab Activities, Research Visits,
-Celebrations, Team Events. Legacy `people` strings remain valid without identity
-inference. Preserve `sample-1`/`sample-2` IDs. Only use kind photo/remove demo labels
-for verified photos with appropriate permission; current scenes are original SVGs.
-Home uses a featured gallery entry; About preserves filters/counts/captions/member
-links and previous/next/Escape/backdrop/focus restoration in its lightbox.
+Edit **one event object** in `src/data/gallery.json`; do not create a Markdown file
+for each photo. Upload originals to `src/assets/gallery/<year>/` and list their paths
+in the event's `photos` array. The collection still supports getCollection("gallery")
+and Astro image optimization, but the old per-photo Markdown source is inactive/removed.
 
-Figure Markdown requires image, `paper` publication ID, caption, citation, and
-license (CC-BY, CC-BY-SA, CC0, publisher-permission, unknown). Optional licenseUrl,
-DOI/PMID/journal/order accompany it. `rightsConfirmed` defaults false; leave it false
-until reuse rights are established. A relationship or public PDF does not itself
-grant permission. Preserve existing paper references and source attribution.
+Required event fields: stable `id`, `title`, `date`, nonempty `photos`. Each photo
+requires `src` (relative to gallery.json, under ../assets/gallery/) and descriptive
+`alt`. Optional photo `caption` provides visible text; otherwise the alt is displayed.
+Optional event fields are `dateLabel`, `description`, `category`, explicit member IDs
+in `members`, `location`, HTTP(S) `eventUrl`, and numeric `order` (default 0).
+Categories remain Conferences, Workshops & Seminars, Lab Activities, Research Visits,
+Celebrations, Team Events; default is Lab Activities.
 
-Minimal fictional gallery Markdown, using an existing illustration:
+Example using an existing uploaded photo (edit the existing event, do not append a
+second event with the same ID):
 
-```yaml
----
-image: ../../assets/gallery/illustrations/lab.svg
-title: "[Fictional example] Activity"
-caption: "[Illustration] A fictional lab activity."
-date: "2026-11-10"
-category: Lab Activities
-kind: illustration
-isMock: true
----
+```json
+{
+  "id": "2026-summer",
+  "title": "SnT Summer Staff Assembly 2026",
+  "date": "2026",
+  "dateLabel": "Summer 2026",
+  "category": "Team Events",
+  "photos": [
+    {
+      "src": "../assets/gallery/2026/2026-summer-001.jpg",
+      "alt": "Group photo at the SnT Summer Staff Assembly 2026.",
+      "featured": false,
+      "featuredHome": true
+    }
+  ]
+}
 ```
 
-For multiple photos, create one future `src/content/gallery/<stable-entry-id>.md`
-per file, preserving each existing entry ID when updating. Split filenames/captions
-in matching order and reject unequal counts. Each entry receives its own image and
-caption, with shared title/date/category and explicitly reviewed member IDs. There
-is no activity parent entity. The caption supplies both visible text and image alt;
-combine description/location/credit into approved readable caption prose as needed.
-Keep event URLs/permission evidence in the review archive because no fields render
-them. Confirm permission before copying images to the public site. Run build/check
-and `npm run test:ui`; inspect About filters, lightbox, member links, and featured
-homepage image. Never replace a photo while leaving an inaccurate caption/date.
+The real event contains three photos; the abbreviated example shows the structure.
+Add/remove photo objects in that same array. No photo ID or separate metadata file
+is required. Keep event IDs and `/about#event-<id>` anchors stable. Members are optional:
+only add confirmed People IDs; never identify people by their faces automatically.
+
+Dates accept `YYYY-MM-DD` **or just YYYY** when the exact day is unknown. dateLabel
+can say Summer 2026/Winter 2025 without inventing dates. Sorting uses date descending,
+then order ascending and ID; use order to arrange events with the same year-only date.
+The initial real names/years come from uploaded filenames and the printed event
+borders; locations, exact dates, and member tags were intentionally left unspecified.
+
+Selection flags belong to **photos**, not to the event:
+
+- `featured` defaults false. If an event has featured photos, its card randomly chooses
+  among those; otherwise it randomly chooses among all photos in that album.
+- `featuredHome` defaults false and is independent. Home randomly chooses only among
+  photos marked featuredHome across all events. With no marked photos, the Home image
+  is omitted. It never falls back to featured. The current Home pool contains the first
+  two landscape photos from the Summer 2026 event.
+- Neither flag removes a photo from its album. Randomization runs once per browser
+  page load, with a stable initial image in static HTML before JavaScript loads.
+
+About displays one card/count per event. Opening a card shows that event's photos
+only, with thumbnails, previous/next, keyboard arrows, Escape/backdrop/close button,
+position announcements, and focus restoration. Changing category filters changes
+visible events, not the photos within an album. Home links to the matching event
+anchor. Image generation uses getImage with responsive WebP thumbnails and a full
+view capped at 1600px without upscaling; originals are not overwritten.
+
+Validation rejects duplicate event IDs, repeated photo paths within an event, empty
+albums, invalid dates, missing files/alt text, unsafe paths, and unknown member IDs.
+Run build/check and `npm run test:ui` (or npm test), then inspect Home and About.
+The eight old mock Markdown records and their eight unreferenced SVG illustrations
+were explicitly removed; mock data in other collections remains untouched.
+
+For PI CSV returns, one lab-life.csv row now becomes one event. Split Photo Filenames,
+Captions and Image Descriptions in matching order into photos[].src/caption/alt;
+reject mismatched counts. The CSV Featured column is a cover-selection hint for the
+curator, not a Home instruction. Set featuredHome manually on the chosen JSON photos;
+no extra CSV column or automatic Lab Life import is required. Keep photographer
+credits and permission evidence with the reviewed source material; event descriptions
+or per-photo captions may include approved public credits. Confirm publication
+permission before adding new real photographs.
+
+## Figures
+
+Figures remain Markdown in `src/content/figures/`; this migration does not change
+publication relationships, licensing, or rights gates. Required fields: image, paper
+publication ID, caption, citation, license (CC-BY, CC-BY-SA, CC0, publisher-permission,
+unknown). Optional licenseUrl/DOI/PMID/journal/order accompany them. rightsConfirmed
+still defaults false; only explicitly confirmed rights permit rendering.
 
 ## General lab information and branding
 
@@ -463,7 +510,7 @@ deployment configuration task. Run build/check, `npm run test:ui`, and
 | Publication illustration | `src/assets/research/` or `src/assets/editorial/` | `../assets/<folder>/<filename>` in publication JSON |
 | News image | `src/assets/editorial/` | `../assets/editorial/<filename>` in News JSON |
 | Blog/Notes cover or body image | `src/assets/editorial/` | `../../assets/editorial/<filename>` from a top-level Markdown file |
-| Lab Life photo/illustration | `src/assets/gallery/` | `../../assets/gallery/<filename>` from gallery Markdown |
+| Lab Life event photo | `src/assets/gallery/<year>/` (future year folders as needed) | `../assets/gallery/<year>/<filename>` in gallery.json photos[].src |
 | Paper PDF | `public/files/publications/` | `/files/publications/<filename>` |
 | Slides | `public/files/presentations/` | `/files/presentations/<filename>` |
 | Software/data/other downloads | `public/files/resources/` | `/files/resources/<filename>` |
@@ -843,18 +890,18 @@ and `model` strings. Never derive either from an ambiguous product name.
 | --- | --- | --- |
 | Example Row | R | `Review only; never a schema property` — Change Yes to No only for real submitted information. This is not verification. |
 | Existing Website URL | O | `Curator lookup; preserve the existing ID` — For updates, supply the existing profile/page/anchor if known; never infer identity solely from the URL or a name. |
-| Activity Title | R | `title` — Repeated for each photo entry. |
-| Date | R | `date` — YYYY-MM-DD. |
+| Activity Title | R | `title` — One event record per activity. |
+| Date | R | `date` — YYYY-MM-DD; Lab Life also accepts YYYY with a dateLabel for partial dates. |
 | Category | R | `category` — Use gallery category choices in PI guide. |
-| Description | O | `caption (curated with per-photo text)` — No separate long description field/body rendering. |
-| Photo Filenames | R | `One gallery image entry per file` — Semicolon-separated filenames; order must match captions/descriptions. |
-| Captions | R | `caption` — Semicolon-separated photo captions, exactly one per filename; avoid semicolons inside captions. |
-| Image Descriptions | C | `caption (current image alt)` — Optional matching per-photo descriptions to help curate accessible captions; no separate alt field. |
+| Description | O | `description` — Event description, shared by the album. |
+| Photo Filenames | R | `photos[].src` — Semicolon-separated filenames; order must match captions/descriptions. |
+| Captions | R | `photos[].caption` — Semicolon-separated photo captions, exactly one per filename; avoid semicolons inside captions. |
+| Image Descriptions | C | `photos[].alt` — Match each photo; a descriptive alt is required in JSON. |
 | Related Members | O | `members[]` — Semicolon-separated full names; curator supplies explicit IDs. |
-| Location | O | `Optional approved caption prose / review archive` — No structured location field. |
-| Event URL | O | `Review archive` — No gallery event URL field. |
-| Image Kind | O | `kind` — Photo → photo; Illustration → illustration. Default photo. |
-| Featured | O | `featured` — Yes/No applied to entries; review homepage selection when multiple are featured. |
+| Location | O | `location` — Optional event location. |
+| Event URL | O | `eventUrl` — Optional HTTP(S) event link. |
+| Image Kind | O | Review evidence only; the active gallery contains real event photographs. |
+| Featured | O | `photos[].featured` — Cover-selection hint; curate per photo. Home uses independent photos[].featuredHome in JSON. |
 | Photo Credit | O | `Review archive / approved caption prose` — Keep credit with each file. |
 | Permission to Publish | C | `Review evidence` — Confirm permission for every supplied photograph before adding it publicly. No permission schema field. |
 | Review Notes | O | `Review archive` — Consent, credit, existing filenames/entry identity. |

@@ -2,9 +2,10 @@
 import { getCollection } from "astro:content";
 import PageHeader from "./PageHeader.astro";
 import GalleryGrid from "./GalleryGrid.astro";
+import { compareGalleryEvents } from "../lib/gallery-schema";
 
 const items = (await getCollection("gallery")).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+  (a, b) => compareGalleryEvents(a.data, b.data),
 );
 ---
 

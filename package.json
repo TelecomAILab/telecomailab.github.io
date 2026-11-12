@@ -23,7 +23,7 @@
     "generate:demo": "node --experimental-strip-types scripts/generate-demo-data.mjs",
     "test:site": "node --test tests/production-build.test.mjs",
     "test:editorial": "node --experimental-strip-types --test tests/editorial.test.ts tests/editorial-build.test.mjs",
-    "test:ui": "node --experimental-strip-types --test tests/calendar.test.ts tests/ui-refinements.test.mjs tests/about-navigation-build.test.mjs",
+    "test:ui": "node --experimental-strip-types --test tests/calendar.test.ts tests/ui-refinements.test.mjs tests/about-navigation-build.test.mjs tests/gallery.test.ts tests/gallery-build.test.mjs",
     "test:search-theme": "node --test tests/search-theme.test.mjs tests/navigation-controls.test.mjs",
     "test": "node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs"
   },

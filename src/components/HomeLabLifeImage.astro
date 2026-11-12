@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import { prepareGalleryPhoto } from "../lib/gallery-images";
+const candidates = await Promise.all((await getCollection("gallery")).flatMap(event => event.data.photos
+  .filter(photo => photo.featuredHome)
+  .map(async photo => ({ ...await prepareGalleryPhoto(photo), eventId: event.id, title: event.data.title }))));
+const first = candidates[0];
+---
+{first && <div data-home-gallery>
+  <script type="application/json" data-home-gallery-photos set:html={JSON.stringify(candidates).replace(/</g, "\\u003c")} />
+  <a href={`/about#event-${first.eventId}`} data-home-gallery-link class="group block overflow-hidden rounded-2xl border border-slate-200 shadow-sm" aria-label={`View album: ${first.title}`}>
+    <img src={first.thumbnail} srcset={first.srcset} alt={first.alt} width={first.width} height={first.height} sizes="(min-width: 1024px) 45vw, 90vw" loading="lazy" decoding="async" class="aspect-[16/9] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" />
+  </a>
+</div>}
+<script>
+  import "../scripts/gallery-home";
+</script>

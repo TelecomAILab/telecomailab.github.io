@@ -19,7 +19,8 @@
   restore global banners or hide samples behind fixture mode. Never present invented
   academic information as verified; leave unknown real fields blank.
 - JSON is authoritative for People, Publications, Research, News, Talks, Funding,
-  Materials. Preserve official `file()` loaders and `getCollection()` consumers.
+  Materials, and Lab Life albums (`src/data/gallery.json`). Preserve official `file()`
+  loaders and `getCollection()` consumers.
   Funding/Materials are currently Zod-validated modules, not Astro collections.
 - People biographies are separate Markdown rendered with `getEntry()`/`render()`.
   Keep metadata in JSON, native Astro images, initials fallback, preferred names,
@@ -42,6 +43,10 @@
   About. Resources contains Materials (`/mare`), Blog, Notes. About contains Contact Us
   then Lab Life. `/contact` and `/lab-life` were removed without redirects. News stays
   contextual; `/figures` stays valid. Preserve the 80rem navigation breakpoint.
+- Lab Life uses one JSON event with a photos array per album; no Markdown per photo.
+  Only this section now uses real uploaded photos; its old mock records were removed.
+  Random covers stay within their event; photo featured limits cover candidates, while
+  featuredHome independently controls Home. Preserve album-only navigation and thumbnails.
 - Keep shared container widths; constrain only profile biography prose. Research
   descriptions come from JSON without publication lists. Preserve gallery accessibility.
 - Keep the original lower footer attribution/dynamic year and all nine icons; seven

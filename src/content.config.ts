@@ -14,6 +14,8 @@ import { newsSchema, talksSchema, articleSchema, validateEditorialReferences } f
 import researchData from "./data/research.json";
 import { researchSchema } from "./lib/research-schema";
 import { resolveMockReferences } from "./lib/mock-references";
+import galleryData from "./data/gallery.json";
+import { galleryEventSchema, galleryPhotoSchema, validateGalleryRecords } from "./lib/gallery-schema";
 
 const isFile = (url: URL) => existsSync(url) && statSync(url).isFile();
 const root = new URL("../", import.meta.url);
@@ -21,6 +23,7 @@ const referenceDirectory = {
   people: new Set(peopleData.map((person) => String(person.id))),
   publications: new Set(publicationData.map((paper) => String(paper.id))),
 };
+validateGalleryRecords(galleryData, referenceDirectory.people, path => isFile(new URL(path, new URL("src/data/gallery.json", root))));
 const resolve = (input: unknown) => resolveMockReferences(input, referenceDirectory, "content collections");
 // The parser transforms only the loaded view; JSON/Markdown remains authoritative.
 const referenceParser = (text: string) => (JSON.parse(text) as Record<string, unknown>[]).map((record) =>
@@ -58,8 +61,8 @@ for (const talk of talkRecords) {
 /*
   Content collections for the lab site.
 
-  People, publications, news, and talks use JSON. Biographies, figures, gallery,
-  blog articles, and notes use Markdown.
+  People, publications, gallery events, news, and talks use JSON. Biographies,
+  figures, blog articles, and notes use Markdown.
   Safety defaults fail closed: figures default to rightsConfirmed:false and are
   filtered out of every figure query, so a half-filled record can never leak.
 */
@@ -112,22 +115,13 @@ const figures = defineCollection({
     }),
 });
 
-// Gallery — lab-life photos.
+// One JSON record per event, with native Astro assets for every album photo.
 const gallery = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/gallery" }),
-  schema: ({ image }) =>
-    z.preprocess(resolve, z.object({
-      image: image(),
-      caption: z.string(),
-      title: z.string().optional(),
-      date: z.coerce.date(),
-      people: z.array(z.string()).optional(),
-      members: z.array(reference("people")).default([]),
-      category: z.enum(["Conferences", "Workshops & Seminars", "Lab Activities", "Research Visits", "Celebrations", "Team Events"]).default("Lab Activities"),
-      kind: z.enum(["photo", "illustration"]).default("photo"),
-      isMock: z.boolean().default(false),
-      featured: z.boolean().default(false),
-    })),
+  loader: file("src/data/gallery.json"),
+  schema: ({ image }) => galleryEventSchema.extend({
+    members: z.array(reference("people")).default([]),
+    photos: z.array(galleryPhotoSchema.extend({ src: image() })).min(1),
+  }),
 });
 
 const news = defineCollection({

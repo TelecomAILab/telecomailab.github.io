@@ -11,7 +11,7 @@ navigation, galleries, search, and appearance. Check `package.json` for exact ve
 | --- | --- |
 | Collections and pre-load integrity checks | `src/content.config.ts` |
 | Structured records | `src/data/` |
-| Markdown biographies/articles/figures/gallery | `src/content/` |
+| Markdown biographies/articles/figures | `src/content/` |
 | Collection queries, ordering, relationships | `src/lib/content.ts`, `src/lib/editorial.ts` |
 | Typed schemas | `src/lib/*-schema.ts` |
 | Funding/Materials/Hardware schemas and relationships | `src/lib/lab-schemas.ts`, `src/lib/lab-data.ts` |
@@ -20,8 +20,8 @@ navigation, galleries, search, and appearance. Check `package.json` for exact ve
 | Identity, contacts, navigation, social links | `src/data/site.ts` |
 | Shared CSS and appearance | `src/styles/global.css`, `src/styles/themes.css` |
 
-Official Astro `file()` loaders read People, Publications, Research, News, and Talks.
-Official `glob()` loaders read biographies, Blog, Notes, figures, and gallery Markdown.
+Official Astro `file()` loaders read People, Publications, Research, News, Talks, and
+Gallery event albums. Official `glob()` loaders read biographies, Blog, Notes, and figures.
 Funding, Materials and Hardware are validated JSON modules, **not** Astro collections. Hardware lives only in `src/data/hardware.json` and joins the existing `/mare` grid/filter/count/search flow through `HardwareCard.astro`; it adds no navigation item. Local equipment assets are discovered by a native Astro image glob. Internal review notes are removed from the public hardware model. No active
 CV overlay, author override file, or Markdown publication/member source competes with
 centralized records. `content-sources.ts` only names active source paths; fixture
@@ -58,10 +58,23 @@ capped at five; profiles are uncapped. Only the main Publications list emits
 Figures reference publication IDs and render only with explicit `rightsConfirmed:
 true`. Queries group by paper and order figure numbers parsed from captions;
 graphical abstracts lead. Keep citation/licensing metadata even on unconfirmed
-entries. Gallery entries use native image processing, explicit member references,
-categories, and a keyboard lightbox; legacy `people` strings imply no identity.
-Current SVG scenes are labeled illustrations. `public/files/` downloads are copied
-directly, without image optimization or access control.
+entries. Gallery uses one JSON event record with a photos array, explicit optional
+member IDs, and native Astro image processing. `gallery-schema.ts` validates IDs,
+references, dates, nonempty albums, duplicate photos, and file existence. Dates can
+be an honest year only with a seasonal dateLabel, or an exact ISO day. Events sort
+newest first, then explicit order/ID for ties. Current Lab Life uses the nine uploaded
+2025/2026 photos in three real albums; its former mock Markdown and SVGs were removed.
+
+`GalleryGrid` prepares optimized WebP responsive thumbnails/full views with getImage.
+Stable initial HTML is enhanced with a fresh random cover per album on each browser
+load. Photo `featured` limits the cover candidate pool; without it every photo is
+eligible. Home uses only photo `featuredHome`, selected independently, and links to
+`/about#event-<id>`. No home candidate means no Home image. These flags never filter
+photos out of the album. One native dialog renders only the selected event's photos,
+with thumbnails, count, wrapping arrows, keyboard, Escape/backdrop close and focus
+restoration. Category filters count events rather than individual photos. No image
+paths are hand-written into generated /_astro URLs; Astro owns optimization.
+`public/files/` downloads are copied directly, without image optimization or access control.
 
 ## Routes and layout
 
@@ -149,8 +162,9 @@ their own appearance. Transitions respect reduced motion. See
 
 ## Asset provenance
 
-Original Research/gallery vectors and fictional avatars do not depict actual lab
-people/events. Nine social paths are vendored from
+Original Research vectors and fictional avatars do not depict actual lab people.
+Lab Life now uses user-supplied event photographs; no person identities are inferred
+from faces, and original uploaded files remain unchanged. Nine social paths are vendored from
 [Simple Icons 11.15.0](https://github.com/simple-icons/simple-icons/tree/11.15.0/icons)
 under [CC0](LICENSE-Simple-Icons.md), with 24×24 currentColor SVGs and accessible link
 labels; no icon package/CDN is needed. Template credit and the original

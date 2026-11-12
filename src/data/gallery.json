@@ -1,0 +1,89 @@
+[
+  {
+    "id": "2026-summer",
+    "title": "SnT Summer Staff Assembly 2026",
+    "date": "2026",
+    "dateLabel": "Summer 2026",
+    "category": "Team Events",
+    "description": "Photos from the SnT Summer Staff Assembly 2026.",
+    "order": 0,
+    "photos": [
+      {
+        "src": "../assets/gallery/2026/2026-summer-001.jpg",
+        "alt": "Group photo at the SnT Summer Staff Assembly 2026, photo 1.",
+        "featured": false,
+        "featuredHome": true
+      },
+      {
+        "src": "../assets/gallery/2026/2026-summer-002.jpg",
+        "alt": "Group photo at the SnT Summer Staff Assembly 2026, photo 2.",
+        "featured": false,
+        "featuredHome": true
+      },
+      {
+        "src": "../assets/gallery/2026/2026-summer-003.jpg",
+        "alt": "Group photo at the SnT Summer Staff Assembly 2026, photo 3.",
+        "featured": false,
+        "featuredHome": false
+      }
+    ]
+  },
+  {
+    "id": "2025-winter",
+    "title": "SnT Winter Social 2025",
+    "date": "2025",
+    "dateLabel": "Winter 2025",
+    "category": "Team Events",
+    "description": "Photos from the SnT Winter Social 2025.",
+    "order": 0,
+    "photos": [
+      {
+        "src": "../assets/gallery/2025/2025-winter-001.jpg",
+        "alt": "Group photo at the SnT Winter Social 2025, photo 1.",
+        "featured": false,
+        "featuredHome": false
+      },
+      {
+        "src": "../assets/gallery/2025/2025-winter-002.jpg",
+        "alt": "Group photo at the SnT Winter Social 2025, photo 2.",
+        "featured": false,
+        "featuredHome": false
+      },
+      {
+        "src": "../assets/gallery/2025/2025-winter-003.jpg",
+        "alt": "Group photo at the SnT Winter Social 2025, photo 3.",
+        "featured": false,
+        "featuredHome": false
+      }
+    ]
+  },
+  {
+    "id": "2025-summer",
+    "title": "SnT Summer Staff Assembly 2025",
+    "date": "2025",
+    "dateLabel": "Summer 2025",
+    "category": "Team Events",
+    "description": "Photos from the SnT Summer Staff Assembly 2025.",
+    "order": 1,
+    "photos": [
+      {
+        "src": "../assets/gallery/2025/2025-summer-001.jpg",
+        "alt": "Group photo at the SnT Summer Staff Assembly 2025, photo 1.",
+        "featured": false,
+        "featuredHome": false
+      },
+      {
+        "src": "../assets/gallery/2025/2025-summer-002.jpg",
+        "alt": "Group photo at the SnT Summer Staff Assembly 2025, photo 2.",
+        "featured": false,
+        "featuredHome": false
+      },
+      {
+        "src": "../assets/gallery/2025/2025-summer-003.jpg",
+        "alt": "Group photo at the SnT Summer Staff Assembly 2025, photo 3.",
+        "featured": false,
+        "featuredHome": false
+      }
+    ]
+  }
+]

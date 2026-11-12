@@ -164,3 +164,16 @@ internal-note exclusion, shared category/search filtering and announced counts.
 Run `npm run import:pi > /private/tmp/telecomai-pi-review.json` to review future
 returns; it has no write flag. Keep reports outside public/build inputs.
 Use the content guide for held records and manual metadata/asset editing.
+
+
+## Event album checks
+
+Lab Life now reads src/data/gallery.json through file(), one event with photos per
+record. test:ui includes gallery schema/selection and rendered/interaction suites.
+They cover all nine current uploaded images, missing/duplicate/empty records, honest
+year-only dates, independent featured/featuredHome pools, optimized asset references,
+event-only thumbnail navigation/wrapping, category counts, dismissal and focus.
+The old per-photo gallery interaction fixture was replaced with multi-event scenarios.
+Browser-host unavailability must still be reported; DOM simulations are not a visual
+browser review. After changing this loader, restart dev with npm run dev -- --force
+if it retains the former Markdown collection snapshot.

@@ -42,8 +42,8 @@ after content changes before reviewing search. Preview the production artifact a
   CSV templates and instructions for completing them.
 - [Agent instructions](AGENTS.md): project-specific rules for coding assistants.
 
-Structured content lives in `src/data/`; biographies, Blog, Notes, figures, and
-gallery entries use Markdown in `src/content/`. Images live in `src/assets/`;
+Structured content, including Lab Life event albums, lives in `src/data/`;
+biographies, Blog, Notes, and figures use Markdown in `src/content/`. Images live in `src/assets/`;
 public downloads live in `public/files/`. Tests and historical fixtures stay under
 `tests/` and are not copied to the website.
 
