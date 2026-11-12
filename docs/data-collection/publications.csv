@@ -1,0 +1,232 @@
+﻿"Example Row","Existing Website URL","Title","Ordered Authors","Year","Publication Type","Journal Name","Conference Name","Venue","Publisher","Volume","Issue","Pages","DOI","arXiv Identifier","PubMed ID","PubMed Central ID","Abstract","Keywords","Research Areas","PDF URL or Filename","Code URL or Filename","Slides URL or Filename","Project URL","Publication URL","Google Scholar URL","BibTeX","Open Access","Citation Count","Featured","Lab Member Authors (author numbers)","Co-first Authors (author numbers)","Co-senior Authors (author numbers)","Corresponding Authors (author numbers)","Corresponding Author Emails","Author Contributions","Additional Materials","Illustration Filename","Illustration Description","Source URL","Review Notes"
+"No","","Transformer Meets Gated Residual Networks to Enhance PICU's PPG Artifact Detection Informed by Mutual Information Neural Estimation","Thanh-Dung Le; Clara Macabiau; Kevin Albert; Symeon Chatzinotas; Philippe Jouvet; Rita Noumeir","2026","Journal Article","IEEE Transactions on Neural Networks and Learning Systems","","IEEE Transactions on Neural Networks and Learning Systems","Institute of Electrical and Electronics Engineers (IEEE)","37","8","3928-3942","10.1109/tnnls.2026.3656756","","41650422","","","Transformers; Gated residual networks; Mutual information; Biomedical signal classification","","https://orbilu.uni.lu/bitstream/10993/61935/1/IEEE_TNNLS_GRNTransformer_MINE_Minor_Cleaned.pdf","","","","https://doi.org/10.1109/tnnls.2026.3656756","","@article{telecomai61935,
+  title = {Transformer Meets Gated Residual Networks to Enhance PICU's PPG Artifact Detection Informed by Mutual Information Neural Estimation},
+  author = {Thanh-Dung Le and Clara Macabiau and Kevin Albert and Symeon Chatzinotas and Philippe Jouvet and Rita Noumeir},
+  year = {2026},
+  journal = {IEEE Transactions on Neural Networks and Learning Systems},
+  doi = {10.1109/tnnls.2026.3656756},
+  volume = {37},
+  number = {8},
+  pages = {3928--3942}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/61935; https://pubmed.ncbi.nlm.nih.gov/41650422/","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation verified on page 1 of the linked manuscript. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata. Published 2026 journal version replaces the incomplete 2025 preprint repository record."
+"No","","A Semantic-Loss Function Modeling Framework With Task-Oriented Machine Learning Perspectives","Ti Ti Nguyen; Thanh-Dung Le; Vu Nguyen Ha; Hong-Fu Chou; Geoffrey Eappen; Duc-Dung Tran; Hung Nguyen-Kha; Prabhu Thiruvasagam; Luis M. Garces-Socarras; Jorge L. Gonzalez-Rios; Juan C. Merlano-Duncan; Symeon Chatzinotas","2025","Conference Paper","","2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)","2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)","IEEE","","","1-6","10.1109/icmlcn64995.2025.11140499","","","","","Semantic communication; Semantic loss; Task-oriented machine learning; Earth observation","","https://orbilu.uni.lu/bitstream/10993/66123/1/A_Semantic-Loss_Function_Modeling_Framework_With_Task-Oriented_Machine_Learning_Perspectives.pdf","","","","https://doi.org/10.1109/icmlcn64995.2025.11140499","","@inproceedings{telecomai66123,
+  title = {A Semantic-Loss Function Modeling Framework With Task-Oriented Machine Learning Perspectives},
+  author = {Ti Ti Nguyen and Thanh-Dung Le and Vu Nguyen Ha and Hong-Fu Chou and Geoffrey Eappen and Duc-Dung Tran and Hung Nguyen-Kha and Prabhu Thiruvasagam and Luis M. Garces-Socarras and Jorge L. Gonzalez-Rios and Juan C. Merlano-Duncan and Symeon Chatzinotas},
+  year = {2025},
+  booktitle = {2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)},
+  doi = {10.1109/icmlcn64995.2025.11140499},
+  pages = {1--6}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/66123","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata. Repository equal-contribution flags are not treated as proof of co-first/co-senior authorship."
+"No","","Energy-Efficient NOMA for 5G Heterogeneous Services: A Joint Optimization and Deep Reinforcement Learning Approach","Duc-Dung Tran; Vu Nguyen Ha; Shree Krishna Sharma; Ti Ti Nguyen; Symeon Chatzinotas; Petar Popovski","2025","Journal Article","IEEE Transactions on Communications","","IEEE Transactions on Communications","Institute of Electrical and Electronics Engineers (IEEE)","73","4","2448-2465","10.1109/tcomm.2024.3476083","","","","","Deep reinforcement learning; Energy efficiency; NOMA","","","","","","https://doi.org/10.1109/tcomm.2024.3476083","","@article{telecomai62410,
+  title = {Energy-Efficient NOMA for 5G Heterogeneous Services: A Joint Optimization and Deep Reinforcement Learning Approach},
+  author = {Duc-Dung Tran and Vu Nguyen Ha and Shree Krishna Sharma and Ti Ti Nguyen and Symeon Chatzinotas and Petar Popovski},
+  year = {2025},
+  journal = {IEEE Transactions on Communications},
+  doi = {10.1109/tcomm.2024.3476083},
+  volume = {73},
+  number = {4},
+  pages = {2448--2465}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/62410","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Generative AI for non-terrestrial networks: design, applications, and challenges","Abuzar B. M. Adam; Eva Lagunas; Mostafa Samy; Almoatssimbillah Saifaldawla; Symeon Chatzinotas","2025","Journal Article","Journal on Wireless Communications and Networking","","Journal on Wireless Communications and Networking","Springer Science and Business Media LLC","2026","1","","10.1186/s13638-025-02549-7","","","","","Generative AI; Diffusion models; Non-terrestrial networks","","https://orbilu.uni.lu/bitstream/10993/67047/1/s13638-025-02549-7.pdf","","","","https://doi.org/10.1186/s13638-025-02549-7","","@article{telecomai67047,
+  title = {Generative AI for non-terrestrial networks: design, applications, and challenges},
+  author = {Abuzar B. M. Adam and Eva Lagunas and Mostafa Samy and Almoatssimbillah Saifaldawla and Symeon Chatzinotas},
+  year = {2025},
+  journal = {Journal on Wireless Communications and Networking},
+  doi = {10.1186/s13638-025-02549-7},
+  volume = {2026},
+  number = {1}
+}","Yes","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/67047","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation corroborated by https://orbilu.uni.lu/handle/10993/64887. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata. Online publication date is December 2025; the assigned journal volume is 2026."
+"No","","GS3D: Signal Recovery in 3-D Wireless Networks With Gaussian Splatting-Synergized Stable Diffusion","Abuzar B. M. Adam; Eva Lagunas; Mostafa Samy; Symeon Chatzinotas","2025","Journal Article","IEEE Wireless Communications Letters","","IEEE Wireless Communications Letters","Institute of Electrical and Electronics Engineers (IEEE)","14","7","2019-2023","10.1109/lwc.2025.3561522","","","","","Stable diffusion; Gaussian splatting; Signal recovery","","","","","","https://doi.org/10.1109/lwc.2025.3561522","","@article{telecomai64887,
+  title = {GS3D: Signal Recovery in 3-D Wireless Networks With Gaussian Splatting-Synergized Stable Diffusion},
+  author = {Abuzar B. M. Adam and Eva Lagunas and Mostafa Samy and Symeon Chatzinotas},
+  year = {2025},
+  journal = {IEEE Wireless Communications Letters},
+  doi = {10.1109/lwc.2025.3561522},
+  volume = {14},
+  number = {7},
+  pages = {2019--2023}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/64887","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Intelligent User Association and Scheduling in Open RAN: A Hierarchical Optimization Framework","Fatemeh Kavehmadavani; Thang X. Vu; Van-Dinh Nguyen; Symeon Chatzinotas","2025","Journal Article","IEEE Transactions on Communications","","IEEE Transactions on Communications","Institute of Electrical and Electronics Engineers (IEEE)","73","11","11574-11589","10.1109/tcomm.2025.3592584","","","","","Deep reinforcement learning; Open RAN; User association","","","","","","https://doi.org/10.1109/tcomm.2025.3592584","","@article{telecomai66093,
+  title = {Intelligent User Association and Scheduling in Open RAN: A Hierarchical Optimization Framework},
+  author = {Fatemeh Kavehmadavani and Thang X. Vu and Van-Dinh Nguyen and Symeon Chatzinotas},
+  year = {2025},
+  journal = {IEEE Transactions on Communications},
+  doi = {10.1109/tcomm.2025.3592584},
+  volume = {73},
+  number = {11},
+  pages = {11574--11589}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/66093","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Neuromorphic Models for Energy-Efficient Onboard Interference Detection in Satellite Systems","Geoffrey Eappen; Saed Daoud; Nicolas Skatchkovsky; Flor Ortiz; Eva Lagunas; Wallace A. Martins; Symeon Chatzinotas","2025","Journal Article","IEEE Transactions on Aerospace and Electronic Systems","","IEEE Transactions on Aerospace and Electronic Systems","Institute of Electrical and Electronics Engineers (IEEE)","61","6","17682-17702","10.1109/taes.2025.3608092","","","","","Spiking neural networks; Neuromorphic computing; Interference detection","","","","","","https://doi.org/10.1109/taes.2025.3608092","","@article{telecomai66701,
+  title = {Neuromorphic Models for Energy-Efficient Onboard Interference Detection in Satellite Systems},
+  author = {Geoffrey Eappen and Saed Daoud and Nicolas Skatchkovsky and Flor Ortiz and Eva Lagunas and Wallace A. Martins and Symeon Chatzinotas},
+  year = {2025},
+  journal = {IEEE Transactions on Aerospace and Electronic Systems},
+  doi = {10.1109/taes.2025.3608092},
+  volume = {61},
+  number = {6},
+  pages = {17682--17702}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/66701","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Semantic Knowledge Distillation for Onboard Satellite Earth Observation Image Classification","Thanh-Dung Le; Vu Nguyen Ha; Ti Ti Nguyen; Geoffrey Eappen; Prabhu Thiruvasagam; Hong-fu Chou; Duc-Dung Tran; Luis M. Garces-Socarras; Jorge L. Gonzalez-Rios; Juan Carlos Merlano-Duncan; Symeon Chatzinotas","2025","Conference Paper","","2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)","2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)","IEEE","","","1-6","10.1109/icmlcn64995.2025.11140497","","","","","Knowledge distillation; Efficient vision models; Earth observation","","","","","","https://doi.org/10.1109/icmlcn64995.2025.11140497","","@inproceedings{telecomai66268,
+  title = {Semantic Knowledge Distillation for Onboard Satellite Earth Observation Image Classification},
+  author = {Thanh-Dung Le and Vu Nguyen Ha and Ti Ti Nguyen and Geoffrey Eappen and Prabhu Thiruvasagam and Hong-fu Chou and Duc-Dung Tran and Luis M. Garces-Socarras and Jorge L. Gonzalez-Rios and Juan Carlos Merlano-Duncan and Symeon Chatzinotas},
+  year = {2025},
+  booktitle = {2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)},
+  doi = {10.1109/icmlcn64995.2025.11140497},
+  pages = {1--6}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/66268","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Spatio-Temporal Predictive Learning Using Crossover Attention for Communications and Networking Applications","Ke He; Thang Xuan Vu; Lisheng Fan; Symeon Chatzinotas; Björn Ottersten","2025","Journal Article","IEEE Transactions on Machine Learning in Communications and Networking","","IEEE Transactions on Machine Learning in Communications and Networking","Institute of Electrical and Electronics Engineers (IEEE)","3","","479-490","10.1109/tmlcn.2025.3555975","","","","","Attention mechanisms; Time-series forecasting; Transformers","","https://orbilu.uni.lu/bitstream/10993/66560/1/Spatio-Temporal_Predictive_Learning_Using_Crossover_Attention_for_Communications_and_Networking_Applications.pdf","","","","https://doi.org/10.1109/tmlcn.2025.3555975","","@article{telecomai66560,
+  title = {Spatio-Temporal Predictive Learning Using Crossover Attention for Communications and Networking Applications},
+  author = {Ke He and Thang Xuan Vu and Lisheng Fan and Symeon Chatzinotas and Björn Ottersten},
+  year = {2025},
+  journal = {IEEE Transactions on Machine Learning in Communications and Networking},
+  doi = {10.1109/tmlcn.2025.3555975},
+  volume = {3},
+  pages = {479--490}
+}","Yes","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/66560","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation verified on page 1 of the linked manuscript. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","The Impact of LoRA Adapters on LLMs for Clinical Text Classification Under Computational and Data Constraints","Thanh-Dung Le; Ti Ti Nguyen; Vu Nguyen Ha; Symeon Chatzinotas; Philippe Jouvet; Rita Noumeir","2025","Journal Article","IEEE Access","","IEEE Access","Institute of Electrical and Electronics Engineers (IEEE)","13","","109365-109377","10.1109/access.2025.3582037","","","","","Large language models; Parameter-efficient fine-tuning; Clinical NLP","","","","","","https://doi.org/10.1109/access.2025.3582037","","@article{telecomai66269,
+  title = {The Impact of LoRA Adapters on LLMs for Clinical Text Classification Under Computational and Data Constraints},
+  author = {Thanh-Dung Le and Ti Ti Nguyen and Vu Nguyen Ha and Symeon Chatzinotas and Philippe Jouvet and Rita Noumeir},
+  year = {2025},
+  journal = {IEEE Access},
+  doi = {10.1109/access.2025.3582037},
+  volume = {13},
+  pages = {109365--109377}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/66269","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Convolutional Autoencoders for Non-Geostationary Satellite Interference Detection","Almoatssimbillah Saifaldawla; Flor Ortiz; Eva Lagunas; Symeon Chatzinotas","2024","Workshop Paper","","2024 IEEE International Conference on Communications Workshops (ICC Workshops)","2024 IEEE International Conference on Communications Workshops (ICC Workshops)","IEEE","","","1334-1339","10.1109/iccworkshops59551.2024.10615457","","","","","Convolutional autoencoders; Unsupervised learning; Interference detection","","","","","","https://doi.org/10.1109/iccworkshops59551.2024.10615457","","@inproceedings{telecomai60597,
+  title = {Convolutional Autoencoders for Non-Geostationary Satellite Interference Detection},
+  author = {Almoatssimbillah Saifaldawla and Flor Ortiz and Eva Lagunas and Symeon Chatzinotas},
+  year = {2024},
+  booktitle = {2024 IEEE International Conference on Communications Workshops (ICC Workshops)},
+  doi = {10.1109/iccworkshops59551.2024.10615457},
+  pages = {1334--1339}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/60597","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Deep Reinforcement Learning for Backscatter Communications: Augmenting Intelligence in Future Internet of Things","Wali Ullah Khan; Eva Lagunas; Zain Ali; Asad Mahmood; Chandan Kumar Sheemar; Manzoor Ahmed; Kapal Dev; Symeon Chatzinotas; Björn Ottersten","2024","Journal Article","IEEE Internet of Things Magazine","","IEEE Internet of Things Magazine","Institute of Electrical and Electronics Engineers (IEEE)","7","5","72-78","10.1109/iotm.001.2400003","","","","","Deep reinforcement learning; Backscatter communications; Internet of Things","","","","","","https://doi.org/10.1109/iotm.001.2400003","","@article{telecomai62992,
+  title = {Deep Reinforcement Learning for Backscatter Communications: Augmenting Intelligence in Future Internet of Things},
+  author = {Wali Ullah Khan and Eva Lagunas and Zain Ali and Asad Mahmood and Chandan Kumar Sheemar and Manzoor Ahmed and Kapal Dev and Symeon Chatzinotas and Björn Ottersten},
+  year = {2024},
+  journal = {IEEE Internet of Things Magazine},
+  doi = {10.1109/iotm.001.2400003},
+  volume = {7},
+  number = {5},
+  pages = {72--78}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/62992","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Diffusion Model-Based Signal Recovery in Coexisting Satellite and Terrestrial Networks","Abuzar B. M. Adam; Mostafa Samy; Carla E. García; Eva Lagunas; Symeon Chatzinotas","2024","Conference Paper","","2024 IEEE Wireless Communications and Networking Conference (WCNC)","2024 IEEE Wireless Communications and Networking Conference (WCNC)","IEEE","","","1-5","10.1109/wcnc57260.2024.10570763","","","","","Diffusion models; Signal recovery; Satellite-terrestrial networks","","https://orbilu.uni.lu/bitstream/10993/60767/1/WCNC_2024_Abuzar.pdf","","","","https://doi.org/10.1109/wcnc57260.2024.10570763","","@inproceedings{telecomai60767,
+  title = {Diffusion Model-Based Signal Recovery in Coexisting Satellite and Terrestrial Networks},
+  author = {Abuzar B. M. Adam and Mostafa Samy and Carla E. García and Eva Lagunas and Symeon Chatzinotas},
+  year = {2024},
+  booktitle = {2024 IEEE Wireless Communications and Networking Conference (WCNC)},
+  doi = {10.1109/wcnc57260.2024.10570763},
+  pages = {1--5}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/60767","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata. Classified from publisher WCNC proceedings metadata; ORBilu uses a workshop event label."
+"No","","GenAI-Based Models for NGSO Satellites Interference Detection","Almoatssimbillah Saifaldawla; Flor Ortiz; Eva Lagunas; Abuzar B. M. Adam; Symeon Chatzinotas","2024","Journal Article","IEEE Transactions on Machine Learning in Communications and Networking","","IEEE Transactions on Machine Learning in Communications and Networking","Institute of Electrical and Electronics Engineers (IEEE)","2","","904-924","10.1109/tmlcn.2024.3418933","","","","","Generative AI; Interference detection; Satellite networks","","","","","","https://doi.org/10.1109/tmlcn.2024.3418933","","@article{telecomai61484,
+  title = {GenAI-Based Models for NGSO Satellites Interference Detection},
+  author = {Almoatssimbillah Saifaldawla and Flor Ortiz and Eva Lagunas and Abuzar B. M. Adam and Symeon Chatzinotas},
+  year = {2024},
+  journal = {IEEE Transactions on Machine Learning in Communications and Networking},
+  doi = {10.1109/tmlcn.2024.3418933},
+  volume = {2},
+  pages = {904--924}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/61484","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation corroborated by https://orbilu.uni.lu/handle/10993/60597. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","A Hybrid Optimization and Deep RL Approach for Resource Allocation in Semi-GF NOMA Networks","Duc-Dung Tran; Vu Nguyen Ha; Symeon Chatzinotas; Ti Ti Nguyen","2023","Conference Paper","","2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)","2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)","IEEE","","","1-6","10.1109/pimrc56721.2023.10293810","","","","","Deep reinforcement learning; Resource allocation; NOMA","","","","","","https://doi.org/10.1109/pimrc56721.2023.10293810","","@inproceedings{telecomai58076,
+  title = {A Hybrid Optimization and Deep RL Approach for Resource Allocation in Semi-GF NOMA Networks},
+  author = {Duc-Dung Tran and Vu Nguyen Ha and Symeon Chatzinotas and Ti Ti Nguyen},
+  year = {2023},
+  booktitle = {2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)},
+  doi = {10.1109/pimrc56721.2023.10293810},
+  pages = {1--6}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/58076","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Multi-Agent DRL Approach for Energy-Efficient Resource Allocation in URLLC-Enabled Grant-Free NOMA Systems","Duc-Dung Tran; Shree Krishna Sharma; Vu Nguyen Ha; Symeon Chatzinotas; Isaac Woungang","2023","Journal Article","IEEE Open Journal of the Communications Society","","IEEE Open Journal of the Communications Society","Institute of Electrical and Electronics Engineers (IEEE)","4","","1470-1486","10.1109/ojcoms.2023.3291689","","","","","Multi-agent reinforcement learning; Resource allocation; Energy efficiency","","","","","","https://doi.org/10.1109/ojcoms.2023.3291689","","@article{telecomai58601,
+  title = {Multi-Agent DRL Approach for Energy-Efficient Resource Allocation in URLLC-Enabled Grant-Free NOMA Systems},
+  author = {Duc-Dung Tran and Shree Krishna Sharma and Vu Nguyen Ha and Symeon Chatzinotas and Isaac Woungang},
+  year = {2023},
+  journal = {IEEE Open Journal of the Communications Society},
+  doi = {10.1109/ojcoms.2023.3291689},
+  volume = {4},
+  pages = {1470--1486}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/58601","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","NGSO-To-GSO Satellite Interference Detection Based on Autoencoder","Almoatssimbillah Saifaldawla; Flor G. Ortiz-Gomez; Eva Lagunas; Saed Daoud; Symeon Chatzinotas","2023","Conference Paper","","2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)","2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)","IEEE","","","1-7","10.1109/pimrc56721.2023.10293839","","","","","Autoencoders; Interference detection; Satellite networks","","","","","","https://doi.org/10.1109/pimrc56721.2023.10293839","","@inproceedings{telecomai55631,
+  title = {NGSO-To-GSO Satellite Interference Detection Based on Autoencoder},
+  author = {Almoatssimbillah Saifaldawla and Flor G. Ortiz-Gomez and Eva Lagunas and Saed Daoud and Symeon Chatzinotas},
+  year = {2023},
+  booktitle = {2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)},
+  doi = {10.1109/pimrc56721.2023.10293839},
+  pages = {1--7}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/55631","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Bayesian Poisson Factorization With Side Information for User Interest Prediction in Hierarchical Edge-Caching Systems","Sajad Mehrizi; Symeon Chatzinotas","2022","Journal Article","IEEE Open Journal of the Communications Society","","IEEE Open Journal of the Communications Society","Institute of Electrical and Electronics Engineers (IEEE)","3","","508-517","10.1109/ojcoms.2022.3158811","","","","","Bayesian learning; Poisson matrix factorization; Recommender systems","","https://orbilu.uni.lu/bitstream/10993/53077/1/feature_based_MF_v7.pdf","","","","https://doi.org/10.1109/ojcoms.2022.3158811","","@article{telecomai53077,
+  title = {Bayesian Poisson Factorization With Side Information for User Interest Prediction in Hierarchical Edge-Caching Systems},
+  author = {Sajad Mehrizi and Symeon Chatzinotas},
+  year = {2022},
+  journal = {IEEE Open Journal of the Communications Society},
+  doi = {10.1109/ojcoms.2022.3158811},
+  volume = {3},
+  pages = {508--517}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/53077","Selected AI-related work coauthored by Symeon Chatzinotas. First author Sajad Mehrizi was at SnT, documented at https://orbilu.uni.lu/handle/10993/44413; this paper acknowledges the Luxembourg FNR PROCAST project. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Unsupervised Learning for User Scheduling in Multibeam Precoded GEO Satellite Systems","Flor Ortiz; Eva Lagunas; Symeon Chatzinotas","2022","Conference Paper","","2022 Joint European Conference on Networks and Communications &amp; 6G Summit (EuCNC/6G Summit)","2022 Joint European Conference on Networks and Communications &amp; 6G Summit (EuCNC/6G Summit)","IEEE","","","190-195","10.1109/eucnc/6gsummit54941.2022.9815569","","","","","Unsupervised learning; User clustering; Satellite scheduling","","","","","","https://doi.org/10.1109/eucnc/6gsummit54941.2022.9815569","","@inproceedings{telecomai51241,
+  title = {Unsupervised Learning for User Scheduling in Multibeam Precoded GEO Satellite Systems},
+  author = {Flor Ortiz and Eva Lagunas and Symeon Chatzinotas},
+  year = {2022},
+  booktitle = {2022 Joint European Conference on Networks and Communications &amp; 6G Summit (EuCNC/6G Summit)},
+  doi = {10.1109/eucnc/6gsummit54941.2022.9815569},
+  pages = {190--195}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/51241","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Completion Time Minimization in NOMA Systems: Learning for Combinatorial Optimization","Anyue Wang; Lei Lei; Eva Lagunas; Symeon Chatzinotas; Björn Ottersten","2021","Journal Article","IEEE Networking Letters","","IEEE Networking Letters","Institute of Electrical and Electronics Engineers (IEEE)","3","1","15-18","10.1109/lnet.2021.3052891","","","","","Deep learning; Combinatorial optimization; NOMA","","","","","","https://doi.org/10.1109/lnet.2021.3052891","","@article{telecomai45730,
+  title = {Completion Time Minimization in NOMA Systems: Learning for Combinatorial Optimization},
+  author = {Anyue Wang and Lei Lei and Eva Lagunas and Symeon Chatzinotas and Björn Ottersten},
+  year = {2021},
+  journal = {IEEE Networking Letters},
+  doi = {10.1109/lnet.2021.3052891},
+  volume = {3},
+  number = {1},
+  pages = {15--18}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/45730","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Trend-Aware Proactive Caching via Tensor Train Decomposition: A Bayesian Viewpoint","Sajad Mehrizi; Thang X. Vu; Symeon Chatzinotas; Björn Ottersten","2021","Journal Article","IEEE Open Journal of the Communications Society","","IEEE Open Journal of the Communications Society","Institute of Electrical and Electronics Engineers (IEEE)","2","","975-989","10.1109/ojcoms.2021.3075071","","","","","Bayesian learning; Tensor train decomposition; Predictive caching","","","","","","https://doi.org/10.1109/ojcoms.2021.3075071","","@article{telecomai48195,
+  title = {Trend-Aware Proactive Caching via Tensor Train Decomposition: A Bayesian Viewpoint},
+  author = {Sajad Mehrizi and Thang X. Vu and Symeon Chatzinotas and Björn Ottersten},
+  year = {2021},
+  journal = {IEEE Open Journal of the Communications Society},
+  doi = {10.1109/ojcoms.2021.3075071},
+  volume = {2},
+  pages = {975--989}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/48195","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Deep Learning for Beam Hopping in Multibeam Satellite Systems","Lei Lei; Eva Lagunas; Yaxiong Yuan; Mirza Golam Kibria; Symeon Chatzinotas; Björn Ottersten","2020","Conference Paper","","2020 IEEE 91st Vehicular Technology Conference (VTC2020-Spring)","2020 IEEE 91st Vehicular Technology Conference (VTC2020-Spring)","IEEE","","","1-5","10.1109/vtc2020-spring48590.2020.9128905","","","","","Deep learning; Beam hopping; Satellite networks","","","","","","https://doi.org/10.1109/vtc2020-spring48590.2020.9128905","","@inproceedings{telecomai42944,
+  title = {Deep Learning for Beam Hopping in Multibeam Satellite Systems},
+  author = {Lei Lei and Eva Lagunas and Yaxiong Yuan and Mirza Golam Kibria and Symeon Chatzinotas and Björn Ottersten},
+  year = {2020},
+  booktitle = {2020 IEEE 91st Vehicular Technology Conference (VTC2020-Spring)},
+  doi = {10.1109/vtc2020-spring48590.2020.9128905},
+  pages = {1--5}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/42944","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Online Spatiotemporal Popularity Learning via Variational Bayes for Cooperative Caching","Sajad Mehrizi; Saikat Chatterjee; Symeon Chatzinotas; Björn Ottersten","2020","Journal Article","IEEE Transactions on Communications","","IEEE Transactions on Communications","Institute of Electrical and Electronics Engineers (IEEE)","68","11","7068-7082","10.1109/tcomm.2020.3015478","","","","","Variational Bayes; Online learning; Popularity prediction","","https://orbilu.uni.lu/bitstream/10993/44413/1/mainDouble.pdf","","","","https://doi.org/10.1109/tcomm.2020.3015478","","@article{telecomai44413,
+  title = {Online Spatiotemporal Popularity Learning via Variational Bayes for Cooperative Caching},
+  author = {Sajad Mehrizi and Saikat Chatterjee and Symeon Chatzinotas and Björn Ottersten},
+  year = {2020},
+  journal = {IEEE Transactions on Communications},
+  doi = {10.1109/tcomm.2020.3015478},
+  volume = {68},
+  number = {11},
+  pages = {7068--7082}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/44413","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Learning-Based Resource Allocation: Efficient Content Delivery Enabled by Convolutional Neural Network","Lei Lei; Yaxiong Yuan; Thang X. Vu; Symeon Chatzinotas; Björn Ottersten","2019","Workshop Paper","","2019 IEEE 20th International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)","2019 IEEE 20th International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)","IEEE","","","1-5","10.1109/spawc.2019.8815447","","","","","Convolutional neural networks; Resource allocation; Content delivery","","","","","","https://doi.org/10.1109/spawc.2019.8815447","","@inproceedings{telecomai41133,
+  title = {Learning-Based Resource Allocation: Efficient Content Delivery Enabled by Convolutional Neural Network},
+  author = {Lei Lei and Yaxiong Yuan and Thang X. Vu and Symeon Chatzinotas and Björn Ottersten},
+  year = {2019},
+  booktitle = {2019 IEEE 20th International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)},
+  doi = {10.1109/spawc.2019.8815447},
+  pages = {1--5}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/41133","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","Constrained Bayesian Active Learning of a Linear Classifier","Anestis Tsakmalis; Symeon Chatzinotas; Björn Ottersten","2018","Conference Paper","","2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)","2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)","IEEE","","","6663-6667","10.1109/icassp.2018.8461409","","","","","Active learning; Bayesian learning; Linear classification","","","","","","https://doi.org/10.1109/icassp.2018.8461409","","@inproceedings{telecomai38164,
+  title = {Constrained Bayesian Active Learning of a Linear Classifier},
+  author = {Anestis Tsakmalis and Symeon Chatzinotas and Björn Ottersten},
+  year = {2018},
+  booktitle = {2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  doi = {10.1109/icassp.2018.8461409},
+  pages = {6663--6667}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/38164","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."
+"No","","A deep learning approach for optimizing content delivering in cache-enabled HetNet","Lei Lei; Lei You; Gaoyang Dai; Thang Xuan Vu; Di Yuan; Symeon Chatzinotas","2017","Conference Paper","","2017 International Symposium on Wireless Communication Systems (ISWCS)","2017 International Symposium on Wireless Communication Systems (ISWCS)","IEEE","","","449-453","10.1109/iswcs.2017.8108157","","","","","Deep learning; Content delivery; Edge caching","","","","","","https://doi.org/10.1109/iswcs.2017.8108157","","@inproceedings{telecomai31926,
+  title = {A deep learning approach for optimizing content delivering in cache-enabled HetNet},
+  author = {Lei Lei and Lei You and Gaoyang Dai and Thang Xuan Vu and Di Yuan and Symeon Chatzinotas},
+  year = {2017},
+  booktitle = {2017 International Symposium on Wireless Communication Systems (ISWCS)},
+  doi = {10.1109/iswcs.2017.8108157},
+  pages = {449--453}
+}","","","","","","","","","","","","","https://orbilu.uni.lu/handle/10993/31926","Selected AI-related work coauthored by Symeon Chatzinotas. First-author SnT affiliation documented in the ORBilu author details. TelecomAI membership and author-role numbering require the lab roster; left blank. Google Scholar blocked automated access; bibliography cross-checked using ORBilu and publisher-deposited Crossref metadata."

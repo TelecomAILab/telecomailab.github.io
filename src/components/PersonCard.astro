@@ -1,12 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import type { Person } from "../lib/content";
+import { personDisplayName } from "../lib/people-schema";
 
 interface Props {
   person: Person;
 }
 const { person } = Astro.props;
-const { name, role, headshot, links } = person.data;
+const { role, headshot, links } = person.data;
+const name = personDisplayName(person.data);
 
 const initials = name
   .split(",")[0]

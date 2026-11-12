@@ -1,0 +1,6 @@
+---
+import ArticleIndex from "../../components/ArticleIndex.astro";
+import { getArticles } from "../../lib/editorial";
+const entries = await getArticles("blog");
+---
+<ArticleIndex entries={entries} kind="blog" />

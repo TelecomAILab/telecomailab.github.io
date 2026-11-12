@@ -1,0 +1,15 @@
+---
+import NavigationIcon from "./NavigationIcon.astro";
+const modes = [{ value: "light", label: "Light", icon: "sun" }, { value: "dark", label: "Dark", icon: "moon" }, { value: "auto", label: "Automatic (System)", icon: "monitor" }] as const;
+---
+<div class="relative" data-appearance>
+  <button type="button" id="appearance-toggle" class="nav-action" aria-label="Appearance: Automatic (System)" title="Change appearance" aria-haspopup="menu" aria-expanded="false" aria-controls="appearance-options">
+    {modes.map((mode) => <span data-appearance-icon={mode.value}><NavigationIcon name={mode.icon} /></span>)}
+  </button>
+  <div id="appearance-options" hidden role="menu" aria-label="Appearance" class="absolute top-full right-0 z-50 mt-2 w-52 rounded-xl border border-line bg-surface p-1 shadow-lg">
+    {modes.map((mode) => <button type="button" role="menuitemradio" aria-checked={mode.value === "auto" ? "true" : "false"} tabindex="-1" data-theme-option={mode.value} class="theme-option flex min-h-11 w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm text-body"><NavigationIcon name={mode.icon} /><span class="flex-1">{mode.label}</span><span data-theme-check aria-hidden="true">✓</span></button>)}
+  </div>
+</div>
+<script>
+  import "../scripts/appearance";
+</script>

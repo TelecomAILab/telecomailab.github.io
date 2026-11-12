@@ -1,0 +1,478 @@
+{
+  "funders": [
+    {
+      "id": "national",
+      "name": "Example Research Foundation",
+      "shortName": "ERF",
+      "programme": "National research programmes",
+      "isMock": true
+    },
+    {
+      "id": "collaboration",
+      "name": "Example Collaborative Research Programme",
+      "shortName": "ECRP",
+      "programme": "International collaborations",
+      "isMock": true
+    },
+    {
+      "id": "industry",
+      "name": "Example Industry Research Partnership",
+      "shortName": "EIRP",
+      "programme": "Industry partnerships",
+      "isMock": true
+    },
+    {
+      "id": "pi-funder-4",
+      "name": "Luxembourg National Research Fund",
+      "shortName": "FNR",
+      "programme": "BRIDGES 2024",
+      "isMock": false
+    },
+    {
+      "id": "pi-funder-5",
+      "name": "University of Luxembourg",
+      "shortName": "Uni.lu",
+      "programme": "Marie Speyer Excellence Grants 2024",
+      "isMock": false
+    },
+    {
+      "id": "pi-funder-6",
+      "name": "Luxembourg National Research Fund",
+      "shortName": "FNR",
+      "programme": "CORE 2021",
+      "isMock": false
+    },
+    {
+      "id": "pi-funder-7",
+      "name": "Luxembourg National Research Fund",
+      "shortName": "FNR",
+      "programme": "CORE",
+      "isMock": false
+    },
+    {
+      "id": "pi-funder-8",
+      "name": "European Space Agency",
+      "shortName": "ESA",
+      "programme": "",
+      "isMock": false
+    },
+    {
+      "id": "pi-funder-9",
+      "name": "Luxembourg National Research Fund",
+      "shortName": "FNR",
+      "programme": "CORE Junior",
+      "isMock": false
+    },
+    {
+      "id": "pi-funder-10",
+      "name": "Luxembourg National Research Fund; Luxembourg Ministry of the Economy",
+      "shortName": "FNR; MECO",
+      "programme": "HPC-AI BRIDGES joint call",
+      "isMock": false
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 701,
+      "acronym": "AIRWISE",
+      "title": "Learning-driven, energy-aware wireless networks",
+      "funderId": "national",
+      "startYear": 2024,
+      "endYear": 2027,
+      "budgetEUR": 360000,
+      "status": "active",
+      "areas": [
+        "topic-one",
+        "theory"
+      ],
+      "grantId": "DEMO-2024-701",
+      "leadPersonId": 1001,
+      "teamPersonIds": [
+        1001,
+        1000
+      ],
+      "partners": [
+        "Example Partner University",
+        "Example Communications Institute"
+      ],
+      "summary": "Exploring efficient learning and resource allocation under changing traffic, coverage, and reliability constraints.",
+      "outputs": [
+        "Algorithms & models",
+        "Open evaluation tools",
+        "Research publications"
+      ],
+      "publicationIds": [
+        "adam2025generative"
+      ],
+      "isMock": true
+    },
+    {
+      "id": 702,
+      "acronym": "EDGECOLLAB",
+      "title": "Collaborative intelligence across cloud and edge",
+      "funderId": "collaboration",
+      "startYear": 2025,
+      "endYear": 2028,
+      "budgetEUR": 280000,
+      "status": "active",
+      "areas": [
+        "topic-two",
+        "methods"
+      ],
+      "grantId": "DEMO-2025-702",
+      "leadPersonId": 1001,
+      "teamPersonIds": [
+        1001,
+        1006
+      ],
+      "partners": [
+        "Example Partner University",
+        "Example Network Systems Company"
+      ],
+      "summary": "Studying collaborative training, deployment, and inference across resource-constrained edge devices.",
+      "outputs": [
+        "Algorithms & models",
+        "Open evaluation tools",
+        "Research publications"
+      ],
+      "publicationIds": [
+        "adam2025generative"
+      ],
+      "isMock": true
+    },
+    {
+      "id": 703,
+      "acronym": "ORBITAI",
+      "title": "Intelligent resource management for satellite systems",
+      "funderId": "industry",
+      "startYear": 2023,
+      "endYear": 2026,
+      "budgetEUR": 195000,
+      "status": "active",
+      "areas": [
+        "topic-three",
+        "theory"
+      ],
+      "grantId": "DEMO-2023-703",
+      "leadPersonId": 1001,
+      "teamPersonIds": [
+        1001,
+        1007
+      ],
+      "partners": [
+        "Example Partner University",
+        "Example Communications Institute"
+      ],
+      "summary": "Investigating adaptive scheduling and robust connectivity across terrestrial and non-terrestrial links.",
+      "outputs": [
+        "Algorithms & models",
+        "Open evaluation tools",
+        "Research publications"
+      ],
+      "publicationIds": [
+        "adam2025generative"
+      ],
+      "isMock": true
+    },
+    {
+      "id": 704,
+      "acronym": "OPEN-RADIO",
+      "title": "Open and reproducible radio access research",
+      "funderId": "collaboration",
+      "startYear": 2026,
+      "endYear": 2029,
+      "budgetEUR": 420000,
+      "status": "active",
+      "areas": [
+        "methods",
+        "topic-one"
+      ],
+      "grantId": "DEMO-2026-704",
+      "leadPersonId": 1001,
+      "teamPersonIds": [
+        1001,
+        1005
+      ],
+      "partners": [
+        "Example Partner University",
+        "Example Network Systems Company"
+      ],
+      "summary": "Developing reusable experiment descriptions, baseline implementations, and reproducibility guidance.",
+      "outputs": [
+        "Algorithms & models",
+        "Open evaluation tools",
+        "Research publications"
+      ],
+      "publicationIds": [
+        "adam2025generative"
+      ],
+      "isMock": true
+    },
+    {
+      "id": 705,
+      "acronym": "GREENLINK",
+      "title": "Energy-efficient learning for connected systems",
+      "funderId": "national",
+      "startYear": 2021,
+      "endYear": 2024,
+      "budgetEUR": 210000,
+      "status": "completed",
+      "areas": [
+        "topic-one",
+        "topic-two"
+      ],
+      "grantId": "DEMO-2021-705",
+      "leadPersonId": 1001,
+      "teamPersonIds": [
+        1000,
+        1004
+      ],
+      "partners": [
+        "Example Partner University",
+        "Example Communications Institute"
+      ],
+      "summary": "Evaluating the trade-offs between energy consumption, model quality, and communication cost.",
+      "outputs": [
+        "Algorithms & models",
+        "Open evaluation tools",
+        "Research publications"
+      ],
+      "publicationIds": [
+        "adam2025generative"
+      ],
+      "isMock": true
+    },
+    {
+      "id": 706,
+      "acronym": "SYNTHNET",
+      "title": "Synthetic network traces for reliable evaluation",
+      "funderId": "industry",
+      "startYear": 2020,
+      "endYear": 2022,
+      "budgetEUR": 95000,
+      "status": "completed",
+      "areas": [
+        "methods",
+        "theory"
+      ],
+      "grantId": "DEMO-2020-706",
+      "leadPersonId": 1001,
+      "teamPersonIds": [
+        1001,
+        1004
+      ],
+      "partners": [
+        "Example Partner University",
+        "Example Network Systems Company"
+      ],
+      "summary": "Building a shared approach to documenting synthetic traces and benchmarking network algorithms.",
+      "outputs": [
+        "Algorithms & models",
+        "Open evaluation tools",
+        "Research publications"
+      ],
+      "publicationIds": [
+        "adam2025generative"
+      ],
+      "isMock": true
+    },
+    {
+      "id": "pi-project-7",
+      "acronym": "BrainSatCom",
+      "title": "Brain-inspired Neuromorphic Computing Techniques to Energy-Efficient Satellite Communications",
+      "funderId": "pi-funder-4",
+      "startYear": 2024,
+      "startDate": "2024-10-01",
+      "programme": "BRIDGES 2024",
+      "website": "https://sites.google.com/view/evalagunas/home/projects/fnr-bridges-brainsatcom",
+      "leadName": "Symeon Chatzinotas",
+      "teamNames": [
+        "Symeon Chatzinotas",
+        "Suleima Briseno Ramirez"
+      ],
+      "grantId": "BRIDGES/2024/IS/19003118",
+      "teamPersonIds": [],
+      "partners": [
+        "SES"
+      ],
+      "areas": [
+        "edge-ai-network-management"
+      ],
+      "summary": "Investigates neuromorphic models and processors for low-power satellite signal processing through simulation and hardware experiments.",
+      "outputs": [],
+      "publicationIds": [
+        "eappen2025neuromorphic"
+      ],
+      "isMock": false
+    },
+    {
+      "id": "pi-project-8",
+      "acronym": "BrainSat",
+      "title": "BrainSat",
+      "funderId": "pi-funder-5",
+      "programme": "Marie Speyer Excellence Grants 2024",
+      "website": "https://www.uni.lu/en/news/first-marie-speyer-grants-awarded-to-outstanding-women-researchers/",
+      "leadName": "Flor Ortiz",
+      "teamNames": [],
+      "teamPersonIds": [],
+      "partners": [],
+      "areas": [
+        "edge-ai-network-management"
+      ],
+      "summary": "Studies energy-efficient AI processing for satellites.",
+      "outputs": [],
+      "publicationIds": [
+        "eappen2025neuromorphic"
+      ],
+      "isMock": false
+    },
+    {
+      "id": "pi-project-9",
+      "acronym": "SmartSpace",
+      "title": "Leveraging Artificial Intelligence to Empower the Next Generation of Satellite Communications",
+      "funderId": "pi-funder-6",
+      "status": "completed",
+      "startYear": 2022,
+      "endYear": 2025,
+      "startDate": "2022-09-01",
+      "endDate": "2025-08-31",
+      "programme": "CORE 2021",
+      "website": "https://fnr-smartspace-project.uni.lu/",
+      "leadName": "Eva Lagunas",
+      "teamNames": [],
+      "grantId": "C21/IS/16193290",
+      "teamPersonIds": [],
+      "partners": [],
+      "areas": [
+        "edge-ai-network-management"
+      ],
+      "summary": "Develops AI methods to improve satellite communication capabilities.",
+      "outputs": [],
+      "publicationIds": [
+        "eappen2025neuromorphic"
+      ],
+      "isMock": false
+    },
+    {
+      "id": "pi-project-10",
+      "acronym": "RUTINE",
+      "title": "Distributed and Risk-aware Multi-Agent Reinforcement Learning for Resources and Control Management in Multilayer Ground-Air-Space Networks",
+      "funderId": "pi-funder-7",
+      "startYear": 2023,
+      "endYear": 2026,
+      "startDate": "2023-09-01",
+      "endDate": "2026-08-31",
+      "programme": "CORE",
+      "website": "https://www.uni.lu/snt-en/research-projects/rutine/",
+      "teamNames": [],
+      "grantId": "C22/IS/17220888/RUTINE",
+      "teamPersonIds": [],
+      "partners": [],
+      "areas": [
+        "edge-ai-network-management"
+      ],
+      "summary": "Explores distributed reinforcement learning for resource and control decisions across ground, aerial and satellite networks.",
+      "outputs": [],
+      "publicationIds": ["eappen2025neuromorphic"],
+      "isMock": false
+    },
+    {
+      "id": "pi-project-11",
+      "acronym": "SPAICE",
+      "title": "Satellite Signal Processing Techniques using a Commercial Off-The-Shelf AI Chipset",
+      "funderId": "pi-funder-8",
+      "startYear": 2021,
+      "startDate": "2021-11-11",
+      "website": "https://www.uni.lu/snt-en/research-projects/spaice/",
+      "leadName": "Symeon Chatzinotas",
+      "teamNames": [
+        "Symeon Chatzinotas"
+      ],
+      "grantId": "4000134522/21/NL/FGL",
+      "teamPersonIds": [],
+      "partners": [],
+      "areas": [
+        "edge-ai-network-management"
+      ],
+      "summary": "Evaluates AI acceleration of onboard satellite signal processing and demonstrates methods in a laboratory testbed.",
+      "outputs": [],
+      "publicationIds": ["eappen2025neuromorphic"],
+      "isMock": false
+    },
+    {
+      "id": "pi-project-12",
+      "acronym": "SENTRY",
+      "title": "Semantic-oriented Inter-satellite Communications for Earth Observation",
+      "funderId": "pi-funder-9",
+      "programme": "CORE Junior",
+      "website": "https://www.uni.lu/snt-en/research-groups/sigcom/research/",
+      "leadName": "Vu Nguyen Ha",
+      "teamNames": [
+        "Vu Nguyen Ha",
+        "Symeon Chatzinotas"
+      ],
+      "grantId": "C23/IS/18073708/SENTRY",
+      "teamPersonIds": [],
+      "partners": [
+        "SES"
+      ],
+      "areas": [
+        "semantic-earth-observation"
+      ],
+      "summary": "Studies semantic information exchange between satellites for Earth observation.",
+      "outputs": [],
+      "publicationIds": [
+        "le2025semantic"
+      ],
+      "isMock": false
+    },
+    {
+      "id": "pi-project-13",
+      "acronym": "SHIELD",
+      "title": "Reliable Distributed Learning and Smart Contract assisted Digital Ecosystems",
+      "status": "active",
+      "programme": "CHIST-ERA Call 2023: Smart Contracts for Digital Transformation Ecosystems",
+      "website": "https://www.uni.lu/snt-en/research-projects/shield/",
+      "leadName": "Vu Nguyen Ha",
+      "teamNames": [
+        "Vu Nguyen Ha"
+      ],
+      "teamPersonIds": [],
+      "partners": [
+        "Trinity College Dublin",
+        "University of Luxembourg",
+        "National Chung Cheng University",
+        "Koç University"
+      ],
+      "areas": [
+        "data-model-ecosystems"
+      ],
+      "summary": "Develops distributed learning and smart-contract methods for dependable digital ecosystems.",
+      "outputs": [],
+      "publicationIds": [],
+      "isMock": false
+    },
+    {
+      "id": "pi-project-14",
+      "acronym": "CLAIRE",
+      "title": "Cloud Learning and Edge-AI Reconstruction for Earth Observation",
+      "funderId": "pi-funder-10",
+      "programme": "HPC-AI BRIDGES joint call",
+      "website": "https://www.fnr.lu/results-hpc-ai-bridges-joint-fnr-meco-luxinnovation-call/",
+      "teamNames": [],
+      "teamPersonIds": [],
+      "partners": [
+        "Hydrosat",
+        "University of Luxembourg"
+      ],
+      "areas": [
+        "semantic-earth-observation"
+      ],
+      "summary": "Combines AI and high-performance computing to process Earth observation imagery efficiently in collaboration with Hydrosat.",
+      "outputs": [],
+      "publicationIds": ["le2025semantic"],
+      "isMock": false
+    }
+  ]
+}

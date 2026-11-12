@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import PageHeader from "./PageHeader.astro";
+import { authorName, formatDate, getEditorialContext } from "../lib/editorial";
+interface Props { entries: CollectionEntry<"blog" | "notes">[]; kind: "blog" | "notes" }
+const { entries, kind } = Astro.props;
+const isBlog = kind === "blog";
+const context = await getEditorialContext();
+const tags = [...new Set(entries.flatMap((entry) => entry.data.tags))].sort();
+---
+<BaseLayout title={isBlog ? "Blog" : "Notes"} description={isBlog ? "Ideas, experiments, and perspectives from TelecomAI Lab." : "Short technical notes and working methods from TelecomAI Lab."}>
+  <PageHeader eyebrow={isBlog ? "Behind the research" : "The research notebook"} title={isBlog ? "Blog" : "Notes"} lead={isBlog ? "Ideas in progress, lessons from experiments, and the people behind intelligent communications." : "Small, useful pieces of research practice: derivations, implementation details, and reproducibility checklists."} />
+  <div class="container-page pb-16" data-editorial-list>
+    <div class="mb-9 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-primary-100 bg-primary-50/50 p-5"><p class="max-w-xl text-sm text-slate-600">{isBlog ? "Looking for a quick derivation or a practical checklist? Our Notes collection keeps the details close at hand." : "For longer stories and perspectives on our experiments, visit the lab blog."}</p><a href={isBlog ? "/notes" : "/blog"} class="shrink-0 text-sm font-semibold text-primary-700 hover:underline">{isBlog ? "Explore notes" : "Read the blog"} &rarr;</a></div>
+    <div class="mb-6 flex flex-wrap items-end gap-4"><div class="min-w-0 flex-1"><label for="article-search" class="mb-2 block text-sm font-medium text-slate-700">Search {kind}</label><input id="article-search" data-editorial-search type="search" placeholder="Search titles, authors, and topics…" class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm" /></div><div><label for="article-tag" class="mb-2 block text-sm font-medium text-slate-700">Topic</label><select id="article-tag" data-editorial-filter="tag" class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm"><option value="all">All topics</option>{tags.map((tag) => <option value={tag}>{tag}</option>)}</select></div></div>
+    <p data-editorial-count class="mb-6 text-sm text-slate-500" role="status" aria-live="polite">{entries.length} articles</p>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {entries.map((entry) => <article data-editorial-card data-tag={JSON.stringify(entry.data.tags)} data-search={[entry.data.title, entry.data.summary, ...entry.data.tags, ...entry.data.authors.map((author) => authorName(author, context))].join(" ").toLowerCase()} class="flex min-w-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+        {entry.data.coverImage && <a href={`/${kind}/${entry.data.slug}`} tabindex="-1" aria-hidden="true"><Image src={entry.data.coverImage} alt="" widths={[400, 800]} sizes="(min-width: 768px) 33vw, 90vw" class="aspect-[2/1] w-full object-cover" /></a>}
+        <div class="flex flex-1 flex-col p-6"><time datetime={entry.data.date} class="text-xs text-slate-500">{formatDate(entry.data.date)}</time><h2 class="mt-3 font-serif text-2xl leading-snug"><a href={`/${kind}/${entry.data.slug}`} class="hover:text-primary-700">{entry.data.title}</a></h2><p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600">{entry.data.summary}</p><p class="mt-5 text-xs leading-relaxed text-slate-500">{entry.data.authors.map((author, index) => <>{index > 0 && " · "}{author.personId ? <a href={`/people/${author.personId}`} class="text-primary-700 hover:underline">{authorName(author, context)}</a> : authorName(author, context)}</>)}</p><div class="mt-4 flex flex-wrap gap-2">{entry.data.tags.map((tag) => <span class="rounded bg-primary-50 px-2 py-1 text-xs text-primary-700">{tag}</span>)}</div></div>
+      </article>)}
+    </div>
+    <p data-editorial-empty hidden class="py-14 text-center text-slate-500">No articles match these filters.</p>
+  </div>
+  <script>
+    import "../scripts/editorial-filters";
+  </script>
+</BaseLayout>

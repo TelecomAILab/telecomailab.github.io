@@ -1,71 +1,32 @@
 ---
 import { site } from "../data/site";
-
+import SocialIcon from "./SocialIcon.astro";
 const year = new Date().getFullYear();
-
+const isPlaceholder = (href: string) => new URL(href, site.url).hostname.endsWith(".invalid");
 const socialLinks = [
-  { label: "Google Scholar", href: site.social.scholar },
-  { label: "X / Twitter", href: site.social.twitter },
-  { label: "GitHub", href: site.social.github },
-].filter((l): l is { label: string; href: string } => Boolean(l.href));
-
-const linkClass =
-  "text-slate-600 hover:text-primary-700 transition-colors";
+  { name: "scholar", label: "Google Scholar", href: site.social.scholar },
+  { name: "github", label: "GitHub", href: site.social.github },
+  { name: "facebook", label: "Facebook", href: site.social.facebook },
+  { name: "twitter", label: "Twitter / X", href: site.social.twitter },
+  { name: "linkedin", label: "LinkedIn", href: site.social.linkedin },
+  { name: "slack", label: "Slack", href: site.social.slack },
+  { name: "youtube", label: "YouTube", href: site.social.youtube },
+  { name: "telegram", label: "Telegram", href: site.social.telegram },
+  { name: "rss", label: "RSS", href: site.social.rss },
+] as const;
 ---
-
-<footer class="mt-20 border-t border-slate-200 bg-slate-50">
-  <div
-    class="container-page grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3"
-  >
-    <div>
-      <p class="font-serif text-lg text-slate-900">{site.name}</p>
-      <p class="mt-2 text-sm text-slate-600">
-        {site.institution} · {site.university}
-      </p>
-      <p class="mt-1 text-sm text-slate-600">
-        Principal Investigator: {site.pi}
-      </p>
-    </div>
-
-    <div>
-      <h2 class="text-sm font-semibold tracking-wide text-slate-600 uppercase">
-        Contact
-      </h2>
-      <ul class="mt-3 space-y-1 text-sm">
-        <li>
-          <a href={`mailto:${site.email}`} class={linkClass}>{site.email}</a>
-        </li>
-        <li>
-          <a href={`tel:${site.phone.replace(/[^0-9+]/g, "")}`} class={linkClass}>
-            {site.phone}
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div>
-      <h2 class="text-sm font-semibold tracking-wide text-slate-600 uppercase">
-        Elsewhere
-      </h2>
-      <ul class="mt-3 space-y-1 text-sm">
-        {
-          socialLinks.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                class={linkClass}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+<footer class="mt-20 border-t border-slate-200 bg-slate-50" data-site-footer>
+  <div class="container-page flex flex-col items-center gap-4 py-11 text-center">
+    <p class="font-serif text-2xl font-semibold text-slate-900">{site.name}</p>
+    <p class="max-w-3xl text-sm leading-relaxed text-slate-500">{site.researchGroup}, {site.institution} · {site.university}</p>
+    <ul class="flex flex-wrap items-center justify-center gap-1" aria-label="Social networks">
+      {socialLinks.filter((link) => link.href).map((link) => {
+        const placeholder = isPlaceholder(link.href!);
+        const label = placeholder ? `${link.label} (placeholder URL)` : link.label;
+        return <li><a href={link.href} aria-label={label} title={label} data-placeholder={placeholder || undefined} target={link.href?.startsWith("http") ? "_blank" : undefined} rel={link.href?.startsWith("http") ? "noopener noreferrer" : undefined} class="flex h-11 w-11 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-primary-100 hover:text-primary-700"><SocialIcon name={link.name} /></a></li>;
+      })}
+    </ul>
   </div>
-
   <div class="border-t border-slate-200">
     <div
       class="container-page flex flex-col gap-1 py-4 text-xs text-slate-600 sm:flex-row sm:items-center sm:justify-between"

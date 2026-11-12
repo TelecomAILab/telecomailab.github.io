@@ -1,0 +1,15 @@
+{
+  "demo": true,
+  "devices": [
+    {
+      "id": "edge-01",
+      "computeBudget": 8,
+      "latencyTargetMs": 25
+    },
+    {
+      "id": "edge-02",
+      "computeBudget": 4,
+      "latencyTargetMs": 50
+    }
+  ]
+}

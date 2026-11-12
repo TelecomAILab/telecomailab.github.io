@@ -1,21 +1,16 @@
 // Verify every publication's DOI + url resolve.
 //  - DOI: doi.org handle API (responseCode 1 = registered/valid) — registrar-agnostic, bot-safe.
 //  - url: HEAD (follow redirects); 403/429 treated as bot-block (not broken).
-import { readdirSync, readFileSync } from "node:fs";
-import { join, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-
-const DIR = join(dirname(fileURLToPath(import.meta.url)), "../src/content/publications");
-const v = (t, k) => {
-  const m = t.match(new RegExp(`^${k}:\\s*"?(.*?)"?\\s*$`, "m"));
-  return m ? m[1] : "";
-};
-const pubs = readdirSync(DIR)
-  .filter((f) => f.endsWith(".md"))
-  .map((f) => {
-    const t = readFileSync(join(DIR, f), "utf8");
-    return { slug: f.replace(/\.md$/, ""), doi: v(t, "doi"), url: v(t, "url"), scholar: v(t, "scholarUrl") };
-  });
+import { readFileSync } from "node:fs";
+const records = JSON.parse(readFileSync(new URL("../src/data/publications.json", import.meta.url), "utf8"));
+const pubs = records.filter((record) => !record.isMock).map((record) => ({
+  slug: String(record.id), doi: record.doi, url: record.url, scholar: record.scholarUrl,
+}));
+console.log(`Skipping ${records.length - pubs.length} explicitly marked mock publications.`);
+if (!pubs.length) {
+  console.log("No non-mock publications to check.");
+  process.exit(0);
+}
 
 async function withTimeout(fn, ms = 15000) {
   const c = new AbortController();
@@ -80,3 +75,5 @@ for (const r of results) {
 console.log(`Checked ${results.length} publications (${results.filter((r) => r.doi).length} with DOI, ${results.filter((r) => r.url).length} with url).\n`);
 console.log(issues.length ? "ISSUES:\n" + issues.join("\n") : "✓ All DOIs registered and all url fields resolve.");
 if (blocked.length) console.log("\nBot-blocked (403/429 — verify manually, likely fine):\n  " + blocked.join("\n  "));
+
+if (issues.length) process.exitCode = 1;

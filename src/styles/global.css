@@ -1,10 +1,11 @@
 @import "tailwindcss";
+@import "./themes.css";
 
 /*
   Brand theme — Tailwind v4, CSS-first (@theme).
   ⚙️  CUSTOMIZE your palette here. Example: an ocean-blue primary + a
   magenta-pink accent, with serif (Newsreader) headings and Inter body.
-  Light-first; dark-mode tokens are stubbed below but unused by default.
+  Light defaults are preserved; themes.css supplies semantic dark surfaces/ink.
 */
 @theme {
   /* ---- Ocean-blue primary (brand) ---- */
@@ -46,7 +47,9 @@
   }
 
   body {
-    @apply font-sans text-slate-800 bg-white antialiased;
+    @apply font-sans antialiased;
+    color: var(--ink-strong);
+    background-color: var(--surface-page);
   }
 
   h1,
@@ -79,3 +82,6 @@
 .authors.clamped .au:nth-child(n + 13) {
   display: none;
 }
+
+[data-editorial-card][hidden], [data-editorial-empty][hidden] { display: none; }
+[data-news] { scroll-margin-top: 6rem; }

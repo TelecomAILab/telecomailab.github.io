@@ -1,0 +1,7 @@
+---
+import paths from "../assets/icons/social-paths.json";
+interface Props { name: keyof typeof paths }
+const { name } = Astro.props;
+// Simple Icons 11.15.0, CC0. Source and attribution: docs/architecture.md (asset provenance).
+---
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d={paths[name]} /></svg>

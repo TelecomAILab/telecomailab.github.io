@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import ProfileLayout from "../../components/ProfileLayout.astro";
 import PubList from "../../components/PubList.astro";
 import { getPublications, publicationsForPerson } from "../../lib/content";
@@ -10,25 +10,39 @@ export async function getStaticPaths() {
 }
 
 const { person } = Astro.props;
-const { Content } = await render(person);
-const hasBio = (person.body ?? "").trim().length > 0;
+const biography = person.data.biography ? await getEntry(person.data.biography) : undefined;
+if (person.data.biography && !biography) throw new Error(`Missing biography for ${person.id}`);
+const Content = biography ? (await render(biography)).Content : undefined;
+const hasBio = (biography?.body ?? "").trim().length > 0;
+const interests = person.data.researchInterests;
 
 const pubs = await getPublications();
-const mine = publicationsForPerson(person, pubs).slice(0, 15);
+const mine = publicationsForPerson(person, pubs);
 ---
 
 <ProfileLayout person={person}>
   {
-    hasBio && (
-      <div class="prose-content space-y-4 leading-relaxed text-slate-700">
+    hasBio && Content && (
+      <div class="prose-content max-w-3xl space-y-4 leading-relaxed text-slate-700">
         <Content />
       </div>
     )
   }
 
   {
-    mine.length > 0 && (
+    interests.length > 0 && (
       <section class:list={[hasBio && "mt-10"]}>
+        <h2 class="mb-1 font-serif text-xl text-slate-900">Research interests</h2>
+        <ul class="list-disc space-y-1 pl-5 text-slate-700">
+          {interests.map((interest) => <li>{interest}</li>)}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    mine.length > 0 && (
+      <section class:list={[(hasBio || interests.length > 0) && "mt-10"]}>
         <h2 class="mb-1 font-serif text-xl text-slate-900">
           Selected publications
         </h2>

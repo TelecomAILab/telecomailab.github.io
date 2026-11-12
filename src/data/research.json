@@ -1,0 +1,186 @@
+[
+  {
+    "id": "topic-one",
+    "title": "AI for wireless networks",
+    "description": "Wireless systems must make decisions with incomplete channel information, changing traffic, and limited radio resources. This illustrative direction asks how learning-based control can improve scheduling and resource allocation while keeping reliability and energy use visible.",
+    "approach": "Combine model-based optimisation with data-driven policies, compare transparent baselines, and evaluate sensitivity to changing channel conditions.",
+    "applications": "Adaptive radio access, interference management, and energy-aware connectivity.",
+    "image": "../assets/research/wireless.svg",
+    "links": [
+      {
+        "label": "Related publications",
+        "url": "/publications#topic-one"
+      }
+    ],
+    "imageAlt": "Concept illustration for ai for wireless networks",
+    "order": 1,
+    "isMock": true,
+    "summary": "Learning-driven resource allocation for reliable, energy-aware wireless systems."
+  },
+  {
+    "id": "topic-two",
+    "title": "Cloud & edge intelligence",
+    "description": "Intelligence distributed across devices, edge servers, and the cloud creates a joint learning and networking problem. This example direction examines how useful models can be trained and deployed when communication, computation, and data availability are uneven.",
+    "approach": "Explore federated and distributed learning, communication-efficient updates, and joint decisions about inference placement and computing resources.",
+    "applications": "Collaborative sensing, responsive edge services, and resource-constrained connected devices.",
+    "image": "../assets/research/edge.svg",
+    "links": [
+      {
+        "label": "Related publications",
+        "url": "/publications#topic-two"
+      }
+    ],
+    "imageAlt": "Concept illustration for cloud & edge intelligence",
+    "order": 2,
+    "isMock": true,
+    "summary": "Collaborative learning and efficient inference across devices, edge servers, and the cloud."
+  },
+  {
+    "id": "topic-three",
+    "title": "Satellite communications",
+    "description": "Integrated terrestrial and non-terrestrial networks can extend connectivity, but moving links and long delays complicate control. This illustrative direction studies how network models and adaptive policies can account for different coverage, capacity, and timescales.",
+    "approach": "Use explicit link and traffic models, robust resource allocation, and carefully scoped simulations of heterogeneous network scenarios.",
+    "applications": "Remote connectivity, resilient infrastructure, and coordinated terrestrial–satellite services.",
+    "image": "../assets/research/satellite.svg",
+    "links": [
+      {
+        "label": "Related publications",
+        "url": "/publications#topic-three"
+      }
+    ],
+    "imageAlt": "Concept illustration for satellite communications",
+    "order": 3,
+    "isMock": true,
+    "summary": "Adaptive connectivity across integrated terrestrial and non-terrestrial networks."
+  },
+  {
+    "id": "methods",
+    "title": "Open tools & datasets",
+    "description": "Research is easier to assess when experimental assumptions, inputs, and comparison methods are available. This example direction focuses on making communication-system experiments easier to reproduce, inspect, and extend.",
+    "approach": "Develop small documented tools, synthetic datasets, common evaluation protocols, and versioned configurations that make comparisons traceable.",
+    "applications": "Reusable benchmarks, research software, and accessible teaching experiments.",
+    "image": "../assets/research/tools.svg",
+    "links": [
+      {
+        "label": "Materials & Resources",
+        "url": "/mare"
+      }
+    ],
+    "imageAlt": "Concept illustration for open tools & datasets",
+    "order": 4,
+    "isMock": true,
+    "summary": "Documented software, transparent benchmarks, and reproducible research workflows."
+  },
+  {
+    "id": "theory",
+    "title": "Optimization & learning",
+    "description": "Network decisions often combine competing objectives, discrete choices, and uncertain operating conditions. This illustrative direction connects mathematical models to learning methods so that their assumptions and trade-offs can be understood.",
+    "approach": "Study constrained optimisation, robust decision-making, and interpretable baselines; use controlled experiments to examine where a model remains useful.",
+    "applications": "Resource allocation, system design, and principled comparisons between control policies.",
+    "image": "../assets/research/theory.svg",
+    "links": [
+      {
+        "label": "Technical notes",
+        "url": "/notes"
+      }
+    ],
+    "imageAlt": "Concept illustration for optimisation & learning",
+    "order": 5,
+    "isMock": true,
+    "summary": "Mathematical models and learning methods for uncertain network decisions."
+  },
+  {
+    "id": "edge-ai-network-management",
+    "title": "Resource Allocation and Network Management with Edge AI",
+    "summary": "Develop efficient AI for resource allocation and autonomous network management.",
+    "description": "We study how learning algorithms can manage wireless and satellite resources and execute on edge hardware. Work connects algorithm design with experimental evaluation on AI accelerators.",
+    "approach": "Reinforcement learning; Deep learning; Neuromorphic computing; Edge inference",
+    "applications": "Satellite communications; Wireless resource allocation; Onboard signal processing",
+    "motivation": "Network decisions must adapt quickly within limited power and computing budgets.",
+    "challenges": [
+      "Dynamic channels",
+      "Limited onboard computation",
+      "Energy consumption",
+      "Real-time inference"
+    ],
+    "keywords": [
+      "Edge AI",
+      "Resource allocation",
+      "Neuromorphic computing"
+    ],
+    "links": [
+      {
+        "label": "telecomailab.uni.lu",
+        "url": "https://telecomailab.uni.lu/research/"
+      },
+      {
+        "label": "www.uni.lu",
+        "url": "https://www.uni.lu/snt-en/facilities/telecomai-lab/"
+      }
+    ],
+    "order": 1,
+    "isMock": false
+  },
+  {
+    "id": "semantic-earth-observation",
+    "title": "Semantic Communications for Earth Observation",
+    "summary": "Transmit useful information from Earth observation data efficiently.",
+    "description": "We explore AI methods that select, compress and reconstruct information for Earth observation tasks. Semantic processing links communication decisions to the information needed by downstream applications.",
+    "approach": "Semantic representation learning; AI compression; Edge AI",
+    "applications": "Earth observation; Inter-satellite communications; Environmental monitoring",
+    "motivation": "Earth observation produces large datasets while satellite links and onboard power are constrained.",
+    "challenges": [
+      "Preserving task-relevant information",
+      "Bandwidth limits",
+      "Reconstruction quality"
+    ],
+    "keywords": [
+      "Semantic communications",
+      "Earth observation",
+      "Compression"
+    ],
+    "links": [
+      {
+        "label": "telecomailab.uni.lu",
+        "url": "https://telecomailab.uni.lu/research/"
+      },
+      {
+        "label": "www.uni.lu",
+        "url": "https://www.uni.lu/snt-en/facilities/telecomai-lab/"
+      }
+    ],
+    "order": 2,
+    "isMock": false
+  },
+  {
+    "id": "data-model-ecosystems",
+    "title": "Data and AI Model Marketplace Ecosystems",
+    "summary": "Support trustworthy sharing of data and AI models across digital ecosystems.",
+    "description": "We investigate distributed learning and smart contracts for collaborative digital services. The aim is to support reliable collaboration among participants that hold different datasets and computing resources.",
+    "approach": "Distributed learning; Smart contracts",
+    "applications": "Digital services; Collaborative AI platforms",
+    "motivation": "Collaborative AI requires dependable mechanisms for participation and exchange.",
+    "challenges": [
+      "Privacy",
+      "Trust",
+      "Distributed coordination"
+    ],
+    "keywords": [
+      "Distributed AI",
+      "Smart contracts",
+      "Data sharing"
+    ],
+    "links": [
+      {
+        "label": "telecomailab.uni.lu",
+        "url": "https://telecomailab.uni.lu/research/"
+      },
+      {
+        "label": "www.uni.lu",
+        "url": "https://www.uni.lu/snt-en/facilities/telecomai-lab/"
+      }
+    ],
+    "order": 3,
+    "isMock": false
+  }
+]

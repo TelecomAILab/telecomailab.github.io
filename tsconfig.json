@@ -1,19 +1,12 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "src/**/*", "scripts/**/*"],
+  "include": [
+    ".astro/types.d.ts",
+    "src/**/*",
+    "scripts/**/*"
+  ],
   "exclude": [
     "dist",
-    "node_modules",
-    "_site",
-    "authors",
-    "publication",
-    "participate",
-    "pages",
-    "admin",
-    "config",
-    "css",
-    "js",
-    "files",
-    "resources"
+    "node_modules"
   ]
 }

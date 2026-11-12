@@ -11,20 +11,39 @@
     "preview": "astro preview",
     "astro": "astro",
     "enrich:orcid": "node scripts/enrich-orcid.mjs",
-    "check:links": "node scripts/check-links.mjs"
+    "check:links": "node scripts/check-links.mjs",
+    "test:publications": "node --experimental-strip-types --test tests/publications.test.ts tests/publications-build.test.mjs tests/publication-management.test.ts tests/publication-management-build.test.mjs",
+    "test:people": "node --experimental-strip-types --test tests/people.test.ts tests/people-build.test.mjs",
+    "prebuild": "node scripts/check-production-mode.mjs",
+    "dev:fixtures": "node scripts/fixtures.mjs dev",
+    "build:fixtures": "node scripts/fixtures.mjs build",
+    "check:fixtures": "node scripts/fixtures.mjs check",
+    "import:pi": "node --experimental-strip-types scripts/import-pi-data.ts",
+    "import:publications": "node --experimental-strip-types scripts/import-publications.ts",
+    "generate:demo": "node --experimental-strip-types scripts/generate-demo-data.mjs",
+    "test:site": "node --test tests/production-build.test.mjs",
+    "test:editorial": "node --experimental-strip-types --test tests/editorial.test.ts tests/editorial-build.test.mjs",
+    "test:ui": "node --experimental-strip-types --test tests/calendar.test.ts tests/ui-refinements.test.mjs tests/about-navigation-build.test.mjs",
+    "test:search-theme": "node --test tests/search-theme.test.mjs tests/navigation-controls.test.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.7",
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource-variable/newsreader": "^5.2.10",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^7.4.8",
+    "katex": "^0.16.47",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "tailwindcss": "^4.3.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "cheerio": "^1.2.0",
+    "pagefind": "^1.6.0",
     "typescript": "^6.0.3"
   }
 }

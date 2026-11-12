@@ -4,15 +4,18 @@ import BaseLayout from "../components/BaseLayout.astro";
 import { site } from "../data/site";
 import { getCollection } from "astro:content";
 import {
-  getConfirmedFigures,
   getPublications,
   featuredMatcher,
   featuredSorter,
 } from "../lib/content";
 import PubList from "../components/PubList.astro";
-import labPhoto from "../assets/gallery/sample-1.jpg";
 
-const figures = await getConfirmedFigures();
+import { getNews } from "../lib/editorial";
+import NewsList from "../components/NewsList.astro";
+
+const labMoment = (await getCollection("gallery")).sort((a,b) => Number(b.data.featured) - Number(a.data.featured) || b.data.date.getTime() - a.data.date.getTime())[0];
+const allNews = await getNews();
+const news = allNews.slice(0, 6);
 
 const people = await getCollection("people");
 const pubs = await getPublications();
@@ -23,54 +26,17 @@ const recent = pubs
   .sort(featuredSorter(people))
   .slice(0, 5);
 
-// "From our work" strip: the most-prominent (lowest-order) figure from each of
-// the top three papers, so the strip showcases range rather than repeating one
-// article. Each figure carries its paper's title + journal as the caption.
-const pubById = new Map(pubs.map((p) => [p.id, p]));
-type StripItem = {
-  figure: (typeof figures)[number];
-  paper: (typeof pubs)[number] | undefined;
-};
-const strip: StripItem[] = [];
-const seenPapers = new Set<string>();
-for (const f of figures) {
-  const pid = f.data.paper.id;
-  if (seenPapers.has(pid)) continue;
-  seenPapers.add(pid);
-  strip.push({ figure: f, paper: pubById.get(pid) });
-  if (strip.length === 3) break;
-}
-
 // Homepage "Research areas" cards. Replace these with your lab's themes; each
 // `href` can deep-link into the Research page's grouped sections (e.g.
 // "/research#your-slug" once you set up the taxonomy in content.config.ts).
-const themes = [
-  {
-    title: "Research area one",
-    href: "/research",
-    body: "A sentence describing this line of work and the questions it asks.",
-  },
-  {
-    title: "Research area two",
-    href: "/research",
-    body: "A sentence describing this line of work and the questions it asks.",
-  },
-  {
-    title: "Research area three",
-    href: "/research",
-    body: "A sentence describing this line of work and the questions it asks.",
-  },
-  {
-    title: "Methods & open tools",
-    href: "/research",
-    body: "Shared resources, datasets, and reproducible pipelines from the lab.",
-  },
-];
+const themes = (await getCollection("research")).sort((a, b) => a.data.order - b.data.order).slice(0, 4).map((area) => ({
+  title: area.data.title, href: `/research#${area.id}`, body: area.data.summary,
+}));
 ---
 
 <BaseLayout>
   <!-- Hero -->
-  <section class="bg-gradient-to-b from-primary-50 to-white">
+  <section data-search-page class="bg-gradient-to-b from-primary-50 to-white">
     <div class="container-page py-16 sm:py-20">
       <div class="mx-auto max-w-3xl text-center">
         <p class="text-sm font-semibold tracking-wide text-accent-600 uppercase">
@@ -95,69 +61,17 @@ const themes = [
           >
         </div>
       </div>
-      {/* Want a custom illustrated hero? src/components/PipelineHero.astro is a
-          worked example (the Cohen Lab's bedside-to-bedside pipeline). Drop it in
-          here, or ask Claude to generate an SVG hero motif for your own field. */}
+
     </div>
   </section>
 
-  <!-- Featured figures strip -->
-  {
-    strip.length > 0 && (
-      <section class="border-y border-slate-200 bg-slate-50">
-        <div class="container-page py-14">
-          <div class="mb-7 flex items-end justify-between gap-4">
-            <div>
-              <div class="mb-3 h-0.5 w-10 rounded-full bg-accent-500" />
-              <h2 class="font-serif text-2xl text-slate-900">From our work</h2>
-            </div>
-            <a
-              href="/figures"
-              class="group inline-flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 transition-colors hover:text-accent-600"
-            >
-              All figures
-              <span
-                class="transition-transform group-hover:translate-x-0.5"
-                aria-hidden="true"
-              >
-                &rarr;
-              </span>
-            </a>
-          </div>
-          <div class="grid gap-5 sm:grid-cols-3">
-            {strip.map(({ figure, paper }) => (
-              <a
-                href="/figures"
-                class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-md"
-              >
-                <div class="overflow-hidden bg-slate-50">
-                  <Image
-                    src={figure.data.image}
-                    alt={figure.data.caption}
-                    widths={[400, 800]}
-                    sizes="(min-width: 640px) 30vw, 90vw"
-                    class="aspect-[4/3] w-full object-contain p-3 transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                  />
-                </div>
-                <div class="flex flex-1 flex-col border-t border-slate-100 p-4">
-                  {paper && (
-                    <p class="text-xs font-medium text-slate-600">
-                      {paper.data.journal && <span>{paper.data.journal}</span>}
-                      {paper.data.journal && " · "}
-                      {paper.data.year}
-                    </p>
-                  )}
-                  <h3 class="mt-1 line-clamp-3 font-serif text-base leading-snug text-slate-900 group-hover:text-primary-700">
-                    {paper ? paper.data.title : figure.data.caption}
-                  </h3>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
+  <!-- Recent announcements -->
+  {news.length > 0 && <section class="border-y border-slate-200 bg-slate-50/60" aria-labelledby="news-heading">
+    <div class="container-page py-14">
+      <div class="mb-7 flex flex-wrap items-end justify-between gap-4"><div><div class="mb-3 h-0.5 w-10 rounded-full bg-accent-500"></div><h2 id="news-heading" class="font-serif text-2xl text-slate-900">News</h2></div>{allNews.length > news.length && <a href="/news" class="text-sm font-medium text-primary-700 hover:text-accent-600">View all news &rarr;</a>}</div>
+      <NewsList entries={news} homepage />
+    </div>
+  </section>}
 
   <!-- Research themes -->
   <section class="container-page py-16">
@@ -217,12 +131,11 @@ const themes = [
           <div class="mb-3 h-0.5 w-10 rounded-full bg-accent-500"></div>
           <h2 class="font-serif text-2xl text-slate-900">Life in the lab</h2>
           <p class="mt-4 max-w-prose text-slate-600">
-            Science is a team sport. Beyond the bench, we celebrate milestones,
-            travel to conferences, and get out together. Add your own photos in
-            <code>src/content/gallery/</code>.
+            Conversations, shared ideas, and time together are part of research.
+            Explore the people and moments behind the work.
           </p>
           <a
-            href="/lab-life"
+            href="/about#lab-life"
             class="group mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary-700 transition-colors hover:text-accent-600"
           >
             Explore lab life
@@ -232,18 +145,19 @@ const themes = [
             >
           </a>
         </div>
-        <a
-          href="/lab-life"
+        {labMoment && <a
+          href="/about#lab-life"
           class="group block overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
         >
           <Image
-            src={labPhoto}
-            alt="Lab team photo"
+            src={labMoment.data.image}
+            alt={labMoment.data.caption}
             widths={[600, 1000]}
             sizes="(min-width: 1024px) 45vw, 90vw"
             class="aspect-[16/9] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
           />
-        </a>
+          {labMoment.data.kind === "illustration" && <p class="bg-white px-4 py-2 text-xs text-slate-500">Illustration · {labMoment.data.title}</p>}
+        </a>}
       </div>
     </div>
   </section>

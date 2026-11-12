@@ -2,104 +2,87 @@
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import type { Publication } from "../lib/content";
-import { authorIsPerson, personKey, menteeMatcher } from "../lib/content";
-// Author markers: ** = mentee (derived from lab membership, see menteeMatcher)
-// and * = co-first/-senior author (from the CV, scripts/data, by DOI/title).
-import cvPubs from "../../scripts/data/cv-publications.json";
-import authorOverrides from "../../scripts/data/author-overrides.json";
+import { personForAuthor, publicationRoles } from "../lib/publication-authors";
+import type { PublicationAuthor } from "../lib/publication-schema";
+import { personDisplayName } from "../lib/people-schema";
+import { PUBLICATION_TYPE_LABELS } from "../lib/publication-schema";
+import { publicationSearchText, publicationType, toBibtex, venueCitation } from "../lib/publication-format";
 
 interface Props {
   pubs: Publication[];
+  anchorIds?: boolean;
 }
-const { pubs } = Astro.props;
+const { pubs, anchorIds = false } = Astro.props;
 
-const norm = (s: string) =>
-  s.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g, "");
-
-// Co-first/-senior (*) author name sets from the CV, keyed by DOI then title.
-const starByDoi = new Map<string, Set<string>>();
-const starByTitle = new Map<string, Set<string>>();
-for (const rec of cvPubs as any[]) {
-  const star = new Set<string>(
-    rec.authors.filter((a: any) => a.coFirstSenior).map((a: any) => a.name),
-  );
-  if (rec.doi) starByDoi.set(rec.doi.toLowerCase(), star);
-  if (rec.title) starByTitle.set(norm(rec.title), star);
-}
-// Merge manual corrections (scripts/data/author-overrides.json) by DOI.
-for (const [doi, ov] of Object.entries(authorOverrides as Record<string, any>)) {
-  if (doi.startsWith("_")) continue;
-  const set = starByDoi.get(doi.toLowerCase()) ?? new Set<string>();
-  for (const n of ov.coFirstSenior ?? []) set.add(n);
-  starByDoi.set(doi.toLowerCase(), set);
-}
-const starsFor = (p: Publication): Set<string> =>
-  (p.data.doi && starByDoi.get(p.data.doi.toLowerCase())) ||
-  starByTitle.get(norm(p.data.title)) ||
-  new Set<string>();
-
-// Directory of lab people, for linking author names + mentee headshots.
 const people = await getCollection("people");
-const dir = people.map((p) => ({
-  slug: p.id,
-  name: p.data.name,
-  headshot: p.data.headshot,
-  key: personKey(p.data.name),
-}));
-const findPerson = (author: string) =>
-  dir.find((d) => authorIsPerson(author, d.key)) ?? null;
-const isMentee = menteeMatcher(people);
+const directory = new Map(people.map((person) => [person.id, person]));
+const findPerson = (author: PublicationAuthor) => personForAuthor(author, directory);
 
-// Headshots for every lab member on a paper (in the people collection, with a
-// headshot), in author order — including the PI on any paper he co-authored.
+// Unique linked members with headshots, in publication author order.
 const labPeopleFor = (p: Publication) => {
   const seen = new Set<string>();
-  const out: typeof dir = [];
+  const out: typeof people = [];
   for (const a of p.data.authors) {
     const d = findPerson(a);
-    if (!d || !d.headshot || seen.has(d.slug)) continue;
-    seen.add(d.slug);
+    if (!d || !d.data.headshot || seen.has(d.id)) continue;
+    seen.add(d.id);
     out.push(d);
   }
   return out;
 };
 
 const shortName = (name: string) => name.split(",")[0].trim();
-const anyMarks = pubs.some((p) => starsFor(p).size > 0);
+const anyMarks = pubs.some((p) => p.data.authors.some((author) => author.coFirst || author.coSenior));
+const anyCorresponding = pubs.some((p) => p.data.authors.some((author) => author.corresponding));
 ---
 
-<ol class="divide-y divide-slate-100" id="pub-list">
+<ol class="space-y-4" data-pub-list data-search-ignore={!anchorIds || undefined}>
   {
     pubs.map((p) => {
       const d = p.data;
       const link = d.doi ? `https://doi.org/${d.doi}` : d.url;
-      const search = `${d.title} ${d.authors.join(" ")} ${d.journal ?? ""}`.toLowerCase();
-      const stars = starsFor(p);
-      const menteeLed = isMentee(d.authors[0] ?? "");
-      const featured = menteeLed || (d.piFirstOrSenior && d.year >= 2019);
+      const search = [publicationSearchText(d), ...d.authors.flatMap((author) => {
+        const member = findPerson(author);
+        return member ? [member.data.name, personDisplayName(member.data)] : [];
+      })].join(" ").toLowerCase();
+      const { menteeLed, piFirstOrSenior, collaboration, featured } = publicationRoles(d, directory);
       const labPeople = labPeopleFor(p);
-      // Collaboration unless the PI is the SOLE first or SOLE last author —
-      // co-first / co-last (he shares the lead) and middle authorship all count.
-      const piAt = (a: string) => findPerson(a)?.slug === "jane-doe";
-      const piStar = d.authors.some((a) => piAt(a) && stars.has(a));
-      const soleFirst = piAt(d.authors[0] ?? "") && !piStar;
-      const soleLast = piAt(d.authors[d.authors.length - 1] ?? "") && !piStar;
-      const collaboration = !soleFirst && !soleLast;
+      const type = publicationType(d);
+      const bibtex = toBibtex(d);
+      const links = [
+        { label: "PDF", href: d.pdfUrl }, { label: "Code", href: d.codeUrl },
+        { label: "DOI", href: d.doi ? `https://doi.org/${encodeURIComponent(d.doi).replace(/%2F/gi, "/")}` : undefined },
+        { label: "arXiv", href: d.arxivId ? `https://arxiv.org/abs/${d.arxivId}` : undefined },
+        { label: "Slides", href: d.slidesUrl }, { label: "Project", href: d.projectUrl },
+        { label: "Scholar", href: d.scholarUrl }, ...(d.presentationMaterials ?? []).map((material) => ({ label: material.label, href: material.url })),
+      ].filter((resource): resource is { label: string; href: string } => Boolean(resource.href));
       return (
         <li
-          class="py-5"
+          class="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5"
           data-pub
+          data-pub-id={p.id}
+          data-search-entry={anchorIds || undefined}
+          data-search-category={anchorIds ? "Publications" : undefined}
+          data-search-title={anchorIds ? d.title : undefined}
+          data-search-extra={anchorIds ? search : undefined}
+          id={anchorIds ? `publication-${p.id}` : undefined}
+          data-title={d.title}
+          data-type={type}
           data-year={d.year}
           data-citations={typeof d.citations === "number" ? d.citations : -1}
           data-featured={featured}
           data-mentee={menteeLed}
-          data-pi-senior={d.piFirstOrSenior}
+          data-pi-senior={piFirstOrSenior}
           data-collaboration={collaboration}
           data-openaccess={d.openAccess}
           data-areas={d.areas.join(" ")}
           data-search={search}
         >
-          <p class="font-medium text-slate-900">
+          <div class="mb-2 flex flex-wrap items-center gap-2 text-xs">
+            <span class="rounded-full bg-primary-50 px-2 py-0.5 font-medium text-primary-800">{PUBLICATION_TYPE_LABELS[type]}</span>
+            {featured && <span class="font-medium text-accent-700">Featured</span>}
+          </div>
+          <p class="break-words font-medium text-slate-900">
             {link ? (
               <a
                 href={link}
@@ -120,21 +103,22 @@ const anyMarks = pubs.some((p) => starsFor(p).size > 0);
                 const person = findPerson(a);
                 // Only a co-first/-senior (*) marker. Mentees are conveyed by
                 // bolded name links + headshots, so they get no marker.
-                const mark = stars.has(a) ? "*" : "";
+                const mark = a.coFirst || a.coSenior ? "*" : "";
                 return (
                   <span class="au">
                     {i > 0 && ", "}
                     {person ? (
                       <a
-                        href={`/people/${person.slug}`}
+                        href={`/people/${person.id}`}
                         class="font-medium text-slate-900 hover:text-primary-700 hover:underline"
                       >
-                        {a}
+                        {a.name}
                       </a>
                     ) : (
-                      a
+                      a.name
                     )}
-                    {mark && <sup class="font-semibold text-slate-600">{mark}</sup>}
+                    {mark && <sup class="font-semibold text-slate-600" title={[a.coFirst && "Co-first author", a.coSenior && "Co-senior author"].filter(Boolean).join("; ")}>{mark}</sup>}
+                    {a.corresponding && <sup class="ml-0.5 text-primary-700" title="Corresponding author" aria-label="Corresponding author">†</sup>}
                   </span>
                 );
               })}
@@ -152,30 +136,28 @@ const anyMarks = pubs.some((p) => starsFor(p).size > 0);
           </p>
 
           <p class="mt-0.5 text-sm text-slate-600">
-            {d.journal && <em>{d.journal}</em>}
-            {d.journal && " · "}
-            {d.year}
+            {venueCitation(d)}
           </p>
 
           {labPeople.length > 0 && (
             <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
               {labPeople.map((m) => (
                 <a
-                  href={`/people/${m.slug}`}
+                  href={`/people/${m.id}`}
                   class="group flex items-center gap-2"
-                  title={m.name}
+                  title={personDisplayName(m.data)}
                 >
-                  {m.headshot && (
+                  {m.data.headshot && (
                     <Image
-                      src={m.headshot}
-                      alt={m.name}
+                      src={m.data.headshot}
+                      alt={personDisplayName(m.data)}
                       width={64}
                       height={64}
                       class="h-8 w-8 rounded-full object-cover ring-1 ring-slate-200 group-hover:ring-primary-300"
                     />
                   )}
                   <span class="text-xs text-slate-600 group-hover:text-primary-700">
-                    {shortName(m.name)}
+                    {shortName(personDisplayName(m.data))}
                   </span>
                 </a>
               ))}
@@ -193,7 +175,7 @@ const anyMarks = pubs.some((p) => starsFor(p).size > 0);
                 Mentee-led
               </span>
             )}
-            {d.piFirstOrSenior && (
+            {piFirstOrSenior && (
               <span class="rounded-full bg-primary-100 px-2 py-0.5 font-medium text-primary-700">
                 PI first/senior
               </span>
@@ -208,27 +190,50 @@ const anyMarks = pubs.some((p) => starsFor(p).size > 0);
                 Open access
               </span>
             )}
-            {d.doi && (
+            {links.map((resource) => (
               <a
-                href={`https://doi.org/${d.doi}`}
+                href={resource.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-primary-700 hover:underline"
               >
-                DOI
+                {resource.label}
               </a>
-            )}
-            {d.scholarUrl && (
+            ))}
+            {bibtex && (
               <a
-                href={d.scholarUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`data:application/x-bibtex;charset=utf-8,${encodeURIComponent(bibtex)}`}
+                download={`publication-${p.id.replace(/[^a-z0-9_-]/gi, "")}.bib`}
                 class="text-primary-700 hover:underline"
               >
-                Scholar
+                BibTeX
               </a>
             )}
           </div>
+          {(d.abstract || d.keywords?.length || d.authors.some((author) => author.contributions?.length || author.corresponding) || bibtex) && (
+            <details class="mt-3 text-sm text-slate-600" data-bibtex-panel>
+              <summary class="w-fit cursor-pointer text-primary-700 hover:underline">Details & citation</summary>
+              <div class="mt-3 grid min-w-0 gap-5 border-t border-slate-100 pt-4 md:grid-cols-[12rem_minmax(0,1fr)]" data-publication-details>
+                <div class="self-start overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+                  {d.image ? <Image src={d.image} alt={d.imageAlt ?? ""} widths={[300, 600]} sizes="(min-width: 768px) 192px, 90vw" class="aspect-[4/3] w-full object-contain" /> : <div class="flex aspect-[4/3] flex-col items-center justify-center gap-3 p-4 text-primary-300" aria-hidden="true"><svg class="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M5 3h10l4 4v14H5zM14 3v5h5M8 12h8m-8 4h6" /></svg><span class="text-xs tracking-wide text-slate-400">Research overview</span></div>}
+                </div>
+                <div class="min-w-0 space-y-3">
+                {d.abstract && <div><h4 class="mb-2 font-sans text-xs font-semibold tracking-wide text-slate-500 uppercase">Abstract</h4><p class="leading-relaxed">{d.abstract}</p></div>}
+                {d.keywords?.length && <p><span class="font-medium">Keywords:</span> {d.keywords.join(" · ")}</p>}
+                {d.authors.filter((author) => author.contributions?.length || author.corresponding || author.coFirst || author.coSenior).map((author) => (
+                  <p><span class="font-medium">{author.name}:</span> {[
+                    ...(author.contributions ?? []), ...(author.coFirst ? ["Co-first author"] : []),
+                    ...(author.coSenior ? ["Co-senior author"] : []), ...(author.corresponding ? ["Corresponding author"] : []),
+                  ].join("; ")}{author.corresponding && author.email && <> · <a href={`mailto:${author.email}`} class="text-primary-700 hover:underline">{author.email}</a></>}</p>
+                ))}
+                {bibtex && <div>
+                  <button type="button" data-copy-bibtex class="mb-2 text-xs font-medium text-primary-700 hover:underline" aria-live="polite">Copy BibTeX</button>
+                  <pre class="max-w-full overflow-x-auto rounded-md bg-slate-50 p-3 text-xs"><code data-bibtex>{bibtex}</code></pre>
+                </div>}
+                </div>
+              </div>
+            </details>
+          )}
         </li>
       );
     })
@@ -236,9 +241,11 @@ const anyMarks = pubs.some((p) => starsFor(p).size > 0);
 </ol>
 
 {
-  anyMarks && (
+  (anyMarks || anyCorresponding) && (
     <p class="mt-4 text-xs text-slate-600">
-      <sup class="font-semibold text-slate-600">*</sup> co-first / co-senior author
+      {anyMarks && <><sup class="font-semibold text-slate-600">*</sup> co-first / co-senior author</>}
+      {anyMarks && anyCorresponding && " · "}
+      {anyCorresponding && <>† corresponding author</>}
     </p>
   )
 }
@@ -251,6 +258,18 @@ const anyMarks = pubs.some((p) => starsFor(p).size > 0);
       if (!authors) return;
       const clamped = authors.classList.toggle("clamped");
       btn.textContent = clamped ? (btn.dataset.more ?? "more") : "show fewer";
+    });
+  });
+  document.querySelectorAll<HTMLButtonElement>("[data-copy-bibtex]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const citation = button.closest("[data-bibtex-panel]")?.querySelector("[data-bibtex]")?.textContent;
+      if (!citation) return;
+      try {
+        await navigator.clipboard.writeText(citation);
+        button.textContent = "Copied";
+      } catch {
+        button.textContent = "Select and copy the citation below";
+      }
     });
   });
 </script>

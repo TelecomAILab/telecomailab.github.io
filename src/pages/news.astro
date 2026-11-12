@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import NewsList from "../components/NewsList.astro";
+import { getNews } from "../lib/editorial";
+const news = await getNews();
+const years = [...new Set(news.map((entry) => entry.data.date.slice(0, 4)))];
+---
+<BaseLayout title="News" description="Announcements, research updates, people, and events from TelecomAI Lab.">
+  <PageHeader eyebrow="Lab announcements" title="News" lead="People, papers, opportunities, and upcoming events." />
+  <div class="container-page pb-16">
+    <div class="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-5"><p class="text-sm text-slate-500">{news.length} announcements · Most recent first</p><a href="/blog" class="text-sm font-medium text-primary-700 hover:underline">Read the lab blog &rarr;</a></div>
+    {years.map((year) => <section class="mb-12" aria-labelledby={`year-${year}`}><h2 id={`year-${year}`} class="mb-5 font-serif text-2xl">{year}</h2><NewsList entries={news.filter((entry) => entry.data.date.startsWith(year))} /></section>)}
+    {news.length === 0 && <p class="py-12 text-slate-500">No announcements yet. Check back soon.</p>}
+  </div>
+</BaseLayout>

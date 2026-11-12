@@ -4,13 +4,13 @@
 // claimed their ORCID on it, Crossref and/or PubMed exposes it — a high-confidence
 // way to populate the roster's ORCID links without searching for each person.
 //
-//   Reads:   src/content/publications/*.md   (doi / pmid)
-//            src/content/people/*.md          (name + any existing links.orcid)
+//   Reads:   src/data/publications.json     (doi / pmid; mock records skipped)
+//            src/data/people.json           (name + any existing links.orcid)
 //   Sources: Crossref REST API (by DOI) + NCBI PubMed efetch (by PMID)
 //
 //   Dry run (default) — prints suggestions, writes nothing:
 //     node scripts/enrich-orcid.mjs
-//   Apply the high-confidence (exact name) matches into people frontmatter:
+//   Apply the high-confidence (exact name) matches into people JSON:
 //     node scripts/enrich-orcid.mjs --write
 //   Also apply lower-confidence (partial / surname-only) matches — eyeball first:
 //     node scripts/enrich-orcid.mjs --write --include-partial
@@ -23,16 +23,17 @@
 // With --write it only fills an EMPTY orcid and never overwrites an existing one;
 // a found iD that disagrees with what's already on file is reported as a conflict
 // for you to resolve by hand. LinkedIn / Twitter / personal sites can't be derived
-// this way — see CLAUDE.md for the Claude-assisted profile-finding workflow.
+// this way; verify those links manually against primary sources.
 
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
+import { applyOrcidUpdates } from "./lib/people-orcid.mjs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const PUBS = join(ROOT, "src/content/publications");
-const PPL = join(ROOT, "src/content/people");
+const PUBS = join(ROOT, "src/data/publications.json");
+const PPL = join(ROOT, "src/data/people.json");
 
 const args = process.argv.slice(2);
 const WRITE = args.includes("--write");
@@ -53,43 +54,34 @@ const normOrcid = (s) => {
 };
 
 // ---- roster ----------------------------------------------------------------
-const people = readdirSync(PPL)
-  .filter((f) => f.endsWith(".md"))
-  .map((f) => {
-    const path = join(PPL, f);
-    const text = readFileSync(path, "utf8");
-    const name = (text.match(/^name:\s*"?(.*?)"?\s*$/m) || [])[1] || f.replace(/\.md$/, "");
-    const bare = name.replace(/,.*$/, "").trim(); // drop suffixes like ", PhD"
-    const toks = bare.split(/\s+/).filter(Boolean);
-    const family = toks.slice(1);
-    const orcid = (text.match(/^\s*orcid:\s*"?(https?:\/\/orcid\.org\/[^"\s]+)"?/m) || [])[1];
-    return {
-      slug: f.replace(/\.md$/, ""),
-      path,
-      name,
-      gi: norm(toks[0]).slice(0, 1),
-      givenNorm: norm(toks[0]),
-      famNorm: norm(family.join("")),
-      famTokens: family.map(norm).filter((t) => t.length >= 4),
-      orcid: orcid ? normOrcid(orcid) : null,
-    };
-  });
+const peopleRecords = JSON.parse(readFileSync(PPL, "utf8"));
+const people = peopleRecords.map((record) => {
+  const bare = record.name.replace(/,.*$/, "").trim();
+  const toks = bare.split(/\s+/).filter(Boolean);
+  const family = toks.slice(1);
+  return {
+    slug: String(record.id),
+    name: record.name,
+    gi: norm(toks[0]).slice(0, 1),
+    givenNorm: norm(toks[0]),
+    famNorm: norm(family.join("")),
+    famTokens: family.map(norm).filter((token) => token.length >= 4),
+    orcid: record.links?.orcid ? normOrcid(record.links.orcid) : null,
+  };
+});
 
 // ---- publications ----------------------------------------------------------
-const pubs = readdirSync(PUBS)
-  .filter((f) => f.endsWith(".md"))
-  .map((f) => {
-    const text = readFileSync(join(PUBS, f), "utf8");
-    return {
-      slug: f.replace(/\.md$/, ""),
-      doi: (text.match(/^doi:\s*"?(.*?)"?\s*$/m) || [])[1] || null,
-      pmid: (text.match(/^pmid:\s*"?(.*?)"?\s*$/m) || [])[1] || null,
-    };
-  });
+const pubs = JSON.parse(readFileSync(PUBS, "utf8"))
+  .filter((record) => !record.isMock)
+  .map((record) => ({
+    slug: String(record.id), doi: record.doi, pmid: record.pmid,
+    personIds: new Set(record.authors.flatMap((author) => author.personId === undefined ? [] : [String(author.personId)])),
+  }));
+const publicationPeople = new Map(pubs.map((pub) => [pub.slug, pub.personIds]));
 
 // ---- collect (family, given, orcid) records from both sources --------------
 const records = [];
-const add = (family, given, orcidRaw, src) => {
+const add = (family, given, orcidRaw, src, eligiblePeople) => {
   const orcid = normOrcid(orcidRaw);
   if (!orcid) return;
   records.push({
@@ -99,6 +91,7 @@ const add = (family, given, orcidRaw, src) => {
     givenNorm: norm(given),
     orcid,
     src,
+    eligiblePeople,
   });
 };
 
@@ -113,7 +106,7 @@ async function crossref() {
       if (r.ok) {
         const j = await r.json();
         for (const a of j.message?.author || []) {
-          if (a.ORCID) add(a.family || "", a.given || "", a.ORCID, p.slug);
+          if (a.ORCID) add(a.family || "", a.given || "", a.ORCID, p.slug, publicationPeople.get(p.slug));
         }
         ok++;
       }
@@ -136,12 +129,16 @@ async function pubmed() {
         `&id=${batch.join(",")}&retmode=xml` +
         (EMAIL ? `&tool=lab-website-template&email=${encodeURIComponent(EMAIL)}` : "");
       const xml = await (await fetch(url, { headers: { "User-Agent": UA } })).text();
-      for (const block of xml.match(/<Author[\s>][\s\S]*?<\/Author>/g) || []) {
-        const orc = block.match(/<Identifier Source="ORCID">\s*(.*?)\s*<\/Identifier>/);
-        if (!orc) continue;
-        const last = (block.match(/<LastName>(.*?)<\/LastName>/) || [])[1] || "";
-        const fore = (block.match(/<ForeName>(.*?)<\/ForeName>/) || [])[1] || "";
-        add(last, fore, orc[1], "pubmed");
+      for (const article of xml.match(/<PubmedArticle[\s>][\s\S]*?<\/PubmedArticle>/g) || []) {
+        const pmid = article.match(/<PMID[^>]*>(.*?)<\/PMID>/)?.[1];
+        const eligiblePeople = new Set(pubs.filter((pub) => pub.pmid === pmid).flatMap((pub) => [...pub.personIds]));
+        for (const block of article.match(/<Author[\s>][\s\S]*?<\/Author>/g) || []) {
+          const orc = block.match(/<Identifier Source="ORCID">\s*(.*?)\s*<\/Identifier>/);
+          if (!orc) continue;
+          const last = block.match(/<LastName>(.*?)<\/LastName>/)?.[1] || "";
+          const fore = block.match(/<ForeName>(.*?)<\/ForeName>/)?.[1] || "";
+          add(last, fore, orc[1], `pubmed:${pmid}`, eligiblePeople);
+        }
       }
       scanned += batch.length;
     } catch {
@@ -182,6 +179,7 @@ const suggestions = new Map(); // slug -> Map(orcid -> { type, srcs:Set }); fill
 const buildSuggestions = () => {
   for (const rec of records) {
     for (const p of people) {
+      if (!rec.eligiblePeople?.has(p.slug)) continue;
       const type = classify(p, rec);
       if (!type) continue;
       if (!suggestions.has(p.slug)) suggestions.set(p.slug, new Map());
@@ -205,16 +203,6 @@ const best = (m) => {
   }
   return b;
 };
-
-// ---- insert orcid into a person's frontmatter ------------------------------
-function withOrcid(text, orcid) {
-  if (/^\s*orcid:/m.test(text)) return text;
-  const line = `  orcid: "${orcid}"`;
-  if (/^links:\s*$/m.test(text)) return text.replace(/^links:\s*$/m, (m) => `${m}\n${line}`);
-  if (/^links:\s*\{\s*\}\s*$/m.test(text)) return text.replace(/^links:\s*\{\s*\}\s*$/m, `links:\n${line}`);
-  const anchor = /^headshot:.*$/m.test(text) ? /^headshot:.*$/m : /^role:.*$/m;
-  return text.replace(anchor, (m) => `${m}\nlinks:\n${line}`);
-}
 
 // ---- run -------------------------------------------------------------------
 console.log(
@@ -279,16 +267,9 @@ if (!WRITE) {
       `exact match(es)` + (INCLUDE_PARTIAL ? "" : ", or add --include-partial for the rest") + ".",
   );
 } else {
-  let wrote = 0;
-  for (const f of found) {
-    if (!willWrite(f)) continue;
-    const text = readFileSync(f.p.path, "utf8");
-    const next = withOrcid(text, f.orcid);
-    if (next !== text) {
-      writeFileSync(f.p.path, next);
-      wrote++;
-      console.log(`  wrote orcid → ${f.p.slug}`);
-    }
-  }
+  const updates = new Map(found.filter(willWrite).map((item) => [item.p.slug, item.orcid]));
+  const updated = applyOrcidUpdates(peopleRecords, updates);
+  const wrote = updated.filter((record, index) => record !== peopleRecords[index]).length;
+  if (wrote) writeFileSync(PPL, JSON.stringify(updated, null, 2) + "\n");
   console.log(`\nWrote ${wrote} orcid field(s). Review with \`git diff\`, then \`npm run build\`.`);
 }

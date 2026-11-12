@@ -1,103 +1,36 @@
 ---
 import { Image, getImage } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
-
-interface Props {
-  items: CollectionEntry<"gallery">[];
-}
+import { getCollection, type CollectionEntry } from "astro:content";
+import { personDisplayName } from "../lib/people-schema";
+interface Props { items: CollectionEntry<"gallery">[] }
 const { items } = Astro.props;
-
-const fmtDate = (d: Date) =>
-  d.toLocaleDateString("en-US", { year: "numeric", month: "long" });
-
-// Pre-generate a large version of each photo for the full-size lightbox view.
-const full = await Promise.all(
-  items.map((item) =>
-    getImage({ src: item.data.image, width: 1600, format: "webp" }),
-  ),
-);
+const people = new Map((await getCollection("people")).map((person) => [person.id, person]));
+for (const item of items) for (const member of item.data.members) if (!people.has(member.id)) throw new Error(`Unknown gallery member ${member.id}`);
+const date = (value: Date) => value.toLocaleDateString("en-GB", { month: "short", year: "numeric", timeZone: "UTC" });
+const categories = [...new Set(items.map((item) => item.data.category))];
+const full = await Promise.all(items.map((item) => getImage({ src: item.data.image, width: 1600 })));
+const chip = "rounded-full border border-slate-200 px-3 py-2 text-sm text-slate-600 hover:border-primary-300 hover:bg-primary-50 aria-pressed:border-primary-600 aria-pressed:bg-primary-600 aria-pressed:text-white";
 ---
-
-<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-  {
-    items.map((item, i) => (
-      <figure class="overflow-hidden rounded-xl border border-slate-200 bg-white">
-        <button
-          type="button"
-          class="group block w-full cursor-zoom-in"
-          data-lightbox
-          data-full={full[i].src}
-          data-caption={item.data.caption}
-          data-date={fmtDate(item.data.date)}
-          aria-label={`View full-size photo: ${item.data.caption}`}
-        >
-          <Image
-            src={item.data.image}
-            alt={item.data.caption}
-            widths={[400, 800]}
-            sizes="(min-width: 640px) 50vw, 100vw"
-            class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-[1.03] group-hover:opacity-95"
-          />
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm text-slate-700">{item.data.caption}</p>
-          <p class="mt-1 text-xs text-slate-600">{fmtDate(item.data.date)}</p>
-        </figcaption>
-      </figure>
-    ))
-  }
-</div>
-
-<dialog
-  id="lightbox"
-  class="m-auto w-full max-w-5xl bg-transparent p-0 backdrop:bg-slate-950/80"
-  aria-label="Photo viewer"
->
-  <div class="relative overflow-hidden rounded-2xl">
-    <button
-      type="button"
-      id="lightbox-close"
-      class="absolute right-2 top-2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-slate-900/60 text-white transition-colors hover:bg-slate-900/85"
-      aria-label="Close"
-    >
-      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <path stroke-linecap="round" d="M6 6l12 12M18 6 6 18" />
-      </svg>
-    </button>
-    <img
-      id="lightbox-img"
-      src=""
-      alt=""
-      class="block max-h-[80vh] w-full bg-slate-950 object-contain"
-    />
-    <p id="lightbox-caption" class="bg-white px-4 py-3 text-sm text-slate-700"></p>
+<div data-gallery-root>
+  <div class="mb-5 flex flex-wrap gap-2" aria-label="Gallery categories"><button type="button" data-gallery-category="all" aria-pressed="true" class={chip}>All moments <span class="ml-1 opacity-70">{items.length}</span></button>{categories.map((category) => <button type="button" data-gallery-category={category} aria-pressed="false" class={chip}>{category}</button>)}</div>
+  <p data-gallery-count class="mb-7 text-sm text-slate-500" role="status" aria-live="polite">{items.length} moments</p>
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {items.map((item, index) => <figure data-gallery-item data-category={item.data.category} class="group min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+      <button type="button" data-lightbox data-full={full[index].src} data-caption={item.data.caption} data-date={date(item.data.date)} class="relative block w-full cursor-zoom-in overflow-hidden bg-primary-50" aria-label={`View ${item.data.kind}: ${item.data.title ?? item.data.caption}`}>
+        <Image src={item.data.image} alt={item.data.caption} widths={[400, 800]} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 95vw" class="aspect-[4/3] w-full object-cover transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.025]" />
+        {item.data.kind === "illustration" && <span class="absolute bottom-3 left-3 rounded-full bg-white/95 px-2.5 py-1 text-xs font-medium text-primary-700">Illustration</span>}
+        <span class="absolute right-3 bottom-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-primary-700" aria-hidden="true">↗</span>
+      </button>
+      <figcaption class="p-5"><div class="flex flex-wrap justify-between gap-2 text-xs"><span class="font-medium text-accent-700">{item.data.category}</span><time datetime={item.data.date.toISOString()} class="text-slate-500">{date(item.data.date)}</time></div><h3 class="mt-3 font-serif text-xl leading-snug">{item.data.title ?? item.data.caption}</h3><p class="mt-2 text-xs leading-relaxed text-slate-500">{item.data.caption}</p>{item.data.members.length > 0 && <p class="mt-4 flex flex-wrap gap-x-3 gap-y-1 border-t border-slate-100 pt-3 text-xs">{item.data.members.map((member) => <a href={`/people/${member.id}`} class="text-primary-700 hover:underline">{personDisplayName(people.get(member.id)!.data)}</a>)}</p>}</figcaption>
+    </figure>)}
   </div>
-</dialog>
-
+  <dialog id="lightbox" class="m-auto max-h-[95vh] w-[calc(100%-2rem)] max-w-5xl overflow-auto rounded-2xl bg-white p-0 backdrop:bg-slate-950/80" aria-label="Gallery viewer">
+    <div class="relative"><button type="button" id="lightbox-close" class="absolute top-3 right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-slate-900/75 text-xl text-white hover:bg-slate-900" aria-label="Close gallery viewer">×</button><img id="lightbox-img" alt="" class="block max-h-[73vh] w-full bg-slate-50 object-contain" /><div class="flex items-center gap-3 p-4"><button type="button" data-gallery-prev class="h-11 w-11 shrink-0 rounded-full border border-slate-200 text-primary-700 hover:bg-primary-50 disabled:opacity-30" aria-label="Previous image">←</button><p id="lightbox-caption" class="min-w-0 flex-1 text-sm leading-relaxed text-slate-600"></p><button type="button" data-gallery-next class="h-11 w-11 shrink-0 rounded-full border border-slate-200 text-primary-700 hover:bg-primary-50 disabled:opacity-30" aria-label="Next image">→</button></div></div>
+  </dialog>
+</div>
 <script>
-  const dialog = document.getElementById("lightbox") as HTMLDialogElement | null;
-  if (dialog) {
-    const img = document.getElementById("lightbox-img") as HTMLImageElement;
-    const cap = document.getElementById("lightbox-caption") as HTMLElement;
-    const closeBtn = document.getElementById("lightbox-close");
-
-    document
-      .querySelectorAll<HTMLButtonElement>("[data-lightbox]")
-      .forEach((btn) => {
-        btn.addEventListener("click", () => {
-          img.src = btn.dataset.full ?? "";
-          img.alt = btn.dataset.caption ?? "";
-          const date = btn.dataset.date ? ` · ${btn.dataset.date}` : "";
-          cap.textContent = (btn.dataset.caption ?? "") + date;
-          dialog.showModal();
-        });
-      });
-
-    const close = () => dialog.close();
-    closeBtn?.addEventListener("click", close);
-    // Click on the backdrop (outside the image card) closes the viewer.
-    dialog.addEventListener("click", (e) => {
-      if (e.target === dialog) close();
-    });
-  }
+  import "../scripts/gallery";
 </script>
+<style>
+  [data-gallery-item][hidden] { display: none; }
+</style>

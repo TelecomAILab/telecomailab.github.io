@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import BaseLayout from "../components/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import RelatedContent from "../components/RelatedContent.astro";
+import CalendarActions from "../components/CalendarActions.astro";
+import { authorName, formatTalkTime, getEditorialContext, talkHasEnded } from "../lib/editorial";
+import { TALK_TYPES } from "../lib/editorial-schema";
+const talks = (await getCollection("talks")).sort((a, b) => Date.parse(b.data.date) - Date.parse(a.data.date) || a.id.localeCompare(b.id));
+const context = await getEditorialContext();
+const years = [...new Set(talks.map((entry) => entry.data.date.slice(0, 4)))].sort().reverse();
+const field = "w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm";
+---
+<BaseLayout title="Talks & Seminars" description="Research seminars, conference presentations, workshops, and tutorials from TelecomAI Lab.">
+  <PageHeader eyebrow="Ideas in conversation" title="Talks & Seminars" lead="Join the discussion. Explore research seminars, conference presentations, practical tutorials, and conversations with our collaborators." />
+  <div class="container-page pb-16" data-editorial-list data-noun="events">
+    <div class="mb-8 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-5"><p class="text-sm text-slate-500">Times shown in Europe/Luxembourg (CET/CEST), unless another event time zone is specified.</p><a href="/news" class="text-sm font-medium text-primary-700 hover:underline">Lab announcements &rarr;</a></div>
+    <div class="grid gap-4 rounded-xl border border-slate-200 bg-slate-50/60 p-5 sm:grid-cols-2 lg:grid-cols-5"><div class="sm:col-span-2 lg:col-span-1"><label class="mb-2 block text-sm font-medium" for="talk-search">Search</label><input id="talk-search" data-editorial-search type="search" placeholder="Title, speaker, event…" class={field} /></div><div><label class="mb-2 block text-sm font-medium" for="talk-period">When</label><select id="talk-period" data-editorial-filter="period" class={field}><option value="all">All events</option><option value="upcoming">Upcoming</option><option value="past">Past events</option></select></div><div><label class="mb-2 block text-sm font-medium" for="talk-type">Format</label><select id="talk-type" data-editorial-filter="type" class={field}><option value="all">All formats</option>{TALK_TYPES.map((type) => <option value={type}>{type}</option>)}</select></div><div><label class="mb-2 block text-sm font-medium" for="talk-year">Year</label><select id="talk-year" data-editorial-filter="year" class={field}><option value="all">All years</option>{years.map((year) => <option value={year}>{year}</option>)}</select></div><div><label class="mb-2 block text-sm font-medium" for="talk-sort">Sort by</label><select id="talk-sort" data-editorial-sort class={field}><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></div></div>
+    <div class="my-6 flex items-center justify-between gap-4"><p data-editorial-count class="text-sm text-slate-500" role="status" aria-live="polite">{talks.length} events</p><button type="button" data-editorial-reset class="text-sm font-medium text-primary-700 hover:underline">Reset filters</button></div>
+    <div class="space-y-5" data-editorial-cards>
+      {talks.map((entry) => {
+        const item = entry.data;
+        const speaker = item.speaker.personId ? context.people.get(item.speaker.personId) : undefined;
+        const name = authorName(item.speaker, context);
+        return <article id={`talk-${entry.id}`} data-editorial-card data-talk data-search-entry data-search-title={item.title} data-search-category="Talks & Seminars" data-date={item.date} data-end={item.endDate ?? item.date} data-year={item.date.slice(0, 4)} data-type={item.type} data-search={[item.title, name, item.event, item.abstract, item.location].join(" ").toLowerCase()} class="scroll-mt-24 rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+          <div class="grid gap-6 sm:grid-cols-[10rem_1fr]"><div><p class="text-xs font-semibold tracking-wide text-accent-700 uppercase">{item.type}</p><time datetime={item.date} class="mt-3 block text-sm font-medium leading-relaxed text-slate-700">{formatTalkTime(item.date, item.timeZone)}</time>{item.endDate && <p class="mt-1 text-xs text-slate-500">Ends {formatTalkTime(item.endDate, item.timeZone)}</p>}<span data-talk-period class="mt-3 inline-block rounded-full bg-primary-50 px-2.5 py-1 text-xs text-primary-700">{talkHasEnded(item) ? "Past event" : "Upcoming"}</span><CalendarActions talk={{ ...item, id: entry.id }} speaker={name} /></div><div class="min-w-0"><p class="text-xs font-medium text-slate-500">{item.event}</p><h2 class="mt-2 font-serif text-2xl leading-snug"><a href={`#talk-${entry.id}`} class="hover:text-primary-700">{item.title}</a></h2><div class="mt-4 flex items-center gap-3">{speaker?.data.headshot && <a href={`/people/${speaker.id}`} tabindex="-1" aria-hidden="true"><Image src={speaker.data.headshot} alt="" width={40} height={40} class="h-10 w-10 rounded-full object-cover" /></a>}<div><p class="text-sm font-medium">{item.speaker.personId ? <a href={`/people/${item.speaker.personId}`} class="text-primary-700 hover:underline">{name}</a> : name}</p><p class="mt-1 text-xs text-slate-500">{item.location}</p></div></div><p class="mt-5 text-sm leading-relaxed text-slate-600">{item.abstract}</p><div class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-primary-700">{item.slides && <a href={item.slides} class="hover:underline">Slides &darr;</a>}{item.video && <a href={item.video} class="hover:underline">Recording ↗</a>}{item.eventWebsite && <a href={item.eventWebsite} class="hover:underline">Event website ↗</a>}</div><RelatedContent publications={item.relatedPublications.map((id) => ({ id }))} /></div></div>
+        </article>;
+      })}
+    </div>
+    <p data-editorial-empty hidden class="py-14 text-center text-slate-500">No talks match these filters. Try another year or clear your search.</p>
+  </div>
+  <script>
+    import "../scripts/editorial-filters";
+  </script>
+</BaseLayout>

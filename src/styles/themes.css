@@ -1,0 +1,144 @@
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Semantic tokens also bridge the existing Cohen Lab utility palette. */
+:root {
+  color-scheme: light;
+  --surface-page: #ffffff;
+  --surface-card: #ffffff;
+  --surface-soft: #f8fafc;
+  --surface-muted: #f1f5f9;
+  --surface-pressed: #e2e8f0;
+  --surface-tint: #eef6fc;
+  --surface-tint-strong: #d6e9f7;
+  --surface-accent: #fdeff8;
+  --ink-heading: #0f172a;
+  --ink-strong: #1e293b;
+  --ink-body: #334155;
+  --ink-muted: #475569;
+  --ink-subtle: #64748b;
+  --ink-faint: #94a3b8;
+  --ink-icon: #cbd5e1;
+  --ink-link: #124d80;
+  --ink-link-hover: #103f68;
+  --ink-accent: #97226b;
+  --line: #e2e8f0;
+  --line-soft: #f1f5f9;
+  --line-strong: #cbd5e1;
+  --line-tint: #d6e9f7;
+  --line-tint-strong: #79b5e2;
+  --icon-ink: #0f172a;
+}
+
+html[data-theme=dark] {
+  color-scheme: dark;
+  --surface-page: #0b1220;
+  --surface-card: #111d30;
+  --surface-soft: #152238;
+  --surface-muted: #1b2b43;
+  --surface-pressed: #2a3c56;
+  --surface-tint: #152f49;
+  --surface-tint-strong: #1b3b58;
+  --surface-accent: #35243c;
+  --ink-heading: #edf2fa;
+  --ink-strong: #e2e9f4;
+  --ink-body: #d2dcec;
+  --ink-muted: #b6c5d8;
+  --ink-subtle: #9cafc7;
+  --ink-faint: #8da3be;
+  --ink-icon: #7189a5;
+  --ink-link: #87c5f5;
+  --ink-link-hover: #c6e6ff;
+  --ink-accent: #efa9d4;
+  --line: #34445b;
+  --line-soft: #25354c;
+  --line-strong: #526682;
+  --line-tint: #254f72;
+  --line-tint-strong: #589ace;
+  --icon-ink: #e2e8f0;
+}
+
+@theme inline {
+  --color-page: var(--surface-page);
+  --color-surface: var(--surface-card);
+  --color-soft: var(--surface-soft);
+  --color-tint: var(--surface-tint);
+  --color-heading: var(--ink-heading);
+  --color-body: var(--ink-body);
+  --color-muted: var(--ink-muted);
+  --color-link: var(--ink-link);
+  --color-accent-label: var(--ink-accent);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+}
+
+/* Keep original light utilities intact; map their roles centrally in dark mode. */
+html[data-theme=dark] .bg-white { background-color: var(--surface-card); }
+html[data-theme=dark] :is(.bg-white\/75, .bg-white\/90, .bg-white\/95) { background-color: color-mix(in srgb, var(--surface-card) 95%, transparent); }
+html[data-theme=dark] :is(.bg-slate-50, .bg-slate-50\/50, .bg-slate-50\/60, .bg-slate-50\/70, .bg-slate-900\/5) { background-color: var(--surface-soft); }
+html[data-theme=dark] .bg-slate-100 { background-color: var(--surface-muted); }
+html[data-theme=dark] .bg-slate-200 { background-color: var(--surface-pressed); }
+html[data-theme=dark] .bg-slate-300 { background-color: var(--line-strong); }
+html[data-theme=dark] :is(.bg-primary-50, .bg-primary-50\/40, .bg-primary-50\/50, .bg-primary-50\/60) { background-color: var(--surface-tint); }
+html[data-theme=dark] .bg-primary-100 { background-color: var(--surface-tint-strong); }
+html[data-theme=dark] :is(.bg-accent-50, .bg-accent-100) { background-color: var(--surface-accent); }
+html[data-theme=dark] .bg-amber-100 { background-color: #3b3019; }
+html[data-theme=dark] :is(.bg-emerald-50, .bg-emerald-100, .bg-emerald-200) { background-color: #15392f; }
+html[data-theme=dark] :is(.text-slate-900, h1, h2, h3, h4) { color: var(--ink-heading); }
+html[data-theme=dark] .text-slate-800 { color: var(--ink-strong); }
+html[data-theme=dark] .text-slate-700 { color: var(--ink-body); }
+html[data-theme=dark] .text-slate-600 { color: var(--ink-muted); }
+html[data-theme=dark] .text-slate-500 { color: var(--ink-subtle); }
+html[data-theme=dark] .text-slate-400 { color: var(--ink-faint); }
+html[data-theme=dark] :is(.text-slate-300, .text-primary-300) { color: var(--ink-icon); }
+html[data-theme=dark] :is(.text-primary-700, .text-primary-800) { color: var(--ink-link); }
+html[data-theme=dark] :is(.text-accent-600, .text-accent-700) { color: var(--ink-accent); }
+html[data-theme=dark] .text-amber-800 { color: #f6d18a; }
+html[data-theme=dark] :is(.text-emerald-700, .text-emerald-800) { color: #8adebd; }
+html[data-theme=dark] .border-slate-100 { border-color: var(--line-soft); }
+html[data-theme=dark] .border-slate-200 { border-color: var(--line); }
+html[data-theme=dark] .border-slate-300 { border-color: var(--line-strong); }
+html[data-theme=dark] .border-primary-100 { border-color: var(--line-tint); }
+html[data-theme=dark] .border-primary-300 { border-color: var(--line-tint-strong); }
+html[data-theme=dark] .divide-slate-200 > :not(:last-child) { border-color: var(--line); }
+html[data-theme=dark] .ring-slate-200 { --tw-ring-color: var(--line); }
+html[data-theme=dark] .from-primary-50 { --tw-gradient-from: var(--surface-tint); }
+html[data-theme=dark] .to-white { --tw-gradient-to: var(--surface-page); }
+html[data-theme=dark] :is(input, select, textarea) { color: var(--ink-body); }
+html[data-theme=dark] :is(input[type=search]:not(.bg-transparent), select, textarea) { background-color: var(--surface-card); border-color: var(--line-strong); }
+html[data-theme=dark] input::placeholder { color: var(--ink-subtle); opacity: 1; }
+html[data-theme=dark] :focus-visible { outline-color: var(--ink-link); }
+html[data-theme=dark] .prose-content a { color: var(--ink-link); }
+html[data-theme=dark] [class~="aria-pressed:bg-primary-600"][aria-pressed=true],
+html[data-theme=dark] [class~="data-[active]:bg-primary-600"][data-active] { background-color: var(--color-primary-600); color: white; }
+
+@media (hover: hover) {
+  html[data-theme=dark] :is([class~="hover:bg-white"], [class~="hover:bg-slate-50"], [class~="hover:bg-slate-100"]):hover { background-color: var(--surface-muted); }
+  html[data-theme=dark] :is([class~="hover:bg-primary-50"], [class~="hover:bg-primary-50/40"], [class~="hover:bg-primary-100"]):hover { background-color: var(--surface-tint-strong); }
+  html[data-theme=dark] [class~="hover:bg-emerald-200"]:hover { background-color: #20503f; }
+  html[data-theme=dark] :is([class~="hover:text-primary-700"], [class~="hover:text-primary-800"], .prose-content a):hover { color: var(--ink-link-hover); }
+  html[data-theme=dark] [class~="hover:text-accent-600"]:hover { color: var(--ink-accent); }
+  html[data-theme=dark] [class~="hover:border-primary-300"]:hover { border-color: var(--line-tint-strong); }
+  html[data-theme=dark] .group:hover [class~="group-hover:text-primary-700"] { color: var(--ink-link-hover); }
+  html[data-theme=dark] .group:hover [class~="group-hover:ring-primary-300"] { --tw-ring-color: var(--line-tint-strong); }
+}
+
+/* Navigation, dialogs and dropdowns share theme-aware surfaces and focus states. */
+.nav-action { display: inline-flex; width: 2.25rem; height: 2.25rem; flex-shrink: 0; align-items: center; justify-content: center; border-radius: .5rem; color: var(--ink-muted); cursor: pointer; }
+.nav-action:hover, .theme-option:hover, .theme-option:focus-visible, .search-result:hover, .search-result:focus-visible { background: var(--surface-tint); color: var(--ink-link); }
+.theme-option[aria-checked=true] { color: var(--ink-link); background: var(--surface-tint); }
+.theme-option [data-theme-check] { visibility: hidden; }
+.theme-option[aria-checked=true] [data-theme-check] { visibility: visible; }
+[data-appearance-icon] { display: none; }
+html[data-theme-preference=light] [data-appearance-icon=light],
+html[data-theme-preference=dark] [data-appearance-icon=dark],
+html[data-theme-preference=auto] [data-appearance-icon=auto] { display: block; }
+#appearance-options[hidden], [data-search-more][hidden], [data-search-retry][hidden] { display: none; }
+[data-search-more]:not([hidden]), [data-search-retry]:not([hidden]) { display: block; }
+.search-dialog mark { border-radius: .15rem; background: var(--surface-tint-strong); color: var(--ink-heading); }
+.search-dialog input:focus-visible { outline: 2px solid var(--ink-link); outline-offset: 4px; border-radius: 2px; }
+html:has(.search-dialog[open]) { overflow: hidden; }
+
+@media (prefers-reduced-motion: no-preference) {
+  body, .nav-action, .theme-option { transition: color 120ms ease, background-color 120ms ease; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

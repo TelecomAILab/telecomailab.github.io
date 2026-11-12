@@ -1,0 +1,32 @@
+---
+import type { NavGroup } from "../data/site";
+interface Props { item: NavGroup; mobile?: boolean }
+const { item, mobile = false } = Astro.props;
+const pathname = Astro.url.pathname;
+const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
+const active = item.children.some((link) => isActive(link.href));
+const panelId = mobile ? "resources-mobile-panel" : "resources-desktop-panel";
+---
+<div data-nav-disclosure class="relative">
+  <button type="button" data-nav-disclosure-trigger aria-expanded="false" aria-controls={panelId} class:list={[
+    "flex min-h-11 items-center gap-1.5 rounded-md font-medium transition-colors hover:bg-tint hover:text-link",
+    mobile ? "w-full px-3 py-2 text-left text-base" : "px-3 py-2 text-sm whitespace-nowrap",
+    active ? "bg-tint text-link" : "text-muted",
+  ]}>
+    <span>{item.label}</span>
+    <svg class="nav-chevron h-3.5 w-3.5 shrink-0 transition-transform duration-150 motion-reduce:transition-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4 6 4 4 4-4" /></svg>
+  </button>
+  <ul id={panelId} data-nav-panel hidden class:list={[
+    "space-y-1",
+    mobile ? "mt-1 ml-4 border-l border-line pl-3" : "absolute top-full left-0 z-50 mt-1 w-48 rounded-xl border border-line bg-surface p-1 shadow-lg",
+  ]}>
+    {item.children.map((link) => <li><a href={link.href} aria-current={isActive(link.href) ? "page" : undefined} class:list={[
+      "flex min-h-11 items-center rounded-lg px-3 py-2 text-sm transition-colors hover:bg-tint hover:text-link",
+      isActive(link.href) ? "bg-tint font-medium text-link" : "text-body",
+    ]}>{link.label}</a></li>)}
+  </ul>
+</div>
+<style>
+  [data-nav-panel][hidden] { display: none; }
+  [aria-expanded=true] .nav-chevron { transform: rotate(180deg); }
+</style>

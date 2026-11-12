@@ -1,0 +1,17 @@
+{
+  "demo": true,
+  "scenarios": [
+    {
+      "name": "Short visibility window",
+      "durationSeconds": 120
+    },
+    {
+      "name": "Changing user density",
+      "users": [
+        10,
+        25,
+        50
+      ]
+    }
+  ]
+}

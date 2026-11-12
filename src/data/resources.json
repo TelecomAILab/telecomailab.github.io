@@ -1,0 +1,272 @@
+[
+  {
+    "id": 801,
+    "title": "Wireless scheduling toolkit",
+    "category": "Software",
+    "summary": "A compact reference implementation for allocating a shared radio resource budget.",
+    "url": "/files/resources/demo-scheduler.js",
+    "format": "JavaScript",
+    "license": "MIT",
+    "version": "v1.2.0",
+    "access": "open",
+    "tags": [
+      "topic-one",
+      "Getting started"
+    ],
+    "updated": "2026-03-15",
+    "maintainerPersonIds": [
+      1001, 1010
+    ],
+    "publicationId": "sample-2024-network",
+    "featured": true,
+    "isMock": true
+  },
+  {
+    "id": 802,
+    "title": "Edge learning starter kit",
+    "category": "Software",
+    "summary": "A small starting point for understanding client updates and aggregation in federated learning.",
+    "url": "/files/resources/demo-edge-training.py",
+    "format": "Python",
+    "license": "MIT",
+    "version": "v0.4.0",
+    "access": "open",
+    "tags": [
+      "topic-two",
+      "Reproducibility"
+    ],
+    "updated": "2026-04-15",
+    "maintainerPersonIds": [
+      1001, 1010
+    ],
+    "publicationId": "adam2025generative",
+    "featured": true,
+    "isMock": true
+  },
+  {
+    "id": 803,
+    "title": "Synthetic channel traces",
+    "category": "Datasets",
+    "summary": "A small, documented set of channel and signal measurements for trying data-loading workflows.",
+    "url": "/files/resources/channel-traces.csv",
+    "format": "CSV",
+    "license": "CC0-1.0",
+    "version": "v1.0",
+    "access": "open",
+    "tags": [
+      "topic-three",
+      "Getting started"
+    ],
+    "updated": "2026-05-15",
+    "maintainerPersonIds": [
+      1001, 1010
+    ],
+    "publicationId": "adam2025generative",
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 804,
+    "title": "Edge workload samples",
+    "category": "Datasets",
+    "summary": "Example device workloads with compute budgets, network demand, and latency targets.",
+    "url": "/files/resources/edge-workloads.json",
+    "format": "JSON",
+    "license": "CC0-1.0",
+    "version": "v1.1",
+    "access": "open",
+    "tags": [
+      "methods",
+      "Reproducibility"
+    ],
+    "updated": "2026-06-15",
+    "maintainerPersonIds": [
+      1001, 1010
+    ],
+    "publicationId": "adam2025generative",
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 805,
+    "title": "Wireless baseline benchmark",
+    "category": "Benchmarks",
+    "summary": "Reference settings and example scores for comparing scheduling strategies consistently.",
+    "url": "/files/resources/benchmark-results.csv",
+    "format": "CSV",
+    "license": "CC-BY-4.0",
+    "version": "2026.1",
+    "access": "open",
+    "tags": [
+      "theory",
+      "Getting started"
+    ],
+    "updated": "2026-07-15",
+    "maintainerPersonIds": [
+      1005,
+      1006
+    ],
+    "publicationId": "adam2025generative",
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 806,
+    "title": "Satellite evaluation scenarios",
+    "category": "Benchmarks",
+    "summary": "Reusable scenario descriptions covering visibility windows and changing link conditions.",
+    "url": "/files/resources/satellite-scenarios.json",
+    "format": "JSON",
+    "license": "CC-BY-4.0",
+    "version": "v0.3",
+    "access": "request",
+    "tags": [
+      "topic-one",
+      "Reproducibility"
+    ],
+    "updated": "2026-08-15",
+    "maintainerPersonIds": [
+      1005,
+      1010
+    ],
+    "publicationId": "tsakmalis2018constrained",
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 807,
+    "title": "Reproduce a wireless experiment",
+    "category": "Tutorials",
+    "summary": "A short walkthrough of recording inputs, running a baseline, and reporting an experiment.",
+    "url": "/files/resources/reproducibility-guide.md",
+    "format": "Markdown",
+    "license": "CC-BY-4.0",
+    "version": "v1.0",
+    "access": "open",
+    "tags": [
+      "topic-two",
+      "Getting started"
+    ],
+    "updated": "2026-09-15",
+    "maintainerPersonIds": [
+      1001, 1010
+    ],
+    "publicationId": "lei2017deep",
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 808,
+    "title": "Getting started with the lab tools",
+    "category": "Tutorials",
+    "summary": "An introductory guide to the example code, datasets, and evaluation resources on this page.",
+    "url": "/files/resources/getting-started.html",
+    "format": "Web guide",
+    "license": "CC-BY-4.0",
+    "version": "v1.0",
+    "access": "open",
+    "tags": [
+      "topic-three",
+      "Reproducibility"
+    ],
+    "updated": "2026-10-15",
+    "maintainerPersonIds": [
+      1001,
+      1010
+    ],
+    "publicationId": "adam2025generative",
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 809,
+    "title": "Wireless AI seminar slides",
+    "category": "Presentations",
+    "summary": "A sample seminar deck connecting learning methods with communication system design.",
+    "url": "/files/presentations/mock-slides.pdf",
+    "format": "PDF",
+    "license": "CC-BY-4.0",
+    "version": "2026",
+    "access": "open",
+    "tags": [
+      "methods",
+      "Getting started"
+    ],
+    "updated": "2026-03-15",
+    "maintainerPersonIds": [
+      1001, 1010
+    ],
+    "publicationId": "adam2025generative",
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 810,
+    "title": "Satellite networks research overview",
+    "category": "Presentations",
+    "summary": "An example research presentation covering intelligent satellite and terrestrial connectivity.",
+    "url": "/files/publications/mock-paper.pdf",
+    "format": "PDF",
+    "license": "CC-BY-4.0",
+    "version": "2025",
+    "access": "open",
+    "tags": [
+      "theory",
+      "Reproducibility"
+    ],
+    "updated": "2026-04-15",
+    "maintainerPersonIds": [
+      1001,
+      1006
+    ],
+    "publicationId": "adam2025generative",
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 811,
+    "title": "Publication citation template",
+    "category": "Templates",
+    "summary": "A ready-to-edit BibTeX entry illustrating the bibliographic fields used by the lab website.",
+    "url": "/files/resources/citation-template.bib",
+    "format": "BibTeX",
+    "license": "CC0-1.0",
+    "version": "v1.0",
+    "access": "open",
+    "tags": [
+      "topic-one",
+      "Getting started"
+    ],
+    "updated": "2026-05-15",
+    "maintainerPersonIds": [
+      1004,
+      1007
+    ],
+    "publicationId": "nguyen2025semantic",
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 812,
+    "title": "Experiment documentation template",
+    "category": "Templates",
+    "summary": "A concise template for assumptions, dependencies, parameters, and reproducibility notes.",
+    "url": "/files/resources/experiment-template.md",
+    "format": "Markdown",
+    "license": "CC0-1.0",
+    "version": "v1.0",
+    "access": "open",
+    "tags": [
+      "topic-two",
+      "Reproducibility"
+    ],
+    "updated": "2026-06-15",
+    "maintainerPersonIds": [
+      1005,
+      1008
+    ],
+    "publicationId": "adam2025generative",
+    "featured": false,
+    "isMock": true
+  }
+]

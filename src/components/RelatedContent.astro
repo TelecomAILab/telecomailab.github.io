@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getEditorialContext } from "../lib/editorial";
+import { personDisplayName } from "../lib/people-schema";
+interface Props {
+  members?: CollectionEntry<"news">["data"]["relatedMembers"];
+  publications?: { id: string }[];
+}
+const { members = [], publications = [] } = Astro.props;
+const context = await getEditorialContext();
+---
+{(members.length > 0 || publications.length > 0) && <div data-search-ignore class="mt-5 space-y-2 border-t border-slate-100 pt-4 text-xs leading-relaxed">
+  {members.length > 0 && <p><span class="text-slate-500">People · </span>{members.map((member, index) => <>{index > 0 && ", "}<a class="text-primary-700 hover:underline" href={`/people/${member.id}`}>{personDisplayName(context.people.get(member.id)!.data)}</a></>)}</p>}
+  {publications.map((paper) => <p><a class="text-primary-700 hover:underline" href={`/publications#publication-${paper.id}`}>{context.publications.get(paper.id)!.data.title}</a></p>)}
+</div>}

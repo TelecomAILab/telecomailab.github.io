@@ -1,0 +1,9 @@
+---
+import ArticleLayout from "../../components/ArticleLayout.astro";
+import { getArticles } from "../../lib/editorial";
+export async function getStaticPaths() {
+  return (await getArticles("blog")).map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<ArticleLayout entry={entry} kind="blog" />

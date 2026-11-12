@@ -1,55 +1,17 @@
 ---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import BaseLayout from "../components/BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
-import PubList from "../components/PubList.astro";
-import { getResearchGroups } from "../lib/content";
-
-// Data-driven: papers group by their `areas` tags. Each area shows its most
-// recent few with a link to the full, area-filtered Publications list.
-const groups = await getResearchGroups(4);
+const areas = (await getCollection("research")).sort((a, b) => a.data.order - b.data.order);
 ---
-
-<BaseLayout
-  title="Research"
-  description="An overview of the lab's research topics and methods."
->
-  <PageHeader
-    eyebrow="What we do"
-    title="Research"
-    lead="A short overview of what the lab studies and how. Explore our work by topic or by approach."
-  />
-  <div class="container-page space-y-16 py-12">
-    {
-      groups.map((group) => (
-        <section>
-          <div class="mb-3 h-1 w-12 rounded-full bg-accent-500"></div>
-          <h2 class="font-serif text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{group.title}</h2>
-          <div class="mt-8 space-y-12">
-            {group.areas.map((area) => (
-              <div id={area.slug} class="scroll-mt-24">
-                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <h3 class="font-serif text-2xl font-semibold text-slate-900">{area.label}</h3>
-                  {area.total > area.pubs.length && (
-                    <a
-                      href={`/publications#${area.slug}`}
-                      class="group inline-flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 transition-colors hover:text-accent-600"
-                    >
-                      All {area.total}
-                      <span class="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
-                        &rarr;
-                      </span>
-                    </a>
-                  )}
-                </div>
-                <p class="mt-2 max-w-3xl text-slate-600">{area.blurb}</p>
-                <div class="mt-4">
-                  <PubList pubs={area.pubs} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      ))
-    }
+<BaseLayout title="Research" description="Research questions, approaches, and applications in intelligent communication systems.">
+  <PageHeader eyebrow="Questions that connect us" title="Research" lead="Intelligent communications bring together learning, networking, and computing. Explore the questions, methods, and applications behind each direction." />
+  <div class="container-page pb-16">
+    <nav aria-label="Research directions" class="mb-12 flex flex-wrap gap-2 border-b border-slate-200 pb-7">{areas.map((area) => <a href={`#${area.id}`} class="rounded-full border border-slate-200 px-3 py-1.5 text-sm text-primary-700 hover:border-primary-300 hover:bg-primary-50">{area.data.title}</a>)}</nav>
+    <div class="space-y-14 sm:space-y-20">{areas.map(({ id, data: area }) => <section id={id} data-research-area data-search-entry data-search-title={area.title} data-search-category="Research" class:list={["grid scroll-mt-24 items-start gap-7 lg:gap-12", area.image && "lg:grid-cols-[.9fr_1.1fr]"]}>
+      {area.image && <div class="overflow-hidden rounded-2xl border border-primary-100 bg-primary-50"><Image src={area.image} alt={area.imageAlt ?? ""} widths={[500, 900]} sizes="(min-width: 1024px) 45vw, 95vw" class="aspect-[4/3] w-full object-contain" /></div>}
+      <div class="min-w-0 lg:py-2">{area.isMock && <p class="mb-3 text-xs font-medium tracking-wide text-accent-700 uppercase">Example direction</p>}<h2 class="font-serif text-3xl leading-tight sm:text-4xl">{area.title}</h2><p class="mt-5 leading-relaxed text-slate-600">{area.description}</p>{area.motivation && <p class="mt-4 text-sm leading-relaxed text-slate-600"><span class="font-semibold text-slate-800">Motivation · </span>{area.motivation}</p>}{area.challenges && area.challenges.length > 0 && <p class="mt-4 text-sm leading-relaxed text-slate-600"><span class="font-semibold text-slate-800">Research challenges · </span>{area.challenges.join("; ")}</p>}<h3 class="mt-5 font-sans text-sm font-semibold text-slate-800">Approach</h3><p class="mt-2 text-sm leading-relaxed text-slate-600">{area.approach}</p><p class="mt-4 text-sm leading-relaxed text-slate-600"><span class="font-semibold text-slate-800">Potential applications · </span>{area.applications}</p>{area.links.length > 0 && <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-slate-100 pt-4 text-sm font-medium text-primary-700">{area.links.map((link) => <a href={link.url} class="hover:underline">{link.label} &rarr;</a>)}</div>}</div>
+    </section>)}</div>
   </div>
 </BaseLayout>

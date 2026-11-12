@@ -1,0 +1,12 @@
+---
+import NavigationIcon from "./NavigationIcon.astro";
+---
+<dialog id="site-search" aria-labelledby="search-heading" class="search-dialog m-auto mt-[10dvh] max-h-[80dvh] w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-2xl border border-line bg-surface p-0 text-body shadow-2xl backdrop:bg-slate-950/70 open:flex open:flex-col" data-search-dev={import.meta.env.DEV}>
+  <div class="flex items-center justify-between border-b border-line px-5 py-4"><h2 id="search-heading" class="font-serif text-xl">Search TelecomAI Lab</h2><button type="button" data-search-close class="nav-action" aria-label="Close search" title="Close search (Escape)"><NavigationIcon name="close" /></button></div>
+  <div class="px-5 pt-4"><label for="site-search-input" class="sr-only">Search the entire website</label><div class="flex items-center gap-3 rounded-lg border border-line-strong bg-page px-3 text-muted"><NavigationIcon name="search" /><input id="site-search-input" type="search" autocomplete="off" autofocus placeholder="Search people, papers, projects, ideas…" aria-controls="search-results" aria-describedby="search-status" class="min-w-0 flex-1 bg-transparent py-3 text-base text-heading outline-none" /></div><p id="search-status" role="status" aria-live="polite" class="py-3 text-sm text-muted">Search publications, people, research, projects, and more.</p></div>
+  <div class="min-h-0 overflow-y-auto overscroll-contain px-3 pb-3"><ol id="search-results" class="space-y-1"></ol><button type="button" data-search-more hidden class="mx-auto mt-3 min-h-11 rounded-lg border border-line px-4 py-2 text-sm text-link hover:bg-tint">Show more results</button><button type="button" data-search-retry hidden class="mx-auto mt-3 min-h-11 rounded-lg border border-line px-4 py-2 text-sm text-link hover:bg-tint">Try again</button></div>
+  <p class="border-t border-line px-5 py-3 text-xs text-muted"><span aria-hidden="true">↑ ↓</span> Navigate · Enter to open · Esc to close</p>
+</dialog>
+<script>
+  import "../scripts/site-search";
+</script>

@@ -1,5 +1,8 @@
 ---
 import { site } from "../data/site";
+import AppearanceSwitcher from "./AppearanceSwitcher.astro";
+import NavigationIcon from "./NavigationIcon.astro";
+import NavigationResources from "./NavigationResources.astro";
 
 const pathname = Astro.url.pathname;
 const isActive = (href: string) =>
@@ -21,13 +24,14 @@ const linkClass = (href: string, mobile = false) => {
 ---
 
 <header
+  data-site-header
   class="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/75"
 >
   <nav
-    class="container-page flex h-16 items-center justify-between"
+    class="container-page flex h-16 items-center justify-between gap-2"
     aria-label="Primary"
   >
-    <a href="/" class="group flex items-center gap-2.5">
+    <a href="/" class="group flex shrink-0 items-center gap-2.5">
       <img
         src="/favicon.svg"
         alt=""
@@ -43,30 +47,34 @@ const linkClass = (href: string, mobile = false) => {
     </a>
 
     <!-- Desktop links -->
-    <ul class="hidden items-center gap-1 md:flex">
+    <ul data-desktop-nav class="hidden items-center gap-1 xl:flex">
       {
         site.nav.map((item) => (
           <li>
+            {"children" in item ? <NavigationResources item={item} /> :
             <a
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
               class:list={[
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                "inline-flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors",
                 linkClass(item.href),
               ]}
             >
               {item.label}
-            </a>
+            </a>}
           </li>
         ))
       }
     </ul>
 
+    <div class="flex shrink-0 items-center gap-0.5">
+      <button type="button" id="search-toggle" class="nav-action" aria-label="Search the website" title="Search (Cmd/Ctrl + K)" aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false"><NavigationIcon name="search" /></button>
+      <AppearanceSwitcher />
     <!-- Mobile toggle -->
     <button
       type="button"
       id="nav-toggle"
-      class="inline-flex items-center justify-center rounded-md p-2 text-slate-600 hover:bg-slate-100 md:hidden"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-md p-2 text-slate-600 hover:bg-slate-100 xl:hidden"
       aria-controls="mobile-menu"
       aria-expanded="false"
     >
@@ -95,27 +103,29 @@ const linkClass = (href: string, mobile = false) => {
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
       </svg>
     </button>
+    </div>
   </nav>
 
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden border-t border-slate-200 bg-white md:hidden"
+    class="hidden max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-slate-200 bg-white xl:hidden"
   >
     <ul class="container-page space-y-1 py-3">
       {
         site.nav.map((item) => (
           <li>
+            {"children" in item ? <NavigationResources item={item} mobile /> :
             <a
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
               class:list={[
-                "block rounded-md px-3 py-2 text-base font-medium transition-colors",
+                "flex min-h-11 items-center rounded-md px-3 py-2 text-base font-medium transition-colors",
                 linkClass(item.href, true),
               ]}
             >
               {item.label}
-            </a>
+            </a>}
           </li>
         ))
       }
@@ -124,13 +134,7 @@ const linkClass = (href: string, mobile = false) => {
 </header>
 
 <script>
-  const toggle = document.getElementById("nav-toggle");
-  const menu = document.getElementById("mobile-menu");
-  toggle?.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!open));
-    menu?.classList.toggle("hidden");
-  });
+  import "../scripts/navigation";
 </script>
 
 <style>

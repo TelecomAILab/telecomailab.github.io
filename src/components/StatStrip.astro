@@ -1,0 +1,7 @@
+---
+interface Props { items: { value: string | number; label: string }[] }
+const { items } = Astro.props;
+---
+<div class="grid grid-cols-3 divide-x divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+  {items.map((item) => <div class="px-3 py-6 text-center sm:px-6"><p class="font-serif text-3xl text-primary-800 sm:text-4xl">{item.value}</p><p class="mt-1 text-xs text-slate-500 sm:text-sm">{item.label}</p></div>)}
+</div>

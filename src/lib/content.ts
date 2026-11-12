@@ -1,73 +1,33 @@
 import { getCollection, type CollectionEntry } from "astro:content";
+import type { AreaSlug } from "./publication-schema";
+import { publicationRoles } from "./publication-authors";
+import { PERSON_GROUPS } from "./people-schema";
+export type { AreaSlug } from "./publication-schema";
 
 export type Person = CollectionEntry<"people">;
 export type Publication = CollectionEntry<"publications">;
 export type Figure = CollectionEntry<"figures">;
 
-// Tag vocabulary (must match the `areas` enum in content.config.ts). A paper may
-// carry several — a topic/population, a method/approach, and a publication type.
-//
-// ⚙️  CUSTOMIZE: these are EXAMPLE tags. Replace the slugs/labels/blurbs below
-//    (and the matching enum in content.config.ts) with your field's topics.
-//    Keep `review`/`letter` if you want those publication-type facets.
-export type AreaSlug =
-  | "topic-one"
-  | "topic-two"
-  | "topic-three"
-  | "methods"
-  | "theory"
-  | "review"
-  | "letter";
-
+// Research taxonomy labels match AREA_SLUGS in publication-schema.ts.
+// Review/letter are legacy compatibility tags; new publication types are separate.
 export const AREA_LABELS: Record<AreaSlug, string> = {
-  "topic-one": "Research topic one",
-  "topic-two": "Research topic two",
-  "topic-three": "Research topic three",
-  methods: "Methods & open tools",
-  theory: "Theory & modeling",
+  "topic-one": "AI for wireless networks",
+  "topic-two": "Cloud & edge intelligence",
+  "topic-three": "Satellite communications",
+  methods: "Open tools & datasets",
+  theory: "Optimization & learning",
+  "edge-ai-network-management": "Resource Allocation and Network Management with Edge AI",
+  "semantic-earth-observation": "Semantic Communications for Earth Observation",
+  "data-model-ecosystems": "Data and AI Model Marketplace Ecosystems",
   review: "Review",
   letter: "Letter / commentary",
 };
 
-// Research-page sections, grouped (topics vs. approaches), with blurbs.
-export const RESEARCH_GROUPS: { title: string; areas: { slug: AreaSlug; blurb: string }[] }[] = [
-  {
-    title: "Research topics",
-    areas: [
-      { slug: "topic-one", blurb: "A sentence describing this line of work and the questions it asks." },
-      { slug: "topic-two", blurb: "A sentence describing this line of work and the questions it asks." },
-      { slug: "topic-three", blurb: "A sentence describing this line of work and the questions it asks." },
-    ],
-  },
-  {
-    title: "Approaches",
-    areas: [
-      { slug: "methods", blurb: "Reproducible, open tooling and shared resources that make the lab's work possible." },
-      { slug: "theory", blurb: "Conceptual and computational frameworks that tie the lab's empirical work together." },
-    ],
-  },
-];
-
 // Publications filter chips, grouped (slugs reference AREA_LABELS).
 export const FILTER_GROUPS: { title: string; slugs: AreaSlug[] }[] = [
-  { title: "Topic", slugs: ["topic-one", "topic-two", "topic-three"] },
+  { title: "Topic", slugs: ["topic-one", "topic-two", "topic-three", "edge-ai-network-management", "semantic-earth-observation", "data-model-ecosystems"] },
   { title: "Approach", slugs: ["methods", "theory"] },
-  { title: "Type", slugs: ["review", "letter"] },
 ];
-
-/** Research-page groups → each area with its most-recent pubs (capped) + total count. */
-export async function getResearchGroups(limit = 4) {
-  const pubs = await getPublications();
-  return RESEARCH_GROUPS.map((g) => ({
-    title: g.title,
-    areas: g.areas
-      .map((a) => {
-        const all = pubs.filter((p) => p.data.areas.includes(a.slug));
-        return { slug: a.slug, label: AREA_LABELS[a.slug], blurb: a.blurb, pubs: all.slice(0, limit), total: all.length };
-      })
-      .filter((a) => a.total > 0),
-  })).filter((g) => g.areas.length > 0);
-}
 
 /** Count of publications per area slug (for filter-chip labels). */
 export async function getAreaCounts() {
@@ -77,22 +37,13 @@ export async function getAreaCounts() {
   return counts;
 }
 
-// Display order of groups within the People page.
-export const GROUP_ORDER = [
-  "Faculty",
-  "Researchers",
-  "Staff",
-  "Students",
-  "Affiliates",
-  "Alumni",
-] as const;
-
+// Display order of members within each group.
 const byOrder = (a: Person, b: Person) => a.data.order - b.data.order;
 
-/** People grouped and ordered: current groups first, then Alumni. */
+/** People in the shared group order, then numeric order within each group. */
 export async function getGroupedPeople() {
   const people = await getCollection("people");
-  return GROUP_ORDER.map((group) => ({
+  return PERSON_GROUPS.map((group) => ({
     group,
     people: people.filter((p) => p.data.group === group).sort(byOrder),
   })).filter((g) => g.people.length > 0);
@@ -107,7 +58,7 @@ export async function getPublications() {
 }
 
 /** Only rights-confirmed figures may ever be rendered (hard gate). */
-export async function getConfirmedFigures() {
+async function getConfirmedFigures() {
   const figs = await getCollection("figures");
   return figs
     .filter((f) => f.data.rightsConfirmed === true)
@@ -141,78 +92,23 @@ export async function getFiguresByPaper() {
   return arr;
 }
 
-// --- author <-> person matching (best-effort, for profile pages) -----------
-
-const normAlpha = (s: string) =>
-  s.toLowerCase().normalize("NFKD").replace(/[^a-z]/g, "");
-
-export interface PersonKey {
-  initial: string;
-  last: string;
-}
-
-export function personKey(name: string): PersonKey {
-  const base = name.split(",")[0].trim(); // drop trailing credentials
-  const toks = base.split(/\s+/);
-  return {
-    initial: (normAlpha(toks[0])[0] || ""),
-    last: normAlpha(toks[toks.length - 1] || ""),
-  };
-}
-
-/** Does a CV-style author string ("Miller GN", "Ortega-Marquez J") name this person? */
-export function authorIsPerson(author: string, pk: PersonKey): boolean {
-  if (!pk.last) return false;
-  const m = author.trim().match(/^(.*?)\s+([A-Za-z]{1,4})$/);
-  const wholeLast = normAlpha(m ? m[1] : author);
-  const initials = m ? m[2].toLowerCase() : "";
-  const lastOk = wholeLast.includes(pk.last);
-  const initialOk = !pk.initial || !initials || initials[0] === pk.initial;
-  return lastOk && initialOk;
-}
-
-/** Publications authored by a person, newest-first (best-effort name match). */
+/** Publications linked by explicit person ID, preserving the supplied ordering. */
 export function publicationsForPerson(person: Person, pubs: Publication[]) {
-  const pk = personKey(person.data.name);
-  return pubs.filter((p) => p.data.authors.some((a) => authorIsPerson(a, pk)));
+  return pubs.filter((p) => p.data.authors.some((author) => author.personId === person.id));
 }
 
-// Everyone profiled is treated as a "mentee" for the publication badges EXCEPT
-// the people listed here (typically the PI and senior faculty/collaborators).
-// Use each person's slug = their markdown filename without ".md".
-// ⚙️  CUSTOMIZE: list your PI (and any senior faculty) here.
-export const NON_MENTEE_SLUGS = new Set(["jane-doe"]);
-
-/** Build an `isMentee(authorString)` predicate from the people collection. */
-export function menteeMatcher(people: Person[]) {
-  const dir = people.map((p) => ({ slug: p.id, key: personKey(p.data.name) }));
-  return (author: string) => {
-    const d = dir.find((x) => authorIsPerson(author, x.key));
-    return !!d && !NON_MENTEE_SLUGS.has(d.slug);
-  };
-}
-
-const menteeLed = (p: Publication, isMentee: (a: string) => boolean) =>
-  isMentee(p.data.authors[0] ?? "");
-
-/**
- * Featured predicate: a mentee-led paper, or a PI first/senior paper from
- * 2019 on. Mentee status is membership-derived (see menteeMatcher).
- */
+/** Shared role policy for homepage selection and publication badges. */
 export function featuredMatcher(people: Person[]) {
-  const isMentee = menteeMatcher(people);
-  return (p: Publication) => {
-    // Letters and reviews aren't "featured" primary research on the homepage.
-    if (p.data.areas.includes("letter") || p.data.areas.includes("review")) return false;
-    return menteeLed(p, isMentee) || (p.data.piFirstOrSenior && p.data.year >= 2019);
-  };
+  const directory = new Map(people.map((person) => [person.id, person]));
+  return (p: Publication) => publicationRoles(p.data, directory).featured;
 }
 
 /** Sort featured papers: mentee-led first, then most recent. */
 export function featuredSorter(people: Person[]) {
-  const isMentee = menteeMatcher(people);
+  const directory = new Map(people.map((person) => [person.id, person]));
   return (a: Publication, b: Publication) => {
-    const diff = Number(menteeLed(b, isMentee)) - Number(menteeLed(a, isMentee));
+    const diff = Number(publicationRoles(b.data, directory).menteeLed)
+      - Number(publicationRoles(a.data, directory).menteeLed);
     return diff || b.data.year - a.data.year;
   };
 }

@@ -1,0 +1,29 @@
+---
+import { funding } from "../lib/lab-data";
+import { AREA_LABELS, type Person, type Publication } from "../lib/content";
+import { personDisplayName } from "../lib/people-schema";
+interface Props { project: (typeof funding.projects)[number]; people: ReadonlyMap<string, Person>; publications: ReadonlyMap<string, Publication> }
+const { project, people, publications } = Astro.props;
+const lead = project.leadPersonId ? people.get(project.leadPersonId) : undefined;
+const funder = funding.funders.find((funder) => funder.id === project.funderId);
+const money = (value: number) => new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(value);
+const period = project.startYear && project.endYear ? `${project.startYear}–${project.endYear}` : project.startYear ? `Started ${project.startYear}` : "";
+---
+<article id={`project-${project.id}`} data-search-entry data-search-title={project.title} data-search-category="Projects" class="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+            <div class="h-1 bg-gradient-to-r from-primary-600 to-primary-200"></div>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="flex flex-wrap items-center justify-between gap-2"><span class="text-xs font-semibold tracking-[0.14em] text-primary-700">{project.acronym}</span><span class:list={["rounded-full px-2.5 py-1 text-xs font-medium", project.status === "active" ? "bg-emerald-50 text-emerald-700" : "bg-slate-50 text-slate-700"]}>{project.status === "active" ? "Active" : "Status not supplied"}{period && ` · ${period}`}</span></div>
+              <h3 class="mt-4 font-serif text-2xl leading-snug">{project.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">{project.summary}</p>
+              <div class="mt-5 flex flex-wrap gap-2">{project.areas.map((area) => <a href={`/research#${area}`} class="rounded-full bg-primary-50 px-2.5 py-1 text-xs text-primary-800 hover:bg-primary-100">{AREA_LABELS[area]}</a>)}</div>
+              <dl class="mt-6 grid grid-cols-2 gap-4 border-t border-slate-100 pt-5 text-sm"><div><dt class="text-xs text-slate-500">Programme</dt><dd class="mt-1 font-medium text-slate-700">{project.programme || funder?.shortName || funder?.programme || "Not listed"}</dd></div><div><dt class="text-xs text-slate-500">Lab budget {project.isMock && "(demo)"}</dt><dd class="mt-1 font-medium text-slate-700">{project.budgetEUR ? money(project.budgetEUR) : "Not listed"}</dd></div><div class="col-span-2"><dt class="text-xs text-slate-500">Principal investigator</dt><dd class="mt-1">{lead ? <a href={`/people/${lead.id}`} class="font-medium text-primary-700 hover:underline">{personDisplayName(lead.data)}</a> : project.leadName ?? "Not listed"}</dd></div></dl>
+              <details class="mt-5 border-t border-slate-100 pt-4 text-sm text-slate-600"><summary class="w-fit cursor-pointer font-medium text-primary-700">Project details</summary><div class="mt-4 space-y-3">
+                {project.startDate && <p>Start date: {project.startDate}</p>}{project.endDate && <p>End date: {project.endDate}</p>}{project.website && <a href={project.website} class="block text-primary-700 hover:underline">Project website &rarr;</a>}
+                {project.grantId && <p><span class="font-medium text-slate-700">Grant reference:</span> {project.grantId}</p>}
+                {project.partners.length > 0 && <p><span class="font-medium text-slate-700">Partners:</span> {project.partners.join(" · ")}</p>}
+                {(project.teamPersonIds.length > 0 || project.teamNames.length > 0) && <p><span class="font-medium text-slate-700">Research team:</span> {project.teamPersonIds.map((id, index) => <>{index > 0 && " · "}<a href={`/people/${id}`} class="text-primary-700 hover:underline">{personDisplayName(people.get(id)!.data)}</a></>)}{project.teamNames.join(" · ")}</p>}
+                {project.outputs.length > 0 && <p><span class="font-medium text-slate-700">Outputs:</span> {project.outputs.join(" · ")}</p>}
+                {project.publicationIds.map((id) => <a href={`/publications#publication-${id}`} class="block text-primary-700 hover:underline">Related paper: {publications.get(id)!.data.title}</a>)}
+              </div></details>
+            </div>
+          </article>

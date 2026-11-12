@@ -1,2 +1,6 @@
-// CSS-only packages (no shipped types) imported for side effects.
+// CSS-only packages imported for side effects; preserve the existing declarations.
 declare module "@fontsource-variable/*";
+
+interface Window {
+  telecomaiTheme?: { set(preference: "light" | "dark" | "auto"): void };
+}

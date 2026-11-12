@@ -1,0 +1,522 @@
+[  
+  {
+    "id": 1000,
+    "name": "Dr. Vu Ha",
+    "displayName": "Vu Nguyen Ha",
+    "status": "current",
+    "group": "Lab Leadership",
+    "role": "Lab Head & Principal Investigator",
+    "publicationRole": "pi",
+    "title": "Lab Head & Principal Investigator",
+    "affiliation": "TelecomAI Lab; SigCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "Radio resource management",
+      "Machine learning and deep learning for wireless networks",
+      "Optimization",
+      "Mobile edge computing",
+      "Massive MIMO",
+      "Satellite beam hopping and precoding"
+    ],
+    "biography": "vu-nguyen-ha",
+    "headshot": "../assets/people/vu-nguyen-ha.png",
+    "sourceUrls": [
+      "https://www.uni.lu/snt-en/people/vu-nguyen-ha/"
+    ],
+    "links": {
+      "email": "vu-nguyen.ha@uni.lu",
+      "website": "https://example.com/people/vu-nguyen-ha",
+      "scholar": "https://example.com/scholar/vu-nguyen-ha",
+      "github": "https://example.com/github/vu-nguyen-ha",
+      "orcid": "https://example.com/orcid/vu-nguyen-ha",
+      "linkedin": "https://example.com/linkedin/vu-nguyen-ha"
+    },
+    "order": 0,
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 1001,
+    "name": "Prof. Symeon Chatzinotas",
+    "displayName": "Symeon Chatzinotas",
+    "status": "current",
+    "group": "Lab Leadership",
+    "role": "Full Professor / Chief Scientist I",
+    "publicationRole": "senior",
+    "title": "Head of the SIGCOM Research Group",
+    "affiliation": "SigCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "Wireless and satellite communications",
+      "5G/6G networks",
+      "Signal processing",
+      "Quantum communications"
+    ],
+    "biography": "symeon-chatzinotas",
+    "sourceUrls": [
+      "https://www.uni.lu/snt-en/people/symeon-chatzinotas/",
+      "https://www.ntnu.edu/employees/symeon.chatzinotas"
+    ],
+    "headshot": "../assets/people/symeon-chatzinotas.png",
+    "links": {
+      "email": "symeon.chatzinotas@uni.lu",
+      "website": "https://sites.google.com/view/symeonchatzinotas/home",
+      "scholar": "https://scholar.google.com/citations?user=6jeAUkoAAAAJ&hl=en"
+    },
+    "order": 1,
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 1004,
+    "order": 4,
+    "name": "Dr. Ti Ti Nguyen",
+    "displayName": "Ti Ti Nguyen",
+    "status": "current",
+    "group": "Researchers",
+    "role": "Research Scientist",
+    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "Satellite communications",
+      "Non-terrestrial networks"
+    ],
+    "sourceUrls": [
+      "https://www.uni.lu/snt-en/people/ti-ti-nguyen/"
+    ],
+    "biography": "ti-ti-nguyen",
+    "headshot": "../assets/people/ti-ti-nguyen.png",
+    "links": {
+      "email": "titi.nguyen@uni.lu",
+      "website": "https://www.uni.lu/snt-en/people/ti-ti-nguyen/",
+      "scholar": "https://scholar.google.com/citations?user=dAFArEYAAAAJ"
+    },
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 1005,
+    "order": 5,
+    "name": "Dr. Duc-Dung Tran",
+    "displayName": "Duc-Dung Tran",
+    "status": "current",
+    "group": "Researchers",
+    "role": "Research Associate",
+    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "5G and beyond wireless networks",
+      "Ultra-reliable low-latency communications",
+      "Multiple access",
+      "Machine learning"
+    ],
+    "biography": "duc-dung-tran",
+    "sourceUrls": [
+      "https://www.uni.lu/snt-en/people/duc-dung-tran/",
+      "https://orbilu.uni.lu/bitstream/10993/62354/1/2410.21916v1.pdf"
+    ],
+    "links": {
+      "email": "duc-dung.tran@uni.lu",
+      "website": "https://www.uni.lu/snt-en/people/duc-dung-tran/",
+      "scholar": "https://scholar.google.com/citations?user=CIt5qdMAAAAJ",
+      "github": "https://example.com/github/2002",
+      "orcid": "https://example.com/orcid/2002"
+    },
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 1006,
+    "order": 6,
+    "name": "Dr. Dinh-Hieu Tran",
+    "displayName": "Dinh-Hieu Tran",
+    "status": "current",
+    "group": "Researchers",
+    "role": "Research Associate",
+    "title": "Postdoctoral Researcher",
+    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "6G and beyond wireless networks",
+      "Network digital twin",
+      "Machine learning for wireless networks"
+    ],
+    "biography": "dinh-hieu-tran",
+    "headshot": "../assets/people/dinh-hieu-tran.png",
+    "sourceUrls": [
+      "https://www.uni.lu/snt-en/people/hieu-tran-dinh/",
+      "https://orbilu.uni.lu/bitstream/10993/66053/1/End_to_End_Network_Digital_Twin_in_6G_and_Beyond_Networks%20%288%29.pdf"
+    ],
+    "links": {
+      "email": "hieu.tran-dinh@uni.lu",
+      "website": "https://www.uni.lu/snt-en/people/hieu-tran-dinh/",
+      "scholar": "https://scholar.google.com/citations?user=zh-uSUYAAAAJ"
+    },
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 1007,
+    "order": 7,
+    "name": "Dr. Ons Aouedi",
+    "displayName": "Ons Aouedi",
+    "status": "current",
+    "group": "Researchers",
+    "role": "Research Associate",
+    "title": "Postdoctoral Researcher",
+    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "Wireless communication",
+      "Machine learning",
+      "Optimization"
+    ],
+    "biography": "ons-aouedi",
+    "headshot": "../assets/people/ons-aouedi.png",
+    "sourceUrls": [
+      "https://www.uni.lu/snt-en/people/ons-aouedi/"
+    ],
+    "links": {
+      "email": "ons.aouedi@uni.lu",
+      "website": "https://www.uni.lu/snt-en/people/ons-aouedi/",
+      "scholar": "https://scholar.google.com/citations?user=JMOBDusAAAAJ",
+      "linkedin": "https://example.com/linkedin/2003"
+    },
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 1008,
+    "order": 8,
+    "name": "Dr. Muhammad Awais",
+    "displayName": "Muhammad Awais",
+    "status": "current",
+    "group": "Researchers",
+    "role": "Research Associate",
+    "title": "Postdoctoral Researcher",
+    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "Wireless communication",
+      "Machine learning",
+      "Optimization"
+    ],
+    "biography": "muhammad-awais",
+    "headshot": "../assets/people/muhammad-awais.png",
+    "sourceUrls": [
+      "https://www.uni.lu/snt-en/people/muhammad-awais/"
+    ],
+    "links": {
+      "email": "muhammad.awais@uni.lu",
+      "website": "https://www.uni.lu/snt-en/people/muhammad-awais/",
+      "scholar": "https://scholar.google.com/citations?user=6jeAUkoAAAAJ&hl=en",
+      "github": "https://example.com/github/2004",
+      "orcid": "https://example.com/orcid/2004"
+    },
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 1009,
+    "order": 9,
+    "name": "Dr. Suleima Briseno Ramirez",
+    "displayName": "Suleima Briseno Ramirez",
+    "status": "current",
+    "group": "Researchers",
+    "role": "Research Associate",
+    "title": "Postdoctoral Researcher",
+    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "Wireless communication",
+      "Machine learning",
+      "Optimization"
+    ],
+    "biography": "suleima-briseno-ramirez",
+    "headshot": "../assets/people/suleima-briseno-ramirez.png",
+    "sourceUrls": [
+      "https://www.uni.lu/snt-en/people/suleima-briseno-ramirez/"
+    ],
+    "links": {
+      "email": "suleima.briseno@uni.lu",
+      "website": "https://www.uni.lu/snt-en/people/suleima-briseno-ramirez/",
+      "github": "https://example.com/github/2004",
+      "orcid": "https://example.com/orcid/2004"
+    },
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 1010,
+    "order": 10,
+    "name": "Van Thieu NGUYEN",
+    "displayName": "Van Thieu NGUYEN",
+    "status": "current",
+    "group": "PhD Students",
+    "role": "PhD Researcher",
+    "publicationRole": "mentee",
+    "title": "PhD Researcher",
+    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "Machine Learning", "Deep Learning", "Federated Learning", "Federated Unlearning",
+      "Optimization", "Metaheuristic Algorithms", "Decentralized Optimization", "Distributed Learning"
+    ],
+    "biography": "van-thieu-nguyen",
+    "headshot": "../assets/people/van-thieu-nguyen.png",
+    "sourceUrls": [
+      "https://www.uni.lu/snt-en/people/van-thieu-nguyen/"
+    ],
+    "links": {
+      "email": "van.thieu.nguyen@uni.lu",
+      "website": "https://thieu1995.github.io/",
+      "scholar": "https://scholar.google.com/citations?user=nsTbdhgAAAAJ&hl=en",
+      "github": "https://github.com/thieu1995"
+    },
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 1011,
+    "order": 11,
+    "name": "Huruy ZERIHUN",
+    "displayName": "Huruy ZERIHUN",
+    "status": "current",
+    "group": "PhD Students",
+    "role": "PhD Researcher",
+    "publicationRole": "mentee",
+    "title": "PhD Researcher",
+    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "Machine Learning", "Deep Learning", "Federated Learning", "Split Learning",
+      "Optimization", "Edge and Cloud Computing", "Distributed Learning"
+    ],
+    "biography": "huruy-zerihun",
+    "headshot": "../assets/people/huruy-zerihun.png",
+    "sourceUrls": [
+      "https://www.uni.lu/snt-en/people/huruy-zerihun/"
+    ],
+    "links": {
+      "email": "huruy.zerihun@uni.lu",
+      "website": "https://www.uni.lu/snt-en/people/huruy-zerihun/",
+      "scholar": "https://example.com/scholar/huruy-zerihun",
+      "linkedin": "https://example.com/linkedin/2006"
+    },
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 2010,
+    "name": "Sara Kim",
+    "status": "current",
+    "group": "Master's Students",
+    "role": "Master's Thesis Student",
+    "publicationRole": "mentee",
+    "title": "Master's Thesis Student",
+    "affiliation": "TelecomAI Lab · demo profile",
+    "researchInterests": [
+      "Satellite communications",
+      "Non-terrestrial networks"
+    ],
+    "biography": "2010",
+    "links": {
+      "email": "demo-2010@example.com",
+      "website": "https://example.com/people/2010",
+      "scholar": "https://example.com/scholar/2010",
+      "github": "https://example.com/github/2010",
+      "orcid": "https://example.com/orcid/2010",
+      "linkedin": "https://example.com/linkedin/2010"
+    },
+    "order": 13,
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 2014,
+    "name": "Theo Ruiz",
+    "status": "current",
+    "group": "Interns",
+    "role": "Research Intern",
+    "publicationRole": "mentee",
+    "title": "Research Intern",
+    "affiliation": "TelecomAI Lab · demo profile",
+    "researchInterests": [
+      "Cloud and edge intelligence",
+      "Federated learning"
+    ],
+    "biography": "2014",
+    "headshot": "../assets/people/demo-2014.svg",
+    "links": {
+      "email": "demo-2014@example.com",
+      "website": "https://example.com/people/2014",
+      "scholar": "https://example.com/scholar/2014",
+      "linkedin": "https://example.com/linkedin/2014"
+    },
+    "order": 17,
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 2016,
+    "name": "Mateo Silva",
+    "status": "current",
+    "group": "Collaborators",
+    "role": "Industry Research Collaborator",
+    "publicationRole": "senior",
+    "title": "Industry Research Collaborator",
+    "affiliation": "Example Partner Research Institute",
+    "researchInterests": [
+      "Open wireless benchmarks",
+      "Reproducible research"
+    ],
+    "biography": "2016",
+    "headshot": "../assets/people/demo-2016.svg",
+    "links": {
+      "email": "demo-2016@example.com",
+      "website": "https://example.com/people/2016",
+      "scholar": "https://example.com/scholar/2016",
+      "github": "https://example.com/github/2016",
+      "orcid": "https://example.com/orcid/2016"
+    },
+    "order": 19,
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 2017,
+    "name": "Aya Sato",
+    "status": "current",
+    "group": "Guests",
+    "role": "Visiting Professor",
+    "publicationRole": "senior",
+    "title": "Visiting Professor",
+    "affiliation": "Example Partner Research Institute",
+    "researchInterests": [
+      "Optimization",
+      "Energy-efficient communications"
+    ],
+    "biography": "2017",
+    "links": {
+      "email": "demo-2017@example.com"
+    },
+    "order": 20,
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 2018,
+    "name": "Iris Becker",
+    "status": "current",
+    "group": "Guests",
+    "role": "Visiting PhD Researcher",
+    "publicationRole": "senior",
+    "title": "Visiting PhD Researcher",
+    "affiliation": "Example Partner Research Institute",
+    "researchInterests": [
+      "Learning for wireless networks",
+      "Resource allocation"
+    ],
+    "biography": "2018",
+    "headshot": "../assets/people/demo-2018.svg",
+    "links": {
+      "email": "demo-2018@example.com",
+      "website": "https://example.com/people/2018",
+      "scholar": "https://example.com/scholar/2018",
+      "linkedin": "https://example.com/linkedin/2018"
+    },
+    "order": 21,
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 2019,
+    "name": "Alex Rivera",
+    "status": "alumni",
+    "group": "Former Members",
+    "role": "Former Research Engineer",
+    "publicationRole": "senior",
+    "title": "Former Research Engineer",
+    "affiliation": "TelecomAI Lab · demo profile",
+    "researchInterests": [
+      "Cloud and edge intelligence",
+      "Federated learning"
+    ],
+    "biography": "2019",
+    "headshot": "../assets/people/demo-2019.svg",
+    "links": {
+      "email": "demo-2019@example.com",
+      "github": "https://example.com/github/2019",
+      "orcid": "https://example.com/orcid/2019"
+    },
+    "order": 22,
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 2020,
+    "name": "Zoe Campbell",
+    "status": "alumni",
+    "group": "Former Members",
+    "role": "Former Postdoctoral Researcher",
+    "publicationRole": "senior",
+    "title": "Former Postdoctoral Researcher",
+    "affiliation": "TelecomAI Lab · demo profile",
+    "researchInterests": [
+      "Satellite communications",
+      "Non-terrestrial networks"
+    ],
+    "biography": "2020",
+    "headshot": "../assets/people/demo-2020.svg",
+    "links": {
+      "email": "demo-2020@example.com",
+      "website": "https://example.com/people/2020",
+      "scholar": "https://example.com/scholar/2020"
+    },
+    "order": 23,
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 2001,
+    "order": 10,
+    "name": "Dr. Kha Hung Nguyen",
+    "displayName": "Kha Hung Nguyen",
+    "status": "alumni",
+    "group": "Alumni",
+    "role": "PhD Alumna",
+    "publicationRole": "mentee",
+    "title": "PhD Alumna",
+    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "5G and beyond wireless networks",
+      "Ultra-reliable low-latency communications",
+      "Multiple access",
+      "Energy-efficient communications",
+      "Machine learning"
+    ],
+    "biography": "kha-hung-nguyen",
+    "headshot": "../assets/people/kha-hung-nguyen.png",
+    "links": {
+      "email": "kha-hung.nguyen@uni.lu",
+      "website": "https://www.uni.lu/snt-en/people/kha-hung-nguyen/",
+      "scholar": "https://scholar.google.com/citations?user=LB0oybwAAAAJ",
+      "github": "https://example.com/github/2002",
+      "orcid": "https://example.com/orcid/2002"
+    },
+    "featured": false,
+    "isMock": false
+  },
+  {
+    "id": 2002,
+    "order": 11,
+    "name": "Gabriel Santos",
+    "status": "alumni",
+    "group": "Alumni",
+    "role": "Master's Alumnus",
+    "publicationRole": "mentee",
+    "title": "Master's Alumnus",
+    "affiliation": "TelecomAI Lab · demo profile",
+    "researchInterests": [
+      "Learning for wireless networks",
+      "Resource allocation"
+    ],
+    "biography": "2022",
+    "headshot": "../assets/people/demo-2022.svg",
+    "links": {
+      "email": "demo-2022@example.com"
+    },
+    "featured": false,
+    "isMock": true
+  }
+]

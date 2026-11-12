@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../components/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import StatStrip from "../components/StatStrip.astro";
+import ResourceIcon from "../components/ResourceIcon.astro";
+import HardwareCard from "../components/HardwareCard.astro";
+import { funding, hardware, resources, RESOURCE_CATEGORIES } from "../lib/lab-data";
+import { AREA_LABELS, type AreaSlug } from "../lib/content";
+import { personDisplayName } from "../lib/people-schema";
+
+const people = new Map((await getCollection("people")).map((person) => [person.id, person]));
+const total = resources.length + hardware.length;
+const projects = new Map(funding.projects.map((project) => [project.id, project]));
+const count = (category: string) => category === "Hardware" ? hardware.length : resources.filter((resource) => resource.category === category).length;
+const topic = (tag: string) => AREA_LABELS[tag as AreaSlug] ?? tag;
+const chip = "rounded-full border border-slate-200 px-3 py-1.5 text-sm text-slate-600 transition-colors hover:border-primary-300 hover:bg-primary-50 data-[active]:border-primary-600 data-[active]:bg-primary-600 data-[active]:text-white";
+const updated = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+---
+<BaseLayout title="Materials & Resources" description="Research software, datasets, benchmarks, tutorials, presentations, and reusable templates, and laboratory hardware.">
+  <PageHeader eyebrow="Open research" title="Materials & Resources" lead="Code, data, and practical guides to help you explore, reproduce, and build on research in intelligent communications." />
+  <div class="container-page pb-16">
+    <StatStrip items={[{ value: total, label: "Research resources" }, { value: RESOURCE_CATEGORIES.length, label: "Resource categories" }, { value: resources.filter((resource) => resource.access === "open").length, label: "Openly available" }]} />
+
+    <section class="grid gap-6 py-12 lg:grid-cols-[1.1fr_1fr]">
+      <div class="rounded-xl border border-primary-100 bg-primary-50/60 p-6 sm:p-8"><p class="text-xs font-semibold tracking-wide text-accent-600 uppercase">Start here</p><h2 class="mt-3 font-serif text-2xl">A small experiment is a good beginning.</h2><p class="mt-3 max-w-prose text-sm leading-relaxed text-slate-600">Pick a dataset, try a baseline, and follow a reproducibility guide. Each entry lists its format, version, license, maintainers, and related publication.</p><a href="/files/resources/getting-started.html" class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary-700 hover:underline">Read the getting-started guide <span aria-hidden="true">&rarr;</span></a></div>
+      <div class="grid gap-4 sm:grid-cols-2">{[{ category: "Software", title: "Build with code", body: "Reference tools and starter implementations." }, { category: "Datasets", title: "Explore the data", body: "Documented samples and reusable traces." }].map((item) => <a href="#resources" data-select-resource-category={item.category} class="group flex flex-col rounded-xl border border-slate-200 bg-white p-6 transition-colors hover:border-primary-300"><div class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-slate-50 text-primary-700"><ResourceIcon category={item.category} /></div><h3 class="font-serif text-xl group-hover:text-primary-700">{item.title}</h3><p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{item.body}</p><span class="mt-5 text-sm font-medium text-primary-700">{count(item.category)} resources &rarr;</span></a>)}</div>
+    </section>
+
+    <section id="resources" class="scroll-mt-24" aria-labelledby="resources-heading">
+      <div class="mb-6 flex flex-wrap items-end justify-between gap-5"><div><div class="mb-3 h-0.5 w-10 rounded-full bg-accent-500"></div><h2 id="resources-heading" class="font-serif text-2xl">Explore the collection</h2></div><div class="w-full sm:w-80"><label class="sr-only" for="resource-search">Search resources</label><input type="search" id="resource-search" placeholder="Search tools, data, hardware, or topics…" class="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus:border-primary-500 focus:outline-none" /></div></div>
+      <div class="mb-5 flex flex-wrap gap-2" aria-label="Resource categories"><button type="button" class={chip} data-resource-category="all" data-active aria-pressed="true">All resources <span class="ml-1 opacity-70">{total}</span></button>{RESOURCE_CATEGORIES.map((category) => <button type="button" class={chip} data-resource-category={category} aria-pressed="false">{category} <span class="ml-1 opacity-70">{count(category)}</span></button>)}</div>
+      <p id="resource-count" class="mb-5 text-sm text-slate-500" role="status" aria-live="polite">{total} resources</p>
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {resources.map((resource) => <article id={`resource-${resource.id}`} data-resource data-search-entry data-search-title={resource.title} data-search-category="Resources" data-category={resource.category} data-search={[resource.title, resource.summary, resource.format, resource.license, ...resource.tags.map(topic)].join(" ").toLowerCase()} class="flex min-w-0 flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6">
+          <div class="mb-5 flex items-center justify-between gap-2"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-primary-700"><ResourceIcon category={resource.category} /></div><span class:list={["rounded-full px-2.5 py-1 text-xs font-medium", resource.featured ? "bg-accent-50 text-accent-700" : "bg-slate-50 text-slate-500"]}>{resource.featured ? "Featured tool" : resource.category}</span></div>
+          <h3 class="font-serif text-xl leading-snug">{resource.title}</h3><p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600">{resource.summary}</p>
+          <div class="mt-4 flex flex-wrap gap-1.5">{resource.tags.map((tag) => <span class="rounded bg-slate-50 px-2 py-1 text-xs text-slate-500">{topic(tag)}</span>)}</div>
+          <dl class="mt-5 grid grid-cols-2 gap-x-3 gap-y-3 border-t border-slate-100 pt-4 text-xs"><div><dt class="text-slate-400">Format & version</dt><dd class="mt-1 font-medium text-slate-700">{resource.format} · {resource.version}</dd></div><div><dt class="text-slate-400">License</dt><dd class="mt-1 font-medium text-slate-700">{resource.license}</dd></div><div class="col-span-2"><dt class="text-slate-400">Maintainers</dt><dd class="mt-1 leading-relaxed">{resource.maintainerPersonIds.map((id, index) => <>{index > 0 && " · "}<a href={`/people/${id}`} class="text-primary-700 hover:underline">{personDisplayName(people.get(id)!.data)}</a></>)}</dd></div></dl>
+          <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-slate-100 pt-4 text-sm">
+            {resource.access === "open" ? <a href={resource.url} download={!resource.url.endsWith(".html") || undefined} class="font-semibold text-primary-700 hover:underline">{resource.format === "Web guide" ? "Open guide" : "Download"} &rarr;</a> : <a href={resource.maintainerPersonIds[0] ? `/people/${resource.maintainerPersonIds[0]}` : "/about#contact"} class="font-semibold text-primary-700 hover:underline">Request access &rarr;</a>}
+            {resource.publicationId && <a href={`/publications#publication-${resource.publicationId}`} class="text-slate-500 hover:text-primary-700 hover:underline">Related paper</a>}
+          </div><p class="mt-3 text-xs text-slate-400">Updated {updated(resource.updated)}{resource.access === "request" && " · Available by request"}</p>
+        </article>)}
+        {hardware.map((equipment) => <HardwareCard equipment={equipment} projects={projects} />)}
+      </div>
+      <p id="resource-empty" class="hidden py-14 text-center text-slate-500">No resources match your search. Try another category or keyword.</p>
+    </section>
+
+    <section class="mt-14 grid gap-6 rounded-2xl border border-slate-200 bg-slate-50/70 p-6 sm:p-8 md:grid-cols-2"><div><h2 class="font-serif text-xl">Reuse thoughtfully. Cite clearly.</h2><p class="mt-3 text-sm leading-relaxed text-slate-600">Check the license and version on each resource, cite its associated paper, and record your configuration when reproducing an experiment. Publication cards include downloadable BibTeX.</p><a href="/publications" class="mt-4 inline-block text-sm font-medium text-primary-700 hover:underline">Browse publications &rarr;</a><a href="/notes" class="ml-5 mt-4 inline-block text-sm font-medium text-primary-700 hover:underline">Read technical notes &rarr;</a></div><div><h2 class="font-serif text-xl">Need a hand?</h2><p class="mt-3 text-sm leading-relaxed text-slate-600">Contact the listed maintainer for usage questions, access requests, or a missing file. For broader collaborations and shared resources, get in touch with the lab.</p><a href="/about#contact" class="mt-4 inline-block text-sm font-medium text-primary-700 hover:underline">Contact the lab &rarr;</a></div></section>
+  </div>
+  <script>
+    const cards = [...document.querySelectorAll<HTMLElement>("[data-resource]")];
+    const buttons = [...document.querySelectorAll<HTMLButtonElement>("[data-resource-category]")];
+    const search = document.querySelector<HTMLInputElement>("#resource-search");
+    let category = "all";
+    const apply = () => {
+      const query = (search?.value ?? "").trim().toLowerCase();
+      let visible = 0;
+      for (const card of cards) { card.hidden = !((category === "all" || card.dataset.category === category) && (!query || card.dataset.search?.includes(query))); if (!card.hidden) visible++; }
+      for (const button of buttons) { const active = button.dataset.resourceCategory === category; button.toggleAttribute("data-active", active); button.setAttribute("aria-pressed", String(active)); }
+      document.getElementById("resource-count")!.textContent = `${visible} of ${cards.length} resources`;
+      document.getElementById("resource-empty")!.classList.toggle("hidden", visible !== 0);
+    };
+    buttons.forEach((button) => button.addEventListener("click", () => { category = button.dataset.resourceCategory ?? "all"; apply(); }));
+    document.querySelectorAll<HTMLElement>("[data-select-resource-category]").forEach((link) => link.addEventListener("click", () => { category = link.dataset.selectResourceCategory ?? "all"; if (search) search.value = ""; apply(); }));
+    search?.addEventListener("input", apply);
+    apply();
+  </script>
+</BaseLayout>
+
+<style>
+  [data-resource][hidden] { display: none; }
+</style>

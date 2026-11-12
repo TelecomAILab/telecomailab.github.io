@@ -1,0 +1,157 @@
+[
+  {
+    "id": 801,
+    "title": "[Demo] A paper on wireless scheduling has been accepted at an example conference.",
+    "date": "2026-11-06",
+    "category": "Research",
+    "summary": "[Demo] A paper on wireless scheduling has been accepted at an example conference.",
+    "relatedMembers": [],
+    "relatedPublications": [
+      "sample-2024-network"
+    ],
+    "featured": true,
+    "isMock": true
+  },
+  {
+    "id": 802,
+    "title": "[Demo] A new PhD researcher has joined the wireless intelligence team.",
+    "date": "2026-10-22",
+    "category": "People",
+    "summary": "[Demo] A new PhD researcher has joined the wireless intelligence team.",
+    "relatedMembers": [
+      "2006"
+    ],
+    "relatedPublications": [],
+    "featured": true,
+    "isMock": true
+  },
+  {
+    "id": 803,
+    "title": "[Demo] A visiting scholar will give a seminar on edge learning.",
+    "date": "2026-10-08",
+    "category": "Events",
+    "summary": "[Demo] A visiting scholar will give a seminar on edge learning.",
+    "relatedMembers": [
+      "2017"
+    ],
+    "relatedPublications": [],
+    "featured": false,
+    "isMock": true,
+    "links": [
+      {
+        "label": "Seminar details",
+        "url": "/talks#talk-901"
+      }
+    ]
+  },
+  {
+    "id": 804,
+    "title": "[Demo] A doctoral researcher has received an example research fellowship.",
+    "date": "2026-09-18",
+    "category": "Resources",
+    "summary": "[Demo] A doctoral researcher has received an example research fellowship.",
+    "relatedMembers": [
+      "2007"
+    ],
+    "relatedPublications": [],
+    "featured": true,
+    "isMock": true
+  },
+  {
+    "id": 805,
+    "title": "[Demo] An example project has received funding for energy-aware networks.",
+    "date": "2026-08-28",
+    "category": "People",
+    "summary": "[Demo] An example project has received funding for energy-aware networks.",
+    "relatedMembers": [],
+    "relatedPublications": [],
+    "featured": false,
+    "isMock": true,
+    "links": [
+      {
+        "label": "Project overview",
+        "url": "/funding#project-701"
+      }
+    ]
+  },
+  {
+    "id": 806,
+    "title": "[Demo] A lab member has received an example early-career research award.",
+    "date": "2026-07-16",
+    "category": "Events",
+    "summary": "[Demo] A lab member has received an example early-career research award.",
+    "relatedMembers": [
+      "2003"
+    ],
+    "relatedPublications": [],
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 807,
+    "title": "[Demo] Two visiting researchers have joined the lab for a short exchange.",
+    "date": "2026-05-20",
+    "category": "Research",
+    "summary": "[Demo] Two visiting researchers have joined the lab for a short exchange.",
+    "relatedMembers": [
+      "2017",
+      "2018"
+    ],
+    "relatedPublications": [],
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 808,
+    "title": "[Demo] Registration is open for an example research software workshop.",
+    "date": "2026-03-12",
+    "category": "Resources",
+    "summary": "[Demo] Registration is open for an example research software workshop.",
+    "relatedMembers": [],
+    "relatedPublications": [],
+    "featured": false,
+    "isMock": true,
+    "links": [
+      {
+        "label": "Workshop information",
+        "url": "/talks#talk-907"
+      }
+    ]
+  },
+  {
+    "id": "pi-news-9",
+    "title": "CLAIRE selected for AI and HPC funding",
+    "date": "2026-01-20",
+    "summary": "CLAIRE, a collaboration with Hydrosat, has been selected for funding through the joint AI-HPC BRIDGES call. The project applies AI and high-performance computing to Earth observation imagery.",
+    "category": "Funding",
+    "externalLink": "https://www.fnr.lu/results-hpc-ai-bridges-joint-fnr-meco-luxinnovation-call/",
+    "links": [
+      {
+        "label": "telecomailab.uni.lu",
+        "url": "https://telecomailab.uni.lu/"
+      }
+    ],
+    "relatedMembers": [],
+    "relatedPublications": [],
+    "featured": true,
+    "isMock": false
+  },
+  {
+    "id": "pi-news-10",
+    "title": "BrainSat receives a Marie Speyer Excellence Grant",
+    "date": "2024-06-07",
+    "summary": "Flor Ortiz received a Marie Speyer Excellence Grant for BrainSat, supporting research into energy-efficient satellite processing. BrainSat is listed among the projects associated with the lab research themes.",
+    "category": "Award",
+    "externalLink": "https://www.uni.lu/en/news/first-marie-speyer-grants-awarded-to-outstanding-women-researchers/",
+    "links": [
+      {
+        "label": "telecomailab.uni.lu",
+        "url": "https://telecomailab.uni.lu/research/"
+      }
+    ],
+    "relatedMembers": [],
+    "relatedPublications": [],
+    "featured": false,
+    "isMock": false
+  }
+]

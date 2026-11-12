@@ -9,7 +9,7 @@ interface Props {
 const { title, people } = Astro.props;
 ---
 
-<section class="mb-14">
+<section id={title.toLowerCase().replace(/[^a-z0-9]+/g, "-")} class="mb-14 scroll-mt-24">
   <h2
     class="mb-8 border-b border-slate-200 pb-2 font-serif text-2xl text-slate-900"
   >

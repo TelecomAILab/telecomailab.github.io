@@ -2,7 +2,7 @@
 image: ../../assets/figures/sample-figure.png
 paper: sample-2024-network
 caption: "Sample figure caption — replace with your own. This is a generated placeholder image."
-citation: "Doe J et al. Example Journal (2024)."
+citation: "Chen M et al. Example Journal of Communication Systems (2024). Demo figure."
 license: CC0
 rightsConfirmed: true
 order: 1

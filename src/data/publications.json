@@ -1,0 +1,1651 @@
+[
+  {
+    "id": "sample-2024-network",
+    "title": "[Demo] Learning to schedule energy-efficient wireless networks",
+    "authors": [
+      {
+        "name": "Chen M",
+        "personId": 1001,
+        "coFirst": true,
+        "contributions": [
+          "Methodology",
+          "Software"
+        ]
+      },
+      {
+        "name": "Idris A",
+        "personId": 1010,
+        "coFirst": true
+      },
+      {
+        "name": "Weiss N",
+        "personId": 1010
+      },
+      {
+        "name": "Doe J",
+        "personId": 1010,
+        "corresponding": true,
+        "email": "demo-jane@example.com",
+        "contributions": [
+          "Supervision",
+          "Writing – review and editing"
+        ],
+        "coSenior": true
+      },
+      {
+        "name": "External Demo Collaborator 1"
+      }
+    ],
+    "year": 2024,
+    "publicationType": "journal-article",
+    "venue": "Example Journal of Communication Systems",
+    "journalName": "Example Journal of Communication Systems",
+    "volume": "1",
+    "issue": "1",
+    "pages": "101–110",
+    "publisher": "Example Academic Press",
+    "doi": "10.0000/telecomai.demo.2024.sample-2024-network",
+    "abstract": "This demo study explores learning to schedule energy-efficient wireless networks using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "keywords": [
+      "wireless networks",
+      "satellite systems",
+      "synthetic evaluation"
+    ],
+    "areas": [
+      "topic-one",
+      "topic-three"
+    ],
+    "citationCount": 84,
+    "pdfUrl": "/files/publications/mock-paper.pdf",
+    "codeUrl": "/files/resources/demo-scheduler.js",
+    "projectUrl": "/mare",
+    "openAccess": true,
+    "featured": true,
+    "isMock": true,
+    "bibtex": "@article{telecomaisample-2024-network,\n  author = {{Chen M} and {Idris A} and {Weiss N} and {Doe J} and {External Demo Collaborator 1}},\n  title = {[Demo] Learning to schedule energy-efficient wireless networks},\n  year = {2024},\n  journal = {Example Journal of Communication Systems},\n  publisher = {Example Academic Press},\n  volume = {1},\n  number = {1},\n  pages = {101--110},\n  doi = {10.0000/telecomai.demo.2024.sample-2024-network}\n}",
+    "image": "../assets/research/wireless.svg",
+    "imageAlt": "Concept illustration for this demonstration publication"
+  },
+  {
+    "id": 1001,
+    "title": "[Demo] Cloud-edge intelligence for adaptive radio access",
+    "authors": [
+      {
+        "name": "Martin L"
+      },
+      {
+        "name": "Costa S"
+      },
+      {
+        "name": "Hassan L"
+      },
+      {
+        "name": "Doe J",
+        "personId": 1010,
+        "corresponding": true,
+        "email": "demo-jane@example.com",
+        "contributions": [
+          "Supervision",
+          "Writing – review and editing"
+        ]
+      }
+    ],
+    "year": 2026,
+    "publicationType": "journal-article",
+    "venue": "Example Journal of Communication Systems",
+    "journalName": "Example Journal of Communication Systems",
+    "volume": "2",
+    "issue": "2",
+    "pages": "111–120",
+    "publisher": "Example Academic Press",
+    "doi": "10.0000/telecomai.demo.2026.1001",
+    "abstract": "This demo study explores cloud-edge intelligence for adaptive radio access using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "keywords": [
+      "wireless networks",
+      "edge intelligence",
+      "synthetic evaluation"
+    ],
+    "areas": [
+      "topic-two",
+      "methods"
+    ],
+    "citationCount": 0,
+    "pdfUrl": "/files/publications/mock-paper.pdf",
+    "projectUrl": "/mare",
+    "slidesUrl": "/files/presentations/mock-slides.pdf",
+    "openAccess": true,
+    "featured": true,
+    "isMock": true,
+    "image": "../assets/research/edge.svg",
+    "imageAlt": "Concept illustration for this demonstration publication"
+  },
+  {
+    "id": 1002,
+    "title": "[Demo] Joint beam selection for integrated satellite-terrestrial networks",
+    "authors": [
+      {
+        "name": "Roe J",
+        "personId": 1001,
+        "coFirst": true,
+        "contributions": [
+          "Methodology",
+          "Software"
+        ]
+      },
+      {
+        "name": "Rao A",
+        "personId": 1006,
+        "coFirst": true
+      },
+      {
+        "name": "Sato A",
+        "personId": 1017
+      },
+      {
+        "name": "Doe J",
+        "personId": 1004,
+        "corresponding": true,
+        "email": "demo-jane@example.com",
+        "contributions": [
+          "Supervision",
+          "Writing – review and editing"
+        ]
+      },
+      {
+        "name": "External Demo Collaborator 4"
+      }
+    ],
+    "year": 2025,
+    "publicationType": "conference-paper",
+    "venue": "Example Conference on Intelligent Communications",
+    "conferenceName": "Example Conference on Intelligent Communications",
+    "pages": "41–48",
+    "publisher": "Example Academic Press",
+    "doi": "10.0000/telecomai.demo.2025.1002",
+    "abstract": "This demo study explores joint beam selection for integrated satellite-terrestrial networks using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "keywords": [
+      "wireless networks",
+      "edge intelligence",
+      "synthetic evaluation"
+    ],
+    "areas": [
+      "methods",
+      "topic-one"
+    ],
+    "citationCount": 26,
+    "pdfUrl": "/files/publications/mock-paper.pdf",
+    "codeUrl": "/files/resources/demo-scheduler.js",
+    "projectUrl": "/mare",
+    "slidesUrl": "/files/presentations/mock-slides.pdf",
+    "openAccess": true,
+    "featured": true,
+    "isMock": true,
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for this demonstration publication"
+  },
+  {
+    "id": 1003,
+    "title": "[Demo] Practical evaluation of shared spectrum learning",
+    "authors": [
+      {
+        "name": "Laurent E",
+        "personId": 2007
+      },
+      {
+        "name": "Tran M",
+        "personId": 2008
+      },
+      {
+        "name": "Rivera A",
+        "personId": 2019
+      },
+      {
+        "name": "Doe J",
+        "personId": 1001,
+        "corresponding": true,
+        "email": "demo-jane@example.com",
+        "contributions": [
+          "Supervision",
+          "Writing – review and editing"
+        ],
+        "coSenior": true
+      }
+    ],
+    "year": 2026,
+    "publicationType": "workshop-paper",
+    "venue": "Example Conference on Intelligent Communications",
+    "conferenceName": "Example Conference on Intelligent Communications",
+    "pages": "51–58",
+    "publisher": "Example Academic Press",
+    "doi": "10.0000/telecomai.demo.2026.1003",
+    "abstract": "This demo study explores practical evaluation of shared spectrum learning using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "keywords": [
+      "wireless networks",
+      "satellite systems",
+      "synthetic evaluation"
+    ],
+    "areas": [
+      "theory",
+      "topic-two"
+    ],
+    "citationCount": 33,
+    "pdfUrl": "/files/publications/mock-paper.pdf",
+    "projectUrl": "/mare",
+    "openAccess": true,
+    "featured": false,
+    "isMock": true,
+    "bibtex": "@inproceedings{telecomai1003,\n  author = {{Laurent E} and {Tran M} and {Rivera A} and {Doe J}},\n  title = {[Demo] Practical evaluation of shared spectrum learning},\n  year = {2026},\n  booktitle = {Example Conference on Intelligent Communications},\n  publisher = {Example Academic Press},\n  pages = {51--58},\n  doi = {10.0000/telecomai.demo.2026.1003}\n}",
+    "image": "../assets/research/theory.svg",
+    "imageAlt": "Concept illustration for this demonstration publication"
+  },
+  {
+    "id": 1005,
+    "title": "[Demo] Robust resource allocation with delayed channel feedback",
+    "authors": [
+      {
+        "name": "Weiss N",
+        "personId": 2011,
+        "coFirst": true,
+        "contributions": [
+          "Methodology",
+          "Software"
+        ]
+      },
+      {
+        "name": "Moreau D",
+        "personId": 2012,
+        "coFirst": true
+      },
+      {
+        "name": "Santos G",
+        "personId": 2022
+      },
+      {
+        "name": "Doe J",
+        "personId": 1004,
+        "corresponding": true,
+        "email": "demo-jane@example.com",
+        "contributions": [
+          "Supervision",
+          "Writing – review and editing"
+        ]
+      },
+      {
+        "name": "External Demo Collaborator 7"
+      }
+    ],
+    "year": 2026,
+    "publicationType": "preprint",
+    "venue": "Demo preprint series",
+    "publisher": "Example Academic Press",
+    "doi": "10.0000/telecomai.demo.2026.1005",
+    "arxivId": "2601.90006",
+    "abstract": "This demo study explores robust resource allocation with delayed channel feedback using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "keywords": [
+      "wireless networks",
+      "satellite systems",
+      "synthetic evaluation"
+    ],
+    "areas": [
+      "topic-two",
+      "methods"
+    ],
+    "citationCount": 84,
+    "pdfUrl": "/files/publications/mock-paper.pdf",
+    "codeUrl": "/files/resources/demo-scheduler.js",
+    "openAccess": true,
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 1008,
+    "title": "[Demo] Optimization foundations for reliable wireless systems",
+    "authors": [
+      {
+        "name": "Sato A",
+        "personId": 2017,
+        "coFirst": true,
+        "contributions": [
+          "Methodology",
+          "Software"
+        ]
+      },
+      {
+        "name": "Becker I",
+        "personId": 2018,
+        "coFirst": true
+      },
+      {
+        "name": "Park L",
+        "personId": 2005
+      },
+      {
+        "name": "Doe J",
+        "personId": 1004,
+        "corresponding": true,
+        "email": "demo-jane@example.com",
+        "contributions": [
+          "Supervision",
+          "Writing – review and editing"
+        ]
+      },
+      {
+        "name": "External Demo Collaborator 10"
+      }
+    ],
+    "year": 2020,
+    "publicationType": "book-chapter",
+    "venue": "Example Handbook of Intelligent Networks",
+    "publisher": "Example Academic Press",
+    "doi": "10.0000/telecomai.demo.2020.1008",
+    "abstract": "This demo study explores optimization foundations for reliable wireless systems using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "keywords": [
+      "wireless networks",
+      "edge intelligence",
+      "synthetic evaluation"
+    ],
+    "areas": [
+      "theory",
+      "topic-two"
+    ],
+    "citationCount": 68,
+    "pdfUrl": "/files/publications/mock-paper.pdf",
+    "codeUrl": "/files/resources/demo-scheduler.js",
+    "projectUrl": "/mare",
+    "slidesUrl": "/files/presentations/mock-slides.pdf",
+    "openAccess": true,
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 1009,
+    "title": "[Demo] Open challenges in energy-aware edge intelligence",
+    "authors": [
+      {
+        "name": "Blake A",
+        "personId": 1002
+      },
+      {
+        "name": "Novak H",
+        "personId": 2021
+      },
+      {
+        "name": "Tran M",
+        "personId": 2008
+      },
+      {
+        "name": "Doe J",
+        "personId": 1004,
+        "corresponding": true,
+        "email": "demo-jane@example.com",
+        "contributions": [
+          "Supervision",
+          "Writing – review and editing"
+        ]
+      }
+    ],
+    "year": 2025,
+    "publicationType": "review-article",
+    "venue": "Example Journal of Communication Systems",
+    "journalName": "Example Journal of Communication Systems",
+    "volume": "12",
+    "issue": "4",
+    "pages": "211–220",
+    "publisher": "Example Academic Press",
+    "doi": "10.0000/telecomai.demo.2025.1009",
+    "abstract": "This demo study explores open challenges in energy-aware edge intelligence using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "keywords": [
+      "wireless networks",
+      "edge intelligence",
+      "synthetic evaluation"
+    ],
+    "areas": [
+      "topic-two",
+      "methods"
+    ],
+    "citationCount": 82,
+    "pdfUrl": "/files/publications/mock-paper.pdf",
+    "codeUrl": "/files/resources/demo-scheduler.js",
+    "projectUrl": "/mare",
+    "slidesUrl": "/files/presentations/mock-slides.pdf",
+    "openAccess": false,
+    "featured": false,
+    "isMock": true
+  },
+  {
+    "id": 1010,
+    "title": "[Demo] Wireless learning benchmark: a technical report and evaluation guide",
+    "authors": [
+      {
+        "name": "Santos G",
+        "personId": 2022,
+        "coFirst": true,
+        "contributions": [
+          "Methodology",
+          "Software"
+        ]
+      },
+      {
+        "name": "Chen M",
+        "personId": 1001,
+        "coFirst": true
+      },
+      {
+        "name": "Kim S",
+        "personId": 2010
+      },
+      {
+        "name": "Doe J",
+        "personId": 1004,
+        "corresponding": true,
+        "email": "demo-jane@example.com",
+        "contributions": [
+          "Supervision",
+          "Writing – review and editing"
+        ],
+        "coSenior": true
+      },
+      {
+        "name": "External Demo Collaborator 13"
+      }
+    ],
+    "year": 2024,
+    "publicationType": "other",
+    "venue": "Example Journal of Communication Systems",
+    "publisher": "Example Academic Press",
+    "doi": "10.0000/telecomai.demo.2024.1010",
+    "abstract": "This demo study explores wireless learning benchmark: a technical report and evaluation guide using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "keywords": [
+      "wireless networks",
+      "satellite systems",
+      "synthetic evaluation"
+    ],
+    "areas": [
+      "topic-three",
+      "theory"
+    ],
+    "citationCount": 84,
+    "pdfUrl": "/files/publications/mock-paper.pdf",
+    "codeUrl": "/files/resources/demo-scheduler.js",
+    "projectUrl": "/mare",
+    "openAccess": true,
+    "featured": false,
+    "isMock": true,
+    "bibtex": "@misc{telecomai1010,\n  author = {{Santos G} and {Chen M} and {Kim S} and {Doe J} and {External Demo Collaborator 13}},\n  title = {[Demo] Wireless learning benchmark: a technical report and evaluation guide},\n  year = {2024},\n  howpublished = {Example Journal of Communication Systems},\n  publisher = {Example Academic Press},\n  doi = {10.0000/telecomai.demo.2024.1010}\n}"
+  },
+  {
+    "id": "le2026transformer",
+    "title": "Transformer Meets Gated Residual Networks to Enhance PICU's PPG Artifact Detection Informed by Mutual Information Neural Estimation",
+    "authors": [
+      {
+        "name": "Thanh-Dung Le"
+      },
+      {
+        "name": "Clara Macabiau"
+      },
+      {
+        "name": "Kevin Albert"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Philippe Jouvet"
+      },
+      {
+        "name": "Rita Noumeir"
+      }
+    ],
+    "year": 2026,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Transactions on Neural Networks and Learning Systems",
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "37",
+    "issue": "8",
+    "pages": "3928-3942",
+    "doi": "10.1109/tnnls.2026.3656756",
+    "pmid": "41650422",
+    "url": "https://doi.org/10.1109/tnnls.2026.3656756",
+    "pdfUrl": "https://orbilu.uni.lu/bitstream/10993/61935/1/IEEE_TNNLS_GRNTransformer_MINE_Minor_Cleaned.pdf",
+    "bibtex": "@article{le2026transformer,\n  title = {Transformer Meets Gated Residual Networks to Enhance PICU's PPG Artifact Detection Informed by Mutual Information Neural Estimation},\n  author = {Thanh-Dung Le and Clara Macabiau and Kevin Albert and Symeon Chatzinotas and Philippe Jouvet and Rita Noumeir},\n  year = {2026},\n  journal = {IEEE Transactions on Neural Networks and Learning Systems},\n  doi = {10.1109/tnnls.2026.3656756},\n  volume = {37},\n  number = {8},\n  pages = {3928--3942}\n}",
+    "keywords": [
+      "Transformers",
+      "Gated residual networks",
+      "Mutual information",
+      "Biomedical signal classification"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/61935",
+      "https://pubmed.ncbi.nlm.nih.gov/41650422/"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "nguyen2025semantic",
+    "title": "A Semantic-Loss Function Modeling Framework With Task-Oriented Machine Learning Perspectives",
+    "authors": [
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 1004
+      },
+      {
+        "name": "Thanh-Dung Le"
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 1000
+      },
+      {
+        "name": "Hong-Fu Chou"
+      },
+      {
+        "name": "Geoffrey Eappen"
+      },
+      {
+        "name": "Duc-Dung Tran",
+        "personId": 1005
+      },
+      {
+        "name": "Hung Nguyen-Kha",
+        "personId": 2001
+      },
+      {
+        "name": "Prabhu Thiruvasagam"
+      },
+      {
+        "name": "Luis M. Garces-Socarras"
+      },
+      {
+        "name": "Jorge L. Gonzalez-Rios"
+      },
+      {
+        "name": "Juan C. Merlano-Duncan"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2025,
+    "publicationType": "conference-paper",
+    "conferenceName": "2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)",
+    "venue": "2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)",
+    "publisher": "IEEE",
+    "pages": "1-6",
+    "doi": "10.1109/icmlcn64995.2025.11140499",
+    "url": "https://doi.org/10.1109/icmlcn64995.2025.11140499",
+    "pdfUrl": "https://orbilu.uni.lu/bitstream/10993/66123/1/A_Semantic-Loss_Function_Modeling_Framework_With_Task-Oriented_Machine_Learning_Perspectives.pdf",
+    "bibtex": "@inproceedings{nguyen2025semantic,\n  title = {A Semantic-Loss Function Modeling Framework With Task-Oriented Machine Learning Perspectives},\n  author = {Ti Ti Nguyen and Thanh-Dung Le and Vu Nguyen Ha and Hong-Fu Chou and Geoffrey Eappen and Duc-Dung Tran and Hung Nguyen-Kha and Prabhu Thiruvasagam and Luis M. Garces-Socarras and Jorge L. Gonzalez-Rios and Juan C. Merlano-Duncan and Symeon Chatzinotas},\n  year = {2025},\n  booktitle = {2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)},\n  doi = {10.1109/icmlcn64995.2025.11140499},\n  pages = {1--6}\n}",
+    "keywords": [
+      "Semantic communication",
+      "Semantic loss",
+      "Task-oriented machine learning",
+      "Earth observation"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/66123"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "tran2025energy",
+    "title": "Energy-Efficient NOMA for 5G Heterogeneous Services: A Joint Optimization and Deep Reinforcement Learning Approach",
+    "authors": [
+      {
+        "name": "Duc-Dung Tran",
+        "personId": 1005
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 1000
+      },
+      {
+        "name": "Shree Krishna Sharma"
+      },
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 1004
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Petar Popovski"
+      }
+    ],
+    "year": 2025,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Transactions on Communications",
+    "venue": "IEEE Transactions on Communications",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "73",
+    "issue": "4",
+    "pages": "2448-2465",
+    "doi": "10.1109/tcomm.2024.3476083",
+    "url": "https://doi.org/10.1109/tcomm.2024.3476083",
+    "bibtex": "@article{tran2025energy,\n  title = {Energy-Efficient NOMA for 5G Heterogeneous Services: A Joint Optimization and Deep Reinforcement Learning Approach},\n  author = {Duc-Dung Tran and Vu Nguyen Ha and Shree Krishna Sharma and Ti Ti Nguyen and Symeon Chatzinotas and Petar Popovski},\n  year = {2025},\n  journal = {IEEE Transactions on Communications},\n  doi = {10.1109/tcomm.2024.3476083},\n  volume = {73},\n  number = {4},\n  pages = {2448--2465}\n}",
+    "keywords": [
+      "Deep reinforcement learning",
+      "Energy efficiency",
+      "NOMA"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/62410"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "adam2025generative",
+    "title": "Generative AI for non-terrestrial networks: design, applications, and challenges",
+    "authors": [
+      {
+        "name": "Abuzar B. M. Adam"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Mostafa Samy"
+      },
+      {
+        "name": "Almoatssimbillah Saifaldawla"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2025,
+    "publicationType": "journal-article",
+    "journalName": "Journal on Wireless Communications and Networking",
+    "venue": "Journal on Wireless Communications and Networking",
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "2026",
+    "issue": "1",
+    "doi": "10.1186/s13638-025-02549-7",
+    "url": "https://doi.org/10.1186/s13638-025-02549-7",
+    "pdfUrl": "https://orbilu.uni.lu/bitstream/10993/67047/1/s13638-025-02549-7.pdf",
+    "bibtex": "@article{adam2025generative,\n  title = {Generative AI for non-terrestrial networks: design, applications, and challenges},\n  author = {Abuzar B. M. Adam and Eva Lagunas and Mostafa Samy and Almoatssimbillah Saifaldawla and Symeon Chatzinotas},\n  year = {2025},\n  journal = {Journal on Wireless Communications and Networking},\n  doi = {10.1186/s13638-025-02549-7},\n  volume = {2026},\n  number = {1}\n}",
+    "keywords": [
+      "Generative AI",
+      "Diffusion models",
+      "Non-terrestrial networks"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/67047"
+    ],
+    "openAccess": true,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "adam2025gs3d",
+    "title": "GS3D: Signal Recovery in 3-D Wireless Networks With Gaussian Splatting-Synergized Stable Diffusion",
+    "authors": [
+      {
+        "name": "Abuzar B. M. Adam"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Mostafa Samy"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2025,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Wireless Communications Letters",
+    "venue": "IEEE Wireless Communications Letters",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "14",
+    "issue": "7",
+    "pages": "2019-2023",
+    "doi": "10.1109/lwc.2025.3561522",
+    "url": "https://doi.org/10.1109/lwc.2025.3561522",
+    "bibtex": "@article{adam2025gs3d,\n  title = {GS3D: Signal Recovery in 3-D Wireless Networks With Gaussian Splatting-Synergized Stable Diffusion},\n  author = {Abuzar B. M. Adam and Eva Lagunas and Mostafa Samy and Symeon Chatzinotas},\n  year = {2025},\n  journal = {IEEE Wireless Communications Letters},\n  doi = {10.1109/lwc.2025.3561522},\n  volume = {14},\n  number = {7},\n  pages = {2019--2023}\n}",
+    "keywords": [
+      "Stable diffusion",
+      "Gaussian splatting",
+      "Signal recovery"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/64887"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "kavehmadavani2025intelligent",
+    "title": "Intelligent User Association and Scheduling in Open RAN: A Hierarchical Optimization Framework",
+    "authors": [
+      {
+        "name": "Fatemeh Kavehmadavani"
+      },
+      {
+        "name": "Thang X. Vu"
+      },
+      {
+        "name": "Van-Dinh Nguyen"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2025,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Transactions on Communications",
+    "venue": "IEEE Transactions on Communications",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "73",
+    "issue": "11",
+    "pages": "11574-11589",
+    "doi": "10.1109/tcomm.2025.3592584",
+    "url": "https://doi.org/10.1109/tcomm.2025.3592584",
+    "bibtex": "@article{kavehmadavani2025intelligent,\n  title = {Intelligent User Association and Scheduling in Open RAN: A Hierarchical Optimization Framework},\n  author = {Fatemeh Kavehmadavani and Thang X. Vu and Van-Dinh Nguyen and Symeon Chatzinotas},\n  year = {2025},\n  journal = {IEEE Transactions on Communications},\n  doi = {10.1109/tcomm.2025.3592584},\n  volume = {73},\n  number = {11},\n  pages = {11574--11589}\n}",
+    "keywords": [
+      "Deep reinforcement learning",
+      "Open RAN",
+      "User association"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/66093"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "eappen2025neuromorphic",
+    "title": "Neuromorphic Models for Energy-Efficient Onboard Interference Detection in Satellite Systems",
+    "authors": [
+      {
+        "name": "Geoffrey Eappen"
+      },
+      {
+        "name": "Saed Daoud"
+      },
+      {
+        "name": "Nicolas Skatchkovsky"
+      },
+      {
+        "name": "Flor Ortiz"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Wallace A. Martins"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2025,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Transactions on Aerospace and Electronic Systems",
+    "venue": "IEEE Transactions on Aerospace and Electronic Systems",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "61",
+    "issue": "6",
+    "pages": "17682-17702",
+    "doi": "10.1109/taes.2025.3608092",
+    "url": "https://doi.org/10.1109/taes.2025.3608092",
+    "bibtex": "@article{eappen2025neuromorphic,\n  title = {Neuromorphic Models for Energy-Efficient Onboard Interference Detection in Satellite Systems},\n  author = {Geoffrey Eappen and Saed Daoud and Nicolas Skatchkovsky and Flor Ortiz and Eva Lagunas and Wallace A. Martins and Symeon Chatzinotas},\n  year = {2025},\n  journal = {IEEE Transactions on Aerospace and Electronic Systems},\n  doi = {10.1109/taes.2025.3608092},\n  volume = {61},\n  number = {6},\n  pages = {17682--17702}\n}",
+    "keywords": [
+      "Spiking neural networks",
+      "Neuromorphic computing",
+      "Interference detection"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/66701"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "le2025semantic",
+    "title": "Semantic Knowledge Distillation for Onboard Satellite Earth Observation Image Classification",
+    "authors": [
+      {
+        "name": "Thanh-Dung Le"
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 1000
+      },
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 1004
+      },
+      {
+        "name": "Geoffrey Eappen"
+      },
+      {
+        "name": "Prabhu Thiruvasagam"
+      },
+      {
+        "name": "Hong-fu Chou"
+      },
+      {
+        "name": "Duc-Dung Tran",
+        "personId": 1005
+      },
+      {
+        "name": "Luis M. Garces-Socarras"
+      },
+      {
+        "name": "Jorge L. Gonzalez-Rios"
+      },
+      {
+        "name": "Juan Carlos Merlano-Duncan"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2025,
+    "publicationType": "conference-paper",
+    "conferenceName": "2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)",
+    "venue": "2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)",
+    "publisher": "IEEE",
+    "pages": "1-6",
+    "doi": "10.1109/icmlcn64995.2025.11140497",
+    "url": "https://doi.org/10.1109/icmlcn64995.2025.11140497",
+    "bibtex": "@inproceedings{le2025semantic,\n  title = {Semantic Knowledge Distillation for Onboard Satellite Earth Observation Image Classification},\n  author = {Thanh-Dung Le and Vu Nguyen Ha and Ti Ti Nguyen and Geoffrey Eappen and Prabhu Thiruvasagam and Hong-fu Chou and Duc-Dung Tran and Luis M. Garces-Socarras and Jorge L. Gonzalez-Rios and Juan Carlos Merlano-Duncan and Symeon Chatzinotas},\n  year = {2025},\n  booktitle = {2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)},\n  doi = {10.1109/icmlcn64995.2025.11140497},\n  pages = {1--6}\n}",
+    "keywords": [
+      "Knowledge distillation",
+      "Efficient vision models",
+      "Earth observation"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/66268"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "he2025spatio",
+    "title": "Spatio-Temporal Predictive Learning Using Crossover Attention for Communications and Networking Applications",
+    "authors": [
+      {
+        "name": "Ke He"
+      },
+      {
+        "name": "Thang Xuan Vu"
+      },
+      {
+        "name": "Lisheng Fan"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Björn Ottersten"
+      }
+    ],
+    "year": 2025,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Transactions on Machine Learning in Communications and Networking",
+    "venue": "IEEE Transactions on Machine Learning in Communications and Networking",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "3",
+    "pages": "479-490",
+    "doi": "10.1109/tmlcn.2025.3555975",
+    "url": "https://doi.org/10.1109/tmlcn.2025.3555975",
+    "pdfUrl": "https://orbilu.uni.lu/bitstream/10993/66560/1/Spatio-Temporal_Predictive_Learning_Using_Crossover_Attention_for_Communications_and_Networking_Applications.pdf",
+    "bibtex": "@article{he2025spatio,\n  title = {Spatio-Temporal Predictive Learning Using Crossover Attention for Communications and Networking Applications},\n  author = {Ke He and Thang Xuan Vu and Lisheng Fan and Symeon Chatzinotas and Björn Ottersten},\n  year = {2025},\n  journal = {IEEE Transactions on Machine Learning in Communications and Networking},\n  doi = {10.1109/tmlcn.2025.3555975},\n  volume = {3},\n  pages = {479--490}\n}",
+    "keywords": [
+      "Attention mechanisms",
+      "Time-series forecasting",
+      "Transformers"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/66560"
+    ],
+    "openAccess": true,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "le2025impact",
+    "title": "The Impact of LoRA Adapters on LLMs for Clinical Text Classification Under Computational and Data Constraints",
+    "authors": [
+      {
+        "name": "Thanh-Dung Le"
+      },
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 1004
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 1000
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Philippe Jouvet"
+      },
+      {
+        "name": "Rita Noumeir"
+      }
+    ],
+    "year": 2025,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Access",
+    "venue": "IEEE Access",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "13",
+    "pages": "109365-109377",
+    "doi": "10.1109/access.2025.3582037",
+    "url": "https://doi.org/10.1109/access.2025.3582037",
+    "bibtex": "@article{le2025impact,\n  title = {The Impact of LoRA Adapters on LLMs for Clinical Text Classification Under Computational and Data Constraints},\n  author = {Thanh-Dung Le and Ti Ti Nguyen and Vu Nguyen Ha and Symeon Chatzinotas and Philippe Jouvet and Rita Noumeir},\n  year = {2025},\n  journal = {IEEE Access},\n  doi = {10.1109/access.2025.3582037},\n  volume = {13},\n  pages = {109365--109377}\n}",
+    "keywords": [
+      "Large language models",
+      "Parameter-efficient fine-tuning",
+      "Clinical NLP"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/66269"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "saifaldawla2024convolutional",
+    "title": "Convolutional Autoencoders for Non-Geostationary Satellite Interference Detection",
+    "authors": [
+      {
+        "name": "Almoatssimbillah Saifaldawla"
+      },
+      {
+        "name": "Flor Ortiz"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2024,
+    "publicationType": "workshop-paper",
+    "conferenceName": "2024 IEEE International Conference on Communications Workshops (ICC Workshops)",
+    "venue": "2024 IEEE International Conference on Communications Workshops (ICC Workshops)",
+    "publisher": "IEEE",
+    "pages": "1334-1339",
+    "doi": "10.1109/iccworkshops59551.2024.10615457",
+    "url": "https://doi.org/10.1109/iccworkshops59551.2024.10615457",
+    "bibtex": "@inproceedings{saifaldawla2024convolutional,\n  title = {Convolutional Autoencoders for Non-Geostationary Satellite Interference Detection},\n  author = {Almoatssimbillah Saifaldawla and Flor Ortiz and Eva Lagunas and Symeon Chatzinotas},\n  year = {2024},\n  booktitle = {2024 IEEE International Conference on Communications Workshops (ICC Workshops)},\n  doi = {10.1109/iccworkshops59551.2024.10615457},\n  pages = {1334--1339}\n}",
+    "keywords": [
+      "Convolutional autoencoders",
+      "Unsupervised learning",
+      "Interference detection"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/60597"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "khan2024deep",
+    "title": "Deep Reinforcement Learning for Backscatter Communications: Augmenting Intelligence in Future Internet of Things",
+    "authors": [
+      {
+        "name": "Wali Ullah Khan"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Zain Ali"
+      },
+      {
+        "name": "Asad Mahmood"
+      },
+      {
+        "name": "Chandan Kumar Sheemar"
+      },
+      {
+        "name": "Manzoor Ahmed"
+      },
+      {
+        "name": "Kapal Dev"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Björn Ottersten"
+      }
+    ],
+    "year": 2024,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Internet of Things Magazine",
+    "venue": "IEEE Internet of Things Magazine",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "7",
+    "issue": "5",
+    "pages": "72-78",
+    "doi": "10.1109/iotm.001.2400003",
+    "url": "https://doi.org/10.1109/iotm.001.2400003",
+    "bibtex": "@article{khan2024deep,\n  title = {Deep Reinforcement Learning for Backscatter Communications: Augmenting Intelligence in Future Internet of Things},\n  author = {Wali Ullah Khan and Eva Lagunas and Zain Ali and Asad Mahmood and Chandan Kumar Sheemar and Manzoor Ahmed and Kapal Dev and Symeon Chatzinotas and Björn Ottersten},\n  year = {2024},\n  journal = {IEEE Internet of Things Magazine},\n  doi = {10.1109/iotm.001.2400003},\n  volume = {7},\n  number = {5},\n  pages = {72--78}\n}",
+    "keywords": [
+      "Deep reinforcement learning",
+      "Backscatter communications",
+      "Internet of Things"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/62992"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "adam2024diffusion",
+    "title": "Diffusion Model-Based Signal Recovery in Coexisting Satellite and Terrestrial Networks",
+    "authors": [
+      {
+        "name": "Abuzar B. M. Adam"
+      },
+      {
+        "name": "Mostafa Samy"
+      },
+      {
+        "name": "Carla E. García"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2024,
+    "publicationType": "conference-paper",
+    "conferenceName": "2024 IEEE Wireless Communications and Networking Conference (WCNC)",
+    "venue": "2024 IEEE Wireless Communications and Networking Conference (WCNC)",
+    "publisher": "IEEE",
+    "pages": "1-5",
+    "doi": "10.1109/wcnc57260.2024.10570763",
+    "url": "https://doi.org/10.1109/wcnc57260.2024.10570763",
+    "pdfUrl": "https://orbilu.uni.lu/bitstream/10993/60767/1/WCNC_2024_Abuzar.pdf",
+    "bibtex": "@inproceedings{adam2024diffusion,\n  title = {Diffusion Model-Based Signal Recovery in Coexisting Satellite and Terrestrial Networks},\n  author = {Abuzar B. M. Adam and Mostafa Samy and Carla E. García and Eva Lagunas and Symeon Chatzinotas},\n  year = {2024},\n  booktitle = {2024 IEEE Wireless Communications and Networking Conference (WCNC)},\n  doi = {10.1109/wcnc57260.2024.10570763},\n  pages = {1--5}\n}",
+    "keywords": [
+      "Diffusion models",
+      "Signal recovery",
+      "Satellite-terrestrial networks"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/60767"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "saifaldawla2024genai",
+    "title": "GenAI-Based Models for NGSO Satellites Interference Detection",
+    "authors": [
+      {
+        "name": "Almoatssimbillah Saifaldawla"
+      },
+      {
+        "name": "Flor Ortiz"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Abuzar B. M. Adam"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2024,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Transactions on Machine Learning in Communications and Networking",
+    "venue": "IEEE Transactions on Machine Learning in Communications and Networking",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "2",
+    "pages": "904-924",
+    "doi": "10.1109/tmlcn.2024.3418933",
+    "url": "https://doi.org/10.1109/tmlcn.2024.3418933",
+    "bibtex": "@article{saifaldawla2024genai,\n  title = {GenAI-Based Models for NGSO Satellites Interference Detection},\n  author = {Almoatssimbillah Saifaldawla and Flor Ortiz and Eva Lagunas and Abuzar B. M. Adam and Symeon Chatzinotas},\n  year = {2024},\n  journal = {IEEE Transactions on Machine Learning in Communications and Networking},\n  doi = {10.1109/tmlcn.2024.3418933},\n  volume = {2},\n  pages = {904--924}\n}",
+    "keywords": [
+      "Generative AI",
+      "Interference detection",
+      "Satellite networks"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/61484"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "tran2023hybrid",
+    "title": "A Hybrid Optimization and Deep RL Approach for Resource Allocation in Semi-GF NOMA Networks",
+    "authors": [
+      {
+        "name": "Duc-Dung Tran",
+        "personId": 1005
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 1000
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 1004
+      }
+    ],
+    "year": 2023,
+    "publicationType": "conference-paper",
+    "conferenceName": "2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)",
+    "venue": "2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)",
+    "publisher": "IEEE",
+    "pages": "1-6",
+    "doi": "10.1109/pimrc56721.2023.10293810",
+    "url": "https://doi.org/10.1109/pimrc56721.2023.10293810",
+    "bibtex": "@inproceedings{tran2023hybrid,\n  title = {A Hybrid Optimization and Deep RL Approach for Resource Allocation in Semi-GF NOMA Networks},\n  author = {Duc-Dung Tran and Vu Nguyen Ha and Symeon Chatzinotas and Ti Ti Nguyen},\n  year = {2023},\n  booktitle = {2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)},\n  doi = {10.1109/pimrc56721.2023.10293810},\n  pages = {1--6}\n}",
+    "keywords": [
+      "Deep reinforcement learning",
+      "Resource allocation",
+      "NOMA"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/58076"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "tran2023multi",
+    "title": "Multi-Agent DRL Approach for Energy-Efficient Resource Allocation in URLLC-Enabled Grant-Free NOMA Systems",
+    "authors": [
+      {
+        "name": "Duc-Dung Tran"
+      },
+      {
+        "name": "Shree Krishna Sharma"
+      },
+      {
+        "name": "Vu Nguyen Ha"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Isaac Woungang"
+      }
+    ],
+    "year": 2023,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Open Journal of the Communications Society",
+    "venue": "IEEE Open Journal of the Communications Society",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "4",
+    "pages": "1470-1486",
+    "doi": "10.1109/ojcoms.2023.3291689",
+    "url": "https://doi.org/10.1109/ojcoms.2023.3291689",
+    "bibtex": "@article{tran2023multi,\n  title = {Multi-Agent DRL Approach for Energy-Efficient Resource Allocation in URLLC-Enabled Grant-Free NOMA Systems},\n  author = {Duc-Dung Tran and Shree Krishna Sharma and Vu Nguyen Ha and Symeon Chatzinotas and Isaac Woungang},\n  year = {2023},\n  journal = {IEEE Open Journal of the Communications Society},\n  doi = {10.1109/ojcoms.2023.3291689},\n  volume = {4},\n  pages = {1470--1486}\n}",
+    "keywords": [
+      "Multi-agent reinforcement learning",
+      "Resource allocation",
+      "Energy efficiency"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/58601"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "saifaldawla2023ngso",
+    "title": "NGSO-To-GSO Satellite Interference Detection Based on Autoencoder",
+    "authors": [
+      {
+        "name": "Almoatssimbillah Saifaldawla"
+      },
+      {
+        "name": "Flor G. Ortiz-Gomez"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Saed Daoud"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2023,
+    "publicationType": "conference-paper",
+    "conferenceName": "2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)",
+    "venue": "2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)",
+    "publisher": "IEEE",
+    "pages": "1-7",
+    "doi": "10.1109/pimrc56721.2023.10293839",
+    "url": "https://doi.org/10.1109/pimrc56721.2023.10293839",
+    "bibtex": "@inproceedings{saifaldawla2023ngso,\n  title = {NGSO-To-GSO Satellite Interference Detection Based on Autoencoder},\n  author = {Almoatssimbillah Saifaldawla and Flor G. Ortiz-Gomez and Eva Lagunas and Saed Daoud and Symeon Chatzinotas},\n  year = {2023},\n  booktitle = {2023 IEEE 34th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)},\n  doi = {10.1109/pimrc56721.2023.10293839},\n  pages = {1--7}\n}",
+    "keywords": [
+      "Autoencoders",
+      "Interference detection",
+      "Satellite networks"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/55631"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "mehrizi2022bayesian",
+    "title": "Bayesian Poisson Factorization With Side Information for User Interest Prediction in Hierarchical Edge-Caching Systems",
+    "authors": [
+      {
+        "name": "Sajad Mehrizi"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2022,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Open Journal of the Communications Society",
+    "venue": "IEEE Open Journal of the Communications Society",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "3",
+    "pages": "508-517",
+    "doi": "10.1109/ojcoms.2022.3158811",
+    "url": "https://doi.org/10.1109/ojcoms.2022.3158811",
+    "pdfUrl": "https://orbilu.uni.lu/bitstream/10993/53077/1/feature_based_MF_v7.pdf",
+    "bibtex": "@article{mehrizi2022bayesian,\n  title = {Bayesian Poisson Factorization With Side Information for User Interest Prediction in Hierarchical Edge-Caching Systems},\n  author = {Sajad Mehrizi and Symeon Chatzinotas},\n  year = {2022},\n  journal = {IEEE Open Journal of the Communications Society},\n  doi = {10.1109/ojcoms.2022.3158811},\n  volume = {3},\n  pages = {508--517}\n}",
+    "keywords": [
+      "Bayesian learning",
+      "Poisson matrix factorization",
+      "Recommender systems"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/53077"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "ortiz2022unsupervised",
+    "title": "Unsupervised Learning for User Scheduling in Multibeam Precoded GEO Satellite Systems",
+    "authors": [
+      {
+        "name": "Flor Ortiz"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2022,
+    "publicationType": "conference-paper",
+    "conferenceName": "2022 Joint European Conference on Networks and Communications &amp; 6G Summit (EuCNC/6G Summit)",
+    "venue": "2022 Joint European Conference on Networks and Communications &amp; 6G Summit (EuCNC/6G Summit)",
+    "publisher": "IEEE",
+    "pages": "190-195",
+    "doi": "10.1109/eucnc/6gsummit54941.2022.9815569",
+    "url": "https://doi.org/10.1109/eucnc/6gsummit54941.2022.9815569",
+    "bibtex": "@inproceedings{ortiz2022unsupervised,\n  title = {Unsupervised Learning for User Scheduling in Multibeam Precoded GEO Satellite Systems},\n  author = {Flor Ortiz and Eva Lagunas and Symeon Chatzinotas},\n  year = {2022},\n  booktitle = {2022 Joint European Conference on Networks and Communications &amp; 6G Summit (EuCNC/6G Summit)},\n  doi = {10.1109/eucnc/6gsummit54941.2022.9815569},\n  pages = {190--195}\n}",
+    "keywords": [
+      "Unsupervised learning",
+      "User clustering",
+      "Satellite scheduling"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/51241"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "wang2021completion",
+    "title": "Completion Time Minimization in NOMA Systems: Learning for Combinatorial Optimization",
+    "authors": [
+      {
+        "name": "Anyue Wang"
+      },
+      {
+        "name": "Lei Lei"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Björn Ottersten"
+      }
+    ],
+    "year": 2021,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Networking Letters",
+    "venue": "IEEE Networking Letters",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "3",
+    "issue": "1",
+    "pages": "15-18",
+    "doi": "10.1109/lnet.2021.3052891",
+    "url": "https://doi.org/10.1109/lnet.2021.3052891",
+    "bibtex": "@article{wang2021completion,\n  title = {Completion Time Minimization in NOMA Systems: Learning for Combinatorial Optimization},\n  author = {Anyue Wang and Lei Lei and Eva Lagunas and Symeon Chatzinotas and Björn Ottersten},\n  year = {2021},\n  journal = {IEEE Networking Letters},\n  doi = {10.1109/lnet.2021.3052891},\n  volume = {3},\n  number = {1},\n  pages = {15--18}\n}",
+    "keywords": [
+      "Deep learning",
+      "Combinatorial optimization",
+      "NOMA"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/45730"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "mehrizi2021trend",
+    "title": "Trend-Aware Proactive Caching via Tensor Train Decomposition: A Bayesian Viewpoint",
+    "authors": [
+      {
+        "name": "Sajad Mehrizi"
+      },
+      {
+        "name": "Thang X. Vu"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Björn Ottersten"
+      }
+    ],
+    "year": 2021,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Open Journal of the Communications Society",
+    "venue": "IEEE Open Journal of the Communications Society",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "2",
+    "pages": "975-989",
+    "doi": "10.1109/ojcoms.2021.3075071",
+    "url": "https://doi.org/10.1109/ojcoms.2021.3075071",
+    "bibtex": "@article{mehrizi2021trend,\n  title = {Trend-Aware Proactive Caching via Tensor Train Decomposition: A Bayesian Viewpoint},\n  author = {Sajad Mehrizi and Thang X. Vu and Symeon Chatzinotas and Björn Ottersten},\n  year = {2021},\n  journal = {IEEE Open Journal of the Communications Society},\n  doi = {10.1109/ojcoms.2021.3075071},\n  volume = {2},\n  pages = {975--989}\n}",
+    "keywords": [
+      "Bayesian learning",
+      "Tensor train decomposition",
+      "Predictive caching"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/48195"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "lei2020deep",
+    "title": "Deep Learning for Beam Hopping in Multibeam Satellite Systems",
+    "authors": [
+      {
+        "name": "Lei Lei"
+      },
+      {
+        "name": "Eva Lagunas"
+      },
+      {
+        "name": "Yaxiong Yuan"
+      },
+      {
+        "name": "Mirza Golam Kibria"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Björn Ottersten"
+      }
+    ],
+    "year": 2020,
+    "publicationType": "conference-paper",
+    "conferenceName": "2020 IEEE 91st Vehicular Technology Conference (VTC2020-Spring)",
+    "venue": "2020 IEEE 91st Vehicular Technology Conference (VTC2020-Spring)",
+    "publisher": "IEEE",
+    "pages": "1-5",
+    "doi": "10.1109/vtc2020-spring48590.2020.9128905",
+    "url": "https://doi.org/10.1109/vtc2020-spring48590.2020.9128905",
+    "bibtex": "@inproceedings{lei2020deep,\n  title = {Deep Learning for Beam Hopping in Multibeam Satellite Systems},\n  author = {Lei Lei and Eva Lagunas and Yaxiong Yuan and Mirza Golam Kibria and Symeon Chatzinotas and Björn Ottersten},\n  year = {2020},\n  booktitle = {2020 IEEE 91st Vehicular Technology Conference (VTC2020-Spring)},\n  doi = {10.1109/vtc2020-spring48590.2020.9128905},\n  pages = {1--5}\n}",
+    "keywords": [
+      "Deep learning",
+      "Beam hopping",
+      "Satellite networks"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/42944"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "mehrizi2020online",
+    "title": "Online Spatiotemporal Popularity Learning via Variational Bayes for Cooperative Caching",
+    "authors": [
+      {
+        "name": "Sajad Mehrizi"
+      },
+      {
+        "name": "Saikat Chatterjee"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Björn Ottersten"
+      }
+    ],
+    "year": 2020,
+    "publicationType": "journal-article",
+    "journalName": "IEEE Transactions on Communications",
+    "venue": "IEEE Transactions on Communications",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "68",
+    "issue": "11",
+    "pages": "7068-7082",
+    "doi": "10.1109/tcomm.2020.3015478",
+    "url": "https://doi.org/10.1109/tcomm.2020.3015478",
+    "pdfUrl": "https://orbilu.uni.lu/bitstream/10993/44413/1/mainDouble.pdf",
+    "bibtex": "@article{mehrizi2020online,\n  title = {Online Spatiotemporal Popularity Learning via Variational Bayes for Cooperative Caching},\n  author = {Sajad Mehrizi and Saikat Chatterjee and Symeon Chatzinotas and Björn Ottersten},\n  year = {2020},\n  journal = {IEEE Transactions on Communications},\n  doi = {10.1109/tcomm.2020.3015478},\n  volume = {68},\n  number = {11},\n  pages = {7068--7082}\n}",
+    "keywords": [
+      "Variational Bayes",
+      "Online learning",
+      "Popularity prediction"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/44413"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "lei2019learning",
+    "title": "Learning-Based Resource Allocation: Efficient Content Delivery Enabled by Convolutional Neural Network",
+    "authors": [
+      {
+        "name": "Lei Lei"
+      },
+      {
+        "name": "Yaxiong Yuan"
+      },
+      {
+        "name": "Thang X. Vu"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Björn Ottersten"
+      }
+    ],
+    "year": 2019,
+    "publicationType": "workshop-paper",
+    "conferenceName": "2019 IEEE 20th International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)",
+    "venue": "2019 IEEE 20th International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)",
+    "publisher": "IEEE",
+    "pages": "1-5",
+    "doi": "10.1109/spawc.2019.8815447",
+    "url": "https://doi.org/10.1109/spawc.2019.8815447",
+    "bibtex": "@inproceedings{telecomai41133,\n  title = {Learning-Based Resource Allocation: Efficient Content Delivery Enabled by Convolutional Neural Network},\n  author = {Lei Lei and Yaxiong Yuan and Thang X. Vu and Symeon Chatzinotas and Björn Ottersten},\n  year = {2019},\n  booktitle = {2019 IEEE 20th International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)},\n  doi = {10.1109/spawc.2019.8815447},\n  pages = {1--5}\n}",
+    "keywords": [
+      "Convolutional neural networks",
+      "Resource allocation",
+      "Content delivery"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/41133"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "tsakmalis2018constrained",
+    "title": "Constrained Bayesian Active Learning of a Linear Classifier",
+    "authors": [
+      {
+        "name": "Anestis Tsakmalis"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      },
+      {
+        "name": "Björn Ottersten"
+      }
+    ],
+    "year": 2018,
+    "publicationType": "conference-paper",
+    "conferenceName": "2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+    "venue": "2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+    "publisher": "IEEE",
+    "pages": "6663-6667",
+    "doi": "10.1109/icassp.2018.8461409",
+    "url": "https://doi.org/10.1109/icassp.2018.8461409",
+    "bibtex": "@inproceedings{tsakmalis2018constrained,\n  title = {Constrained Bayesian Active Learning of a Linear Classifier},\n  author = {Anestis Tsakmalis and Symeon Chatzinotas and Björn Ottersten},\n  year = {2018},\n  booktitle = {2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},\n  doi = {10.1109/icassp.2018.8461409},\n  pages = {6663--6667}\n}",
+    "keywords": [
+      "Active learning",
+      "Bayesian learning",
+      "Linear classification"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/38164"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  },
+  {
+    "id": "lei2017deep",
+    "title": "A deep learning approach for optimizing content delivering in cache-enabled HetNet",
+    "authors": [
+      {
+        "name": "Lei Lei"
+      },
+      {
+        "name": "Lei You"
+      },
+      {
+        "name": "Gaoyang Dai"
+      },
+      {
+        "name": "Thang Xuan Vu"
+      },
+      {
+        "name": "Di Yuan"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 1001
+      }
+    ],
+    "year": 2017,
+    "publicationType": "conference-paper",
+    "conferenceName": "2017 International Symposium on Wireless Communication Systems (ISWCS)",
+    "venue": "2017 International Symposium on Wireless Communication Systems (ISWCS)",
+    "publisher": "IEEE",
+    "pages": "449-453",
+    "doi": "10.1109/iswcs.2017.8108157",
+    "url": "https://doi.org/10.1109/iswcs.2017.8108157",
+    "bibtex": "@inproceedings{lei2017deep,\n  title = {A deep learning approach for optimizing content delivering in cache-enabled HetNet},\n  author = {Lei Lei and Lei You and Gaoyang Dai and Thang Xuan Vu and Di Yuan and Symeon Chatzinotas},\n  year = {2017},\n  booktitle = {2017 International Symposium on Wireless Communication Systems (ISWCS)},\n  doi = {10.1109/iswcs.2017.8108157},\n  pages = {449--453}\n}",
+    "keywords": [
+      "Deep learning",
+      "Content delivery",
+      "Edge caching"
+    ],
+    "sourceUrls": [
+      "https://orbilu.uni.lu/handle/10993/31926"
+    ],
+    "openAccess": false,
+    "isMock": false,
+    "areas": []
+  }
+
+]

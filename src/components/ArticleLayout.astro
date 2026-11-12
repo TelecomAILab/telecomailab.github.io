@@ -1,0 +1,44 @@
+---
+import "katex/dist/katex.min.css";
+import { Image } from "astro:assets";
+import { render, type CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import RelatedContent from "./RelatedContent.astro";
+import { authorName, formatDate, getEditorialContext } from "../lib/editorial";
+interface Props { entry: CollectionEntry<"blog" | "notes">; kind: "blog" | "notes" }
+const { entry, kind } = Astro.props;
+const { Content, headings } = await render(entry);
+const context = await getEditorialContext();
+const contents = headings.filter((heading) => heading.depth === 2);
+---
+<BaseLayout title={entry.data.title} description={entry.data.summary} image={entry.data.coverImage?.src}>
+  <article class="container-page py-10 sm:py-14" data-article data-search-page>
+    <header class="mx-auto max-w-5xl"><a href={`/${kind}`} class="text-sm font-medium text-primary-700 hover:underline">&larr; All {kind === "blog" ? "blog articles" : "notes"}</a><div class="mt-8 h-0.5 w-12 rounded-full bg-accent-500"></div><p class="mt-5 text-xs font-medium tracking-wide text-accent-700 uppercase">{kind === "blog" ? "Lab perspectives" : "Technical note"}</p><h1 class="mt-3 font-serif text-4xl leading-tight sm:text-5xl">{entry.data.title}</h1><p class="mt-5 text-lg leading-relaxed text-slate-600">{entry.data.summary}</p><div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-500"><time datetime={entry.data.date}>{formatDate(entry.data.date)}</time><span aria-hidden="true">·</span>{entry.data.authors.map((author, index) => <>{index > 0 && <span aria-hidden="true">&amp;</span>}{author.personId ? <a href={`/people/${author.personId}`} class="text-primary-700 hover:underline">{authorName(author, context)}</a> : <span>{authorName(author, context)}</span>}</>)}</div><div class="mt-4 flex flex-wrap gap-2">{entry.data.tags.map((tag) => <span class="rounded bg-primary-50 px-2 py-1 text-xs text-primary-700">{tag}</span>)}</div></header>
+    {entry.data.coverImage && <div class="mx-auto mt-9 max-w-5xl overflow-hidden rounded-xl border border-slate-200"><Image src={entry.data.coverImage} alt={entry.data.coverAlt ?? ""} widths={[700, 1200]} sizes="(min-width: 1024px) 900px, 95vw" class="aspect-[2/1] w-full object-cover" /></div>}
+    <div class="mx-auto mt-10 max-w-5xl">
+      {contents.length > 0 && <nav aria-label="On this page" class="mb-10 rounded-xl border border-slate-200 bg-slate-50 p-5"><h2 class="font-serif text-lg">On this page</h2><ul class="mt-3 space-y-2 text-sm">{contents.map((heading) => <li><a class="text-primary-700 hover:underline" href={`#${heading.slug}`}>{heading.text}</a></li>)}</ul></nav>}
+      <div class="article-body prose-content"><Content /></div>
+      <RelatedContent publications={entry.data.relatedPublications} />
+      <footer class="mt-10 flex flex-wrap justify-between gap-4 border-t border-slate-200 pt-6 text-sm font-medium text-primary-700"><a href={`/${kind}`} class="hover:underline">&larr; Back to {kind}</a><a href={kind === "blog" ? "/notes" : "/blog"} class="hover:underline">{kind === "blog" ? "Explore technical notes" : "More from the blog"} &rarr;</a></footer>
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  .article-body { color: var(--ink-body); line-height: 1.85; overflow-wrap: anywhere; }
+  .article-body > :is(p, ul, ol, blockquote) { max-width: 92ch; }
+  .article-body > * + * { margin-top: 1.25rem; }
+  .article-body h2 { margin-top: 2.5rem; font-size: 1.8rem; line-height: 1.25; scroll-margin-top: 6rem; }
+  .article-body h3 { margin-top: 2rem; font-size: 1.35rem; scroll-margin-top: 6rem; }
+  .article-body ul, .article-body ol { padding-left: 1.5rem; }
+  .article-body ul { list-style: disc; } .article-body ol { list-style: decimal; }
+  .article-body li + li { margin-top: .4rem; }
+  .article-body blockquote { border-left: 3px solid var(--color-accent-400); padding: .75rem 1.25rem; background: var(--surface-tint); }
+  .article-body pre { border: 1px solid var(--line); padding: 1.25rem; border-radius: .75rem; overflow-x: auto; font-size: .85rem; line-height: 1.6; }
+  .article-body :not(pre) > code { border-radius: .25rem; background: var(--surface-muted); padding: .1rem .3rem; font-size: .85em; }
+  .article-body img { max-width: 100%; height: auto; border-radius: .75rem; }
+  .article-body table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: .9rem; }
+  .article-body th, .article-body td { padding: .6rem .8rem; border: 1px solid var(--line); text-align: left; }
+  .article-body th { background: var(--surface-soft); }
+  .article-body .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-block: .5rem; }
+</style>

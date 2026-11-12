@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getEditorialContext } from "../lib/editorial";
+import { personDisplayName } from "../lib/people-schema";
+interface Props { entries: CollectionEntry<"news">[]; homepage?: boolean }
+const { entries, homepage = false } = Astro.props;
+const context = await getEditorialContext();
+const month = (date: string) => new Intl.DateTimeFormat("en-GB", { month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(date));
+---
+<ol class="divide-y divide-slate-200 border-y border-slate-200" data-news-list>
+  {entries.map((entry) => {
+    const item = entry.data;
+    const links = [
+      ...item.links,
+      ...item.relatedMembers.map((member) => ({ label: personDisplayName(context.people.get(member.id)!.data), url: `/people/${member.id}` })),
+      ...item.relatedPublications.map((paper) => ({ label: "Publication", url: `/publications#publication-${paper.id}` })),
+      ...(item.externalLink ? [{ label: "Read more ↗", url: item.externalLink }] : []),
+    ];
+    return <li id={homepage ? undefined : `news-${entry.id}`} data-news data-search-entry={!homepage || undefined} data-search-title={item.title} data-search-category="News" class="grid gap-1.5 py-4 sm:grid-cols-[7rem_1fr] sm:gap-5">
+      <time datetime={item.date} class="pt-0.5 text-sm font-medium tabular-nums text-accent-700">{month(item.date)}</time>
+      <div class="min-w-0"><p class="text-sm leading-relaxed text-slate-700">{item.title}</p>
+        {links.length > 0 && <div class="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-primary-700">{links.map((link) => <a href={link.url} class="hover:underline">{link.label}</a>)}</div>}
+      </div>
+    </li>;
+  })}
+</ol>

@@ -3,8 +3,10 @@ interface Props {
   eyebrow?: string;
   title: string;
   lead?: string;
+  headingLevel?: "h1" | "h2";
+  headingId?: string;
 }
-const { eyebrow, title, lead } = Astro.props;
+const { eyebrow, title, lead, headingLevel: Heading = "h1", headingId } = Astro.props;
 ---
 
 <header class="bg-gradient-to-b from-primary-50 to-white">
@@ -19,7 +21,7 @@ const { eyebrow, title, lead } = Astro.props;
     <div
       class:list={["h-0.5 w-12 rounded-full bg-accent-500", eyebrow ? "mt-4" : ""]}
     />
-    <h1 class="mt-4 text-4xl font-semibold text-slate-900 sm:text-5xl">{title}</h1>
+    <Heading id={headingId} class="mt-4 text-4xl font-semibold text-slate-900 sm:text-5xl">{title}</Heading>
     {lead && <p class="mt-5 max-w-2xl text-lg text-slate-600">{lead}</p>}
   </div>
 </header>

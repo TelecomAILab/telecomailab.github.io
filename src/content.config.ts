@@ -1,92 +1,94 @@
 import { defineCollection, reference } from "astro:content";
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { z } from "zod";
+import { existsSync, statSync } from "node:fs";
+import { publicationSchema, withPublicationAliases, validatePublicationRecords } from "./lib/publication-schema";
+import { personSchema, validatePeopleRecords } from "./lib/people-schema";
+import { sources } from "./lib/content-sources";
+import { resources, hardware } from "./lib/lab-data";
+import peopleData from "./data/people.json";
+import publicationData from "./data/publications.json";
+import newsData from "./data/news.json";
+import talksData from "./data/talks.json";
+import { newsSchema, talksSchema, articleSchema, validateEditorialReferences } from "./lib/editorial-schema";
+import researchData from "./data/research.json";
+import { researchSchema } from "./lib/research-schema";
+import { resolveMockReferences } from "./lib/mock-references";
+
+const isFile = (url: URL) => existsSync(url) && statSync(url).isFile();
+const root = new URL("../", import.meta.url);
+const referenceDirectory = {
+  people: new Set(peopleData.map((person) => String(person.id))),
+  publications: new Set(publicationData.map((paper) => String(paper.id))),
+};
+const resolve = (input: unknown) => resolveMockReferences(input, referenceDirectory, "content collections");
+// The parser transforms only the loaded view; JSON/Markdown remains authoritative.
+const referenceParser = (text: string) => (JSON.parse(text) as Record<string, unknown>[]).map((record) =>
+  resolveMockReferences(record, referenceDirectory, `JSON record ${record.id}`) as Record<string, unknown>);
+const researchRecords = z.array(researchSchema).parse(researchData);
+if (new Set(researchRecords.map((area) => area.id)).size !== researchRecords.length) throw new Error("Duplicate research area IDs");
+const validatedPeople = validatePeopleRecords(peopleData, {
+  headshotExists: (path) => isFile(new URL(path, new URL(sources.people, root))),
+  biographyExists: (id) => isFile(new URL(`${sources.biographies}/${id}.md`, root)),
+});
+const validatedPublications = validatePublicationRecords(publicationData.map(resolve), new Set(validatedPeople.map((person) => person.id)),
+  (path) => isFile(new URL(`public${path}`, root)));
+for (const paper of validatedPublications) {
+  if (paper.image && !isFile(new URL(paper.image, new URL("src/data/publications.json", root)))) throw new Error(`Missing publication image: ${paper.image}`);
+}
+for (const resource of resources) {
+  if (resource.url.startsWith("/files/") && !isFile(new URL(`public${resource.url}`, root))) throw new Error(`Missing resource file ${resource.url}`);
+}
+for (const item of hardware) {
+  if (item.image && !isFile(new URL(item.image, new URL("src/data/hardware.json", root)))) throw new Error(`Missing equipment image: ${item.image}`);
+}
+const editorialPeople = new Set(validatedPeople.map((person) => person.id));
+const editorialPublications = new Set(publicationData.map((paper) => String(paper.id)));
+const newsRecords = z.array(newsSchema).parse(newsData.map(resolve));
+const talkRecords = z.array(talksSchema).parse(talksData.map(resolve));
+validateEditorialReferences(newsRecords, editorialPeople, editorialPublications);
+validateEditorialReferences(talkRecords, editorialPeople, editorialPublications);
+for (const item of newsRecords) {
+  if (item.image && !isFile(new URL(item.image, new URL("src/data/news.json", root)))) throw new Error(`Missing news image: ${item.image}`);
+}
+for (const talk of talkRecords) {
+  if (talk.slides?.startsWith("/files/") && !isFile(new URL(`public${talk.slides}`, root))) throw new Error(`Missing talk slides: ${talk.slides}`);
+}
 
 /*
-  Content collections for the lab site (Astro 6 Content Layer API).
+  Content collections for the lab site.
 
-  Content lives in src/content/<collection>/*.md so a CMS (Sveltia/Decap) can
-  layer on later with no schema change.
+  People, publications, news, and talks use JSON. Biographies, figures, gallery,
+  blog articles, and notes use Markdown.
   Safety defaults fail closed: figures default to rightsConfirmed:false and are
   filtered out of every figure query, so a half-filled record can never leak.
 */
 
-// People — bio lives in the markdown body (use render()).
+// Structured members remain compatible with getCollection("people") and Astro assets.
 const people = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/people" }),
+  loader: file(sources.people),
   schema: ({ image }) =>
-    z.object({
-      name: z.string(),
-      status: z.enum(["current", "alumni"]),
-      group: z.enum([
-        "Faculty",
-        "Researchers",
-        "Staff",
-        "Students",
-        "Affiliates",
-        "Alumni",
-      ]),
-      role: z.string(),
-      title: z.string().optional(),
+    personSchema.extend({
       headshot: image().optional(),
-      links: z
-        .object({
-          email: z.email().optional(),
-          twitter: z.url().optional(),
-          scholar: z.url().optional(),
-          orcid: z.url().optional(),
-          linkedin: z.url().optional(),
-          website: z.url().optional(),
-        })
-        .default({}),
-      order: z.number().default(0),
-      featured: z.boolean().default(false),
+      biography: reference("biographies").optional(),
     }),
 });
 
-// Publications — frontmatter only (any markdown body is optional notes).
+// Markdown rendering stays in Astro's native content pipeline; no member metadata here.
+const biographies = defineCollection({
+  loader: glob({ pattern: "*.md", base: sources.biographies }),
+  schema: z.strictObject({}),
+});
+
+// Publications — the only active publication source; existing IDs remain stable.
 const publications = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/publications" }),
-  schema: z.object({
-    title: z.string(),
-    authors: z.array(z.string()),
-    year: z.number(),
-    journal: z.string().optional(),
-    doi: z.string().optional(),
-    pmid: z.string().optional(),
-    pmcid: z.string().optional(),
-    url: z.url().optional(),
-    scholarUrl: z.url().optional(),
-    citations: z.number().optional(),
-    isMenteePaper: z.boolean().default(false),
-    menteeFirstAuthor: z.boolean().default(false),
-    // The lab PI is first or last (senior) author.
-    piFirstOrSenior: z.boolean().default(false),
-    featured: z.boolean().default(false),
-    openAccess: z.boolean().default(false),
-    // Research tags — topic/population AREAS (drive the Research page) plus
-    // cross-cutting facets. One field; a paper may carry several. The vocabulary
-    // is mirrored in src/lib/content.ts — keep the two in sync when you edit it.
-    // ⚙️  CUSTOMIZE: replace these example slugs with your field's topics.
-    areas: z
-      .array(
-        z.enum([
-          "topic-one",
-          "topic-two",
-          "topic-three",
-          "methods",
-          "theory",
-          "review",
-          "letter",
-        ]),
-      )
-      .default([]),
-  }),
+  loader: file(sources.publications, { parser: referenceParser }),
+  schema: ({ image }) => publicationSchema.extend({ image: image().optional() }).transform(withPublicationAliases),
 });
 
 // Figures — gated by rightsConfirmed (hard gate, defaults closed).
 const figures = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/figures" }),
+  loader: glob({ pattern: "**/*.md", base: sources.figures }),
   schema: ({ image }) =>
     z.object({
       image: image(),
@@ -114,13 +116,40 @@ const figures = defineCollection({
 const gallery = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/gallery" }),
   schema: ({ image }) =>
-    z.object({
+    z.preprocess(resolve, z.object({
       image: image(),
       caption: z.string(),
+      title: z.string().optional(),
       date: z.coerce.date(),
       people: z.array(z.string()).optional(),
+      members: z.array(reference("people")).default([]),
+      category: z.enum(["Conferences", "Workshops & Seminars", "Lab Activities", "Research Visits", "Celebrations", "Team Events"]).default("Lab Activities"),
+      kind: z.enum(["photo", "illustration"]).default("photo"),
+      isMock: z.boolean().default(false),
       featured: z.boolean().default(false),
-    }),
+    })),
 });
 
-export const collections = { people, publications, figures, gallery };
+const news = defineCollection({
+  loader: file("src/data/news.json", { parser: referenceParser }),
+  schema: ({ image }) => newsSchema.extend({
+    image: image().optional(),
+    relatedMembers: z.array(reference("people")).default([]),
+    relatedPublications: z.array(reference("publications")).default([]),
+  }),
+});
+
+const talks = defineCollection({
+  loader: file("src/data/talks.json", { parser: referenceParser }),
+  schema: talksSchema,
+});
+
+const longFormSchema = ({ image }: { image: import("astro:content").SchemaContext["image"] }) => z.preprocess(resolve, articleSchema.extend({
+  coverImage: image().optional(),
+  relatedPublications: z.array(reference("publications")).default([]),
+}));
+const blog = defineCollection({ loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }), schema: longFormSchema });
+const notes = defineCollection({ loader: glob({ pattern: "**/*.md", base: "./src/content/notes" }), schema: longFormSchema });
+const research = defineCollection({ loader: file("src/data/research.json"), schema: ({ image }) => researchSchema.extend({ image: image().optional() }) });
+
+export const collections = { people, biographies, publications, figures, gallery, news, talks, blog, notes, research };

@@ -6,15 +6,21 @@
 //    (Tip: ask Claude to "fill in src/data/site.ts for my lab" and paste your
 //    name, institution, and a one-line mission.)
 
-export interface NavItem {
+export interface NavLink {
   label: string;
   href: string;
 }
+export interface NavGroup {
+  label: string;
+  children: NavLink[];
+}
+export type NavItem = NavLink | NavGroup;
 
 export interface SiteConfig {
   name: string;
   shortName: string;
   pi: string;
+  researchGroup: string;
   institution: string;
   university: string;
   url: string;
@@ -27,6 +33,12 @@ export interface SiteConfig {
     scholar?: string;
     twitter?: string;
     github?: string;
+    facebook?: string;
+    linkedin?: string;
+    slack?: string;
+    youtube?: string;
+    telegram?: string;
+    rss?: string;
   };
   nav: NavItem[];
 }
@@ -35,6 +47,7 @@ export const site: SiteConfig = {
   name: "TelecomAI Lab",
   shortName: "TelecomAI",
   pi: "Vu Nguyen HA",
+  researchGroup: "SigCOM",
   institution: "Interdisciplinary Centre for Security, Reliability and Trust (SnT)", 
   university: "University of Luxembourg",
   // Your production URL (used for canonical links + sitemap). Set your domain.
@@ -54,17 +67,27 @@ export const site: SiteConfig = {
   mapQuery: "SnT JFK Building University of Luxembourg",
   social: {
     scholar: "https://scholar.google.com/citations?user=ZKYvTCgAAAAJ&hl=en",
-    // twitter: "https://twitter.com/yourhandle",
     github: "https://github.com/TelecomAILab",
+    // Reserved .invalid URLs visibly mark replaceable placeholders, never real accounts.
+    facebook: "https://placeholder.invalid/telecomai/facebook",
+    twitter: "https://placeholder.invalid/telecomai/x",
+    linkedin: "https://placeholder.invalid/telecomai/linkedin",
+    slack: "https://placeholder.invalid/telecomai/slack",
+    youtube: "https://placeholder.invalid/telecomai/youtube",
+    telegram: "https://placeholder.invalid/telecomai/telegram",
+    rss: "https://placeholder.invalid/telecomai/rss.xml", // Placeholder; no feed is implemented.
   },
   nav: [
     { label: "People", href: "/people" },
     { label: "Research", href: "/research" },
     { label: "Funding", href: "/funding" },
     { label: "Publications", href: "/publications" },
-    { label: "Figures", href: "/figures" },
-    { label: "Materials & Resources", href: "/mare" },
-    { label: "Lab Life", href: "/lab-life" },
-    { label: "Contact", href: "/contact" },
+    { label: "Talks & Seminars", href: "/talks" },
+    { label: "Resources", children: [
+      { label: "Materials", href: "/mare" },
+      { label: "Blog", href: "/blog" },
+      { label: "Notes", href: "/notes" },
+    ] },
+    { label: "About", href: "/about" },
   ],
 };

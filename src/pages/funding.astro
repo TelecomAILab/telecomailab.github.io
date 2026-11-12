@@ -1,0 +1,57 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../components/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import StatStrip from "../components/StatStrip.astro";
+import ResourceIcon from "../components/ResourceIcon.astro";
+import { funding } from "../lib/lab-data";
+import FundingProjectCard from "../components/FundingProjectCard.astro";
+
+const people = new Map((await getCollection("people")).map((person) => [person.id, person]));
+const publications = new Map((await getCollection("publications")).map((paper) => [paper.id, paper]));
+const pending = funding.projects.filter((project) => !project.status);
+const active = funding.projects.filter((project) => project.status === "active");
+const completed = funding.projects.filter((project) => project.status === "completed");
+const funders = new Map(funding.funders.map((funder) => [funder.id, funder]));
+---
+<BaseLayout title="Funding" description="Research projects, funding programmes, and collaborative partnerships supporting the lab.">
+  <PageHeader eyebrow="Research support" title="Funding & partnerships" lead="Support for ambitious ideas, collaborative research, and open tools for intelligent communication systems." />
+  <div class="container-page pb-16">
+    <StatStrip items={[{ value: active.length, label: "Active projects" }, { value: funding.funders.length, label: "Funding streams" }, { value: completed.length, label: "Completed projects" }]} />
+
+    <section class="py-14" aria-labelledby="support-heading">
+      <div class="mb-7 h-0.5 w-10 rounded-full bg-accent-500"></div>
+      <div class="mb-7 flex flex-wrap items-end justify-between gap-4">
+        <div><h2 id="support-heading" class="font-serif text-2xl text-slate-900">Support across research & industry</h2><p class="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">National programmes, international collaborations, and industry partnerships bring complementary perspectives to our research.</p></div>
+        <a href="#active-projects" class="text-sm font-medium text-primary-700 hover:underline">Explore projects &darr;</a>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {funding.funders.map((funder) => <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-slate-50/60 p-5">
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-primary-100 bg-white font-serif text-lg font-semibold text-primary-800">{funder.shortName}</div>
+          <div><p class="text-xs font-medium text-accent-600">{funder.programme}</p><h3 class="mt-1 font-sans text-sm font-semibold leading-snug text-slate-800">{funder.name}</h3></div>
+        </div>)}
+      </div>
+    </section>
+
+    <section id="active-projects" class="scroll-mt-24" aria-labelledby="active-heading">
+      <div class="mb-7 flex items-baseline justify-between gap-4"><h2 id="active-heading" class="font-serif text-2xl text-slate-900">Active projects</h2><span class="text-sm text-slate-500">{active.length} projects</span></div>
+      <div class="grid gap-6 md:grid-cols-2">
+        {active.map((project) => <FundingProjectCard project={project} people={people} publications={publications} />)}
+      </div>
+    </section>
+
+    <section class="mt-16" aria-labelledby="completed-heading">
+      <h2 id="completed-heading" class="mb-6 font-serif text-2xl">Completed projects</h2>
+      <div class="divide-y divide-slate-200 rounded-xl border border-slate-200 bg-slate-50/50">
+        {completed.map((project) => <article id={`project-${project.id}`} data-search-entry data-search-title={project.title} data-search-category="Projects" class="flex flex-wrap items-start justify-between gap-4 p-5 sm:p-6"><div class="max-w-2xl"><p class="text-xs font-semibold tracking-wide text-slate-500">{project.acronym} · {project.funderId ? funders.get(project.funderId)?.shortName : "Funder not listed"}</p><h3 class="mt-1 font-serif text-xl">{project.title}</h3><p class="mt-2 text-sm text-slate-600">{project.summary}</p>{project.publicationIds[0] && <a href={`/publications#publication-${project.publicationIds[0]}`} class="mt-3 inline-block text-sm font-medium text-primary-700 hover:underline">Explore the related work &rarr;</a>}</div><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-500">{project.startYear && project.endYear ? `${project.startYear}–${project.endYear} · ` : ""}Completed</span></article>)}
+      </div>
+    </section>
+
+    {pending.length > 0 && <section class="mt-16" aria-labelledby="pending-projects-heading"><h2 id="pending-projects-heading" class="mb-6 font-serif text-2xl">More research projects</h2><p class="mb-6 text-sm text-slate-600">Project status and some administrative details have not been supplied.</p><div class="grid gap-6 md:grid-cols-2">{pending.map((project) => <FundingProjectCard project={project} people={people} publications={publications} />)}</div></section>}
+
+    <section class="mt-16 grid items-center gap-8 rounded-2xl bg-primary-50 p-7 sm:p-10 md:grid-cols-[1fr_auto]">
+      <div><div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white text-primary-700"><ResourceIcon category="Benchmarks" /></div><h2 class="font-serif text-2xl sm:text-3xl">Build the next idea together.</h2><p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">Interested in collaborative research, student projects, or developing open research tools? We welcome conversations with academic and industry partners.</p></div>
+      <a href="/about#contact" class="inline-flex w-fit items-center gap-2 rounded-md bg-primary-700 px-5 py-3 text-sm font-semibold text-white hover:bg-primary-800">Discuss a collaboration <span aria-hidden="true">&rarr;</span></a>
+    </section>
+  </div>
+</BaseLayout>
