@@ -15,9 +15,9 @@
     ],
     "updated": "2026-03-15",
     "maintainerPersonIds": [
-      1001, 1010
+      101,
+      108
     ],
-    "publicationId": "sample-2024-network",
     "featured": true,
     "isMock": true
   },
@@ -37,7 +37,8 @@
     ],
     "updated": "2026-04-15",
     "maintainerPersonIds": [
-      1001, 1010
+      101,
+      108
     ],
     "publicationId": "adam2025generative",
     "featured": true,
@@ -59,7 +60,8 @@
     ],
     "updated": "2026-05-15",
     "maintainerPersonIds": [
-      1001, 1010
+      101,
+      108
     ],
     "publicationId": "adam2025generative",
     "featured": false,
@@ -81,7 +83,8 @@
     ],
     "updated": "2026-06-15",
     "maintainerPersonIds": [
-      1001, 1010
+      101,
+      108
     ],
     "publicationId": "adam2025generative",
     "featured": false,
@@ -103,8 +106,8 @@
     ],
     "updated": "2026-07-15",
     "maintainerPersonIds": [
-      1005,
-      1006
+      103,
+      104
     ],
     "publicationId": "adam2025generative",
     "featured": false,
@@ -126,8 +129,8 @@
     ],
     "updated": "2026-08-15",
     "maintainerPersonIds": [
-      1005,
-      1010
+      103,
+      108
     ],
     "publicationId": "tsakmalis2018constrained",
     "featured": false,
@@ -149,7 +152,8 @@
     ],
     "updated": "2026-09-15",
     "maintainerPersonIds": [
-      1001, 1010
+      101,
+      108
     ],
     "publicationId": "lei2017deep",
     "featured": false,
@@ -171,8 +175,8 @@
     ],
     "updated": "2026-10-15",
     "maintainerPersonIds": [
-      1001,
-      1010
+      101,
+      108
     ],
     "publicationId": "adam2025generative",
     "featured": false,
@@ -194,7 +198,8 @@
     ],
     "updated": "2026-03-15",
     "maintainerPersonIds": [
-      1001, 1010
+      101,
+      108
     ],
     "publicationId": "adam2025generative",
     "featured": false,
@@ -216,8 +221,8 @@
     ],
     "updated": "2026-04-15",
     "maintainerPersonIds": [
-      1001,
-      1006
+      101,
+      104
     ],
     "publicationId": "adam2025generative",
     "featured": false,
@@ -239,8 +244,8 @@
     ],
     "updated": "2026-05-15",
     "maintainerPersonIds": [
-      1004,
-      1007
+      102,
+      105
     ],
     "publicationId": "nguyen2025semantic",
     "featured": false,
@@ -262,8 +267,8 @@
     ],
     "updated": "2026-06-15",
     "maintainerPersonIds": [
-      1005,
-      1008
+      103,
+      106
     ],
     "publicationId": "adam2025generative",
     "featured": false,

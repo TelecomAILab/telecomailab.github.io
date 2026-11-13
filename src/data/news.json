@@ -6,9 +6,7 @@
     "category": "Research",
     "summary": "[Demo] A paper on wireless scheduling has been accepted at an example conference.",
     "relatedMembers": [],
-    "relatedPublications": [
-      "sample-2024-network"
-    ],
+    "relatedPublications": [],
     "featured": true,
     "isMock": true
   },
@@ -18,9 +16,7 @@
     "date": "2026-10-22",
     "category": "People",
     "summary": "[Demo] A new PhD researcher has joined the wireless intelligence team.",
-    "relatedMembers": [
-      "2006"
-    ],
+    "relatedMembers": [],
     "relatedPublications": [],
     "featured": true,
     "isMock": true
@@ -31,9 +27,7 @@
     "date": "2026-10-08",
     "category": "Events",
     "summary": "[Demo] A visiting scholar will give a seminar on edge learning.",
-    "relatedMembers": [
-      "2017"
-    ],
+    "relatedMembers": [],
     "relatedPublications": [],
     "featured": false,
     "isMock": true,
@@ -50,9 +44,7 @@
     "date": "2026-09-18",
     "category": "Resources",
     "summary": "[Demo] A doctoral researcher has received an example research fellowship.",
-    "relatedMembers": [
-      "2007"
-    ],
+    "relatedMembers": [],
     "relatedPublications": [],
     "featured": true,
     "isMock": true
@@ -80,9 +72,7 @@
     "date": "2026-07-16",
     "category": "Events",
     "summary": "[Demo] A lab member has received an example early-career research award.",
-    "relatedMembers": [
-      "2003"
-    ],
+    "relatedMembers": [],
     "relatedPublications": [],
     "featured": false,
     "isMock": true
@@ -93,10 +83,7 @@
     "date": "2026-05-20",
     "category": "Research",
     "summary": "[Demo] Two visiting researchers have joined the lab for a short exchange.",
-    "relatedMembers": [
-      "2017",
-      "2018"
-    ],
+    "relatedMembers": [],
     "relatedPublications": [],
     "featured": false,
     "isMock": true

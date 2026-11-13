@@ -3,14 +3,16 @@ title: "[Demo] Thinking in timescales for satellite networks"
 slug: satellite-network-timescales
 date: "2026-09-03"
 authors:
-  - personId: "2005"
-  - personId: "2015"
-summary: "A working sketch of how propagation, scheduling, and learning timescales shape a network model."
-tags: [Satellite networks, Modelling]
+  - name: Author not listed
+  - name: Author not listed
+summary: A working sketch of how propagation, scheduling, and learning timescales shape a network model.
+tags:
+  - Satellite networks
+  - Modelling
 coverImage: ../../assets/editorial/orbit.svg
-coverAlt: "An orbital network illustration"
+coverAlt: An orbital network illustration
 status: published
-relatedPublications: ["1004"]
+relatedPublications: []
 isMock: true
 ---
 

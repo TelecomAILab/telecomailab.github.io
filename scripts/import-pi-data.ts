@@ -112,7 +112,7 @@ export function preparePiImport(root = resolve(fileURLToPath(new URL("../", impo
           const roles: Record<string, string> = { PI: "pi", "Senior researcher": "senior", Mentee: "mentee" };
           const role = get("Publication Role");
           if (role && !roles[role]) throw new Error("Unknown publication role");
-          const person = personSchema.parse(compact({ id, name, displayName: get("Display Name"), status: get("Current/Alumni Status").toLowerCase(), group: get("Member Category"), role: get("Academic Position"), title: get("Profile Title"), affiliation: get("Affiliation"), researchInterests: list(get("Research Interests")), links, biography: bio || education ? String(id) : undefined, sourceUrls: sources, publicationRole: roles[role], order: number(get("Display Order")), featured: boolean(get("Featured")), isMock: false }));
+          const person = personSchema.parse(compact({ id, name, displayName: get("Display Name"), status: get("Current/Alumni Status").toLowerCase(), group: get("Member Category"), role: get("Academic Position"), title: get("Profile Title"), affiliation: get("Affiliation"), researchInterests: list(get("Research Interests")), links, biography: bio || education ? String(id) : undefined, sourceUrls: sources, publicationRole: roles[role], order: number(get("Display Order")), featured: boolean(get("Featured")) }));
           if (get("Profile Photo Filename")) entry.warnings!.push("Photo not attached automatically; add a verified local asset manually");
           if (!role) entry.warnings!.push("Publication role unknown; no inferred badge role");
           if (person.biography) biographies[person.biography] = [bio, education].filter(Boolean).join("\n\n") + "\n";
@@ -125,7 +125,7 @@ export function preparePiImport(root = resolve(fileURLToPath(new URL("../", impo
             if ((identifier && match.doi && identifier !== match.doi.toLowerCase()) || normalize(match.title) !== normalize(title) || match.year !== year) throw new Error(`Conflicting publication evidence for ${match.id}`);
             entry.status = "duplicate"; entry.reason = `Existing publication ${match.id}; no fields changed`; continue;
           }
-          const record: Record<string, unknown> = { id: nextId(records), title, year, authors: list(get("Ordered Authors")).map((name) => ({ name })), isMock: false };
+          const record: Record<string, unknown> = { id: nextId(records), title, year, authors: list(get("Ordered Authors")).map((name) => ({ name })) };
           const type = get("Publication Type");
           const types = ["Journal Article", "Conference Paper", "Workshop Paper", "Preprint", "Book Chapter", "Review Article", "Other Academic Output"];
           if (type && !types.includes(type)) throw new Error("Unknown publication type");
@@ -136,7 +136,7 @@ export function preparePiImport(root = resolve(fileURLToPath(new URL("../", impo
           record.sourceUrls = list(get("Source URL"));
           record.areas = list(get("Research Areas")).map((title) => { if (!RESEARCH_IDS[title]) throw new Error(`Unmapped research area: ${title}`); return RESEARCH_IDS[title]; });
           for (const [column, key] of [["Open Access", "openAccess"], ["Featured", "featured"]]) if (get(column)) record[key] = boolean(get(column));
-          if (get("Citation Count")) record.citationCount = number(get("Citation Count"));
+          if (get("Citation Count")) entry.warnings!.push("Citation Count is retained in the CSV for separate review into src/data/citations.json; never added to publication metadata");
           entry.warnings!.push("Author personIds and verification receipt intentionally omitted; CSV provides no confirmed identity mappings or review timestamp");
           candidates.publications.push(publicationSchema.parse(record));
         } else if (file === "research") {

@@ -17,11 +17,11 @@ Use Node >=22.12 and `npm ci` for the lockfile-pinned dependencies.
 | `npm run test:ui` | Calendar/DST/ICS, News, Research, gallery, footer, About, links/assets |
 | `npm run test:search-theme` | Actual Pagefind WASM, theme/storage, navigation/search keyboard and races |
 | `npm run test:site` | Built sample pages, counts, navigation, usable downloads |
-| `npm run check:links` | External DOI/URL checks for non-mock papers; skips mock records |
+| `npm run check:links` | External DOI/URL checks for curated papers |
 | `npm run enrich:orcid` | Dry-run ORCID suggestions; details below |
+| `npm run refresh:citations` | Refresh the separate citation store using configured Scholar credentials |
 | `npm run import:pi -- --help` | Read-only PI CSV conversion and row-level review report |
 | `npm run import:publications -- --help` | Review-only JSON import workflow |
-| `npm run generate:demo` | Destructive sample regeneration; see content guide |
 
 Run build, then Astro check, then tests. Build-based tests read `dist/`; stale output
 can hide source changes. Keep a dev server for content/UI review and use preview for
@@ -65,7 +65,7 @@ intentional placeholders, not functioning accounts.
 Publication imports accept structured JSON and print reports only. DOI checks use
 Crossref; manual review remains required. See [content management](content-management.md).
 
-`enrich:orcid` reads non-mock DOI/PMID metadata from Crossref/PubMed and considers only
+`enrich:orcid` reads curated DOI/PMID metadata from Crossref/PubMed and considers only
 members already explicitly referenced on that publication. It uses normalized names
 to rank ORCID suggestions, **never** to establish publication membership. Default is
 dry run; `--write` fills empty ORCID links for its strongest matches, and
@@ -74,12 +74,23 @@ and conflicts remain unresolved; existing values are not overwritten. `--email=â
 or `CONTACT_EMAIL` supplies an API contact. Verify suggestions against primary sources,
 especially abbreviated/compound names; social/profile links need independent review.
 
-`scripts/refresh-citations.mjs` matches normalized titles against a Scholar profile
-via SerpAPI and updates only `citationCount`/`scholarUrl`, skipping mock records.
-`SERPAPI_KEY` and `SCHOLAR_AUTHOR_ID` enable it; `SERPAPI_FIXTURE` supplies a local
-article-array/response for tooling tests. Missing credentials or API errors preserve
-saved values; zero is valid. Automated title matching still needs curator oversight.
-Do not run writing/enrichment/generator tools as routine cleanup validation.
+`npm run refresh:citations` reads publications and writes **only**
+`src/data/citations.json` atomically; it never edits publications, authors or Scholar
+links. `SERPAPI_KEY` and `SCHOLAR_AUTHOR_ID` enable the
+[SerpAPI Google Scholar Author API](https://serpapi.com/google-scholar-author-api).
+Pagination follows `serpapi_pagination.next` (including `start`/`cstart`); HTTP/API,
+invalid payload, repeated-token or safety-limit failures retain the entire saved
+snapshot. Matches require a unique normalized title with a compatible supplied year;
+ambiguous entries retain saved values. A curator-supplied Scholar citation URL can
+disambiguate matching titles. Unmatched/invalid counts stay unchanged, new unknown
+counts are null, and zero remains valid. This profile-based source does not guarantee
+coverage of every lab paper; do not invent counts for unmatched work.
+
+`SERPAPI_FIXTURE` supplies an article-array/response for isolated tooling tests. The
+citation suites inject HTTP responses and temporary directories; they need no API
+key, spend no quota, and verify that publication bytes never change. Do not run
+writing/enrichment tools as routine cleanup validation. The destructive demo generator
+has been retired to protect curated People/Publications.
 
 ## Existing deployment reference
 
@@ -89,9 +100,11 @@ Do not dispatch deployment workflows as a test.
 - `.github/workflows/deploy.yml` runs on `main` pushes or manual dispatch. The Astro
   action v6 uses Node 22, builds/uploads `dist`, then deploy-pages publishes it.
 - `.github/workflows/refresh-citations.yml` runs Monday 08:00 UTC or manually. If
-  citation data changes it can commit, push, build, and deploy. Repository secret
+  citation data changes it stages/commits only `src/data/citations.json`, rebases over
+  concurrent metadata edits without force-pushing, then builds and deploys. Repository secret
   `SERPAPI_KEY` and variable `SCHOLAR_AUTHOR_ID` configure it. Without credentials
-  (or with only mock papers) the refresh is a no-op.
+  or during API failures the refresh is a no-op. Human edits to the citation file
+  itself can still conflict; bibliographic edits no longer share the bot's file.
 - Pages source must be GitHub Actions when this workflow is used. Neither a local
   build nor preview runs these workflows.
 - `astro.config.mjs` still uses `https://example.com`; `public/robots.txt` also has
@@ -113,7 +126,8 @@ its commented homepage example, obsolete research-group descriptions/query, unus
 demo-mode calculations, and unused export surfaces. Two unreferenced stock gallery
 JPEGs, five obsolete template screenshots, populated-directory `.gitkeep` markers,
 and the generator alias wrapper were removed. Duplicate `generate:fixtures` and
-`test:production` aliases were dropped; use `generate:demo` and `test:site`.
+`test:production` aliases were dropped; `test:site` remains the rendered site check.
+The later curated-data migration retired the destructive demo generator entirely.
 TypeScript exclusions for absent legacy directories were removed. Stale isolated
 fixture outputs/caches were deleted; the retained wrapper recreates them when needed.
 All substantive tests and dependencies were retained: every dependency has a current
@@ -138,6 +152,7 @@ links are omitted from the loaded view while source JSON/Markdown stays unchange
 Author names and flags remain, and an ID-only missing speaker/author gets an explicit
 not-listed label. Valid explicit IDs are never reassigned by name. Real records,
 duplicate IDs/DOIs, malformed metadata, assets, and imports retain strict validation.
+People/Publications no longer use this resolver: both are curated-only strict schemas.
 To restore a sample link later, restore its referenced record or deliberately correct
 the source ID after verification; do not fabricate a member to satisfy a pointer.
 

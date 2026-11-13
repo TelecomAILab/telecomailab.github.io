@@ -12,6 +12,7 @@ development displays the sample records directly, without fixture mode.
 | People | `src/data/people.json` | `src/lib/people-schema.ts` | `/people`, `/people/<id>` |
 | Biographies | `src/content/biographies/*.md` | Empty structured frontmatter | Member profile |
 | Publications | `src/data/publications.json` | `src/lib/publication-schema.ts` | `/publications#publication-<id>` |
+| Citation counts | `src/data/citations.json` | `src/lib/citations.ts` | Joined into publication cards |
 | Research | `src/data/research.json` | `src/lib/research-schema.ts` | `/research#<id>` |
 | Funding | `src/data/funding.json` | `src/lib/lab-schemas.ts` | `/funding` |
 | Materials | `src/data/resources.json` | `src/lib/lab-schemas.ts` | `/mare` |
@@ -37,19 +38,16 @@ Do not reuse an old person ID for a different identity without reviewing every
 publication/project reference: a valid ID is not proof that its displayed name is
 the intended researcher. Correct uncertain mappings manually, never by fuzzy matching.
 
-Current visible samples include 26 people, 14 papers (two per type, 2020–2026), five
-Research directions, three funders/six projects, 12 resources, eight News items,
-eight Talks, four Blog articles, and three Notes. Lab Life separately uses three real
-event albums with nine uploaded photos from 2025/2026; its old mock entries were removed.
-They are fictional, marked `isMock` and record-specific demo/illustration labels.
-Preserve these when appending PI records; omit unknown fields in real records.
-Do not add a global demo banner or hide samples from normal local viewing/search.
+People/Publications now contain 13 curated members and 43 curated papers; their
+strict schemas reject `isMock`. Research, Funding, Materials, News, Talks, Blog and
+Notes retain record-specific labeled examples and their mock flags. Do not remove
+these examples during People/Publications edits or hide them behind fixture mode.
+Lab Life uses three real event albums with nine uploaded photos from 2025/2026.
+Omit unknown fields in real records; do not invent missing information.
 
-`npm run generate:demo` replaces People/Publications/Funding/Resources JSON,
-biographies, SVG avatars, and sample downloads. It does not regenerate Research,
-News, Talks, Blog, Notes, or gallery. **Never run it over curated edits casually.**
-Legacy migration fixtures under `tests/fixtures` are separate regression/reference
-inputs, not another active publication/member source.
+The destructive demo generator and its npm command were removed to protect curated
+data. Legacy migration fixtures under `tests/fixtures` remain separate regression/
+reference inputs, not another active publication/member source.
 
 ## People and biographies
 
@@ -63,7 +61,7 @@ inputs, not another active publication/member source.
 | `biography`, `headshot` | Optional Markdown entry ID and local asset path |
 | `sourceUrls` | Optional HTTP(S) source evidence; not an independent verification receipt |
 | `links` | Optional email, website, scholar, orcid, linkedin, github, twitter; use schema-valid values |
-| `order`, `featured`, `isMock` | Numeric display order (default 0), featured/mock flags (default false) |
+| `order`, `featured` | Numeric display order (default 0), featured flag (default false) |
 
 Shared `PERSON_GROUPS` includes leadership, scientists, postdocs, PhD/master's,
 interns, collaborators, guests, former members, alumni, and legacy Faculty/Researchers/
@@ -75,17 +73,58 @@ to that ID. No structured member fields belong in biography frontmatter. Markdow
 formatting remains supported. Headshots normally use `../assets/people/<file>` relative
 to `people.json`; native Astro assets preserve optimization. Omitting a headshot
 renders initials. Do not use a real person's photograph for a fictional profile.
-Preserve `jane-doe`, `john-roe`, `1001`, and `1002` as existing stable IDs.
+Historical fixture IDs such as `jane-doe` are not active members.
+
+The deliberate roster migration follows the user-supplied file order:
+
+| New ID | Previous ID | Member | Order |
+| --- | --- | --- | --- |
+| 100 | 1000 | Vu Ha | 1 |
+| 101 | 1001 | Symeon Chatzinotas | 2 |
+| 102 | 1004 | Ti Ti Nguyen | 3 |
+| 103 | 1005 | Duc-Dung Tran | 4 |
+| 104 | 1006 | Dinh-Hieu Tran | 5 |
+| 105 | 1007 | Ons Aouedi | 6 |
+| 106 | 1008 | Muhammad Awais | 7 |
+| 107 | 1009 | Suleima Briseno Ramirez | 8 |
+| 108 | 1010 | Van Thieu NGUYEN | 9 |
+| 109 | 1011 | Huruy ZERIHUN | 10 |
+| 110 | 2016 | Bjorn Ottersten | 11 |
+| 111 | 2020 | Thanh-Dung Le | 12 |
+| 112 | 2001 | Kha Hung Nguyen | 13 |
+
+These IDs define the current `/people/<id>` URLs; old IDs were replaced, not retained
+as aliases. Do not renumber again when changing display order. The next new member
+can use 113 if still unused. Biography entry IDs/filenames need not match person IDs.
+Sara Kim and five other mock profiles were removed. Thanh-Dung Le remains without
+the incorrectly attached “[Demo] Zoe…” biography, as confirmed by the curator.
+Six previously saved real biographies were moved from numeric filenames to the
+correct member-named files, replacing demonstration/template text; Ti Ti Nguyen's
+real biography was retained. Members 107–112 have no supplied matching biography
+and omit that optional reference. Their profiles and publications still render.
+
+Pending manual identity checks (no automatic assignments were made):
+
+- Members 101 and 106 currently supply the same Google Scholar URL. Confirm Muhammad
+  Awais's link before changing either source field.
+- Unlinked Bjorn/Björn Ottersten author names occur in `wang2026multi`,
+  `nguyen2026digital`, `zaeem2026closed`, `nguyen2026joint`, `wang2026statistical`,
+  `he2025spatio`, `khan2024deep`, `wang2021completion`, `mehrizi2021trend`,
+  `lei2020deep`, `mehrizi2020online`, `lei2019learning`, and
+  `tsakmalis2018constrained`. Confirm whether each should reference member 110.
+- `tran2023multi` has unlinked author names Duc-Dung Tran and Vu Nguyen Ha. Confirm
+  the intended members 103 and 100 respectively. Names alone are not identity proof.
 
 Only publication authors with explicit `personId` appear as member associations.
 Current/alumni/former records all resolve consistently; every associated paper appears
 on the profile, without a fifteen-paper cap. Uncertain mappings remain unresolved
 until a curator confirms identity.
 
-Minimal fictional example for a **new, unused** member ID (documentation only):
+Minimal structural example for a **new, unused** member ID (documentation only;
+replace the name and role with approved information before adding it):
 
 ```json
-{"id":900001,"name":"[Fictional example] New Member","status":"current","group":"PhD Students","role":"PhD Researcher","isMock":true}
+{"id":900001,"name":"<Approved full name>","status":"current","group":"PhD Students","role":"<Approved role>"}
 ```
 
 Append a new object or edit the existing object by ID; never replace the whole roster.
@@ -116,8 +155,7 @@ fields preserve older records. Source schema: `src/lib/publication-schema.ts`.
 | `url`, `scholarUrl` | Optional HTTP(S) links |
 | `presentationMaterials` | Optional `{label, url}` array; HTTP(S) or `/files/…` |
 | `bibtex` | Optional curated entry, preferred over generated citation |
-| `citationCount` | Optional nonnegative integer; omitted means unknown, zero remains visible |
-| `openAccess`, `featured`, `isMock` | Access/mock default false; featured is an optional explicit override |
+| `openAccess`, `featured` | Access defaults false; featured is an optional explicit override |
 | `verification` | Optional `{method: "doi" or "manual", sourceUrl, checkedAt}` review receipt |
 | Legacy flags | `isMenteePaper`, `menteeFirstAuthor`, `piFirstOrSenior`, `collaboration` remain supported |
 
@@ -140,10 +178,55 @@ and supplied metadata only. Curated BibTeX needs human syntax/content review bey
 the schema's basic entry shape. Never invent missing bibliographic fields.
 
 Validation rejects duplicate IDs/DOIs (case-insensitive DOI comparison), unresolved
-person references, missing local materials, and missing specified images. Preserve
-`sample-2024-network` referenced by `sample-figure`, and publication `1001` referenced
-by the rights-unconfirmed figure. Do not restore CV/author overlay JSON or active
-Markdown publication copies.
+person references, missing local materials, and missing specified images. Real paper
+IDs were preserved during migration. Two mock figure records were removed alongside
+their deleted mock papers; the rights gate and `/figures` empty state remain valid.
+Do not restore CV/author overlay JSON or active Markdown publication copies.
+
+Use `journal-article`, not `journal-paper`. `areas` accepts only existing taxonomy
+IDs; free-form subjects belong in `keywords`. During migration unsupported terms
+were retained as keywords and mapped to existing directions where clear (wireless,
+edge, satellite, optimization, semantic Earth observation); computer vision remains
+a keyword. Ti Ti Nguyen's first-author reference in `nguyen2026optimization` was
+corrected to 102 with the curator's confirmation. Other unresolved authors stay
+unlinked; no name-based membership inference was applied.
+
+Local PDF links were omitted for the following absent uploads. Add the actual file
+under `public`, then restore `pdfUrl`; existing DOI/publisher links remain available:
+
+| Paper ID | Pending `pdfUrl` |
+| --- | --- |
+| `nguyen2026privacy` | `/files/publications/privacy-preserving-uav-2026.pdf` |
+| `wang2026multi` | `/files/publications/multi-satellite-beamspace-2026.pdf` |
+| `tran2026reinforcement` | `/files/publications/southeastcon-rl-compression-routing-2026.pdf` |
+
+Five missing `methods.svg` references now use the existing concept illustration
+`tools.svg`, matching the Methods direction's asset. Actual uploaded paper images
+and files were retained.
+
+### Citation counts
+
+Store counts exclusively in `src/data/citations.json`:
+
+```json
+[
+  {"id":"<existing-publication-id>","citationCount":null}
+]
+```
+
+IDs must identify existing papers and be unique; counts are nonnegative integers
+or null. Null/missing means unknown and produces no citation badge; 0 is a known
+zero and sorts above unknown values. Original known counts were migrated; no
+new counts were invented. Adding a paper may include a null row; a missing row is
+also safe until the next successful refresh. Remove its count row when deleting a
+paper. Do not put `citationCount`, `citations`, or `isMock` into publications.json.
+
+The loader joins counts into the collection's read model so cards, profiles,
+homepage and citation sorting continue using the same derived aliases. The weekly
+Scholar script writes only citations.json; it never modifies bibliographic metadata
+or Scholar URLs. Review/import count values separately from publication candidates.
+See [development](development.md#metadata-tools) for credentials, pagination,
+matching safeguards, offline tests and the existing weekly workflow.
 
 ### Review imports
 
@@ -163,17 +246,17 @@ compare DOI, title, year, ordered author names, venue, and supplied publisher/vo
 issue/pages. Abbreviations, metadata differences, non-Crossref DOIs, unavailable
 services, resource links, and contribution assertions need manual source review.
 Non-DOI records can supply a manual receipt with primary source URL and timestamp.
-The receipt alone is insufficient: `--reviewed` confirms operator review. Mock records
-cannot become verified import candidates. Arbitrary BibTeX input is not parsed.
+The receipt alone is insufficient: `--reviewed` confirms operator review. The strict
+schema rejects `isMock` and inline citation fields. Arbitrary BibTeX input is not parsed.
 
-Minimal fictional record for `src/data/publications.json`:
+Minimal structural record (documentation only; replace placeholders with approved
+publication metadata):
 
 ```json
-{"id":900001,"title":"[Fictional example] A scheduling study","authors":[{"name":"Chen M","personId":"1001"},{"name":"Fictional External Author"}],"year":2026,"publicationType":"preprint","isMock":true}
+{"id":900001,"title":"<Approved title>","authors":[{"name":"<Author as published>"}],"year":2026,"publicationType":"preprint"}
 ```
 
-Here `1001` is an existing demo member, used only to illustrate an explicit link.
-Replace it with a confirmed member ID for real data. Preserve author order and display
+Add `personId` only after confirming a member from the roster above. Preserve author order and display
 names independently of profile names. Validate combined existing/candidate records,
 not candidates alone, to detect collisions. Never match by fuzzy name or create a
 People record solely to make an external author link. Run build/check and
@@ -216,7 +299,7 @@ Minimal fictional Funding pair, to merge into the **existing** funders/projects 
 ```json
 {
   "funders":[{"id":"example-only","name":"Fictional Example Funder","shortName":"EXAMPLE","programme":"Fictional programme","isMock":true}],
-  "projects":[{"id":900001,"acronym":"EXAMPLE","title":"[Fictional example] Project","funderId":"example-only","status":"active","startYear":2026,"endYear":2027,"leadPersonId":"1001","areas":[],"summary":"Fictional project description.","isMock":true}]
+  "projects":[{"id":900001,"acronym":"EXAMPLE","title":"[Fictional example] Project","funderId":"example-only","status":"active","startYear":2026,"endYear":2027,"leadName":"Fictional project lead","areas":[],"summary":"Fictional project description.","isMock":true}]
 }
 ```
 
@@ -229,7 +312,7 @@ Run build/check and `npm run test:site`, then inspect `/funding` and its links.
 Minimal fictional Materials object, using an existing demo download:
 
 ```json
-{"id":900001,"title":"[Fictional example] Resource","category":"Presentations","summary":"Fictional resource description.","url":"/files/publications/mock-paper.pdf","format":"PDF","license":"Example only","version":"example-1","access":"open","updated":"2026-11-10","maintainerPersonIds":["1001"],"isMock":true}
+{"id":900001,"title":"[Fictional example] Resource","category":"Presentations","summary":"Fictional resource description.","url":"/files/publications/mock-paper.pdf","format":"PDF","license":"Example only","version":"example-1","access":"open","updated":"2026-11-10","maintainerPersonIds":[],"isMock":true}
 ```
 
 Pick one primary link for `url`; separate repository/documentation/download links
@@ -338,14 +421,14 @@ title: "Article title"
 slug: your-stable-slug
 date: "2026-11-10"
 authors:
-  - personId: "1001"
+  - personId: "100"
   - name: "External contributor"
 summary: "One or two introductory sentences."
 tags: [Wireless AI, Reproducibility]
 coverImage: ../../assets/editorial/wireless.svg
 coverAlt: "Describe the image"
 status: draft
-relatedPublications: [sample-2024-network]
+relatedPublications: []
 isMock: true
 ---
 ```
@@ -557,7 +640,7 @@ page, profile/paper links, images, files, filters, and calendar actions; review 
 and wide layouts. Pagefind dev search uses the last built index. Existing demo-count
 tests will need deliberate updates when verified data replaces samples; do not delete
 useful relationship/interaction tests to hide a failure. Run `npm run check:links` for
-non-mock external publication links when network access is available; it skips examples.
+curated external publication links when network access is available.
 No local command above publishes; commit/push/deploy need explicit approval.
 
 ## CSV return and import workflow
@@ -585,8 +668,8 @@ to the corresponding arrays. Append `funders` and `projects` to their separate
 arrays in funding.json. Create only new biography paths; never overwrite existing
 Markdown. Compare every old record before/after, including its ID, field values and
 relationships. There is deliberately no `--write` option. Rerunning against the
-updated JSON must return zero new candidates for the same input. Never run
-`generate:demo` during imports.
+updated JSON must return zero new candidates for the same input. The retired demo
+generator must not be reintroduced as an import step.
 
 Duplicate rules: People use shared institutional profile source URLs, email or
 ORCID plus a consistent name; name-only collisions are held for review. Publications
@@ -607,9 +690,9 @@ files are reported for manual conversion using the tables below. Site Informatio
 is a singleton configuration, so replacement fields are reported for review rather
 than changing existing identity/contact/navigation/deployment settings.
 
-Seven submitted people, 26 papers, three research directions, eight projects,
-seven funder/programme entries, two news items and eight equipment records have
-been appended, preserving all earlier samples. Suleima Briseno Ramirez is held
+The original CSV pass supplied People, Publications, Research, Funding, News and
+Equipment candidates. JSON now also includes later direct curator edits; the current
+People/Publications roster replaces the old samples and is authoritative. Suleima Briseno Ramirez is held
 because the Postdocs/Research Associate fields conflict with a technician biography.
 The proposed Foundations and Methods of Artificial Intelligence direction explicitly
 requires lab approval and is held. Review the original CSVs for all source notes,
@@ -727,7 +810,7 @@ directions. Never derive a new ID by lowercasing a returned Research title.
 | Google Scholar URL | O | `scholarUrl` — Paper URL. |
 | BibTeX | O | `bibtex` — Preserve full multiline entry; do not split on semicolons. |
 | Open Access | O | `openAccess` — Yes/No. Blank does not assert verified open access. |
-| Citation Count | O | `citationCount` — Nonnegative integer; blank is unknown and 0 is a known zero. |
+| Citation Count | O | `citations.json[].citationCount` — Review separately by publication ID; nonnegative integer, blank becomes null, 0 is a known zero. Never a publication field. |
 | Featured | O | `featured` — Blank omits the override; Yes/No explicitly overrides automatic selection. |
 | Lab Member Authors (author numbers) | O | `authors[position-1].personId` — One-based positions; curator confirms each identity and supplies IDs. |
 | Co-first Authors (author numbers) | O | `authors[position-1].coFirst` — One-based positions. |

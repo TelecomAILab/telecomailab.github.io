@@ -3,12 +3,11 @@
 //  - url: HEAD (follow redirects); 403/429 treated as bot-block (not broken).
 import { readFileSync } from "node:fs";
 const records = JSON.parse(readFileSync(new URL("../src/data/publications.json", import.meta.url), "utf8"));
-const pubs = records.filter((record) => !record.isMock).map((record) => ({
+const pubs = records.map((record) => ({
   slug: String(record.id), doi: record.doi, url: record.url, scholar: record.scholarUrl,
 }));
-console.log(`Skipping ${records.length - pubs.length} explicitly marked mock publications.`);
 if (!pubs.length) {
-  console.log("No non-mock publications to check.");
+  console.log("No publications to check.");
   process.exit(0);
 }
 

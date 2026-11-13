@@ -16,6 +16,7 @@ navigation, galleries, search, and appearance. Check `package.json` for exact ve
 | Typed schemas | `src/lib/*-schema.ts` |
 | Funding/Materials/Hardware schemas and relationships | `src/lib/lab-schemas.ts`, `src/lib/lab-data.ts` |
 | Publication badges, citations, queries, review imports | `src/lib/publication-{authors,format,query,import}.ts` |
+| Independent citation records and read-time join | `src/data/citations.json`, `src/lib/citations.ts` |
 | Shared shell | `BaseLayout.astro`, `SEO.astro`, `Nav.astro`, `Footer.astro` |
 | Identity, contacts, navigation, social links | `src/data/site.ts` |
 | Shared CSS and appearance | `src/styles/global.css`, `src/styles/themes.css` |
@@ -35,7 +36,10 @@ change them. Publication-specific author names/order remain authoritative. Only 
 explicit `personId` connects an author to a member; external/unresolved authors omit
 it. Current, former, and alumni profiles show all associated papers without a cap.
 Group order comes from `PERSON_GROUPS`, then numeric member `order`; status does not
-replace that ordering.
+replace that ordering. The curated roster was deliberately rekeyed to 100–112
+(order 1–13); all explicit references were migrated together. These IDs now define
+profile URLs; future edits must not renumber them. People/Publications reject `isMock`;
+other collections retain labeled examples and their mock-reference resolver.
 
 Structured member data stays in JSON; Markdown-only biographies resolve through
 `getEntry()` and `render()`. Collection `image()` helpers and Astro `Image`/`getImage`
@@ -48,7 +52,13 @@ Publication filters combine type/topic/year/role/access/featured/search with AND
 semantics. Preserve newest/oldest/citation sorting, deterministic ties, unknown counts,
 reset, announced counts, mobile controls, and legacy hashes. Search includes title,
 author, venue, keywords, and linked members' full/preferred names. Canonical `venue`
-and `citationCount` produce derived `journal`/`citations` aliases for old consumers.
+produces the derived `journal` alias. Citation counts live only in `citations.json`,
+not bibliographic records. Its unique publication ID and nullable nonnegative integer
+are validated before loading. The Publications schema transform joins counts into
+`citationCount`/`citations`, preserving `getCollection("publications")` consumers. Null
+or an absent row means unknown; zero is a confirmed zero. Orphan/duplicate citation
+IDs fail validation. The weekly writer matches unambiguous Scholar titles/years or
+an explicitly supplied citation link and writes only the independent count store.
 `publicationRole` (`pi`, `senior`, `mentee`) drives shared badges; legacy assertions
 remain compatible. Explicit `featured` overrides the automatic mentee/PI policy
 (excluding reviews/letters and retaining the 2019 threshold). Homepage selection is
@@ -142,8 +152,8 @@ repeats. Missing/duplicate anchors or Pagefind errors fail the build.
 The index includes public member/article pages, papers, projects, resources, Research,
 News, Talks, Figures, home introduction, and both About sections. It excludes duplicate
 listings/profile papers, controls, navigation/footer, BibTeX, related blocks,
-404/noindex, drafts, future articles, downloads, and calendars. Public demo and appended PI records
-remain searchable (currently 144 entries, 13 categories). The native search dialog
+404/noindex, drafts, future articles, downloads, and calendars. Curated records and
+retained examples remain searchable; counts are derived from current content. The native search dialog
 lazy-loads local Pagefind/WASM, supports Cmd/Ctrl+K outside editable fields, keyboard
 results, focus restoration, empty/error/retry/more states, and stale-response protection.
 Same-page results navigate freshly to clear filters. Paths respect Astro base handling.
@@ -162,7 +172,9 @@ their own appearance. Transitions respect reduced motion. See
 
 ## Asset provenance
 
-Original Research vectors and fictional avatars do not depict actual lab people.
+Original Research vectors are concept illustrations, not paper figures or photographs.
+Unused fictional member avatars were removed with the mock roster; the historical
+JPEG headshots remain test dependencies.
 Lab Life now uses user-supplied event photographs; no person identities are inferred
 from faces, and original uploaded files remain unchanged. Nine social paths are vendored from
 [Simple Icons 11.15.0](https://github.com/simple-icons/simple-icons/tree/11.15.0/icons)
@@ -182,6 +194,6 @@ partners, and achievements are not represented as TelecomAI's.
 reports candidates, duplicate/conflicting identities, unsupported columns and source
 notes; deliberate append edits remain separate. It never rewrites curated JSON or
 biographies. People/Publications retain optional source URLs without manufacturing
-verification receipts. Unknown publication roles remain unset; real papers without a reviewed PI role or explicit collaboration assertion receive no inferred collaboration badge. Fictional and explicit legacy badges remain compatible. Existing official
+verification receipts. Unknown publication roles remain unset; real papers without a reviewed PI role or explicit collaboration assertion receive no inferred collaboration badge. Explicit legacy badges remain compatible. Existing official
 Astro loaders and `getCollection()` consumers remain authoritative. See the content
 guide for exact mappings, held rows, hardware fields and image instructions.

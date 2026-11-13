@@ -71,7 +71,6 @@
       "isMock": false
     }
   ],
-
   "projects": [
     {
       "id": 701,
@@ -87,10 +86,10 @@
         "theory"
       ],
       "grantId": "DEMO-2024-701",
-      "leadPersonId": 1001,
+      "leadPersonId": 101,
       "teamPersonIds": [
-        1001,
-        1000
+        101,
+        100
       ],
       "partners": [
         "Example Partner University",
@@ -121,10 +120,10 @@
         "methods"
       ],
       "grantId": "DEMO-2025-702",
-      "leadPersonId": 1001,
+      "leadPersonId": 101,
       "teamPersonIds": [
-        1001,
-        1006
+        101,
+        104
       ],
       "partners": [
         "Example Partner University",
@@ -155,10 +154,10 @@
         "theory"
       ],
       "grantId": "DEMO-2023-703",
-      "leadPersonId": 1001,
+      "leadPersonId": 101,
       "teamPersonIds": [
-        1001,
-        1007
+        101,
+        105
       ],
       "partners": [
         "Example Partner University",
@@ -189,10 +188,10 @@
         "topic-one"
       ],
       "grantId": "DEMO-2026-704",
-      "leadPersonId": 1001,
+      "leadPersonId": 101,
       "teamPersonIds": [
-        1001,
-        1005
+        101,
+        103
       ],
       "partners": [
         "Example Partner University",
@@ -223,10 +222,10 @@
         "topic-two"
       ],
       "grantId": "DEMO-2021-705",
-      "leadPersonId": 1001,
+      "leadPersonId": 101,
       "teamPersonIds": [
-        1000,
-        1004
+        100,
+        102
       ],
       "partners": [
         "Example Partner University",
@@ -257,10 +256,10 @@
         "theory"
       ],
       "grantId": "DEMO-2020-706",
-      "leadPersonId": 1001,
+      "leadPersonId": 101,
       "teamPersonIds": [
-        1001,
-        1004
+        101,
+        102
       ],
       "partners": [
         "Example Partner University",
@@ -374,7 +373,9 @@
       ],
       "summary": "Explores distributed reinforcement learning for resource and control decisions across ground, aerial and satellite networks.",
       "outputs": [],
-      "publicationIds": ["eappen2025neuromorphic"],
+      "publicationIds": [
+        "eappen2025neuromorphic"
+      ],
       "isMock": false
     },
     {
@@ -397,7 +398,9 @@
       ],
       "summary": "Evaluates AI acceleration of onboard satellite signal processing and demonstrates methods in a laboratory testbed.",
       "outputs": [],
-      "publicationIds": ["eappen2025neuromorphic"],
+      "publicationIds": [
+        "eappen2025neuromorphic"
+      ],
       "isMock": false
     },
     {
@@ -471,7 +474,9 @@
       ],
       "summary": "Combines AI and high-performance computing to process Earth observation imagery efficiently in collaboration with Hydrosat.",
       "outputs": [],
-      "publicationIds": ["le2025semantic"],
+      "publicationIds": [
+        "le2025semantic"
+      ],
       "isMock": false
     }
   ]

@@ -3,13 +3,16 @@ title: "[Demo] Reading a weighted objective carefully"
 slug: weighted-objectives
 date: "2026-08-13"
 authors:
-  - personId: "1001"
-summary: "Units and normalisation matter when combining performance and resource cost in one expression."
-tags: [Optimisation, Modelling]
+  - personId: 101
+summary: Units and normalisation matter when combining performance and resource cost in one expression.
+tags:
+  - Optimisation
+  - Modelling
 coverImage: ../../assets/editorial/wireless.svg
-coverAlt: "A schematic network of connected nodes"
+coverAlt: A schematic network of connected nodes
 status: published
-relatedPublications: [nguyen2025semantic]
+relatedPublications:
+  - nguyen2025semantic
 isMock: true
 ---
 

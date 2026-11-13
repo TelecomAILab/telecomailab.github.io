@@ -1,1 +1,1 @@
-[Demo] Amina explores satellite communications and non-terrestrial networks.
+Dinh-Hieu Tran is a postdoctoral researcher in the SIGCOM group at SnT, University of Luxembourg.

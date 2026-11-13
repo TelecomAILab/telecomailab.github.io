@@ -39,7 +39,6 @@ export const personSchema = z.strictObject({
   }).default({}),
   order: z.number().default(0),
   featured: z.boolean().default(false),
-  isMock: z.boolean().default(false),
 });
 
 

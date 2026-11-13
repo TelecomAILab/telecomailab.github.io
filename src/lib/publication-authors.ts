@@ -26,7 +26,7 @@ export function publicationRoles(record: PublicationMetadata, people: ReadonlyMa
   const soleLast = isPI(last) && !sharedSenior && !last.coFirst;
   // Real records with unreviewed identities cannot establish a PI collaboration.
   const knownPiRole = record.authors.some(isPI);
-  const collaboration = record.collaboration ?? ((record.isMock || knownPiRole) && !soleFirst && !soleLast);
+  const collaboration = record.collaboration ?? (knownPiRole && !soleFirst && !soleLast);
   const primaryResearch = record.publicationType !== "review-article" && !record.areas.includes("letter") && !record.areas.includes("review");
   return { menteeLed, piFirstOrSenior, collaboration, featured: record.featured ?? (primaryResearch && (menteeLed || (piFirstOrSenior && record.year >= 2019))) };
 }

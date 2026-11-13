@@ -8,6 +8,8 @@ dist/
 
 tests/
 
+# Keep test sources and fixtures versioned; Astro does not copy tests/ to dist/.
+
 # dependencies
 node_modules/
 
@@ -29,6 +31,7 @@ pnpm-debug.log*
 /.local/
 *.log
 *.tsbuildinfo
+src/data/citations.json.*.tmp
 .cache/
 coverage/
 .nyc_output/

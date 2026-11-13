@@ -3,9 +3,11 @@ title: "[Demo] A checklist for reproducible runs"
 slug: reproducible-runs
 date: "2026-10-30"
 authors:
-  - personId: "2007"
-summary: "The information to save before an experiment becomes difficult to reconstruct."
-tags: [Reproducibility, Checklist]
+  - name: Author not listed
+summary: The information to save before an experiment becomes difficult to reconstruct.
+tags:
+  - Reproducibility
+  - Checklist
 status: published
 isMock: true
 ---

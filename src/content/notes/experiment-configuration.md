@@ -3,9 +3,11 @@ title: "[Demo] A minimal experiment configuration"
 slug: experiment-configuration
 date: "2026-09-24"
 authors:
-  - personId: "2008"
-summary: "Keep experiment settings separate from the implementation and save the exact configuration with each result."
-tags: [Software, Experiments]
+  - name: Author not listed
+summary: Keep experiment settings separate from the implementation and save the exact configuration with each result.
+tags:
+  - Software
+  - Experiments
 status: published
 isMock: true
 ---

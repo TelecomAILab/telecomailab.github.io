@@ -14,10 +14,10 @@
 
 ## Content contracts
 
-- Fictional samples must remain visible in **normal local development**. Keep active
-  data under `src/`, `isMock`, and record-specific demo/illustration labels. Do not
-  restore global banners or hide samples behind fixture mode. Never present invented
-  academic information as verified; leave unknown real fields blank.
+- People and Publications contain curated records only; their strict schemas reject
+  `isMock`. Other retained samples remain visible in normal local development with
+  `isMock` and record-specific labels. Do not restore global banners or hide samples
+  behind fixture mode. Never present invented academic information as verified.
 - JSON is authoritative for People, Publications, Research, News, Talks, Funding,
   Materials, and Lab Life albums (`src/data/gallery.json`). Preserve official `file()`
   loaders and `getCollection()` consumers.
@@ -26,16 +26,19 @@
   Keep metadata in JSON, native Astro images, initials fallback, preferred names,
   current/alumni support, and shared group/order behavior. No real photos for fake people.
 - Relationships use explicit stable IDs only; never infer `personId` from names.
-  Preserve legacy IDs; use positive numeric IDs for new People/Publications. External
+  People were deliberately migrated to 100–112 with order 1–13; preserve these IDs
+  and append unused positive numeric IDs for new People/Publications. External
   authors need no member record. Profiles show all associated publications without a cap.
-- Publication types and research topics are separate. Store canonical `venue` and
-  `citationCount`; aliases are derived. Preserve badges, featured overrides, filters,
+- Publication types and research topics are separate. Store canonical `venue` in
+  `publications.json` and `{id, citationCount}` in `citations.json`; null means unknown,
+  zero is valid. Join counts at collection load; aliases are derived. The weekly
+  citation bot must write/stage only citations.json. Preserve badges, featured overrides, filters,
   sorting, author names/headshots, optional resources, BibTeX, and stable anchors.
 - Keep figure rights fail-closed. Draft/future articles generate no routes or sitemap
   entries. Scheduling uses UTC build dates. Talks require explicit offsets/IANA zones;
   calendar actions require a supplied end after the start. Never invent a duration.
-- `generate:demo` overwrites curated files; never run it as routine validation.
-  Imports only report candidates and must not silently overwrite curated records.
+- The destructive demo generator was retired. Imports only report candidates and
+  must not silently overwrite curated records or put counts back in publications.json.
 
 ## Interface contracts
 
@@ -44,7 +47,7 @@
   then Lab Life. `/contact` and `/lab-life` were removed without redirects. News stays
   contextual; `/figures` stays valid. Preserve the 80rem navigation breakpoint.
 - Lab Life uses one JSON event with a photos array per album; no Markdown per photo.
-  Only this section now uses real uploaded photos; its old mock records were removed.
+  This section uses real uploaded photos; its old mock records were removed.
   Random covers stay within their event; photo featured limits cover candidates, while
   featuredHome independently controls Home. Preserve album-only navigation and thumbnails.
 - Keep shared container widths; constrain only profile biography prose. Research

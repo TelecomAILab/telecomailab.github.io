@@ -1,484 +1,972 @@
 [
   {
-    "id": "sample-2024-network",
-    "title": "[Demo] Learning to schedule energy-efficient wireless networks",
+    "id": "van2026fedqos",
+    "title": "FedQoS: Federated QoS-Risk Learning for Heterogeneous Indoor-Outdoor Access Selection",
     "authors": [
       {
-        "name": "Chen M",
-        "personId": 1001,
-        "coFirst": true,
+        "name": "Van Thieu, Nguyen",
+        "personId": 108,
         "contributions": [
           "Methodology",
-          "Software"
+          "Software",
+          "Writing - original draft"
         ]
       },
       {
-        "name": "Idris A",
-        "personId": 1010,
-        "coFirst": true
+        "name": "Ti Ti Nguyen",
+        "personId": 102
       },
       {
-        "name": "Weiss N",
-        "personId": 1010
+        "name": "Ons Aouedi",
+        "personId": 105
       },
       {
-        "name": "Doe J",
-        "personId": 1010,
-        "corresponding": true,
-        "email": "demo-jane@example.com",
-        "contributions": [
-          "Supervision",
-          "Writing – review and editing"
-        ],
-        "coSenior": true
+        "name": "Zerihun Huruy",
+        "personId": 109
       },
       {
-        "name": "External Demo Collaborator 1"
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
       }
     ],
-    "year": 2024,
-    "publicationType": "journal-article",
-    "venue": "Example Journal of Communication Systems",
-    "journalName": "Example Journal of Communication Systems",
-    "volume": "1",
-    "issue": "1",
-    "pages": "101–110",
-    "publisher": "Example Academic Press",
-    "doi": "10.0000/telecomai.demo.2024.sample-2024-network",
-    "abstract": "This demo study explores learning to schedule energy-efficient wireless networks using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "year": 2026,
+    "publicationType": "conference-paper",
+    "venue": "2026 IEEE 37th International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)",
+    "conferenceName": "IEEE PIMRC 2026",
+    "pages": "2495-2501",
+    "publisher": "IEEE",
+    "abstract": "Reliable access selection in dynamic and heterogeneous indoor-outdoor environments is challenging because instantaneous radio measurements alone cannot capture future QoS degradation caused by mobility, blockage, traffic load, and resource competition. This paper proposes FedQoS, a federated QoS-risk learning framework for predicting the future reliability of candidate access links and supporting access-node selection without centralizing user-level network data.",
     "keywords": [
+      "federated learning",
+      "access selection",
       "wireless networks",
-      "satellite systems",
-      "synthetic evaluation"
+      "QoS-risk learning",
+      "indoor-outdoor environments",
+      "wireless communications"
     ],
     "areas": [
       "topic-one",
-      "topic-three"
+      "topic-two"
     ],
-    "citationCount": 84,
-    "pdfUrl": "/files/publications/mock-paper.pdf",
-    "codeUrl": "/files/resources/demo-scheduler.js",
-    "projectUrl": "/mare",
+    "pdfUrl": "/files/publications/van2026fedqos-paper.pdf",
+    "slidesUrl": "/files/publications/van2026fedqos-slides.pptx",
     "openAccess": true,
     "featured": true,
-    "isMock": true,
-    "bibtex": "@article{telecomaisample-2024-network,\n  author = {{Chen M} and {Idris A} and {Weiss N} and {Doe J} and {External Demo Collaborator 1}},\n  title = {[Demo] Learning to schedule energy-efficient wireless networks},\n  year = {2024},\n  journal = {Example Journal of Communication Systems},\n  publisher = {Example Academic Press},\n  volume = {1},\n  number = {1},\n  pages = {101--110},\n  doi = {10.0000/telecomai.demo.2024.sample-2024-network}\n}",
-    "image": "../assets/research/wireless.svg",
-    "imageAlt": "Concept illustration for this demonstration publication"
+    "bibtex": "@inproceedings{van2026fedqos,\n  title={FedQoS: Federated QoS-Risk Learning for Heterogeneous Indoor-Outdoor Access Selection},\n  author={Van Thieu, Nguyen and Nguyen, Ti Ti and Aouedi, Ons and Huruy, Zerihun and Ha, Vu Nguyen and Chatzinotas, Symeon},\n  booktitle={2026 IEEE 37th International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)},\n  pages={2495--2501},\n  year={2026},\n  organization={IEEE}\n}",
+    "image": "../assets/research/icon/van2026fedqos.png",
+    "imageAlt": "Concept illustration for FedQoS publication"
   },
   {
-    "id": 1001,
-    "title": "[Demo] Cloud-edge intelligence for adaptive radio access",
+    "id": "van2026resilient",
+    "title": "Resilient Decentralized Wireless Federated Learning via Gradient Tracking with AdamW",
     "authors": [
       {
-        "name": "Martin L"
+        "name": "Van Thieu, Nguyen",
+        "personId": 108
       },
       {
-        "name": "Costa S"
+        "name": "Ti Ti Nguyen",
+        "personId": 102
       },
       {
-        "name": "Hassan L"
+        "name": "Ons Aouedi",
+        "personId": 105
       },
       {
-        "name": "Doe J",
-        "personId": 1010,
-        "corresponding": true,
-        "email": "demo-jane@example.com",
-        "contributions": [
-          "Supervision",
-          "Writing – review and editing"
-        ]
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      }
+    ],
+    "year": 2026,
+    "publicationType": "conference-paper",
+    "venue": "2026 IEEE Global Communications Conference (GLOBECOM)",
+    "conferenceName": "IEEE GLOBECOM 2026",
+    "publisher": "IEEE",
+    "abstract": "Decentralized learning has emerged as a promising paradigm for enabling collaborative intelligence across distributed edge devices without relying on a central coordinator. However, deploying decentralized learning over wireless networks introduces significant challenges, particularly when devices have heterogeneous local data and communicate through bandwidth-limited, unreliable wireless channels.",
+    "keywords": [
+      "decentralized learning",
+      "federated learning",
+      "gradient tracking",
+      "AdamW",
+      "wireless edge networks",
+      "decentralized optimization",
+      "wireless communications"
+    ],
+    "areas": [
+      "theory",
+      "topic-one"
+    ],
+    "pdfUrl": "/files/publications/van2026resilient-paper.pdf",
+    "slidesUrl": "/files/publications/van2026resilient-slides.pptx",
+    "openAccess": false,
+    "featured": true,
+    "bibtex": "@inproceedings{van2026resilient,\n  title={Resilient Decentralized Wireless Federated Learning via Gradient Tracking with AdamW},\n  author={Van Thieu, Nguyen and Nguyen, Ti Ti and Aouedi, Ons and Ha, Vu Nguyen and Chatzinotas, Symeon},\n  booktitle={2026 IEEE Global Communications Conference (GLOBECOM)},\n  year={2026},\n  organization={IEEE}\n}",
+    "image": "../assets/research/icon/van2026resilient.png",
+    "imageAlt": "Concept illustration for Resilient Decentralized FL publication"
+  },
+  {
+    "id": "nguyen2026privacy",
+    "title": "Privacy-Preserving Solutions for UAV-aided Uplink Massive MIMO Systems",
+    "authors": [
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 102
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Thanh-Dung Le",
+        "personId": 111
+      },
+      {
+        "name": "Hung Nguyen-Kha",
+        "personId": 112
+      },
+      {
+        "name": "Duc Dung Tran",
+        "personId": 103
+      },
+      {
+        "name": "Kim-Khoa Nguyen"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
       }
     ],
     "year": 2026,
     "publicationType": "journal-article",
-    "venue": "Example Journal of Communication Systems",
-    "journalName": "Example Journal of Communication Systems",
-    "volume": "2",
-    "issue": "2",
-    "pages": "111–120",
-    "publisher": "Example Academic Press",
-    "doi": "10.0000/telecomai.demo.2026.1001",
-    "abstract": "This demo study explores cloud-edge intelligence for adaptive radio access using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "venue": "IEEE Transactions on Wireless Communications",
+    "conferenceName": "IEEE TWC",
+    "publisher": "IEEE",
+    "abstract": "As future wireless communication networks brace for a huge number of connected devices with various applications, they are expected to accommodate a diverse set of users (UEs) with different security needs. Alongside ordinary UEs, networks may encounter UEs with heightened security requirements and untrustworthy devices. Ensuring data protection for these UEs against potential threats from unauthorized ones poses a significant challenge for the next-generation wireless data transmission protocols. To address these security concerns, differential privacy (DP) has been considered as a promising approach. Developing privacy-preserving solutions for future Unmanned Aerial Vehicle (UAV)-aided wireless communication systems, this paper investigates a framework exploiting the massive multi-input multi-output (MIMO) technology and UAV-based Line-of-Sight (LoS) links to maximize the total uplink transmission rate. We then introduce a three tiers of assistance system to achieve this objective. These tiers are classified based on the role of the base station (BS) and the transmission strategy of protected-authorized UEs. In particular, protected-authorized UEs can either directly transmit their data to the BS or relay them through their neighbors if the channels between protected-authorized UEs and unauthorized UEs pose a risk of violating the DP constraint. The underlying non-convex problems are solved by transforming fractional functions into non-fractional forms. Then, the successive convex approximation (SCA) is applied to attain a standard semi-definite programming (SDP) problem. Our numerical results confirm the efficiency of the proposed design in terms of spectral efficiency, relative minimum-rate violation, and relative privacy-budget violation.",
     "keywords": [
-      "wireless networks",
-      "edge intelligence",
-      "synthetic evaluation"
+      "UAV communications",
+      "massive MIMO",
+      "differential privacy",
+      "uplink transmission",
+      "successive convex approximation",
+      "wireless security",
+      "UAV networks"
     ],
     "areas": [
-      "topic-two",
-      "methods"
-    ],
-    "citationCount": 0,
-    "pdfUrl": "/files/publications/mock-paper.pdf",
-    "projectUrl": "/mare",
-    "slidesUrl": "/files/presentations/mock-slides.pdf",
-    "openAccess": true,
-    "featured": true,
-    "isMock": true,
-    "image": "../assets/research/edge.svg",
-    "imageAlt": "Concept illustration for this demonstration publication"
-  },
-  {
-    "id": 1002,
-    "title": "[Demo] Joint beam selection for integrated satellite-terrestrial networks",
-    "authors": [
-      {
-        "name": "Roe J",
-        "personId": 1001,
-        "coFirst": true,
-        "contributions": [
-          "Methodology",
-          "Software"
-        ]
-      },
-      {
-        "name": "Rao A",
-        "personId": 1006,
-        "coFirst": true
-      },
-      {
-        "name": "Sato A",
-        "personId": 1017
-      },
-      {
-        "name": "Doe J",
-        "personId": 1004,
-        "corresponding": true,
-        "email": "demo-jane@example.com",
-        "contributions": [
-          "Supervision",
-          "Writing – review and editing"
-        ]
-      },
-      {
-        "name": "External Demo Collaborator 4"
-      }
-    ],
-    "year": 2025,
-    "publicationType": "conference-paper",
-    "venue": "Example Conference on Intelligent Communications",
-    "conferenceName": "Example Conference on Intelligent Communications",
-    "pages": "41–48",
-    "publisher": "Example Academic Press",
-    "doi": "10.0000/telecomai.demo.2025.1002",
-    "abstract": "This demo study explores joint beam selection for integrated satellite-terrestrial networks using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
-    "keywords": [
-      "wireless networks",
-      "edge intelligence",
-      "synthetic evaluation"
-    ],
-    "areas": [
-      "methods",
       "topic-one"
     ],
-    "citationCount": 26,
-    "pdfUrl": "/files/publications/mock-paper.pdf",
-    "codeUrl": "/files/resources/demo-scheduler.js",
-    "projectUrl": "/mare",
-    "slidesUrl": "/files/presentations/mock-slides.pdf",
-    "openAccess": true,
-    "featured": true,
-    "isMock": true,
-    "image": "../assets/research/tools.svg",
-    "imageAlt": "Concept illustration for this demonstration publication"
-  },
-  {
-    "id": 1003,
-    "title": "[Demo] Practical evaluation of shared spectrum learning",
-    "authors": [
-      {
-        "name": "Laurent E",
-        "personId": 2007
-      },
-      {
-        "name": "Tran M",
-        "personId": 2008
-      },
-      {
-        "name": "Rivera A",
-        "personId": 2019
-      },
-      {
-        "name": "Doe J",
-        "personId": 1001,
-        "corresponding": true,
-        "email": "demo-jane@example.com",
-        "contributions": [
-          "Supervision",
-          "Writing – review and editing"
-        ],
-        "coSenior": true
-      }
-    ],
-    "year": 2026,
-    "publicationType": "workshop-paper",
-    "venue": "Example Conference on Intelligent Communications",
-    "conferenceName": "Example Conference on Intelligent Communications",
-    "pages": "51–58",
-    "publisher": "Example Academic Press",
-    "doi": "10.0000/telecomai.demo.2026.1003",
-    "abstract": "This demo study explores practical evaluation of shared spectrum learning using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
-    "keywords": [
-      "wireless networks",
-      "satellite systems",
-      "synthetic evaluation"
-    ],
-    "areas": [
-      "theory",
-      "topic-two"
-    ],
-    "citationCount": 33,
-    "pdfUrl": "/files/publications/mock-paper.pdf",
     "projectUrl": "/mare",
     "openAccess": true,
     "featured": false,
-    "isMock": true,
-    "bibtex": "@inproceedings{telecomai1003,\n  author = {{Laurent E} and {Tran M} and {Rivera A} and {Doe J}},\n  title = {[Demo] Practical evaluation of shared spectrum learning},\n  year = {2026},\n  booktitle = {Example Conference on Intelligent Communications},\n  publisher = {Example Academic Press},\n  pages = {51--58},\n  doi = {10.0000/telecomai.demo.2026.1003}\n}",
+    "bibtex": "@article{nguyen2026privacy,\n  title={Privacy-Preserving Solutions for UAV-aided Uplink Massive MIMO Systems},\n  author={Nguyen, Ti Ti and Ha, Vu Nguyen and Le, Thanh-Dung and Nguyen-Kha, Hung and Tran, Duc Dung and Nguyen, Kim-Khoa and Chatzinotas, Symeon},\n  journal={IEEE Transactions on Wireless Communications},\n  year={2026},\n  publisher={IEEE}\n}",
     "image": "../assets/research/theory.svg",
-    "imageAlt": "Concept illustration for this demonstration publication"
+    "imageAlt": "Concept illustration for Privacy-Preserving UAV publication"
   },
   {
-    "id": 1005,
-    "title": "[Demo] Robust resource allocation with delayed channel feedback",
+    "id": "nguyen2026optimization",
+    "title": "An Optimization-Ready Semantic-Performance Model for DJSCC-based Image Transmission over Wireless Channels",
     "authors": [
       {
-        "name": "Weiss N",
-        "personId": 2011,
-        "coFirst": true,
-        "contributions": [
-          "Methodology",
-          "Software"
-        ]
-      },
-      {
-        "name": "Moreau D",
-        "personId": 2012,
+        "name": "Ti Ti Nguyen",
+        "personId": 102,
         "coFirst": true
       },
       {
-        "name": "Santos G",
-        "personId": 2022
+        "name": "Vu Nguyen Ha",
+        "personId": 100,
+        "coFirst": true
       },
       {
-        "name": "Doe J",
-        "personId": 1004,
-        "corresponding": true,
-        "email": "demo-jane@example.com",
-        "contributions": [
-          "Supervision",
-          "Writing – review and editing"
-        ]
+        "name": "Thanh-Dung Le",
+        "personId": 111
       },
       {
-        "name": "External Demo Collaborator 7"
+        "name": "Duc-Dung Tran",
+        "personId": 103
+      },
+      {
+        "name": "Hung Nguyen-Kha",
+        "personId": 112
+      },
+      {
+        "name": "Dinh-Hieu Tran",
+        "personId": 104
+      },
+      {
+        "name": "Carlos L. Marcos-Rojas"
+      },
+      {
+        "name": "Raudel Cuiman"
+      },
+      {
+        "name": "Juan C. Merlano-Duncan"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      }
+    ],
+    "year": 2026,
+    "publicationType": "journal-article",
+    "venue": "IEEE Open Journal of the Communications Society",
+    "conferenceName": "IEEE OJ-COMS",
+    "publisher": "IEEE",
+    "abstract": "Deep joint source–channel coding (DJSCC) has emerged as a promising approach for image transmission over bandwidth-limited and power-constrained wireless links in remote monitoring systems (RMSs), as it jointly learns source and channel coding. However, semantic communication based on DJSCC lacks a comparable system-level abstraction that relates physical-layer conditions to semantic or task-level performance. This gap limits the use of semantic communication techniques in resource allocation, scheduling, and cross-layer wireless design. Motivated by this limitation, this paper develops an interpretable and optimization-ready semantic performance model for DJSCC-based image transmission. The proposed model is explicitly a local parametric surrogate: its coefficients are calibrated from measurements collected on the EuroSAT dataset using the specific DJSCC and downstream vision architectures. It characterizes the joint impact of the compression ratio and channel signal-to-interference-plus-noise ratio (SINR) on both reconstruction-oriented metrics, including peak signal-to-noise ratio (PSNR), structural similarity index measure (SSIM), and mean squared error (MSE), and task-oriented metrics, including accuracy, precision, and recall. Extensive experiments are conducted over additive white Gaussian noise (AWGN) and fading channels, with and without channel equalization, and using downstream vision models. The resulting model is then embedded into a semantic-aware resource allocation framework that jointly controls transmit power and compression ratio to improve fairness among users with heterogeneous semantic-quality requirements. Numerical results show that the proposed modeling approach provides a compact bridge between learned DJSCC transmission and system-level communication optimization, enabling semantic performance to be incorporated directly into wireless resource allocation.",
+    "keywords": [
+      "semantic communication",
+      "joint source-channel coding",
+      "image transmission",
+      "wireless resource allocation",
+      "surrogate modeling",
+      "semantic communications",
+      "wireless resource management"
+    ],
+    "areas": [
+      "semantic-earth-observation",
+      "topic-one"
+    ],
+    "openAccess": true,
+    "featured": false,
+    "bibtex": "@article{nguyen2026optimization,\n  title={An Optimization-Ready Semantic-Performance Model for DJSCC-based Image Transmission over Wireless Channels},\n  author={Nguyen, Ti Ti and Ha, Vu Nguyen and Le, Thanh-Dung and Tran, Duc-Dung and Nguyen-Kha, Hung and Tran, Dinh-Hieu and Marcos-Rojas, Carlos L and Cuiman, Raudel and Merlano-Duncan, Juan C and Chatzinotas, Symeon},\n  journal={IEEE Open Journal of the Communications Society},\n  year={2026},\n  publisher={IEEE}\n}",
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for Semantic-Performance Model publication"
+  },
+  {
+    "id": "lin2026satellite",
+    "title": "Satellite Intelligence: Distributed Training, Collaborative Inference, and LLM Adaptation in LEO Constellation",
+    "authors": [
+      {
+        "name": "Zheng Lin"
+      },
+      {
+        "name": "Zhanwei Wang"
+      },
+      {
+        "name": "Yuxin Zhang"
+      },
+      {
+        "name": "Yafei Wang"
+      },
+      {
+        "name": "Ons Aouedi",
+        "personId": 105
+      },
+      {
+        "name": "Zihan Fang"
+      },
+      {
+        "name": "Jinfeng Xu"
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Yuanwei Liu"
       }
     ],
     "year": 2026,
     "publicationType": "preprint",
-    "venue": "Demo preprint series",
-    "publisher": "Example Academic Press",
-    "doi": "10.0000/telecomai.demo.2026.1005",
-    "arxivId": "2601.90006",
-    "abstract": "This demo study explores robust resource allocation with delayed channel feedback using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "venue": "arXiv preprint arXiv:2610.35282",
+    "conferenceName": "arXiv",
+    "abstract": "The proliferation of orbital sensing data and the real-time demands of emerging global services are pushing low Earth orbit (LEO) satellite networks from bent-pipe relays toward intelligent onboard processing. This shift confronts a fundamental tension, where modern artificial intelligence (AI) training paradigms require intensive computation, abundant memory, and stable connectivity, all of which are scarce under the dynamic topologies, intermittent links, and severe size, weight, and power (SWaP) constraints of satellite networks. Addressing this tension demands rethinking AI workflows, from training and inference to the emerging deployment of large language models (LLMs), under a constraint-aware design philosophy. To the best of our knowledge, this paper provides the first survey that jointly covers all three, whereas prior surveys examine these aspects in isolation. We begin by identifying the deployment challenge of satellite intelligence (SI) and deriving design principles for SI. We then examine three advancing paradigms: i) distributed training, where federated learning (FL) and split learning (SL) enable satellite-ground co-training under resource limitations; ii) collaborative inference, which exploits single-satellite, multi-satellite, and satellite-ground architectures to meet real-time service demands; and iii) on-orbit LLM adaptation and serving, which tackles the frontier challenge of deploying LLMs under severe orbital constraints and resource-aware serving. Finally, we identify open challenges and future directions. By bridging the AI and satellite networks, this paper provides a research roadmap for the implementation of space-native AI technologies.",
     "keywords": [
-      "wireless networks",
-      "satellite systems",
-      "synthetic evaluation"
+      "satellite intelligence",
+      "LEO constellations",
+      "distributed training",
+      "collaborative inference",
+      "LLM adaptation",
+      "space-native AI",
+      "satellite networks"
     ],
     "areas": [
-      "topic-two",
-      "methods"
+      "topic-three"
     ],
-    "citationCount": 84,
-    "pdfUrl": "/files/publications/mock-paper.pdf",
-    "codeUrl": "/files/resources/demo-scheduler.js",
     "openAccess": true,
     "featured": false,
-    "isMock": true
+    "bibtex": "@article{lin2026satellite,\n  title={Satellite Intelligence: Distributed Training, Collaborative Inference, and LLM Adaptation in LEO Constellation},\n  author={Lin, Zheng and Wang, Zhanwei and Zhang, Yuxin and Wang, Yafei and Aouedi, Ons and Fang, Zihan and Xu, Jinfeng and Yang, Jing and Ha, Vu Nguyen and Liu, Yuanwei and others},\n  journal={arXiv preprint arXiv:2610.35282},\n  year={2026}\n}",
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for Satellite Intelligence survey"
   },
   {
-    "id": 1008,
-    "title": "[Demo] Optimization foundations for reliable wireless systems",
+    "id": "wang2026multi",
+    "title": "Multi-satellite multi-stream beamspace massive mimo transmission",
     "authors": [
       {
-        "name": "Sato A",
-        "personId": 2017,
-        "coFirst": true,
-        "contributions": [
-          "Methodology",
-          "Software"
-        ]
+        "name": "Yafei Wang"
       },
       {
-        "name": "Becker I",
-        "personId": 2018,
-        "coFirst": true
+        "name": "Yiming Zhu"
       },
       {
-        "name": "Park L",
-        "personId": 2005
+        "name": "Vu Nguyen Ha",
+        "personId": 100
       },
       {
-        "name": "Doe J",
-        "personId": 1004,
-        "corresponding": true,
-        "email": "demo-jane@example.com",
-        "contributions": [
-          "Supervision",
-          "Writing – review and editing"
-        ]
+        "name": "Wenjin Wang"
       },
       {
-        "name": "External Demo Collaborator 10"
+        "name": "Rui Ding"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      },
+      {
+        "name": "Björn Ottersten",
+        "personId": 110
       }
     ],
-    "year": 2020,
-    "publicationType": "book-chapter",
-    "venue": "Example Handbook of Intelligent Networks",
-    "publisher": "Example Academic Press",
-    "doi": "10.0000/telecomai.demo.2020.1008",
-    "abstract": "This demo study explores optimization foundations for reliable wireless systems using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "year": 2026,
+    "publicationType": "journal-article",
+    "venue": "IEEE Transactions on Communications",
+    "conferenceName": "IEEE TCom",
+    "publisher": "IEEE",
+    "abstract": "This paper studies multi-satellite multi-stream (MSMS) beamspace transmission, where multiple satellites cooperate to form a distributed multiple-input multiple-output (MIMO) system and jointly deliver multiple data streams to multi-antenna user terminals (UTs), and beamspace transmission combines earth-moving beamforming with beam-domain precoding. For the first time, we formulate the signal model for MSMS beamspace MIMO transmission. Under synchronization errors, multi-antenna UTs enable the distributed MIMO channel to exhibit higher rank, supporting multiple data streams. Beamspace MIMO retains conventional codebook based beamforming while providing the performance gains of precoding. Based on the signal model, we propose statistical channel state information (sCSI)-based optimization of satellite clustering, beam selection, and transmit precoding, using a sum-rate upper-bound approximation. With given satellite clustering and beam selection, we cast precoder design as an equivalent covariance decomposition-based weighted minimum mean square error (CDWMMSE) problem. To obtain tractable algorithms, we develop a closed-form covariance decomposition required by CDWMMSE and derive an iterative MSMS beam-domain precoder under sCSI. Following this, we further propose several heuristic closed-form precoders to avoid iterative cost. For satellite clustering, we enhance a competition-based algorithm by introducing a mechanism to regulate the number of satellites serving certain UT. Furthermore, we design a two-stage low-complexity beam selection algorithm focused on enhancing the effective channel power. Simulations under practical configurations validate the proposed methods across the number of data streams, receive antennas, serving satellites, and active beams, and show that beamspace transmission approaches conventional MIMO performance at lower complexity.",
     "keywords": [
-      "wireless networks",
-      "edge intelligence",
-      "synthetic evaluation"
+      "multi-satellite transmission",
+      "beamspace MIMO",
+      "distributed precoding",
+      "statistical CSI",
+      "covariance decomposition",
+      "satellite communications",
+      "massive MIMO"
     ],
     "areas": [
-      "theory",
+      "topic-three",
+      "topic-one"
+    ],
+    "openAccess": true,
+    "featured": false,
+    "bibtex": "@article{wang2026multi,\n  title={Multi-satellite multi-stream beamspace massive mimo transmission},\n  author={Wang, Yafei and Zhu, Yiming and Ha, Vu Nguyen and Wang, Wenjin and Ding, Rui and Chatzinotas, Symeon and Ottersten, Bj\\\"orn},\n  journal={IEEE Transactions on Communications},\n  year={2026},\n  publisher={IEEE}\n}",
+    "image": "../assets/research/theory.svg",
+    "imageAlt": "Concept illustration for Multi-satellite Beamspace MIMO"
+  },
+  {
+    "id": "le2026onboard",
+    "title": "Onboard satellite image classification for earth observation: A comparative study of ViT models",
+    "authors": [
+      {
+        "name": "Thanh-Dung Le",
+        "personId": 111
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 102
+      },
+      {
+        "name": "Duc-Dung Tran",
+        "personId": 103
+      },
+      {
+        "name": "Hung Nguyen-Kha",
+        "personId": 112
+      },
+      {
+        "name": "Luis M. Garces-Socarras"
+      },
+      {
+        "name": "Juan Carlos Merlano-Duncan"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      }
+    ],
+    "year": 2026,
+    "publicationType": "journal-article",
+    "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+    "conferenceName": "IEEE TGRS",
+    "publisher": "IEEE",
+    "abstract": "Remote sensing (RS) image classification (IC) is central to Earth observation (EO), and Transformer-based architectures with large-scale pretraining now rival the convolutional neural networks (CNNs) that long dominated it. Deploying such models onboard satellites, however, imposes constraints that standard benchmarks ignore: strict power and memory budgets, and inference on imagery degraded by sensor noise, platform motion, and lossy downlink transmission. This study identifies the most effective pretrained model for onboard land-use classification by evaluating accuracy, computational efficiency, and robustness jointly rather than in isolation. Following a train-on-ground, infer-onboard workflow, we compare 14 backbones, covering CNN, ResNet, and compact transformer (CCT) baselines trained from scratch as well as pretrained vision transformers (ViTs), on the EuroSAT and PatternNet benchmarks, and stress them with Gaussian noise and motion blur at five severity levels as well as an end-to-end DVB-S2(X) transmission chain combining channel impairments with JPEG compression. Pretrained ViTs consistently outperform models trained from scratch at lower computational cost and with greater noise resilience. MobileViTV2 attains the highest clean-data accuracy (99.09%), whereas EfficientViT-M2 offers the best overall tradeoff: 98.76% accuracy, precision, and recall on EuroSAT (99.52% on PatternNet), a compact footprint (203.53 MFLOPs, 38.19 MB), fast training (1000 s) and inference (10 s), the strongest corruption robustness (overall score 0.79) with the most graceful degradation under transmission loss, and markedly lower power, 63.35% below MobileViTV2 (79.23 W) and 73.33% below SwinTransformer (108.90 W). EfficientViT-M2 is therefore the most suitable choice for reliable, energy-efficient onboard RS-IC. Reproducible code for data augmentation, noisy-data generation, training, and inference is openly available from our shared GitHub repository (https://github.com/ltdung/SnT-SENTRY).",
+    "keywords": [
+      "remote sensing",
+      "image classification",
+      "vision transformers",
+      "onboard satellite processing",
+      "robustness evaluation",
+      "earth observation",
+      "computer vision"
+    ],
+    "areas": [
+      "semantic-earth-observation"
+    ],
+    "codeUrl": "https://github.com/ltdung/SnT-SENTRY",
+    "openAccess": true,
+    "featured": true,
+    "bibtex": "@article{le2026onboard,\n  title={Onboard satellite image classification for earth observation: A comparative study of ViT models},\n  author={Le, Thanh-Dung and Ha, Vu Nguyen and Nguyen, Ti Ti and Tran, Duc-Dung and Nguyen-Kha, Hung and Garces-Socarras, Luis M and Merlano-Duncan, Juan Carlos and Chatzinotas, Symeon},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  year={2026},\n  publisher={IEEE}\n}",
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for ViT Models on Earth Observation"
+  },
+  {
+    "id": "le2026gluse",
+    "title": "GLUSE: Enhanced channel-wise adaptive gated linear units SE for onboard satellite earth observation image classification",
+    "authors": [
+      {
+        "name": "Thanh-Dung Le",
+        "personId": 111
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 102
+      },
+      {
+        "name": "Duc-Dung Tran",
+        "personId": 103
+      },
+      {
+        "name": "Hung Nguyen-Kha",
+        "personId": 112
+      },
+      {
+        "name": "Luis M. Garces-Socarras"
+      },
+      {
+        "name": "Juan Carlos Merlano-Duncan"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      }
+    ],
+    "year": 2026,
+    "publicationType": "journal-article",
+    "venue": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+    "conferenceName": "IEEE JSTARS",
+    "publisher": "IEEE",
+    "abstract": "This study introduces ResNet-GLUSE, a lightweight ResNet variant enhanced with gated linear unit-enhanced squeeze-and-excitation (GLUSE), an adaptive channelwise attention mechanism. By integrating dynamic gating into the traditional SE framework, GLUSE improves feature recalibration while maintaining computational efficiency. Experiments on EuroSAT and PatternNet datasets confirm its effectiveness, achieving exceeding 94% and 98% accuracy, respectively. While MobileViT achieves 99% accuracy, ResNet-GLUSE offers 33× fewer parameters, 27× fewer FLOPs, 33× smaller model size (MB), ≈6× lower power consumption (W), and ≈3× faster inference time (s), making it significantly more efficient for onboard satellite deployment. Furthermore, due to its simplicity, ResNet-GLUSE can be easily mimicked for neuromorphic computing, enabling ultralow power inference at just 852.30 mW on Akida Brainchip. This balance between high accuracy and ultralow resource consumption establishes ResNet-GLUSE as a practical solution for real-time Earth observation (EO) tasks. Reproducible codes are available in our shared repository. Impact Statement– ResNet-GLUSE adds a lightweight, dynamic gated attention to a small ResNet, reaching high accuracy with a fraction of the computation, memory, and power required by existing models, enabling real-time image analytics directly on satellite edge hardware. This synergy of performance, scalability, and energy efficiency accelerates rapid decision-making in resource-constrained orbital environments, aiding critical tasks like near-real-time hazard detection and precision agriculture. Reproducible codes promote broad adoption and facilitate ongoing innovation, underscoring ResNet-GLUSE's potential as a transformative solution for next-generation EO missions.",
+    "keywords": [
+      "ResNet-GLUSE",
+      "channel-wise attention",
+      "earth observation",
+      "neuromorphic computing",
+      "lightweight models",
+      "edge intelligence"
+    ],
+    "areas": [
+      "semantic-earth-observation",
       "topic-two"
     ],
-    "citationCount": 68,
-    "pdfUrl": "/files/publications/mock-paper.pdf",
-    "codeUrl": "/files/resources/demo-scheduler.js",
-    "projectUrl": "/mare",
-    "slidesUrl": "/files/presentations/mock-slides.pdf",
     "openAccess": true,
     "featured": false,
-    "isMock": true
+    "bibtex": "@article{le2026gluse,\n  title={GLUSE: Enhanced channel-wise adaptive gated linear units SE for onboard satellite earth observation image classification},\n  author={Le, Thanh-Dung and Ha, Vu Nguyen and Nguyen, Ti Ti and Tran, Duc-Dung and Nguyen-Kha, Hung and Garces-Socarras, Luis M and Merlano-Duncan, Juan Carlos and Chatzinotas, Symeon},\n  journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},\n  year={2026},\n  publisher={IEEE}\n}",
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for GLUSE publication"
   },
   {
-    "id": 1009,
-    "title": "[Demo] Open challenges in energy-aware edge intelligence",
+    "id": "nguyen2026digital",
+    "title": "Digital-Twin-Aided Dynamic Spectrum Sharing and Resource Management in Integrated Satellite–Terrestrial Networks",
     "authors": [
       {
-        "name": "Blake A",
-        "personId": 1002
+        "name": "Hung Nguyen-Kha",
+        "personId": 112
       },
       {
-        "name": "Novak H",
-        "personId": 2021
+        "name": "Vu Nguyen Ha",
+        "personId": 100
       },
       {
-        "name": "Tran M",
-        "personId": 2008
+        "name": "Ti Nguyen",
+        "personId": 102
       },
       {
-        "name": "Doe J",
-        "personId": 1004,
-        "corresponding": true,
-        "email": "demo-jane@example.com",
-        "contributions": [
-          "Supervision",
-          "Writing – review and editing"
-        ]
+        "name": "Eva Lagunas",
+        "personId": 113
+      },
+      {
+        "name": "Joel Grotz"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      },
+      {
+        "name": "Björn Ottersten",
+        "personId": 110
       }
     ],
-    "year": 2025,
-    "publicationType": "review-article",
-    "venue": "Example Journal of Communication Systems",
-    "journalName": "Example Journal of Communication Systems",
-    "volume": "12",
-    "issue": "4",
-    "pages": "211–220",
-    "publisher": "Example Academic Press",
-    "doi": "10.0000/telecomai.demo.2025.1009",
-    "abstract": "This demo study explores open challenges in energy-aware edge intelligence using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
+    "year": 2026,
+    "publicationType": "journal-article",
+    "venue": "IEEE Transactions on Wireless Communications",
+    "conferenceName": "IEEE TWC",
+    "publisher": "IEEE",
+    "abstract": "The explosive growth in wireless service demand has prompted the evolution of integrated satellite-terrestrial networks (ISTNs) to overcome the limitations of traditional terrestrial networks (TNs) in terms of coverage, spectrum efficiency, and deployment cost. Particularly, leveraging LEO satellites and dynamic spectrum sharing (DSS), ISTNs offer promising solutions but face significant challenges due to diverse terrestrial environments, user and satellite mobility, and long propagation LEO-to-ground distance. To address these challenges, digital-twin (DT) has emerged as a promising technology to offer virtual replicas of real-world systems, facilitating prediction for resource management. In this work, we study a time-window-based DT-aided DSS framework for ISTNs, enabling joint long-term and short-term resource decisions to reduce system congestion. Based on that, two optimization problems are formulated, which aim to optimize resource management using DT information and to refine obtained solutions with actual real-time information, respectively. To efficiently solve these problems, we proposed algorithms using compressed-sensing-based and successive convex approximation techniques. Simulation results using actual traffic data and the London 3D map demonstrate the superiority in terms of congestion minimization of our proposed algorithms compared to benchmarks. Additionally, it shows the adaptation ability and practical feasibility of our proposed solutions.",
     "keywords": [
-      "wireless networks",
-      "edge intelligence",
-      "synthetic evaluation"
-    ],
-    "areas": [
-      "topic-two",
-      "methods"
-    ],
-    "citationCount": 82,
-    "pdfUrl": "/files/publications/mock-paper.pdf",
-    "codeUrl": "/files/resources/demo-scheduler.js",
-    "projectUrl": "/mare",
-    "slidesUrl": "/files/presentations/mock-slides.pdf",
-    "openAccess": false,
-    "featured": false,
-    "isMock": true
-  },
-  {
-    "id": 1010,
-    "title": "[Demo] Wireless learning benchmark: a technical report and evaluation guide",
-    "authors": [
-      {
-        "name": "Santos G",
-        "personId": 2022,
-        "coFirst": true,
-        "contributions": [
-          "Methodology",
-          "Software"
-        ]
-      },
-      {
-        "name": "Chen M",
-        "personId": 1001,
-        "coFirst": true
-      },
-      {
-        "name": "Kim S",
-        "personId": 2010
-      },
-      {
-        "name": "Doe J",
-        "personId": 1004,
-        "corresponding": true,
-        "email": "demo-jane@example.com",
-        "contributions": [
-          "Supervision",
-          "Writing – review and editing"
-        ],
-        "coSenior": true
-      },
-      {
-        "name": "External Demo Collaborator 13"
-      }
-    ],
-    "year": 2024,
-    "publicationType": "other",
-    "venue": "Example Journal of Communication Systems",
-    "publisher": "Example Academic Press",
-    "doi": "10.0000/telecomai.demo.2024.1010",
-    "abstract": "This demo study explores wireless learning benchmark: a technical report and evaluation guide using synthetic network traces and simulated workloads. The sample record describes the research question, evaluation setup, and reproducibility materials to demonstrate the publication interface. All authorship, results, identifiers, and citation counts in this preview are fictional.",
-    "keywords": [
-      "wireless networks",
-      "satellite systems",
-      "synthetic evaluation"
+      "digital twin",
+      "dynamic spectrum sharing",
+      "integrated satellite-terrestrial networks",
+      "resource management",
+      "compressed sensing",
+      "satellite communications",
+      "resource allocation"
     ],
     "areas": [
       "topic-three",
       "theory"
     ],
-    "citationCount": 84,
-    "pdfUrl": "/files/publications/mock-paper.pdf",
-    "codeUrl": "/files/resources/demo-scheduler.js",
-    "projectUrl": "/mare",
     "openAccess": true,
     "featured": false,
-    "isMock": true,
-    "bibtex": "@misc{telecomai1010,\n  author = {{Santos G} and {Chen M} and {Kim S} and {Doe J} and {External Demo Collaborator 13}},\n  title = {[Demo] Wireless learning benchmark: a technical report and evaluation guide},\n  year = {2024},\n  howpublished = {Example Journal of Communication Systems},\n  publisher = {Example Academic Press},\n  doi = {10.0000/telecomai.demo.2024.1010}\n}"
+    "bibtex": "@article{nguyen2026digital,\n  title={Digital-twin-aided dynamic spectrum sharing and resource management in integrated satellite-terrestrial networks},\n  author={Nguyen-Kha, Hung and Ha, Vu Nguyen and Nguyen, Ti and Lagunas, Eva and Grotz, Joel and Chatzinotas, Symeon and Ottersten, Bj\\\"orn},\n  journal={IEEE Transactions on Wireless Communications},\n  year={2026},\n  publisher={IEEE}\n}",
+    "image": "../assets/research/theory.svg",
+    "imageAlt": "Concept illustration for Digital-Twin ISTN publication"
+  },
+  {
+    "id": "zaeem2026closed",
+    "title": "Closed-Form SINR Expression of Precoding Techniques in Cell-Free Massive MIMO over Rician Fading Channels",
+    "authors": [
+      {
+        "name": "Reza Mahin Zaeem"
+      },
+      {
+        "name": "Juan Carlos Merlano Duncan"
+      },
+      {
+        "name": "Wallace Alves Martins"
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      },
+      {
+        "name": "Björn Ottersten",
+        "personId": 110
+      }
+    ],
+    "year": 2026,
+    "publicationType": "journal-article",
+    "venue": "IEEE Open Journal of the Communications Society",
+    "conferenceName": "IEEE OJ-COMS",
+    "publisher": "IEEE",
+    "abstract": "Cell-free massive multiple-input multiple-output (CF-MM) is a promising architecture for next-generation wireless networks, offering enhanced capacity, coverage, and spectral efficiency (SE). However, designing scalable, low-complexity CF-MM systems under Rician fading—characterized by both line-of-sight (LoS) and non-line-of-sight (NLoS) components—remains challenging, especially in dense deployments with many distributed access points (APs). This work studies four distributed precoding schemes, namely maximum-ratio transmission (MRT), full-pilot zero-forcing (FZF), partial ZF (PZF), and protective partial ZF (PPZF), highlighting their complexity–interference trade-offs across channel estimators. We evaluate several channel estimation methods, including minimum mean square error (MMSE), linear minimum mean square error (LMS), and least squares (LS). We first derive a closed-form ZF normalization constant that removes per-block norm computations to enable low-complexity per-AP implementation. Building on this, we derive closed-form downlink signal-to-interference-plus-noise ratio (SINR) expressions for all precoder–estimator configurations under Rician fading and validate them via Monte Carlo simulations. Additionally, we propose a distributed power allocation rule and a three-group user-scheduling policy, both driven by closed-form SINR expressions based on large-scale statistics, reducing per-AP precoder computation and fronthaul overhead while preserving fairness. Our results quantify how user density, pilot reuse, and estimator choice shape the trade-off between SE and computational burden, yielding design guidelines for fronthaul-efficient CF-MM deployments that approach centralized performance at much lower complexity.",
+    "keywords": [
+      "cell-free massive MIMO",
+      "Rician fading",
+      "precoding techniques",
+      "closed-form SINR",
+      "power allocation",
+      "cell-free networks",
+      "wireless communications"
+    ],
+    "areas": [
+      "topic-one"
+    ],
+    "openAccess": true,
+    "featured": false,
+    "bibtex": "@article{zaeem2026closed,\n  title={Closed-Form SINR Expression of Precoding Techniques in Cell-Free Massive MIMO over Rician Fading Channels},\n  author={Zaeem, Reza Mahin and Duncan, Juan Carlos Merlano and Martins, Wallace Alves and Ha, Vu Nguyen and Chatzinotas, Symeon and Ottersten, Bj\\\"orn},\n  journal={IEEE Open Journal of the Communications Society},\n  year={2026},\n  publisher={IEEE}\n}",
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for Cell-Free Massive MIMO publication"
+  },
+  {
+    "id": "nguyen2026joint",
+    "title": "A Joint JSCC--Resource Allocation Framework for QoS-Aware Semantic Communication in LEO Satellite-based EO Missions",
+    "authors": [
+      {
+        "name": "Hung Nguyen-Kha",
+        "personId": 112
+      },
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 102
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Eva Lagunas",
+        "personId": 113
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      },
+      {
+        "name": "Bjorn Ottersten",
+        "personId": 110
+      }
+    ],
+    "year": 2026,
+    "publicationType": "conference-paper",
+    "venue": "ICC 2026 - IEEE International Conference on Communications",
+    "conferenceName": "IEEE ICC 2026",
+    "pages": "1--6",
+    "publisher": "IEEE",
+    "abstract": "In Earth observation (EO) missions with Low Earth orbit (LEO) satellites, high-resolution image acquisition generates a massive data volume that poses a significant challenge for transmission under the limited satellite power budget, while LEO movement introduces dynamic systems. To enable efficient image transmission, this paper employs semantic communication (SemCom) with joint source-channel coding (JSCC), which focuses on transmitting meaningful information to reduce power consumption. Under a quality-of-service (QoS) requirement defined by image reconstruction quality, this work aims to minimize the total transmit power by jointly optimizing the JSCC encoder-decoder parameters and resource allocation. However, the implicit relationship among JSCC parameters, link quality, and image quality, coupled with the presence of mixed integer-continuous variables, makes the problem difficult to solve directly. To address this, a curve-fitting model is proposed to approximate the JSCC compression-SNR-quality relationship. Then, the joint compression ratio-resource allocation (JCRRA) algorithm is proposed to address the underlying problem. Numerical results demonstrate that the proposed method achieves substantial power savings compared to both greedy algorithms and conventional transmission paradigms.",
+    "keywords": [
+      "semantic communication",
+      "joint source-channel coding",
+      "LEO satellites",
+      "resource allocation",
+      "Earth observation",
+      "satellite communications",
+      "semantic communications"
+    ],
+    "areas": [
+      "topic-three",
+      "semantic-earth-observation"
+    ],
+    "openAccess": true,
+    "featured": false,
+    "bibtex": "@inproceedings{nguyen2026joint,\n  title={A Joint JSCC--Resource Allocation Framework for QoS-Aware Semantic Communication in LEO Satellite-based EO Missions},\n  author={Nguyen-Kha, Hung and Nguyen, Ti Ti and Ha, Vu Nguyen and Lagunas, Eva and Chatzinotas, Symeon and Ottersten, Bjorn},\n  booktitle={ICC 2026-IEEE International Conference on Communications},\n  pages={1--6},\n  year={2026},\n  organization={IEEE}\n}",
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for Joint JSCC ICC publication"
+  },
+  {
+    "id": "flores2026secure",
+    "title": "Secure Task Offloading and Resource Allocation Design for Multi-Layer Non-Terrestrial Networks",
+    "authors": [
+      {
+        "name": "Alejandro Flores"
+      },
+      {
+        "name": "Isabella WG Da Silva"
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Konstantinos Ntontin",
+        "personId": 114
+      },
+      {
+        "name": "Hien Quoc Ngo"
+      },
+      {
+        "name": "Michail Matthaiou"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      }
+    ],
+    "year": 2026,
+    "publicationType": "conference-paper",
+    "venue": "IEEE INFOCOM 2026 - IEEE Conference on Computer Communications",
+    "conferenceName": "IEEE INFOCOM 2026",
+    "pages": "1--7",
+    "publisher": "IEEE",
+    "abstract": "Remote and resource-constrained Internet-of-Things (IoT) deployments often lack terrestrial connectivity for task offloading, motivating non-terrestrial networks (NTNs) with onboard multiaccess edge computing (MEC) capabilities. Nevertheless, in the presence of malicious actors, authentication needs to be performed to avoid non-authorized nodes from draining the computing resources of the NTN nodes. As a solution, we propose a four-layer MEC-enabled NTN with unmanned aerial vehicles (UAVs) acting as access nodes, a high altitude platform station (HAPS) acting as coordinator and authenticator, and a constellation of low-Earth orbit satellites (LEOSats) acting as remote MEC servers. We consider a tag-based physical-layer authentication (PLA) scheme to authenticate legitimate users, and formulate a joint task offloading decision and resource allocation for the admitted tasks, which is solved via block coordinate descent. Numerical results show that the PLA scheme is efficient and performs better than the benchmark schemes. We also demonstrate that the proposed scheme is robust against malicious attacks even under relaxed false-alarm constraints.",
+    "keywords": [
+      "task offloading",
+      "non-terrestrial networks",
+      "physical-layer authentication",
+      "edge computing",
+      "block coordinate descent"
+    ],
+    "areas": [
+      "topic-three",
+      "topic-two"
+    ],
+    "openAccess": true,
+    "featured": false,
+    "bibtex": "@inproceedings{flores2026secure,\n  title={Secure Task Offloading and Resource Allocation Design for Multi-Layer Non-Terrestrial Networks},\n  author={Flores, Alejandro and Da Silva, Isabella WG and Ha, Vu Nguyen and Ntontin, Konstantinos and Ngo, Hien Quoc and Matthaiou, Michail and Chatzinotas, Symeon},\n  booktitle={IEEE INFOCOM 2026-IEEE Conference on Computer Communications},\n  pages={1--7},\n  year={2026},\n  organization={IEEE}\n}",
+    "image": "../assets/research/theory.svg",
+    "imageAlt": "Concept illustration for Secure Task Offloading INFOCOM publication"
+  },
+  {
+    "id": "tamiru2026distributed",
+    "title": "Distributed Precoding Design for LEO Satellite Swarms: A Robust Approach to Phase Error Uncertainty",
+    "authors": [
+      {
+        "name": "Biniam Tamiru"
+      },
+      {
+        "name": "Konstantinos Ntontin",
+        "personId": 114
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      }
+    ],
+    "year": 2026,
+    "publicationType": "journal-article",
+    "venue": "IEEE Open Journal of the Communications Society",
+    "conferenceName": "IEEE OJ-COMS",
+    "publisher": "IEEE",
+    "abstract": "LEO-based satellite communication systems offer significant advantages in terms of reduced latency and enhanced coverage for global connectivity. To further increase capacity and spatial resolution, there is a growing need for using LEO satellite swarms, which enable distributed beamforming and scalable service delivery to dense user populations. However, the distributed nature of LEO satellite swarms introduces critical challenges, particularly in achieving precise phase synchronization among satellites for coherent transmission. In this work, we investigate the problem of distributed precoding design for downlink transmissions from a swarm of LEO satellites to multiple ground users, accounting for imperfect phase synchronization among the satellites. The objective is to maximize the expected sum rate while ensuring that each user’s signal-to-interference-plus-noise ratio (SINR) satisfies a probabilistic quality-of-service constraint. We develop an analytical framework to solve the resulting non-convex problem by exploiting the statistical distribution of the phase errors, thereby enabling a compact and tractable formulation. This approach achieves significantly lower theoretical complexity compared to conventional sample-based methods. The methodology is further specialized for Gaussian and uniform phase error distributions, for which closed-form reformulations are derived. Simulation results demonstrate that the proposed robust design consistently outperforms benchmark precoding schemes and offers improved performance over collocated antenna arrays on a single satellite, provided the phase error variance remains below a critical threshold.",
+    "keywords": [
+      "LEO satellite swarms",
+      "distributed precoding",
+      "phase error uncertainty",
+      "robust design",
+      "probabilistic QoS",
+      "satellite swarms",
+      "distributed beamforming"
+    ],
+    "areas": [
+      "topic-three"
+    ],
+    "openAccess": true,
+    "featured": false,
+    "bibtex": "@article{tamiru2026distributed,\n  title={Distributed Precoding Design for LEO Satellite Swarms: A Robust Approach to Phase Error Uncertainty},\n  author={Tamiru, Biniam and Ntontin, Konstantinos and Ha, Vu Nguyen and Chatzinotas, Symeon},\n  journal={IEEE Open Journal of the Communications Society},\n  year={2026},\n  publisher={IEEE}\n}",
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for Distributed Precoding LEO Swarms"
+  },
+  {
+    "id": "tran2026reinforcement",
+    "title": "Reinforcement Learning-Based Data Compression and Routing Design for Multi-Satellite Systems",
+    "authors": [
+      {
+        "name": "Duc-Dung Tran",
+        "personId": 103
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 102
+      },
+      {
+        "name": "Thanh-Dung Le",
+        "personId": 111
+      },
+      {
+        "name": "Hung Nguyen-Kha",
+        "personId": 112
+      },
+      {
+        "name": "Konstantinos Ntontin",
+        "personId": 114
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      }
+    ],
+    "year": 2026,
+    "publicationType": "conference-paper",
+    "venue": "SoutheastCon 2026",
+    "conferenceName": "IEEE SoutheastCon 2026",
+    "pages": "1--6",
+    "publisher": "IEEE",
+    "abstract": "Low Earth Orbit (LEO)-based satellite networks (LEONet) are poised to play a transformative role in the evolution of global wireless communication systems, offering reduced launch costs, global coverage, and low communication delay. However, the dynamic nature of LEONet, characterized by intermittent visibility windows between satellites and ground stations, necessitates efficient routing and scheduling mechanisms to ensure reliable data delivery and minimized delay. Existing multi-hop routing frameworks focus on optimizing path selection and latency but are not adapted to handle high-variability traffic rates. To address these challenges, this paper presents a novel joint data compression (DC) and routing framework specifically designed for LEONet with dynamic traffic demands. Leveraging multi-agent deep reinforcement learning (MADRL), our approach coordinates DC and routing decisions across a distributed network of LEO satellites, with considerations for maximum hop count and buffer constraints. The proposed method optimizes the trade-off between DC and routing efficiency, significantly enhancing end-to-end latency. Simulation results demonstrate the effectiveness of this approach in minimizing transmission delays for latency-sensitive applications in LEONet.",
+    "keywords": [
+      "multi-satellite systems",
+      "data compression",
+      "routing design",
+      "multi-agent deep reinforcement learning",
+      "LEO satellite networks",
+      "satellite networks",
+      "reinforcement learning"
+    ],
+    "areas": [
+      "topic-three",
+      "theory"
+    ],
+    "openAccess": true,
+    "featured": false,
+    "bibtex": "@inproceedings{tran2026reinforcement,\n  title={Reinforcement Learning-Based Data Compression and Routing Design for Multi-Satellite Systems},\n  author={Tran, Duc-Dung and Ha, Vu Nguyen and Nguyen, Ti Ti and Le, Thanh-Dung and Nguyen-Kha, Hung and Ntontin, Konstantinos and Chatzinotas, Symeon},\n  booktitle={SoutheastCon 2026},\n  pages={1--6},\n  year={2026},\n  organization={IEEE}\n}",
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for SoutheastCon RL Compression publication"
+  },
+  {
+    "id": "nguyen2026resource",
+    "title": "Resource allocation for deep joint source--channel coding--assisted earth observation missions in leo satellite systems",
+    "authors": [
+      {
+        "name": "Ti Ti Nguyen",
+        "personId": 102
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Hung Nguyen-Kha",
+        "personId": 112
+      },
+      {
+        "name": "Thanh-Dung Le",
+        "personId": 111
+      },
+      {
+        "name": "Duc Dung Tran",
+        "personId": 103
+      },
+      {
+        "name": "Juan Andres Vasquez"
+      },
+      {
+        "name": "Juan Carlos Merlano Duncan"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101
+      }
+    ],
+    "year": 2026,
+    "publicationType": "conference-paper",
+    "venue": "SoutheastCon 2026",
+    "conferenceName": "IEEE SoutheastCon 2026",
+    "pages": "1--6",
+    "publisher": "IEEE",
+    "abstract": "Low Earth orbit (LEO) satellite systems equipped with large-scale multiple-input multiple-output (MIMO) antenna arrays have emerged as a key enabler for next-generation Earth observation (EO) services. By exploiting flexible beamforming, massive-MIMO LEO satellites can support simultaneous data delivery to multiple ground users, while accommodating the stringent quality-of-service (QoS) requirements of EO applications. However, the rapidly growing volume of EO data, together with limited onboard power and highly dynamic satellite channels, poses significant challenges for efficient data transmission. To address these challenges, this paper investigates a SemCom framework based on deep joint source-channel coding (DJSCC), which directly maps sensed EO data into channel symbols and prioritizes the transmission of task-relevant information. Within this framework, we study a resource allocation problem that jointly optimizes transmission power and semantic compression to maximize the minimum QoS across users, defined in terms of image reconstruction quality. By leveraging a curve-fitting model that characterizes the relationship among compression ratio, signal-to-interference-plus-noise ratio (SINR), and semantic reconstruction quality, the proposed approach enables a tractable solution for massive-MIMO LEO satellite systems. Numerical results demonstrate that the proposed framework effectively improves EO transmission performance while efficiently utilizing limited satellite resources.",
+    "keywords": [
+      "resource allocation",
+      "deep joint source-channel coding",
+      "Earth observation",
+      "LEO satellite systems",
+      "massive MIMO",
+      "earth observation",
+      "resource management"
+    ],
+    "areas": [
+      "semantic-earth-observation",
+      "theory"
+    ],
+    "openAccess": true,
+    "featured": false,
+    "bibtex": "@inproceedings{nguyen2026resource,\n  title={Resource allocation for deep joint source--channel coding--assisted earth observation missions in leo satellite systems},\n  author={Nguyen, Ti Ti and Ha, Vu Nguyen and Nguyen-Kha, Hung and Le, Thanh-Dung and Tran, Duc Dung and Vasquez, Juan Andres and Duncan, Juan Carlos Merlano and Chatzinotas, Symeon},\n  booktitle={SoutheastCon 2026},\n  pages={1--6},\n  year={2026},\n  organization={IEEE}\n}",
+    "image": "../assets/research/theory.svg",
+    "imageAlt": "Concept illustration for SoutheastCon Resource Allocation publication"
+  },
+  {
+    "id": "flores2026low",
+    "title": "Low-Complexity Resource Allocation for Task Offloading in Hierarchical Non-Terrestrial Networks",
+    "authors": [
+      {
+        "name": "Alejandro Flores"
+      },
+      {
+        "name": "Konstantinos Ntontin",
+        "personId": 114
+      },
+      {
+        "name": "Ashok Bandi"
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101,
+        "corresponding": true,
+        "contributions": [
+          "Supervision",
+          "Writing – review and editing"
+        ]
+      }
+    ],
+    "year": 2026,
+    "publicationType": "journal-article",
+    "venue": "IEEE Internet of Things Journal",
+    "conferenceName": "IEEE IoT-J",
+    "publisher": "IEEE",
+    "abstract": "In this article, we address the resource allocation problem for task offloading from Internet of Things (IoT) devices to a nonterrestrial network (NTN). The proposed architecture contains clusters of IoT devices that can either execute their computing tasks locally or offload them to a dedicated uncrewed aerial vehicle (UAV) functioning as a multiaccess edge computing (MEC) server. The UAV can process the tasks itself or further offload them to an available high-altitude platform station (HAPS) or to a low-Earth orbit (LEO) satellite within line-of-sight (LoS) for remote computing. We formulate an optimization problem that aims to minimize the weighted sum of the total task-execution delay and the energy consumption of the IoT devices. Due to the nonconvexity of the problem and the inherent complexity-performance tradeoff in optimization algorithms, we propose a set of low-complexity solutions. These include optimal methods based on convex subproblem decomposition and a greedy heuristic guided by convex optimization criteria. The framework jointly optimizes the computing resources and transmission power of IoT devices, the digital precoders and combiners at the UAV, the computing resources at the remote nodes (UAV, HAPS, and LEO), as well as task offloading decisions and subchannel allocation through a one-shot block coordinate descent approach. Simulation results highlight the performance gains of the proposed methods, demonstrating the impact of algorithmic complexity on key system metrics and the benefits of incorporating multiple nonterrestrial nodes compared to architectures lacking such capabilities.",
+    "keywords": [
+      "resource allocation",
+      "task offloading",
+      "hierarchical non-terrestrial networks",
+      "Internet of Things",
+      "edge computing",
+      "internet of things",
+      "non-terrestrial networks"
+    ],
+    "areas": [
+      "topic-one",
+      "topic-three"
+    ],
+    "openAccess": true,
+    "featured": false,
+    "bibtex": "@article{flores2026low,\n  title={Low-Complexity Resource Allocation for Task Offloading in Hierarchical Non-Terrestrial Networks},\n  author={Flores, Alejandro and Ntontin, Konstantinos and Bandi, Ashok and Ha, Vu Nguyen and Chatzinotas, Symeon},\n  journal={IEEE Internet of Things Journal},\n  year={2026},\n  publisher={IEEE}\n}",
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for IoT-J Task Offloading publication"
+  },
+  {
+    "id": "wang2026statistical",
+    "title": "Statistical CSI-based distributed precoding design for OFDM-cooperative multi-satellite systems",
+    "authors": [
+      {
+        "name": "Yafei Wang"
+      },
+      {
+        "name": "Vu Nguyen Ha",
+        "personId": 100
+      },
+      {
+        "name": "Konstantinos Ntontin",
+        "personId": 114
+      },
+      {
+        "name": "Hong Yan"
+      },
+      {
+        "name": "Wenjin Wang"
+      },
+      {
+        "name": "Symeon Chatzinotas",
+        "personId": 101,
+        "corresponding": true,
+        "contributions": [
+          "Supervision",
+          "Writing – review and editing"
+        ]
+      },
+      {
+        "name": "Björn Ottersten",
+        "personId": 110
+      }
+    ],
+    "year": 2026,
+    "publicationType": "journal-article",
+    "venue": "IEEE Journal on Selected Areas in Communications",
+    "conferenceName": "IEEE JSAC",
+    "publisher": "IEEE",
+    "abstract": "This paper investigates the design of distributed precoding for multi-satellite massive MIMO transmissions. We first conduct a detailed analysis of the transceiver model, in which delay and Doppler precompensation is introduced to ensure coherent transmission. In this analysis, we examine the impact of precompensation errors on the transmission model, emphasize the near-independence of inter-satellite interference, and ultimately derive the received signal model. Based on such signal model, we formulate an approximate expected rate maximization problem that considers both statistical channel state information (sCSI) and compensation errors. Unlike conventional approaches that recast such problems as weighted minimum mean square error (WMMSE) minimization, we demonstrate that this transformation fails to maintain equivalence in the considered scenario. To address this, we introduce an equivalent covariance decomposition-based WMMSE (CDWMMSE) formulation derived based on channel covariance matrix decomposition. By exploiting the channel characteristics, we develop a low-complexity decomposition method and propose an optimization algorithm. To further reduce computational complexity, we introduce a model-driven scalable deep learning (DL) approach that leverages the equivariance of the mapping from sCSI to the unknown variables in the optimal closed-form solution, enhancing performance through",
+    "keywords": [
+      "statistical CSI",
+      "distributed precoding",
+      "OFDM-cooperative systems",
+      "multi-satellite systems",
+      "deep learning",
+      "satellite communications",
+      "massive MIMO"
+    ],
+    "areas": [
+      "topic-three",
+      "topic-one"
+    ],
+    "openAccess": true,
+    "featured": false,
+    "bibtex": "@article{wang2026statistical,\n  title={Statistical CSI-based distributed precoding design for OFDM-cooperative multi-satellite systems},\n  author={Wang, Yafei and Ha, Vu Nguyen and Ntontin, Konstantinos and Yan, Hong and Wang, Wenjin and Chatzinotas, Symeon and Ottersten, Bj\\\"orn},\n  journal={IEEE Journal on Selected Areas in Communications},\n  year={2026},\n  publisher={IEEE}\n}",
+    "image": "../assets/research/tools.svg",
+    "imageAlt": "Concept illustration for JSAC Statistical CSI publication"
   },
   {
     "id": "le2026transformer",
     "title": "Transformer Meets Gated Residual Networks to Enhance PICU's PPG Artifact Detection Informed by Mutual Information Neural Estimation",
     "authors": [
       {
-        "name": "Thanh-Dung Le"
+        "name": "Thanh-Dung Le",
+        "personId": 111
       },
       {
         "name": "Clara Macabiau"
@@ -488,7 +976,7 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
         "name": "Philippe Jouvet"
@@ -521,7 +1009,6 @@
       "https://pubmed.ncbi.nlm.nih.gov/41650422/"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -530,14 +1017,15 @@
     "authors": [
       {
         "name": "Ti Ti Nguyen",
-        "personId": 1004
+        "personId": 102
       },
       {
-        "name": "Thanh-Dung Le"
+        "name": "Thanh-Dung Le",
+        "personId": 111
       },
       {
         "name": "Vu Nguyen Ha",
-        "personId": 1000
+        "personId": 100
       },
       {
         "name": "Hong-Fu Chou"
@@ -547,11 +1035,11 @@
       },
       {
         "name": "Duc-Dung Tran",
-        "personId": 1005
+        "personId": 103
       },
       {
         "name": "Hung Nguyen-Kha",
-        "personId": 2001
+        "personId": 112
       },
       {
         "name": "Prabhu Thiruvasagam"
@@ -567,7 +1055,7 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2025,
@@ -590,7 +1078,6 @@
       "https://orbilu.uni.lu/handle/10993/66123"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -599,22 +1086,22 @@
     "authors": [
       {
         "name": "Duc-Dung Tran",
-        "personId": 1005
+        "personId": 103
       },
       {
         "name": "Vu Nguyen Ha",
-        "personId": 1000
+        "personId": 100
       },
       {
         "name": "Shree Krishna Sharma"
       },
       {
         "name": "Ti Ti Nguyen",
-        "personId": 1004
+        "personId": 102
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
         "name": "Petar Popovski"
@@ -640,7 +1127,6 @@
       "https://orbilu.uni.lu/handle/10993/62410"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -651,7 +1137,8 @@
         "name": "Abuzar B. M. Adam"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Mostafa Samy"
@@ -661,7 +1148,7 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2025,
@@ -684,7 +1171,6 @@
       "https://orbilu.uni.lu/handle/10993/67047"
     ],
     "openAccess": true,
-    "isMock": false,
     "areas": []
   },
   {
@@ -695,14 +1181,15 @@
         "name": "Abuzar B. M. Adam"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Mostafa Samy"
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2025,
@@ -725,7 +1212,6 @@
       "https://orbilu.uni.lu/handle/10993/64887"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -743,7 +1229,7 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2025,
@@ -766,7 +1252,6 @@
       "https://orbilu.uni.lu/handle/10993/66093"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -786,14 +1271,15 @@
         "name": "Flor Ortiz"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Wallace A. Martins"
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2025,
@@ -816,7 +1302,6 @@
       "https://orbilu.uni.lu/handle/10993/66701"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -824,15 +1309,16 @@
     "title": "Semantic Knowledge Distillation for Onboard Satellite Earth Observation Image Classification",
     "authors": [
       {
-        "name": "Thanh-Dung Le"
+        "name": "Thanh-Dung Le",
+        "personId": 111
       },
       {
         "name": "Vu Nguyen Ha",
-        "personId": 1000
+        "personId": 100
       },
       {
         "name": "Ti Ti Nguyen",
-        "personId": 1004
+        "personId": 102
       },
       {
         "name": "Geoffrey Eappen"
@@ -845,7 +1331,7 @@
       },
       {
         "name": "Duc-Dung Tran",
-        "personId": 1005
+        "personId": 103
       },
       {
         "name": "Luis M. Garces-Socarras"
@@ -858,7 +1344,7 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2025,
@@ -879,7 +1365,6 @@
       "https://orbilu.uni.lu/handle/10993/66268"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -897,10 +1382,11 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
-        "name": "Björn Ottersten"
+        "name": "Björn Ottersten",
+        "personId": 110
       }
     ],
     "year": 2025,
@@ -923,7 +1409,6 @@
       "https://orbilu.uni.lu/handle/10993/66560"
     ],
     "openAccess": true,
-    "isMock": false,
     "areas": []
   },
   {
@@ -931,19 +1416,20 @@
     "title": "The Impact of LoRA Adapters on LLMs for Clinical Text Classification Under Computational and Data Constraints",
     "authors": [
       {
-        "name": "Thanh-Dung Le"
+        "name": "Thanh-Dung Le",
+        "personId": 111
       },
       {
         "name": "Ti Ti Nguyen",
-        "personId": 1004
+        "personId": 102
       },
       {
         "name": "Vu Nguyen Ha",
-        "personId": 1000
+        "personId": 100
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
         "name": "Philippe Jouvet"
@@ -971,7 +1457,6 @@
       "https://orbilu.uni.lu/handle/10993/66269"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -985,11 +1470,12 @@
         "name": "Flor Ortiz"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2024,
@@ -1010,7 +1496,6 @@
       "https://orbilu.uni.lu/handle/10993/60597"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1021,7 +1506,8 @@
         "name": "Wali Ullah Khan"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Zain Ali"
@@ -1040,10 +1526,11 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
-        "name": "Björn Ottersten"
+        "name": "Björn Ottersten",
+        "personId": 110
       }
     ],
     "year": 2024,
@@ -1066,7 +1553,6 @@
       "https://orbilu.uni.lu/handle/10993/62992"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1083,11 +1569,12 @@
         "name": "Carla E. García"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2024,
@@ -1109,7 +1596,6 @@
       "https://orbilu.uni.lu/handle/10993/60767"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1123,14 +1609,15 @@
         "name": "Flor Ortiz"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Abuzar B. M. Adam"
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2024,
@@ -1152,7 +1639,6 @@
       "https://orbilu.uni.lu/handle/10993/61484"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1161,19 +1647,19 @@
     "authors": [
       {
         "name": "Duc-Dung Tran",
-        "personId": 1005
+        "personId": 103
       },
       {
         "name": "Vu Nguyen Ha",
-        "personId": 1000
+        "personId": 100
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
         "name": "Ti Ti Nguyen",
-        "personId": 1004
+        "personId": 102
       }
     ],
     "year": 2023,
@@ -1194,7 +1680,6 @@
       "https://orbilu.uni.lu/handle/10993/58076"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1212,7 +1697,7 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
         "name": "Isaac Woungang"
@@ -1237,7 +1722,6 @@
       "https://orbilu.uni.lu/handle/10993/58601"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1251,14 +1735,15 @@
         "name": "Flor G. Ortiz-Gomez"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Saed Daoud"
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2023,
@@ -1279,7 +1764,6 @@
       "https://orbilu.uni.lu/handle/10993/55631"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1291,7 +1775,7 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2022,
@@ -1314,7 +1798,6 @@
       "https://orbilu.uni.lu/handle/10993/53077"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1325,11 +1808,12 @@
         "name": "Flor Ortiz"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2022,
@@ -1350,7 +1834,6 @@
       "https://orbilu.uni.lu/handle/10993/51241"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1364,14 +1847,16 @@
         "name": "Lei Lei"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
-        "name": "Björn Ottersten"
+        "name": "Björn Ottersten",
+        "personId": 110
       }
     ],
     "year": 2021,
@@ -1394,7 +1879,6 @@
       "https://orbilu.uni.lu/handle/10993/45730"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1409,10 +1893,11 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
-        "name": "Björn Ottersten"
+        "name": "Björn Ottersten",
+        "personId": 110
       }
     ],
     "year": 2021,
@@ -1434,7 +1919,6 @@
       "https://orbilu.uni.lu/handle/10993/48195"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1445,7 +1929,8 @@
         "name": "Lei Lei"
       },
       {
-        "name": "Eva Lagunas"
+        "name": "Eva Lagunas",
+        "personId": 113
       },
       {
         "name": "Yaxiong Yuan"
@@ -1455,10 +1940,11 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
-        "name": "Björn Ottersten"
+        "name": "Björn Ottersten",
+        "personId": 110
       }
     ],
     "year": 2020,
@@ -1479,7 +1965,6 @@
       "https://orbilu.uni.lu/handle/10993/42944"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1494,10 +1979,11 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
-        "name": "Björn Ottersten"
+        "name": "Björn Ottersten",
+        "personId": 110
       }
     ],
     "year": 2020,
@@ -1521,7 +2007,6 @@
       "https://orbilu.uni.lu/handle/10993/44413"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1539,10 +2024,11 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
-        "name": "Björn Ottersten"
+        "name": "Björn Ottersten",
+        "personId": 110
       }
     ],
     "year": 2019,
@@ -1563,7 +2049,6 @@
       "https://orbilu.uni.lu/handle/10993/41133"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1575,10 +2060,11 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       },
       {
-        "name": "Björn Ottersten"
+        "name": "Björn Ottersten",
+        "personId": 110
       }
     ],
     "year": 2018,
@@ -1599,7 +2085,6 @@
       "https://orbilu.uni.lu/handle/10993/38164"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   },
   {
@@ -1623,7 +2108,7 @@
       },
       {
         "name": "Symeon Chatzinotas",
-        "personId": 1001
+        "personId": 101
       }
     ],
     "year": 2017,
@@ -1644,8 +2129,6 @@
       "https://orbilu.uni.lu/handle/10993/31926"
     ],
     "openAccess": false,
-    "isMock": false,
     "areas": []
   }
-
 ]

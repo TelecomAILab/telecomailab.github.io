@@ -43,8 +43,7 @@ export async function preparePublicationImport(input: unknown, existing: unknown
   for (const candidate of candidates) {
     const issues: string[] = [];
     let verification = candidate.verification;
-    if (candidate.isMock) issues.push("Fictional records cannot be verified import candidates");
-    else if (candidate.doi && options.lookupDoi) {
+    if (candidate.doi && options.lookupDoi) {
       try {
         const metadata = await options.lookupDoi(candidate.doi);
         issues.push(...verifyDoiMetadata(candidate, metadata));

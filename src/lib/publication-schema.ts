@@ -70,7 +70,6 @@ export const publicationSchema = z.strictObject({
   presentationMaterials: z.array(z.strictObject({ label: z.string().trim().min(1), url: materialUrl })).optional(),
   bibtex: z.string().trim().regex(/^@[A-Za-z]+\s*[{(][\s\S]*[})]$/, "BibTeX must be an entry beginning with @type").optional(),
   scholarUrl: webUrl.optional(),
-  citationCount: z.number().int().nonnegative().optional(),
   abstract: z.string().trim().min(1).optional(),
   image: z.string().regex(/^\.\.\/assets\//, "Publication images must reference local src/assets").optional(),
   imageAlt: z.string().trim().min(1).optional(),
@@ -88,13 +87,12 @@ export const publicationSchema = z.strictObject({
   collaboration: z.boolean().optional(),
   featured: z.boolean().optional(),
   openAccess: z.boolean().default(false),
-  isMock: z.boolean().default(false),
   areas: z.array(z.enum(AREA_SLUGS)).default([]),
 });
 
 export type PublicationRecord = z.output<typeof publicationSchema>;
 // Bibliographic helpers accept both raw paths and Astro's processed image assets.
-export type PublicationMetadata = Omit<PublicationRecord, "image">;
+export type PublicationMetadata = Omit<PublicationRecord, "image"> & { citationCount?: number };
 export type PublicationAuthor = z.output<typeof authorSchema>;
 
 export const publicationRecordsSchema = z.array(publicationSchema).superRefine((records, ctx) => {
@@ -135,4 +133,5 @@ export const withPublicationAliases = <T extends { venue?: string; journalName?:
   journal: record.venue ?? record.journalName ?? record.conferenceName,
   citations: record.citationCount,
 });
-export const publicationCollectionSchema = publicationSchema.transform(withPublicationAliases);
+// Derived read model; canonical publication JSON rejects citationCount and isMock.
+export const publicationCollectionSchema = publicationSchema.extend({ citationCount: z.number().int().nonnegative().optional() }).transform(withPublicationAliases);

@@ -16,6 +16,8 @@ import { researchSchema } from "./lib/research-schema";
 import { resolveMockReferences } from "./lib/mock-references";
 import galleryData from "./data/gallery.json";
 import { galleryEventSchema, galleryPhotoSchema, validateGalleryRecords } from "./lib/gallery-schema";
+import citationsData from "./data/citations.json";
+import { createCitationIndex, withCitationCount } from "./lib/citations";
 
 const isFile = (url: URL) => existsSync(url) && statSync(url).isFile();
 const root = new URL("../", import.meta.url);
@@ -34,7 +36,8 @@ const validatedPeople = validatePeopleRecords(peopleData, {
   headshotExists: (path) => isFile(new URL(path, new URL(sources.people, root))),
   biographyExists: (id) => isFile(new URL(`${sources.biographies}/${id}.md`, root)),
 });
-const validatedPublications = validatePublicationRecords(publicationData.map(resolve), new Set(validatedPeople.map((person) => person.id)),
+const citationCounts = createCitationIndex(citationsData, referenceDirectory.publications);
+const validatedPublications = validatePublicationRecords(publicationData, new Set(validatedPeople.map((person) => person.id)),
   (path) => isFile(new URL(`public${path}`, root)));
 for (const paper of validatedPublications) {
   if (paper.image && !isFile(new URL(paper.image, new URL("src/data/publications.json", root)))) throw new Error(`Missing publication image: ${paper.image}`);
@@ -85,8 +88,8 @@ const biographies = defineCollection({
 
 // Publications — the only active publication source; existing IDs remain stable.
 const publications = defineCollection({
-  loader: file(sources.publications, { parser: referenceParser }),
-  schema: ({ image }) => publicationSchema.extend({ image: image().optional() }).transform(withPublicationAliases),
+  loader: file(sources.publications),
+  schema: ({ image }) => publicationSchema.extend({ image: image().optional() }).transform(record => withPublicationAliases(withCitationCount(record, citationCounts))),
 });
 
 // Figures — gated by rightsConfirmed (hard gate, defaults closed).

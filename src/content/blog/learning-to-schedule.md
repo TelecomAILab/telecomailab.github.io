@@ -3,14 +3,17 @@ title: "[Demo] What a small wireless experiment can teach us"
 slug: learning-to-schedule
 date: "2026-11-04"
 authors:
-  - personId: "1001"
-  - personId: "2006"
-summary: "Start with a transparent baseline, ask a narrow question, and make every experimental assumption visible."
-tags: [Wireless AI, Experiments, Reproducibility]
+  - personId: 101
+  - name: Author not listed
+summary: Start with a transparent baseline, ask a narrow question, and make every experimental assumption visible.
+tags:
+  - Wireless AI
+  - Experiments
+  - Reproducibility
 coverImage: ../../assets/editorial/wireless.svg
-coverAlt: "Illustrated network of wireless nodes"
+coverAlt: Illustrated network of wireless nodes
 status: published
-relatedPublications: [sample-2024-network]
+relatedPublications: []
 isMock: true
 ---
 

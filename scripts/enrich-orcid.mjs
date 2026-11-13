@@ -4,7 +4,7 @@
 // claimed their ORCID on it, Crossref and/or PubMed exposes it — a high-confidence
 // way to populate the roster's ORCID links without searching for each person.
 //
-//   Reads:   src/data/publications.json     (doi / pmid; mock records skipped)
+//   Reads:   src/data/publications.json     (doi / pmid; curated publications only)
 //            src/data/people.json           (name + any existing links.orcid)
 //   Sources: Crossref REST API (by DOI) + NCBI PubMed efetch (by PMID)
 //
@@ -72,7 +72,6 @@ const people = peopleRecords.map((record) => {
 
 // ---- publications ----------------------------------------------------------
 const pubs = JSON.parse(readFileSync(PUBS, "utf8"))
-  .filter((record) => !record.isMock)
   .map((record) => ({
     slug: String(record.id), doi: record.doi, pmid: record.pmid,
     personIds: new Set(record.authors.flatMap((author) => author.personId === undefined ? [] : [String(author.personId)])),

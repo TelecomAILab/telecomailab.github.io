@@ -3,11 +3,13 @@ title: "[Demo] Small research tools deserve good documentation"
 slug: documenting-research-tools
 date: "2026-07-09"
 authors:
-  - personId: "2008"
-summary: "A practical structure for a tool that someone else can understand, run, and cite."
-tags: [Open research, Software]
+  - name: Author not listed
+summary: A practical structure for a tool that someone else can understand, run, and cite.
+tags:
+  - Open research
+  - Software
 status: published
-relatedPublications: ["1010"]
+relatedPublications: []
 isMock: true
 ---
 

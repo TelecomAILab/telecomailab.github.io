@@ -21,17 +21,25 @@ concurrency:
 jobs:
   refresh-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      TARGET_BRANCH: ${{ github.ref_name }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
           node-version: 22
+
+      - name: Install locked dependencies
+        run: npm ci
 
       - name: Refresh citation counts from Google Scholar (SerpAPI)
         env:
@@ -40,17 +48,19 @@ jobs:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           SCHOLAR_AUTHOR_ID: ${{ vars.SCHOLAR_AUTHOR_ID }}
         # No-op (exits 0) if the key/id are missing or SerpAPI is unreachable.
-        run: node scripts/refresh-citations.mjs
+        run: npm run refresh:citations
 
       - name: Commit refreshed counts (if any changed)
         id: commit
         run: |
-          if [ -n "$(git status --porcelain src/data/publications.json)" ]; then
+          if [ -n "$(git status --porcelain src/data/citations.json)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/data/publications.json
+            git add src/data/citations.json
             git commit -m "chore: refresh Google Scholar citation counts [skip ci]"
-            git push
+            # Rebase over independently edited publication metadata; never force push.
+            git pull --rebase origin "$TARGET_BRANCH"
+            git push origin "HEAD:$TARGET_BRANCH"
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "No citation changes — skipping rebuild/deploy."

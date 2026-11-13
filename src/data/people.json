@@ -1,6 +1,6 @@
-[  
+[
   {
-    "id": 1000,
+    "id": 100,
     "name": "Dr. Vu Ha",
     "displayName": "Vu Nguyen Ha",
     "status": "current",
@@ -24,18 +24,16 @@
     ],
     "links": {
       "email": "vu-nguyen.ha@uni.lu",
-      "website": "https://example.com/people/vu-nguyen-ha",
-      "scholar": "https://example.com/scholar/vu-nguyen-ha",
-      "github": "https://example.com/github/vu-nguyen-ha",
-      "orcid": "https://example.com/orcid/vu-nguyen-ha",
-      "linkedin": "https://example.com/linkedin/vu-nguyen-ha"
+      "website": "https://www.uni.lu/snt-en/people/vu-nguyen-ha/",
+      "scholar": "https://scholar.google.com/citations?user=ZKYvTCgAAAAJ&hl=en",
+      "linkedin": "https://www.linkedin.com/in/vu-ha-581314a8/",
+      "orcid": "https://orcid.org/0000-0003-1325-3480"
     },
-    "order": 0,
-    "featured": false,
-    "isMock": false
+    "order": 1,
+    "featured": false
   },
   {
-    "id": 1001,
+    "id": 101,
     "name": "Prof. Symeon Chatzinotas",
     "displayName": "Symeon Chatzinotas",
     "status": "current",
@@ -61,13 +59,12 @@
       "website": "https://sites.google.com/view/symeonchatzinotas/home",
       "scholar": "https://scholar.google.com/citations?user=6jeAUkoAAAAJ&hl=en"
     },
-    "order": 1,
-    "featured": false,
-    "isMock": false
+    "order": 2,
+    "featured": false
   },
   {
-    "id": 1004,
-    "order": 4,
+    "id": 102,
+    "order": 3,
     "name": "Dr. Ti Ti Nguyen",
     "displayName": "Ti Ti Nguyen",
     "status": "current",
@@ -88,12 +85,11 @@
       "website": "https://www.uni.lu/snt-en/people/ti-ti-nguyen/",
       "scholar": "https://scholar.google.com/citations?user=dAFArEYAAAAJ"
     },
-    "featured": false,
-    "isMock": false
+    "featured": false
   },
   {
-    "id": 1005,
-    "order": 5,
+    "id": 103,
+    "order": 4,
     "name": "Dr. Duc-Dung Tran",
     "displayName": "Duc-Dung Tran",
     "status": "current",
@@ -115,16 +111,13 @@
     "links": {
       "email": "duc-dung.tran@uni.lu",
       "website": "https://www.uni.lu/snt-en/people/duc-dung-tran/",
-      "scholar": "https://scholar.google.com/citations?user=CIt5qdMAAAAJ",
-      "github": "https://example.com/github/2002",
-      "orcid": "https://example.com/orcid/2002"
+      "scholar": "https://scholar.google.com/citations?user=CIt5qdMAAAAJ"
     },
-    "featured": false,
-    "isMock": false
+    "featured": false
   },
   {
-    "id": 1006,
-    "order": 6,
+    "id": 104,
+    "order": 5,
     "name": "Dr. Dinh-Hieu Tran",
     "displayName": "Dinh-Hieu Tran",
     "status": "current",
@@ -148,12 +141,11 @@
       "website": "https://www.uni.lu/snt-en/people/hieu-tran-dinh/",
       "scholar": "https://scholar.google.com/citations?user=zh-uSUYAAAAJ"
     },
-    "featured": false,
-    "isMock": false
+    "featured": false
   },
   {
-    "id": 1007,
-    "order": 7,
+    "id": 105,
+    "order": 6,
     "name": "Dr. Ons Aouedi",
     "displayName": "Ons Aouedi",
     "status": "current",
@@ -174,15 +166,13 @@
     "links": {
       "email": "ons.aouedi@uni.lu",
       "website": "https://www.uni.lu/snt-en/people/ons-aouedi/",
-      "scholar": "https://scholar.google.com/citations?user=JMOBDusAAAAJ",
-      "linkedin": "https://example.com/linkedin/2003"
+      "scholar": "https://scholar.google.com/citations?user=JMOBDusAAAAJ"
     },
-    "featured": false,
-    "isMock": false
+    "featured": false
   },
   {
-    "id": 1008,
-    "order": 8,
+    "id": 106,
+    "order": 7,
     "name": "Dr. Muhammad Awais",
     "displayName": "Muhammad Awais",
     "status": "current",
@@ -203,16 +193,13 @@
     "links": {
       "email": "muhammad.awais@uni.lu",
       "website": "https://www.uni.lu/snt-en/people/muhammad-awais/",
-      "scholar": "https://scholar.google.com/citations?user=6jeAUkoAAAAJ&hl=en",
-      "github": "https://example.com/github/2004",
-      "orcid": "https://example.com/orcid/2004"
+      "scholar": "https://scholar.google.com/citations?user=6jeAUkoAAAAJ&hl=en"
     },
-    "featured": false,
-    "isMock": false
+    "featured": false
   },
   {
-    "id": 1009,
-    "order": 9,
+    "id": 107,
+    "order": 8,
     "name": "Dr. Suleima Briseno Ramirez",
     "displayName": "Suleima Briseno Ramirez",
     "status": "current",
@@ -225,23 +212,19 @@
       "Machine learning",
       "Optimization"
     ],
-    "biography": "suleima-briseno-ramirez",
     "headshot": "../assets/people/suleima-briseno-ramirez.png",
     "sourceUrls": [
       "https://www.uni.lu/snt-en/people/suleima-briseno-ramirez/"
     ],
     "links": {
       "email": "suleima.briseno@uni.lu",
-      "website": "https://www.uni.lu/snt-en/people/suleima-briseno-ramirez/",
-      "github": "https://example.com/github/2004",
-      "orcid": "https://example.com/orcid/2004"
+      "website": "https://www.uni.lu/snt-en/people/suleima-briseno-ramirez/"
     },
-    "featured": false,
-    "isMock": false
+    "featured": false
   },
   {
-    "id": 1010,
-    "order": 10,
+    "id": 108,
+    "order": 9,
     "name": "Van Thieu NGUYEN",
     "displayName": "Van Thieu NGUYEN",
     "status": "current",
@@ -251,10 +234,15 @@
     "title": "PhD Researcher",
     "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
     "researchInterests": [
-      "Machine Learning", "Deep Learning", "Federated Learning", "Federated Unlearning",
-      "Optimization", "Metaheuristic Algorithms", "Decentralized Optimization", "Distributed Learning"
+      "Machine Learning",
+      "Deep Learning",
+      "Federated Learning",
+      "Federated Unlearning",
+      "Optimization",
+      "Metaheuristic Algorithms",
+      "Decentralized Optimization",
+      "Distributed Learning"
     ],
-    "biography": "van-thieu-nguyen",
     "headshot": "../assets/people/van-thieu-nguyen.png",
     "sourceUrls": [
       "https://www.uni.lu/snt-en/people/van-thieu-nguyen/"
@@ -265,12 +253,11 @@
       "scholar": "https://scholar.google.com/citations?user=nsTbdhgAAAAJ&hl=en",
       "github": "https://github.com/thieu1995"
     },
-    "featured": false,
-    "isMock": false
+    "featured": false
   },
   {
-    "id": 1011,
-    "order": 11,
+    "id": 109,
+    "order": 10,
     "name": "Huruy ZERIHUN",
     "displayName": "Huruy ZERIHUN",
     "status": "current",
@@ -280,172 +267,51 @@
     "title": "PhD Researcher",
     "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
     "researchInterests": [
-      "Machine Learning", "Deep Learning", "Federated Learning", "Split Learning",
-      "Optimization", "Edge and Cloud Computing", "Distributed Learning"
+      "Machine Learning",
+      "Deep Learning",
+      "Federated Learning",
+      "Split Learning",
+      "Optimization",
+      "Edge and Cloud Computing",
+      "Distributed Learning"
     ],
-    "biography": "huruy-zerihun",
     "headshot": "../assets/people/huruy-zerihun.png",
     "sourceUrls": [
       "https://www.uni.lu/snt-en/people/huruy-zerihun/"
     ],
     "links": {
       "email": "huruy.zerihun@uni.lu",
-      "website": "https://www.uni.lu/snt-en/people/huruy-zerihun/",
-      "scholar": "https://example.com/scholar/huruy-zerihun",
-      "linkedin": "https://example.com/linkedin/2006"
+      "website": "https://www.uni.lu/snt-en/people/huruy-zerihun/"
     },
-    "featured": false,
-    "isMock": false
+    "featured": false
   },
   {
-    "id": 2010,
-    "name": "Sara Kim",
-    "status": "current",
-    "group": "Master's Students",
-    "role": "Master's Thesis Student",
-    "publicationRole": "mentee",
-    "title": "Master's Thesis Student",
-    "affiliation": "TelecomAI Lab · demo profile",
-    "researchInterests": [
-      "Satellite communications",
-      "Non-terrestrial networks"
-    ],
-    "biography": "2010",
-    "links": {
-      "email": "demo-2010@example.com",
-      "website": "https://example.com/people/2010",
-      "scholar": "https://example.com/scholar/2010",
-      "github": "https://example.com/github/2010",
-      "orcid": "https://example.com/orcid/2010",
-      "linkedin": "https://example.com/linkedin/2010"
-    },
-    "order": 13,
-    "featured": false,
-    "isMock": false
-  },
-  {
-    "id": 2014,
-    "name": "Theo Ruiz",
-    "status": "current",
-    "group": "Interns",
-    "role": "Research Intern",
-    "publicationRole": "mentee",
-    "title": "Research Intern",
-    "affiliation": "TelecomAI Lab · demo profile",
-    "researchInterests": [
-      "Cloud and edge intelligence",
-      "Federated learning"
-    ],
-    "biography": "2014",
-    "headshot": "../assets/people/demo-2014.svg",
-    "links": {
-      "email": "demo-2014@example.com",
-      "website": "https://example.com/people/2014",
-      "scholar": "https://example.com/scholar/2014",
-      "linkedin": "https://example.com/linkedin/2014"
-    },
-    "order": 17,
-    "featured": false,
-    "isMock": true
-  },
-  {
-    "id": 2016,
-    "name": "Mateo Silva",
+    "id": 110,
+    "name": "Prof. Bjorn Ottersten",
     "status": "current",
     "group": "Collaborators",
-    "role": "Industry Research Collaborator",
+    "role": "Full Professor / Chief Scientist I",
     "publicationRole": "senior",
-    "title": "Industry Research Collaborator",
-    "affiliation": "Example Partner Research Institute",
+    "title": "Full Professor / Chief Scientist I",
+    "affiliation": "SnT, University of Luxembourg",
     "researchInterests": [
-      "Open wireless benchmarks",
+      "Electrical Engineering",
+      "Signal Processing",
+      "Communications",
+      "Wireless Communications",
       "Reproducible research"
     ],
-    "biography": "2016",
-    "headshot": "../assets/people/demo-2016.svg",
+    "headshot": "../assets/people/bjorn-ottersten.png",
     "links": {
-      "email": "demo-2016@example.com",
-      "website": "https://example.com/people/2016",
-      "scholar": "https://example.com/scholar/2016",
-      "github": "https://example.com/github/2016",
-      "orcid": "https://example.com/orcid/2016"
+      "website": "https://www.kth.se/profile/otterste",
+      "scholar": "https://scholar.google.ca/citations?user=OAWYhh0AAAAJ",
+      "orcid": "https://orcid.org/0000-0003-2298-6774"
     },
-    "order": 19,
-    "featured": false,
-    "isMock": true
+    "order": 11,
+    "featured": false
   },
   {
-    "id": 2017,
-    "name": "Aya Sato",
-    "status": "current",
-    "group": "Guests",
-    "role": "Visiting Professor",
-    "publicationRole": "senior",
-    "title": "Visiting Professor",
-    "affiliation": "Example Partner Research Institute",
-    "researchInterests": [
-      "Optimization",
-      "Energy-efficient communications"
-    ],
-    "biography": "2017",
-    "links": {
-      "email": "demo-2017@example.com"
-    },
-    "order": 20,
-    "featured": false,
-    "isMock": true
-  },
-  {
-    "id": 2018,
-    "name": "Iris Becker",
-    "status": "current",
-    "group": "Guests",
-    "role": "Visiting PhD Researcher",
-    "publicationRole": "senior",
-    "title": "Visiting PhD Researcher",
-    "affiliation": "Example Partner Research Institute",
-    "researchInterests": [
-      "Learning for wireless networks",
-      "Resource allocation"
-    ],
-    "biography": "2018",
-    "headshot": "../assets/people/demo-2018.svg",
-    "links": {
-      "email": "demo-2018@example.com",
-      "website": "https://example.com/people/2018",
-      "scholar": "https://example.com/scholar/2018",
-      "linkedin": "https://example.com/linkedin/2018"
-    },
-    "order": 21,
-    "featured": false,
-    "isMock": true
-  },
-  {
-    "id": 2019,
-    "name": "Alex Rivera",
-    "status": "alumni",
-    "group": "Former Members",
-    "role": "Former Research Engineer",
-    "publicationRole": "senior",
-    "title": "Former Research Engineer",
-    "affiliation": "TelecomAI Lab · demo profile",
-    "researchInterests": [
-      "Cloud and edge intelligence",
-      "Federated learning"
-    ],
-    "biography": "2019",
-    "headshot": "../assets/people/demo-2019.svg",
-    "links": {
-      "email": "demo-2019@example.com",
-      "github": "https://example.com/github/2019",
-      "orcid": "https://example.com/orcid/2019"
-    },
-    "order": 22,
-    "featured": false,
-    "isMock": true
-  },
-  {
-    "id": 2020,
+    "id": 111,
     "name": "Thanh-Dung Le",
     "status": "alumni",
     "group": "Former Members",
@@ -458,7 +324,6 @@
       "Machine learning and Data Analytics",
       "Applied Artificial Intelligence"
     ],
-    "biography": "thanh-dung-le",
     "headshot": "../assets/people/thanh-dung-le.png",
     "links": {
       "email": "thanh-dung.le@uni.lu",
@@ -467,13 +332,12 @@
       "github": "https://github.com/ltdung",
       "orcid": "https://orcid.org/0000-0003-0782-8698"
     },
-    "order": 23,
-    "featured": false,
-    "isMock": true
+    "order": 12,
+    "featured": false
   },
   {
-    "id": 2001,
-    "order": 10,
+    "id": 112,
+    "order": 13,
     "name": "Dr. Kha Hung Nguyen",
     "displayName": "Kha Hung Nguyen",
     "status": "alumni",
@@ -489,38 +353,64 @@
       "Energy-efficient communications",
       "Machine learning"
     ],
-    "biography": "kha-hung-nguyen",
     "headshot": "../assets/people/kha-hung-nguyen.png",
     "links": {
       "email": "kha-hung.nguyen@uni.lu",
       "website": "https://www.uni.lu/snt-en/people/kha-hung-nguyen/",
-      "scholar": "https://scholar.google.com/citations?user=LB0oybwAAAAJ",
-      "github": "https://example.com/github/2002",
-      "orcid": "https://example.com/orcid/2002"
+      "scholar": "https://scholar.google.com/citations?user=LB0oybwAAAAJ"
     },
-    "featured": false,
-    "isMock": false
+    "featured": false
   },
   {
-    "id": 2002,
-    "order": 11,
-    "name": "Gabriel Santos",
-    "status": "alumni",
-    "group": "Alumni",
-    "role": "Master's Alumnus",
-    "publicationRole": "mentee",
-    "title": "Master's Alumnus",
-    "affiliation": "TelecomAI Lab · demo profile",
+    "id": 113,
+    "name": "Assistant Prof. Eva Lagunas",
+    "displayName": "Eva Lagunas",
+    "status": "current",
+    "group": "Collaborators",
+    "role": "Deputy-Head of SIGCOM",
+    "publicationRole": "senior",
+    "title": "Assistant Professor",
+    "affiliation": "SigCOM, SnT, University of Luxembourg",
     "researchInterests": [
-      "Learning for wireless networks",
-      "Resource allocation"
+      "5G/6G Communications",
+      "Design and Optimization of NTN networks",
+      "Terrestrial and Non-Terrestrial Networks (NTN) hybrid networks",
+      "Wireless Communications"
     ],
-    "biography": "2022",
-    "headshot": "../assets/people/demo-2022.svg",
+    "headshot": "../assets/people/eva-lagunas.png",
     "links": {
-      "email": "demo-2022@example.com"
+      "email": "eva.lagunas@uni.lu",
+      "website": "https://sites.google.com/view/evalagunas/home",
+      "scholar": "https://scholar.google.com/citations?hl=en&user=TssmcdQAAAAJ",
+      "orcid": "https://orcid.org/0000-0002-9936-7245"
     },
-    "featured": false,
-    "isMock": true
+    "order": 12,
+    "featured": false
+  },
+  {
+    "id": 114,
+    "name": "Dr. Konstantinos NTONTIN",
+    "displayName": "Konstantinos NTONTIN",
+    "status": "current",
+    "group": "Collaborators",
+    "role": "Research Scientist",
+    "publicationRole": "senior",
+    "title": "Research Scientist",
+    "affiliation": "SigCOM, SnT, University of Luxembourg",
+    "researchInterests": [
+      "5G/6G Communications",
+      "Design and Optimization of NTN networks",
+      "Terrestrial and Non-Terrestrial Networks (NTN) hybrid networks",
+      "Wireless Communications"
+    ],
+    "headshot": "../assets/people/konstantinos-ntontin.png",
+    "links": {
+      "email": "kostantinos.ntontin@uni.lu",
+      "website": "https://www.uni.lu/snt-en/people/konstantinos-ntontin/",
+      "scholar": "https://scholar.google.com/citations?user=H3ZxC5QAAAAJ&hl=en",
+      "orcid": "https://orcid.org/0000-0003-1899-6865"
+    },
+    "order": 13,
+    "featured": false
   }
 ]

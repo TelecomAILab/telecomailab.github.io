@@ -3,7 +3,7 @@
     "id": 901,
     "title": "[Demo] Learning to schedule under uncertainty",
     "speaker": {
-      "personId": "1001"
+      "personId": 101
     },
     "date": "2026-11-26T14:00:00+01:00",
     "endDate": "2026-11-26T15:00:00+01:00",
@@ -11,9 +11,7 @@
     "type": "Seminar",
     "location": "Demo seminar room · Luxembourg",
     "abstract": "How should a wireless scheduler behave when channel estimates are imperfect? This fictional seminar compares simple baselines, uncertainty-aware objectives, and the practical trade-offs behind a reproducible evaluation.",
-    "relatedPublications": [
-      "sample-2024-network"
-    ],
+    "relatedPublications": [],
     "slides": "/files/presentations/mock-slides.pdf",
     "isMock": true
   },
@@ -21,7 +19,7 @@
     "id": 902,
     "title": "[Demo] Hands-on reproducibility for edge learning",
     "speaker": {
-      "personId": "2003"
+      "name": "Author or speaker not listed"
     },
     "date": "2026-12-10T10:00:00+01:00",
     "endDate": "2026-12-10T12:00:00+01:00",
@@ -29,9 +27,7 @@
     "type": "Tutorial",
     "location": "Online · demonstration event",
     "abstract": "A practical fictional tutorial on recording seeds, partitions, checkpoints, and hardware settings. Participants follow a small synthetic example and discuss which conclusions survive changes in the evaluation protocol.",
-    "relatedPublications": [
-      1002
-    ],
+    "relatedPublications": [],
     "slides": "/files/presentations/mock-slides.pdf",
     "isMock": true
   },
@@ -46,16 +42,14 @@
     "type": "Seminar",
     "location": "Demo seminar room · Luxembourg",
     "abstract": "External speaker Taylor Morgan introduces a fictional research agenda for adaptive routing across heterogeneous links, emphasizing modelling assumptions and accessible baseline experiments.",
-    "relatedPublications": [
-      1004
-    ],
+    "relatedPublications": [],
     "isMock": true
   },
   {
     "id": 904,
     "title": "[Demo] Energy budgets as a first-class design constraint",
     "speaker": {
-      "personId": "2001"
+      "personId": 112
     },
     "date": "2026-10-29T11:00:00+01:00",
     "endDate": "2026-10-29T11:45:00+01:00",
@@ -63,9 +57,7 @@
     "type": "Conference talk",
     "location": "Example City · demonstration conference",
     "abstract": "This sample presentation examines the interaction between model accuracy, communication cost, and energy budgets using a deliberately small synthetic dataset.",
-    "relatedPublications": [
-      1001
-    ],
+    "relatedPublications": [],
     "slides": "/files/presentations/mock-slides.pdf",
     "video": "https://example.com/demo-recording",
     "eventWebsite": "https://example.com/demo-conference",
@@ -75,7 +67,7 @@
     "id": 905,
     "title": "[Demo] Building fair comparisons for network controllers",
     "speaker": {
-      "personId": "2006"
+      "name": "Author or speaker not listed"
     },
     "date": "2026-09-17T14:00:00+02:00",
     "endDate": "2026-09-17T15:00:00+02:00",
@@ -83,9 +75,7 @@
     "type": "Workshop",
     "location": "Hybrid · demo meeting room",
     "abstract": "A fictional workshop discussion about fair baselines, held-out conditions, and reporting uncertainty. The goal is to make experimental comparisons easier to audit and reproduce.",
-    "relatedPublications": [
-      1003
-    ],
+    "relatedPublications": [],
     "slides": "/files/presentations/mock-slides.pdf",
     "isMock": true
   },
@@ -93,16 +83,14 @@
     "id": 906,
     "title": "[Demo] What changes when the channel drifts?",
     "speaker": {
-      "personId": "2015"
+      "name": "Author or speaker not listed"
     },
     "date": "2026-06-18T13:30:00+02:00",
     "event": "Collaborator Seminar",
     "type": "Seminar",
     "location": "Online · demonstration event",
     "abstract": "A fictional collaborator session on distribution shift in communication systems. We discuss monitoring, adaptation, and the limitations of static validation traces.",
-    "relatedPublications": [
-      1005
-    ],
+    "relatedPublications": [],
     "slides": "/files/presentations/mock-slides.pdf",
     "isMock": true
   },
@@ -110,7 +98,7 @@
     "id": 907,
     "title": "[Demo] A small toolkit for transparent experiments",
     "speaker": {
-      "personId": "2008"
+      "name": "Author or speaker not listed"
     },
     "date": "2026-04-09T10:00:00+02:00",
     "endDate": "2026-04-09T11:30:00+02:00",
@@ -118,28 +106,26 @@
     "type": "Tutorial",
     "location": "Demo computer lab · Luxembourg",
     "abstract": "A sample tutorial on organizing configuration, logging, and plots. The accompanying files demonstrate a minimal workflow rather than a production research framework.",
-    "relatedPublications": [
-      1010
-    ],
+    "relatedPublications": [],
     "slides": "/files/presentations/mock-slides.pdf",
     "isMock": true
   },
   {
-    "id": 908,
-    "title": "[Demo] From optimisation models to useful baselines",
+    "id": 1,
+    "title": "Resilient Decentralized Wireless Federated Learning via Gradient Tracking with AdamW",
     "speaker": {
-      "personId": "1002"
+      "personId": 108
     },
-    "date": "2026-02-12T14:00:00+01:00",
-    "endDate": "2026-02-12T15:00:00+01:00",
-    "event": "Alumni Research Exchange",
-    "type": "Workshop",
-    "location": "Online · demonstration event",
-    "abstract": "A fictional alumni session exploring how mathematical models become practical baselines and where implementation assumptions deserve explicit documentation.",
+    "date": "2026-10-16T14:00:00+02:00",
+    "endDate": "2026-10-16T15:00:00+02:00",
+    "event": "SigCOM Seminar Series",
+    "type": "Seminar",
+    "location": "Offline - E03-318 - JFK Building, Kirchberg Campus, Luxembourg.",
+    "abstract": "Decentralized learning has emerged as a promising paradigm for enabling collaborative intelligence across distributed edge devices without relying on a central coordinator. However, deploying decentralized learning over wireless networks introduces significant challenges, particularly when devices have heterogeneous local data and communicate through bandwidth-limited, unreliable wireless channels. These challenges become more pronounced for gradient-tracking-based algorithms, which require exchanging both model parameters and auxiliary tracking variables, resulting in substantial communication overhead and increased vulnerability to packet losses. In this seminar, I will present QEF-GT-AdamW, a communication-efficient and outage-resilient decentralized learning framework developed for wireless edge networks. The proposed approach integrates gradient tracking to mitigate data heterogeneity, AdamW-based adaptive optimization to improve training stability, and dual-stream Top-K compression with error feedback to reduce communication overhead while compensating for compression-induced errors. A local fallback mechanism further improves resilience against unsuccessful wireless transmissions. The talk will cover the research motivation, related work, wireless system model, algorithmic design. Experimental evaluations on heterogeneous MNIST and CIFAR-10 datasets demonstrate favorable trade-offs among learning accuracy, communication efficiency, and robustness under constrained bandwidth, limited transmission power, and fading-induced packet losses.",
     "relatedPublications": [
       "nguyen2025semantic"
     ],
     "slides": "/files/presentations/mock-slides.pdf",
-    "isMock": true
+    "isMock": false
   }
 ]

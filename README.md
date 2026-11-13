@@ -14,8 +14,9 @@ npm run dev
 ```
 
 Open [localhost:4321](http://localhost:4321). Normal development displays the current
-lab records together with retained fictional examples. Keep record-specific demo
-labels on examples. Removing some sample records does not require restoring the
+lab records together with retained fictional examples in other sections. People and
+Publications now contain curated records only. Keep record-specific demo labels on
+remaining examples. Removing sample records does not require restoring the
 original sample counts; missing relationships on retained examples are reported at
 build time and omitted only from the rendered links, without editing source data.
 
@@ -47,8 +48,9 @@ biographies, Blog, Notes, and figures use Markdown in `src/content/`. Images liv
 public downloads live in `public/files/`. Tests and historical fixtures stay under
 `tests/` and are not copied to the website.
 
-`npm run generate:demo` **overwrites** sample data, biographies, avatars, and
-downloads. Do not run it over curated records without authorization.
+People IDs are 100–112; preserve them when adding members. Publication metadata lives
+in `publications.json`; independent `citations.json` stores weekly citation counts.
+The destructive demo generator has been removed. See the content guide before imports.
 
 Local builds do not deploy. Existing Actions can publish on a push to `main` or
 an explicit workflow run; do not commit, push, or deploy without approval.
