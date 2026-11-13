@@ -10,7 +10,7 @@
     "version": "v1.2.0",
     "access": "open",
     "tags": [
-      "topic-one",
+      "edge-ai-network-management",
       "Getting started"
     ],
     "updated": "2026-03-15",
@@ -32,7 +32,7 @@
     "version": "v0.4.0",
     "access": "open",
     "tags": [
-      "topic-two",
+      "edge-ai-network-management",
       "Reproducibility"
     ],
     "updated": "2026-04-15",
@@ -55,7 +55,7 @@
     "version": "v1.0",
     "access": "open",
     "tags": [
-      "topic-three",
+      "edge-ai-network-management",
       "Getting started"
     ],
     "updated": "2026-05-15",
@@ -101,7 +101,7 @@
     "version": "2026.1",
     "access": "open",
     "tags": [
-      "theory",
+      "edge-ai-network-management",
       "Getting started"
     ],
     "updated": "2026-07-15",
@@ -124,7 +124,7 @@
     "version": "v0.3",
     "access": "request",
     "tags": [
-      "topic-one",
+      "edge-ai-network-management",
       "Reproducibility"
     ],
     "updated": "2026-08-15",
@@ -147,7 +147,7 @@
     "version": "v1.0",
     "access": "open",
     "tags": [
-      "topic-two",
+      "edge-ai-network-management",
       "Getting started"
     ],
     "updated": "2026-09-15",
@@ -170,7 +170,7 @@
     "version": "v1.0",
     "access": "open",
     "tags": [
-      "topic-three",
+      "edge-ai-network-management",
       "Reproducibility"
     ],
     "updated": "2026-10-15",
@@ -216,7 +216,7 @@
     "version": "2025",
     "access": "open",
     "tags": [
-      "theory",
+      "edge-ai-network-management",
       "Reproducibility"
     ],
     "updated": "2026-04-15",
@@ -239,7 +239,7 @@
     "version": "v1.0",
     "access": "open",
     "tags": [
-      "topic-one",
+      "edge-ai-network-management",
       "Getting started"
     ],
     "updated": "2026-05-15",
@@ -262,7 +262,7 @@
     "version": "v1.0",
     "access": "open",
     "tags": [
-      "topic-two",
+      "edge-ai-network-management",
       "Reproducibility"
     ],
     "updated": "2026-06-15",

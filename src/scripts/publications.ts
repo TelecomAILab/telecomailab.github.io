@@ -1,4 +1,5 @@
 import { comparePublications, matchesPublication, type PublicationFilter, type PublicationIndex } from "../lib/publication-query";
+import { RESEARCH_ALIASES } from "../lib/research-aliases";
 
 const list = document.querySelector<HTMLOListElement>("[data-pub-list]");
 const nodes = [...(list?.querySelectorAll<HTMLElement>("[data-pub]") ?? [])];
@@ -75,6 +76,7 @@ document.getElementById("pub-reset")?.addEventListener("click", () => {
 function applyHash() {
   let area = "";
   try { area = decodeURIComponent(location.hash.slice(1)); } catch { /* Ignore malformed external hashes. */ }
+  area = RESEARCH_ALIASES[area] ?? area;
   filter.area = area === "letter" || [...document.querySelectorAll<HTMLElement>("[data-area]")].some((button) => button.dataset.area === area) ? area : "all";
   if (area === "review") filter.type = "review-article";
   if (filter.area !== "all") {

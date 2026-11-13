@@ -49,8 +49,8 @@
       "wireless communications"
     ],
     "areas": [
-      "topic-one",
-      "topic-two"
+      "edge-ai-network-management",
+      "data-model-ecosystems"
     ],
     "pdfUrl": "/files/publications/van2026fedqos-paper.pdf",
     "slidesUrl": "/files/publications/van2026fedqos-slides.pptx",
@@ -101,8 +101,8 @@
       "wireless communications"
     ],
     "areas": [
-      "theory",
-      "topic-one"
+      "edge-ai-network-management",
+      "data-model-ecosystems"
     ],
     "pdfUrl": "/files/publications/van2026resilient-paper.pdf",
     "slidesUrl": "/files/publications/van2026resilient-slides.pptx",
@@ -160,7 +160,7 @@
       "UAV networks"
     ],
     "areas": [
-      "topic-one"
+      "edge-ai-network-management"
     ],
     "projectUrl": "/mare",
     "openAccess": true,
@@ -230,7 +230,7 @@
     ],
     "areas": [
       "semantic-earth-observation",
-      "topic-one"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -287,7 +287,7 @@
       "satellite networks"
     ],
     "areas": [
-      "topic-three"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -340,8 +340,7 @@
       "massive MIMO"
     ],
     "areas": [
-      "topic-three",
-      "topic-one"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -400,7 +399,9 @@
       "computer vision"
     ],
     "areas": [
-      "semantic-earth-observation"
+      "semantic-earth-observation",
+      "edge-ai-network-management",
+      "methods"
     ],
     "codeUrl": "https://github.com/ltdung/SnT-SENTRY",
     "openAccess": true,
@@ -460,7 +461,8 @@
     ],
     "areas": [
       "semantic-earth-observation",
-      "topic-two"
+      "edge-ai-network-management",
+      "methods"
     ],
     "openAccess": true,
     "featured": false,
@@ -516,8 +518,7 @@
       "resource allocation"
     ],
     "areas": [
-      "topic-three",
-      "theory"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -567,7 +568,7 @@
       "wireless communications"
     ],
     "areas": [
-      "topic-one"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -621,8 +622,8 @@
       "semantic communications"
     ],
     "areas": [
-      "topic-three",
-      "semantic-earth-observation"
+      "semantic-earth-observation",
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -674,8 +675,7 @@
       "block coordinate descent"
     ],
     "areas": [
-      "topic-three",
-      "topic-two"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -719,7 +719,7 @@
       "distributed beamforming"
     ],
     "areas": [
-      "topic-three"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -777,8 +777,7 @@
       "reinforcement learning"
     ],
     "areas": [
-      "topic-three",
-      "theory"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -839,7 +838,7 @@
     ],
     "areas": [
       "semantic-earth-observation",
-      "theory"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -891,8 +890,7 @@
       "non-terrestrial networks"
     ],
     "areas": [
-      "topic-one",
-      "topic-three"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -951,8 +949,7 @@
       "massive MIMO"
     ],
     "areas": [
-      "topic-three",
-      "topic-one"
+      "edge-ai-network-management"
     ],
     "openAccess": true,
     "featured": false,
@@ -1078,7 +1075,9 @@
       "https://orbilu.uni.lu/handle/10993/66123"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "semantic-earth-observation"
+    ]
   },
   {
     "id": "tran2025energy",
@@ -1127,7 +1126,9 @@
       "https://orbilu.uni.lu/handle/10993/62410"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "adam2025generative",
@@ -1171,7 +1172,9 @@
       "https://orbilu.uni.lu/handle/10993/67047"
     ],
     "openAccess": true,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "adam2025gs3d",
@@ -1212,7 +1215,9 @@
       "https://orbilu.uni.lu/handle/10993/64887"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "kavehmadavani2025intelligent",
@@ -1252,7 +1257,9 @@
       "https://orbilu.uni.lu/handle/10993/66093"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "eappen2025neuromorphic",
@@ -1302,7 +1309,9 @@
       "https://orbilu.uni.lu/handle/10993/66701"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "le2025semantic",
@@ -1365,7 +1374,10 @@
       "https://orbilu.uni.lu/handle/10993/66268"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "semantic-earth-observation",
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "he2025spatio",
@@ -1409,7 +1421,9 @@
       "https://orbilu.uni.lu/handle/10993/66560"
     ],
     "openAccess": true,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "le2025impact",
@@ -1496,7 +1510,9 @@
       "https://orbilu.uni.lu/handle/10993/60597"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "khan2024deep",
@@ -1553,7 +1569,9 @@
       "https://orbilu.uni.lu/handle/10993/62992"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "adam2024diffusion",
@@ -1596,7 +1614,9 @@
       "https://orbilu.uni.lu/handle/10993/60767"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "saifaldawla2024genai",
@@ -1639,7 +1659,9 @@
       "https://orbilu.uni.lu/handle/10993/61484"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "tran2023hybrid",
@@ -1680,7 +1702,9 @@
       "https://orbilu.uni.lu/handle/10993/58076"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "tran2023multi",
@@ -1722,7 +1746,9 @@
       "https://orbilu.uni.lu/handle/10993/58601"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "saifaldawla2023ngso",
@@ -1764,7 +1790,9 @@
       "https://orbilu.uni.lu/handle/10993/55631"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "mehrizi2022bayesian",
@@ -1798,7 +1826,9 @@
       "https://orbilu.uni.lu/handle/10993/53077"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "ortiz2022unsupervised",
@@ -1834,7 +1864,9 @@
       "https://orbilu.uni.lu/handle/10993/51241"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "wang2021completion",
@@ -1879,7 +1911,9 @@
       "https://orbilu.uni.lu/handle/10993/45730"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "mehrizi2021trend",
@@ -1919,7 +1953,9 @@
       "https://orbilu.uni.lu/handle/10993/48195"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "lei2020deep",
@@ -1965,7 +2001,9 @@
       "https://orbilu.uni.lu/handle/10993/42944"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "mehrizi2020online",
@@ -2007,7 +2045,9 @@
       "https://orbilu.uni.lu/handle/10993/44413"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "lei2019learning",
@@ -2049,7 +2089,9 @@
       "https://orbilu.uni.lu/handle/10993/41133"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   },
   {
     "id": "tsakmalis2018constrained",
@@ -2129,6 +2171,8 @@
       "https://orbilu.uni.lu/handle/10993/31926"
     ],
     "openAccess": false,
-    "areas": []
+    "areas": [
+      "edge-ai-network-management"
+    ]
   }
 ]

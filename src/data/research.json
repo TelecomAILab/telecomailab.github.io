@@ -1,95 +1,5 @@
 [
   {
-    "id": "topic-one",
-    "title": "AI for wireless networks",
-    "description": "Wireless systems must make decisions with incomplete channel information, changing traffic, and limited radio resources. This illustrative direction asks how learning-based control can improve scheduling and resource allocation while keeping reliability and energy use visible.",
-    "approach": "Combine model-based optimisation with data-driven policies, compare transparent baselines, and evaluate sensitivity to changing channel conditions.",
-    "applications": "Adaptive radio access, interference management, and energy-aware connectivity.",
-    "image": "../assets/research/wireless.svg",
-    "links": [
-      {
-        "label": "Related publications",
-        "url": "/publications#topic-one"
-      }
-    ],
-    "imageAlt": "Concept illustration for ai for wireless networks",
-    "order": 1,
-    "isMock": true,
-    "summary": "Learning-driven resource allocation for reliable, energy-aware wireless systems."
-  },
-  {
-    "id": "topic-two",
-    "title": "Cloud & edge intelligence",
-    "description": "Intelligence distributed across devices, edge servers, and the cloud creates a joint learning and networking problem. This example direction examines how useful models can be trained and deployed when communication, computation, and data availability are uneven.",
-    "approach": "Explore federated and distributed learning, communication-efficient updates, and joint decisions about inference placement and computing resources.",
-    "applications": "Collaborative sensing, responsive edge services, and resource-constrained connected devices.",
-    "image": "../assets/research/edge.svg",
-    "links": [
-      {
-        "label": "Related publications",
-        "url": "/publications#topic-two"
-      }
-    ],
-    "imageAlt": "Concept illustration for cloud & edge intelligence",
-    "order": 2,
-    "isMock": true,
-    "summary": "Collaborative learning and efficient inference across devices, edge servers, and the cloud."
-  },
-  {
-    "id": "topic-three",
-    "title": "Satellite communications",
-    "description": "Integrated terrestrial and non-terrestrial networks can extend connectivity, but moving links and long delays complicate control. This illustrative direction studies how network models and adaptive policies can account for different coverage, capacity, and timescales.",
-    "approach": "Use explicit link and traffic models, robust resource allocation, and carefully scoped simulations of heterogeneous network scenarios.",
-    "applications": "Remote connectivity, resilient infrastructure, and coordinated terrestrial–satellite services.",
-    "image": "../assets/research/satellite.svg",
-    "links": [
-      {
-        "label": "Related publications",
-        "url": "/publications#topic-three"
-      }
-    ],
-    "imageAlt": "Concept illustration for satellite communications",
-    "order": 3,
-    "isMock": true,
-    "summary": "Adaptive connectivity across integrated terrestrial and non-terrestrial networks."
-  },
-  {
-    "id": "methods",
-    "title": "Open tools & datasets",
-    "description": "Research is easier to assess when experimental assumptions, inputs, and comparison methods are available. This example direction focuses on making communication-system experiments easier to reproduce, inspect, and extend.",
-    "approach": "Develop small documented tools, synthetic datasets, common evaluation protocols, and versioned configurations that make comparisons traceable.",
-    "applications": "Reusable benchmarks, research software, and accessible teaching experiments.",
-    "image": "../assets/research/tools.svg",
-    "links": [
-      {
-        "label": "Materials & Resources",
-        "url": "/mare"
-      }
-    ],
-    "imageAlt": "Concept illustration for open tools & datasets",
-    "order": 4,
-    "isMock": true,
-    "summary": "Documented software, transparent benchmarks, and reproducible research workflows."
-  },
-  {
-    "id": "theory",
-    "title": "Optimization & learning",
-    "description": "Network decisions often combine competing objectives, discrete choices, and uncertain operating conditions. This illustrative direction connects mathematical models to learning methods so that their assumptions and trade-offs can be understood.",
-    "approach": "Study constrained optimisation, robust decision-making, and interpretable baselines; use controlled experiments to examine where a model remains useful.",
-    "applications": "Resource allocation, system design, and principled comparisons between control policies.",
-    "image": "../assets/research/theory.svg",
-    "links": [
-      {
-        "label": "Technical notes",
-        "url": "/notes"
-      }
-    ],
-    "imageAlt": "Concept illustration for optimisation & learning",
-    "order": 5,
-    "isMock": true,
-    "summary": "Mathematical models and learning methods for uncertain network decisions."
-  },
-  {
     "id": "edge-ai-network-management",
     "title": "Resource Allocation and Network Management with Edge AI",
     "summary": "Develop efficient AI for resource allocation and autonomous network management.",
@@ -108,6 +18,7 @@
       "Resource allocation",
       "Neuromorphic computing"
     ],
+    "image": "../assets/research/edge-ai.png",
     "links": [
       {
         "label": "telecomailab.uni.lu",
@@ -116,10 +27,13 @@
       {
         "label": "www.uni.lu",
         "url": "https://www.uni.lu/snt-en/facilities/telecomai-lab/"
+      },
+      {
+        "label": "Related publications",
+        "url": "/publications#edge-ai-network-management"
       }
     ],
-    "order": 1,
-    "isMock": false
+    "order": 1
   },
   {
     "id": "semantic-earth-observation",
@@ -139,6 +53,7 @@
       "Earth observation",
       "Compression"
     ],
+    "image": "../assets/research/earth-observation.png",
     "links": [
       {
         "label": "telecomailab.uni.lu",
@@ -147,10 +62,13 @@
       {
         "label": "www.uni.lu",
         "url": "https://www.uni.lu/snt-en/facilities/telecomai-lab/"
+      },
+      {
+        "label": "Related publications",
+        "url": "/publications#semantic-earth-observation"
       }
     ],
-    "order": 2,
-    "isMock": false
+    "order": 2
   },
   {
     "id": "data-model-ecosystems",
@@ -170,6 +88,7 @@
       "Smart contracts",
       "Data sharing"
     ],
+    "image": "../assets/research/ai-marketplace.png",
     "links": [
       {
         "label": "telecomailab.uni.lu",
@@ -178,9 +97,43 @@
       {
         "label": "www.uni.lu",
         "url": "https://www.uni.lu/snt-en/facilities/telecomai-lab/"
+      },
+      {
+        "label": "Related publications",
+        "url": "/publications#data-model-ecosystems"
       }
     ],
-    "order": 3,
-    "isMock": false
+    "order": 3
+  },
+  {
+    "id": "methods",
+    "title": "Open tools & datasets",
+    "description": "This planned research direction aims to make experiments in AI-enabled wireless and satellite communications easier to reproduce, inspect, and extend. The focus is on connecting research code, data preparation, system assumptions, and evaluation protocols so that future studies can build on a clear experimental foundation.",
+    "approach": "Develop documented simulation and evaluation tools, versioned experiment configurations, and data preparation workflows. Establish transparent baselines and reproducibility checklists; release code and datasets when ownership, licensing, and privacy requirements permit.",
+    "applications": "Reusable benchmarks for wireless and satellite AI; reproducible edge-learning experiments; research software and educational materials.",
+    "image": "../assets/research/open-source-tools.png",
+    "links": [
+      {
+        "label": "Materials & Resources",
+        "url": "/mare"
+      }
+    ],
+    "imageAlt": "Illustration of open research tools, datasets, and reproducible workflows",
+    "order": 4,
+    "summary": "A planned direction for reusable research software, documented datasets, and transparent evaluation of intelligent communication systems.",
+    "motivation": "Comparisons between learning-based communication methods depend on data partitions, channel assumptions, implementation choices, and computing budgets. Making these choices explicit helps researchers understand when results transfer to another setting.",
+    "challenges": [
+      "Documenting data provenance, licenses, and permitted uses",
+      "Keeping experimental configurations and software dependencies traceable",
+      "Comparing methods under consistent communication and computation budgets",
+      "Maintaining reusable resources as models and platforms evolve"
+    ],
+    "keywords": [
+      "Open research software",
+      "Datasets",
+      "Reproducibility",
+      "Benchmarking",
+      "Wireless and satellite AI"
+    ]
   }
 ]

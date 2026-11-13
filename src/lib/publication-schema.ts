@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const AREA_SLUGS = [
-  "topic-one", "topic-two", "topic-three", "methods", "theory", "review", "letter",
+  "methods", "review", "letter",
   "edge-ai-network-management", "semantic-earth-observation", "data-model-ecosystems",
 ] as const;
 export type AreaSlug = (typeof AREA_SLUGS)[number];

@@ -14,7 +14,7 @@
 
 ## Content contracts
 
-- People and Publications contain curated records only; their strict schemas reject
+- People, Publications, and Research contain curated records only; their strict schemas reject
   `isMock`. Other retained samples remain visible in normal local development with
   `isMock` and record-specific labels. Do not restore global banners or hide samples
   behind fixture mode. Never present invented academic information as verified.
@@ -29,6 +29,10 @@
   People were deliberately migrated to 100–112 with order 1–13; preserve these IDs
   and append unused positive numeric IDs for new People/Publications. External
   authors need no member record. Profiles show all associated publications without a cap.
+- Research has four directions: edge-ai-network-management, semantic-earth-observation,
+  data-model-ecosystems, and methods (Open tools & datasets, planned). Retired topic-*
+  and theory hashes are compatibility bookmarks only, never content IDs. Publications
+  use reviewed topics from their title/abstract; leave areas empty when unsupported.
 - Publication types and research topics are separate. Store canonical `venue` in
   `publications.json` and `{id, citationCount}` in `citations.json`; null means unknown,
   zero is valid. Join counts at collection load; aliases are derived. The weekly

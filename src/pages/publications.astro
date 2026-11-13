@@ -65,7 +65,7 @@ const filters = [
         <button class={chip} data-area="all" data-active aria-pressed="true">All topics</button>
         {
           areaChips.map((slug) => (
-            <button class={chip} data-area={slug} aria-pressed="false">
+            <button id={slug} class={chip} data-area={slug} aria-pressed="false">
               {AREA_LABELS[slug]}{" "}
               <span class="opacity-70">({areaCounts[slug] ?? 0})</span>
             </button>

@@ -192,3 +192,12 @@ The old per-photo gallery interaction fixture was replaced with multi-event scen
 Browser-host unavailability must still be reported; DOM simulations are not a visual
 browser review. After changing this loader, restart dev with npm run dev -- --force
 if it retains the former Markdown collection snapshot.
+
+## Research taxonomy validation
+
+Research schema checks reject mock flags and retired direction IDs. Build validation
+requires every publication area to resolve to an actual Research record. Retained
+Funding examples keep their mock labels but use current area IDs; Materials taxonomy
+tags were updated without changing downloads or deleting examples. Rendered tests
+derive Research counts/images from JSON, rather than the former eight-section demo.
+Publication fixtures use canonical topic IDs while historical archives remain intact.

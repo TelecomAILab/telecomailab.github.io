@@ -39,7 +39,7 @@ publication/project reference: a valid ID is not proof that its displayed name i
 the intended researcher. Correct uncertain mappings manually, never by fuzzy matching.
 
 People/Publications now contain 13 curated members and 43 curated papers; their
-strict schemas reject `isMock`. Research, Funding, Materials, News, Talks, Blog and
+strict schemas reject `isMock`. Research is also curated-only. Funding, Materials, News, Talks, Blog and
 Notes retain record-specific labeled examples and their mock flags. Do not remove
 these examples during People/Publications edits or hide them behind fixture mode.
 Lab Life uses three real event albums with nine uploaded photos from 2025/2026.
@@ -184,10 +184,9 @@ their deleted mock papers; the rights gate and `/figures` empty state remain val
 Do not restore CV/author overlay JSON or active Markdown publication copies.
 
 Use `journal-article`, not `journal-paper`. `areas` accepts only existing taxonomy
-IDs; free-form subjects belong in `keywords`. During migration unsupported terms
-were retained as keywords and mapped to existing directions where clear (wireless,
-edge, satellite, optimization, semantic Earth observation); computer vision remains
-a keyword. Ti Ti Nguyen's first-author reference in `nguyen2026optimization` was
+IDs; free-form subjects belong in `keywords`. Free-form subjects remain keywords. The subsequent Research cleanup reviewed
+each paper against the four current directions documented below; generic topic-*
+and theory labels are no longer publication areas. Ti Ti Nguyen's first-author reference in `nguyen2026optimization` was
 corrected to 102 with the curator's confirmation. Other unresolved authors stay
 unlinked; no name-based membership inference was applied.
 
@@ -266,7 +265,7 @@ People record solely to make an external author link. Run build/check and
 
 Research records require existing taxonomy `id`, `title`, `summary`, `description`,
 `approach`, and `applications`; `image` and `imageAlt` are optional when no approved image exists. Optional `motivation`, `challenges`, `keywords`, `links: [{label,url}]`,
-`order`, and `isMock` have defaults. Keep old topic IDs/anchors. Image paths are
+`order` has a default. The strict schema rejects `isMock`. Image paths are
 relative to JSON. Home and Research share these records without duplicate summaries.
 
 Funding JSON is an object containing `funders` and `projects`, validated by `lab-schemas.ts` and consumed through `lab-data.ts`. Funders require `id`,
@@ -283,16 +282,43 @@ relationships and display. Categories: Software, Datasets, Benchmarks, Tutorials
 Presentations, Templates; Hardware uses the dedicated source below. URLs are HTTP(S) or `/files/…`; referenced files must exist.
 “By request” is a contact/UI label, not authentication: static downloads remain public.
 
-Minimal fictional Research object (documentation only; never replace a sample during append-only imports):
+The current Research directions are:
 
-```json
-{"id":"topic-one","title":"[Fictional example] Wireless AI","summary":"Example summary.","description":"Example motivation and challenges.","approach":"Compare controlled baselines.","applications":"Example scheduling.","image":"../assets/research/wireless.svg","imageAlt":"Illustrated wireless network","isMock":true}
-```
+| ID | Direction |
+| --- | --- |
+| `edge-ai-network-management` | Resource Allocation and Network Management with Edge AI |
+| `semantic-earth-observation` | Semantic Communications for Earth Observation |
+| `data-model-ecosystems` | Data and AI Model Marketplace Ecosystems |
+| `methods` | Open tools & datasets (planned) |
 
-Select the existing direction by confirmed ID before editing. Motivation/challenges
-can become approved description prose; Methods becomes approach. Related project
-links can use `/funding#project-<id>` after checking the target. The three additional PI directions have explicit IDs in `RESEARCH_IDS`, `AREA_SLUGS`, `AREA_LABELS`, and publication filters. Unknown CSV titles do not create taxonomy IDs automatically.
-Build/check and `npm run test:ui` protect the homepage summaries and Research layout.
+Open tools describes intended work and release criteria, not completed datasets or
+unverified achievements. Its Materials link remains `/mare`; other directions link
+to matching `/publications#<id>` filters. Keep supplied images in src/assets/research;
+native image sizing preserves their full contents and intrinsic proportions.
+
+Publication `areas` were reviewed individually from supplied titles, abstracts where
+available, and keywords. Wireless/satellite control, resource allocation, inference,
+interference detection and caching fit Edge AI/network management. Semantic/EO
+representation and task-aware transmission fit Semantic Earth Observation.
+Federated/decentralized collaborative learning also fits Data/model ecosystems;
+this does not claim that these papers implement a marketplace or smart contracts.
+Open tools is used only where an abstract explicitly describes reusable released
+code (the onboard ViT comparison and GLUSE studies), not merely because a study uses
+a dataset. Multiple directions may apply. Most older papers have no supplied abstract;
+their classification is editorial inference from title/keywords, not external verification.
+
+Three papers remain unclassified rather than forcing an unsupported relationship:
+`le2026transformer` (clinical PPG), `le2025impact` (clinical text/LoRA), and
+`tsakmalis2018constrained` (general Bayesian active learning). They remain visible
+under All topics and searchable. Revisit them if fuller abstracts establish relevance.
+
+Retired `topic-one`, `topic-two`, `topic-three`, and `theory` are not valid content IDs.
+Old bookmarks resolve to the broader Edge AI direction through compatibility aliases;
+active data, labels, and filters use current IDs only. Historical migration archives
+can retain old IDs; runnable publication fixtures use the current taxonomy. The
+legacy review/letter values remain only for historical publication-type compatibility.
+The read-only CSV planner rejects unrecognized direction titles for manual review.
+Update schemas, labels, data, filters and tests together when adding a direction.
 
 Minimal fictional Funding pair, to merge into the **existing** funders/projects arrays:
 

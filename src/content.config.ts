@@ -39,7 +39,9 @@ const validatedPeople = validatePeopleRecords(peopleData, {
 const citationCounts = createCitationIndex(citationsData, referenceDirectory.publications);
 const validatedPublications = validatePublicationRecords(publicationData, new Set(validatedPeople.map((person) => person.id)),
   (path) => isFile(new URL(`public${path}`, root)));
+const researchIds = new Set<string>(researchRecords.map(area => area.id));
 for (const paper of validatedPublications) {
+  for (const area of paper.areas) if (!researchIds.has(area)) throw new Error(`${paper.id}: unknown research direction ${area}`);
   if (paper.image && !isFile(new URL(paper.image, new URL("src/data/publications.json", root)))) throw new Error(`Missing publication image: ${paper.image}`);
 }
 for (const resource of resources) {

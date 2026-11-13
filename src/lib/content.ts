@@ -11,11 +11,7 @@ export type Figure = CollectionEntry<"figures">;
 // Research taxonomy labels match AREA_SLUGS in publication-schema.ts.
 // Review/letter are legacy compatibility tags; new publication types are separate.
 export const AREA_LABELS: Record<AreaSlug, string> = {
-  "topic-one": "AI for wireless networks",
-  "topic-two": "Cloud & edge intelligence",
-  "topic-three": "Satellite communications",
   methods: "Open tools & datasets",
-  theory: "Optimization & learning",
   "edge-ai-network-management": "Resource Allocation and Network Management with Edge AI",
   "semantic-earth-observation": "Semantic Communications for Earth Observation",
   "data-model-ecosystems": "Data and AI Model Marketplace Ecosystems",
@@ -25,8 +21,7 @@ export const AREA_LABELS: Record<AreaSlug, string> = {
 
 // Publications filter chips, grouped (slugs reference AREA_LABELS).
 export const FILTER_GROUPS: { title: string; slugs: AreaSlug[] }[] = [
-  { title: "Topic", slugs: ["topic-one", "topic-two", "topic-three", "edge-ai-network-management", "semantic-earth-observation", "data-model-ecosystems"] },
-  { title: "Approach", slugs: ["methods", "theory"] },
+  { title: "Topic", slugs: ["edge-ai-network-management", "semantic-earth-observation", "data-model-ecosystems", "methods"] },
 ];
 
 /** Count of publications per area slug (for filter-chip labels). */

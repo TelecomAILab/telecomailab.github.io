@@ -82,8 +82,7 @@
       "budgetEUR": 360000,
       "status": "active",
       "areas": [
-        "topic-one",
-        "theory"
+        "edge-ai-network-management"
       ],
       "grantId": "DEMO-2024-701",
       "leadPersonId": 101,
@@ -116,7 +115,7 @@
       "budgetEUR": 280000,
       "status": "active",
       "areas": [
-        "topic-two",
+        "edge-ai-network-management",
         "methods"
       ],
       "grantId": "DEMO-2025-702",
@@ -150,8 +149,7 @@
       "budgetEUR": 195000,
       "status": "active",
       "areas": [
-        "topic-three",
-        "theory"
+        "edge-ai-network-management"
       ],
       "grantId": "DEMO-2023-703",
       "leadPersonId": 101,
@@ -185,7 +183,7 @@
       "status": "active",
       "areas": [
         "methods",
-        "topic-one"
+        "edge-ai-network-management"
       ],
       "grantId": "DEMO-2026-704",
       "leadPersonId": 101,
@@ -218,8 +216,7 @@
       "budgetEUR": 210000,
       "status": "completed",
       "areas": [
-        "topic-one",
-        "topic-two"
+        "edge-ai-network-management"
       ],
       "grantId": "DEMO-2021-705",
       "leadPersonId": 101,
@@ -253,7 +250,7 @@
       "status": "completed",
       "areas": [
         "methods",
-        "theory"
+        "edge-ai-network-management"
       ],
       "grantId": "DEMO-2020-706",
       "leadPersonId": 101,

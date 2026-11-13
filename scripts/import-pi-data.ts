@@ -47,8 +47,7 @@ export function parseCsv(input: string): Record<string, string>[] {
 }
 
 export const RESEARCH_IDS: Record<string, string> = {
-  "AI for wireless networks": "topic-one", "Cloud & edge intelligence": "topic-two", "Satellite communications": "topic-three",
-  "Open tools & datasets": "methods", "Optimization & learning": "theory",
+  "Open tools & datasets": "methods",
   "Resource Allocation and Network Management with Edge AI": "edge-ai-network-management",
   "Semantic Communications for Earth Observation": "semantic-earth-observation",
   "Data and AI Model Marketplace Ecosystems": "data-model-ecosystems",
@@ -144,7 +143,7 @@ export function preparePiImport(root = resolve(fileURLToPath(new URL("../", impo
           if (/PROPOSED DRAFT/i.test(row["Review Notes"])) throw new Error("Proposed research agenda explicitly requires lab confirmation before publication");
           if (!id) throw new Error("Research title has no explicitly configured stable taxonomy ID");
           if ([...current.research, ...candidates.research].some((area) => area.id === id || normalize(area.title) === normalize(title))) { entry.status = "duplicate"; entry.reason = `Existing research direction ${id}`; continue; }
-          candidates.research.push(researchSchema.parse({ id, title, summary: get("Short Summary"), description: get("Detailed Description"), motivation: get("Motivation"), challenges: list(get("Research Challenges")), approach: get("Methods"), applications: get("Applications"), keywords: list(get("Keywords")), links: list(get("Additional Links")).map((url) => ({ label: new URL(url).hostname, url })), order: number(get("Display Order")), isMock: false }));
+          candidates.research.push(researchSchema.parse({ id, title, summary: get("Short Summary"), description: get("Detailed Description"), motivation: get("Motivation"), challenges: list(get("Research Challenges")), approach: get("Methods"), applications: get("Applications"), keywords: list(get("Keywords")), links: list(get("Additional Links")).map((url) => ({ label: new URL(url).hostname, url })), order: number(get("Display Order")) }));
           entry.warnings!.push("No approved image supplied; displayed without an image");
         } else if (file === "funding") {
           const records = [...current.funding.projects, ...candidates.projects];

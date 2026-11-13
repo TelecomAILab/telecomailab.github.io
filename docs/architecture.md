@@ -38,7 +38,7 @@ it. Current, former, and alumni profiles show all associated papers without a ca
 Group order comes from `PERSON_GROUPS`, then numeric member `order`; status does not
 replace that ordering. The curated roster was deliberately rekeyed to 100–112
 (order 1–13); all explicit references were migrated together. These IDs now define
-profile URLs; future edits must not renumber them. People/Publications reject `isMock`;
+profile URLs; future edits must not renumber them. People/Publications/Research reject `isMock`;
 other collections retain labeled examples and their mock-reference resolver.
 
 Structured member data stays in JSON; Markdown-only biographies resolve through
@@ -108,6 +108,15 @@ Blog/Notes headers/covers/body use max-width 5xl and prose 92ch; code, equations
 tables, and figures can use the wider space. Markdown supports highlighted code,
 local images, tables, links, and KaTeX through official Unified processing with
 remark-math/rehype-katex. KaTeX CSS/fonts are local; MDX is not configured.
+
+Research now contains three supplied directions plus planned Open tools & datasets
+(`methods`). Legacy topic-one/two/three and theory IDs are rejected in content;
+`research-aliases.ts` preserves old Research bookmarks and publication filter hashes.
+Publication areas and Funding areas use the current directions; publication topics
+were reviewed against supplied titles/abstracts, with empty lists for unrelated work.
+Research images use intrinsic proportions (full width, automatic height), a neutral
+border and surface, and native Astro optimization. They have no forced aspect ratio,
+colored letterboxing, distortion or crop.
 
 Home shows the six latest dated News items and shared Research summaries. Research
 uses image/text descriptions from JSON without paper lists. About uses one BaseLayout,
