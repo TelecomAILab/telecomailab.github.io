@@ -1,114 +1,65 @@
 [
   {
-    "id": 901,
-    "title": "[Demo] Learning to schedule under uncertainty",
+    "id": 911,
+    "title": "Research seminar with Huruy Zerihun",
     "speaker": {
-      "personId": 101
+      "personId": 109
     },
-    "date": "2026-11-26T14:00:00+01:00",
-    "endDate": "2026-11-26T15:00:00+01:00",
-    "event": "Autumn Research Seminar",
+    "date": "2027-06-25T14:00:00+02:00",
+    "endDate": "2027-06-25T15:00:00+02:00",
+    "timeZone": "Europe/Luxembourg",
+    "event": "TelecomAI Lab Seminar Series",
     "type": "Seminar",
-    "location": "Demo seminar room · Luxembourg",
-    "abstract": "How should a wireless scheduler behave when channel estimates are imperfect? This fictional seminar compares simple baselines, uncertainty-aware objectives, and the practical trade-offs behind a reproducible evaluation.",
-    "relatedPublications": [],
-    "slides": "/files/presentations/mock-slides.pdf",
-    "isMock": true
+    "location": "In person — E3-318, JFK Building, Kirchberg Campus, Luxembourg",
+    "abstract": "The paper title and abstract will be announced.",
+    "relatedPublications": []
   },
   {
-    "id": 902,
-    "title": "[Demo] Hands-on reproducibility for edge learning",
+    "id": 910,
+    "title": "Resilience Optimization in 6G and Beyond Integrated Satellite-Terrestrial Networks: A Deep Reinforcement Learning Approach",
     "speaker": {
-      "name": "Author or speaker not listed"
+      "personId": 104
     },
-    "date": "2026-12-10T10:00:00+01:00",
-    "endDate": "2026-12-10T12:00:00+01:00",
-    "event": "Open Research Skills Series",
-    "type": "Tutorial",
-    "location": "Online · demonstration event",
-    "abstract": "A practical fictional tutorial on recording seeds, partitions, checkpoints, and hardware settings. Participants follow a small synthetic example and discuss which conclusions survive changes in the evaluation protocol.",
-    "relatedPublications": [],
-    "slides": "/files/presentations/mock-slides.pdf",
-    "isMock": true
-  },
-  {
-    "id": 903,
-    "title": "[Demo] Networking across terrestrial and satellite links",
-    "speaker": {
-      "name": "Taylor Morgan (fictional guest)"
-    },
-    "date": "2027-01-21T15:00:00+01:00",
-    "event": "Visiting Speaker Series",
+    "date": "2027-01-29T14:00:00+01:00",
+    "endDate": "2027-01-29T15:00:00+01:00",
+    "timeZone": "Europe/Luxembourg",
+    "event": "TelecomAI Lab Seminar Series",
     "type": "Seminar",
-    "location": "Demo seminar room · Luxembourg",
-    "abstract": "External speaker Taylor Morgan introduces a fictional research agenda for adaptive routing across heterogeneous links, emphasizing modelling assumptions and accessible baseline experiments.",
-    "relatedPublications": [],
-    "isMock": true
+    "location": "In person — E3-318, JFK Building, Kirchberg Campus, Luxembourg",
+    "abstract": "Ensuring network resilience in 6G and beyond is essential to maintain service continuity during base station (BS) outages due to failures, disasters, attacks, or energy-saving operations. This paper proposes a novel resilience optimization framework for integrated satellite-terrestrial networks (ISTNs), leveraging low Earth orbit (LEO) satellites to assist users when terrestrial BSs are unavailable. Specifically, we develop a realistic multi-cell model incorporating user association, antenna downtilt adaptation, power control, heterogeneous traffic demands, and dynamic user distribution. The objective is to maximize the total user rate in the considered area by optimizing the BS’s antenna tilt, transmission power, user association to neighboring BS or to a LEO satellite with a minimum number of successfully served user satisfaction constraint, defined by rate and Reference Signal Received Power (RSRP) requirements. To solve the non-convex, NP-hard problem, we design a deep Q-network (DQN)-based algorithm to learn network dynamics to maximize throughput while minimizing LEO satellite usage, thereby limiting reliance on links with longer propagation delays and prolonging satellite operational lifetime. Simulation results confirm that our approach significantly outperforms the benchmark.",
+    "relatedPublications": []
   },
   {
-    "id": 904,
-    "title": "[Demo] Energy budgets as a first-class design constraint",
+    "id": 909,
+    "title": "Digital-Twin-Aided Dynamic Spectrum Sharing and Resource Management in Integrated Satellite–Terrestrial Networks",
     "speaker": {
       "personId": 112
     },
-    "date": "2026-10-29T11:00:00+01:00",
-    "endDate": "2026-10-29T11:45:00+01:00",
-    "event": "Example Communications Research Forum",
-    "type": "Conference talk",
-    "location": "Example City · demonstration conference",
-    "abstract": "This sample presentation examines the interaction between model accuracy, communication cost, and energy budgets using a deliberately small synthetic dataset.",
-    "relatedPublications": [],
-    "slides": "/files/presentations/mock-slides.pdf",
-    "video": "https://example.com/demo-recording",
-    "eventWebsite": "https://example.com/demo-conference",
-    "isMock": true
-  },
-  {
-    "id": 905,
-    "title": "[Demo] Building fair comparisons for network controllers",
-    "speaker": {
-      "name": "Author or speaker not listed"
-    },
-    "date": "2026-09-17T14:00:00+02:00",
-    "endDate": "2026-09-17T15:00:00+02:00",
-    "event": "Methods Exchange",
-    "type": "Workshop",
-    "location": "Hybrid · demo meeting room",
-    "abstract": "A fictional workshop discussion about fair baselines, held-out conditions, and reporting uncertainty. The goal is to make experimental comparisons easier to audit and reproduce.",
-    "relatedPublications": [],
-    "slides": "/files/presentations/mock-slides.pdf",
-    "isMock": true
-  },
-  {
-    "id": 906,
-    "title": "[Demo] What changes when the channel drifts?",
-    "speaker": {
-      "name": "Author or speaker not listed"
-    },
-    "date": "2026-06-18T13:30:00+02:00",
-    "event": "Collaborator Seminar",
+    "date": "2026-12-04T14:00:00+01:00",
+    "endDate": "2026-12-04T15:00:00+01:00",
+    "timeZone": "Europe/Luxembourg",
+    "event": "TelecomAI Lab Seminar Series",
     "type": "Seminar",
-    "location": "Online · demonstration event",
-    "abstract": "A fictional collaborator session on distribution shift in communication systems. We discuss monitoring, adaptation, and the limitations of static validation traces.",
-    "relatedPublications": [],
-    "slides": "/files/presentations/mock-slides.pdf",
-    "isMock": true
+    "location": "In person — E3-318, JFK Building, Kirchberg Campus, Luxembourg",
+    "abstract": "The explosive growth in wireless service demand has prompted the evolution of integrated satellite-terrestrial networks (ISTNs) to overcome the limitations of traditional terrestrial networks (TNs) in terms of coverage, spectrum efficiency, and deployment cost. Particularly, leveraging LEO satellites and dynamic spectrum sharing (DSS), ISTNs offer promising solutions but face significant challenges due to diverse terrestrial environments, user and satellite mobility, and long propagation LEO-to-ground distance. To address these challenges, digital-twin (DT) has emerged as a promising technology to offer virtual replicas of real-world systems, facilitating prediction for resource management. In this work, we study a time-window-based DT-aided DSS framework for ISTNs, enabling joint long-term and short-term resource decisions to reduce system congestion. Based on that, two optimization problems are formulated, which aim to optimize resource management using DT information and to refine obtained solutions with actual real-time information, respectively. To efficiently solve these problems, we proposed algorithms using compressed-sensing-based and successive convex approximation techniques. Simulation results using actual traffic data and the London 3D map demonstrate the superiority in terms of congestion minimization of our proposed algorithms compared to benchmarks. Additionally, it shows the adaptation ability and practical feasibility of our proposed solutions.",
+    "relatedPublications": [
+      "nguyen2026digital"
+    ]
   },
   {
-    "id": 907,
-    "title": "[Demo] A small toolkit for transparent experiments",
+    "id": 908,
+    "title": "HierFedKD-Traffic: Hierarchical Federated Knowledge Distillation for Wireless Traffic Prediction",
     "speaker": {
-      "name": "Author or speaker not listed"
+      "personId": 105
     },
-    "date": "2026-04-09T10:00:00+02:00",
-    "endDate": "2026-04-09T11:30:00+02:00",
-    "event": "Research Software Clinic",
-    "type": "Tutorial",
-    "location": "Demo computer lab · Luxembourg",
-    "abstract": "A sample tutorial on organizing configuration, logging, and plots. The accompanying files demonstrate a minimal workflow rather than a production research framework.",
-    "relatedPublications": [],
-    "slides": "/files/presentations/mock-slides.pdf",
-    "isMock": true
+    "date": "2026-11-27T14:00:00+01:00",
+    "endDate": "2026-11-27T15:00:00+01:00",
+    "timeZone": "Europe/Luxembourg",
+    "event": "TelecomAI Lab Seminar Series",
+    "type": "Seminar",
+    "location": "In person — E3-318, JFK Building, Kirchberg Campus, Luxembourg",
+    "abstract": "Accurate wireless traffic forecasting is essential for proactive resource allocation in 5G/6G networks, yet conventional centralized training over spatially distributed data raises concerns regarding privacy, latency, and backhaul capacity. Federated learning (FL) alleviates these issues by retaining data at the network edge; however, its performance degrades under the highly non-IID traffic distributions characteristic of heterogeneous cellular deployments. We present HierFedKD-Traffic, a hierarchical FL framework purpose-built for wireless traffic prediction. HierFedKD-Traffic introduces three tightly integrated mechanisms: (i) a base–core–student model decomposition aligned with the cloud–edge–base-station (BS) hierarchy, confining heavy computation to the edge while BSs retain only a lightweight predictor; (ii) a geo- and traffic-aware clustering that maps BSs to edge servers by jointly exploiting geographic proximity and diurnal load similarity, yielding coherent edge groups that stabilize teacher learning; and (iii) an adaptive knowledge distillation (KD) protocol that transfers edge-teacher knowledge to the on-BS student only when the teacher demonstrably outperforms it. On real call detail record (CDR) data from the Telecom Italia Big Data Challenge (Milano, Trento), HierFedKD-Traffic reduces RMSE by 2.3–3.1% over FedAvg, FedProx, and HierFL, while simultaneously cutting per-round BS→edge communication by ≈22%, edge→cloud communication by ≈56%, and BS-side computation by ≈22%.",
+    "relatedPublications": []
   },
   {
     "id": 1,
@@ -123,9 +74,24 @@
     "location": "Offline - E03-318 - JFK Building, Kirchberg Campus, Luxembourg.",
     "abstract": "Decentralized learning has emerged as a promising paradigm for enabling collaborative intelligence across distributed edge devices without relying on a central coordinator. However, deploying decentralized learning over wireless networks introduces significant challenges, particularly when devices have heterogeneous local data and communicate through bandwidth-limited, unreliable wireless channels. These challenges become more pronounced for gradient-tracking-based algorithms, which require exchanging both model parameters and auxiliary tracking variables, resulting in substantial communication overhead and increased vulnerability to packet losses. In this seminar, I will present QEF-GT-AdamW, a communication-efficient and outage-resilient decentralized learning framework developed for wireless edge networks. The proposed approach integrates gradient tracking to mitigate data heterogeneity, AdamW-based adaptive optimization to improve training stability, and dual-stream Top-K compression with error feedback to reduce communication overhead while compensating for compression-induced errors. A local fallback mechanism further improves resilience against unsuccessful wireless transmissions. The talk will cover the research motivation, related work, wireless system model, algorithmic design. Experimental evaluations on heterogeneous MNIST and CIFAR-10 datasets demonstrate favorable trade-offs among learning accuracy, communication efficiency, and robustness under constrained bandwidth, limited transmission power, and fading-induced packet losses.",
     "relatedPublications": [
-      "nguyen2025semantic"
+      "van2026resilient"
+    ]
+  },
+  {
+    "id": 912,
+    "title": "FedQoS: Federated QoS-Risk Learning for Heterogeneous Indoor-Outdoor Access Selection",
+    "speaker": {
+      "personId": 108
+    },
+    "date": "2026-09-04T16:00:00+08:00",
+    "timeZone": "Asia/Singapore",
+    "event": "IEEE PIMRC 2026",
+    "type": "Conference talk",
+    "location": "Heliconia Main 3504, Level 3, Marina Bay Sands Expo & Convention Centre, Singapore",
+    "abstract": "Presentation of the FedQoS paper at IEEE PIMRC 2026.",
+    "relatedPublications": [
+      "van2026fedqos"
     ],
-    "slides": "/files/presentations/mock-slides.pdf",
-    "isMock": false
+    "endDate": "2026-09-04T18:10:00+08:00"
   }
 ]

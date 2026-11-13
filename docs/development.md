@@ -210,3 +210,13 @@ Rendered tests cover day/month/year dates on both Home and News, chronological
 selection, valid profile/paper anchors and absence of demo announcements. Search
 counts follow eligible source records rather than the old ten-entry example feed.
 The read-only CSV planner emits News candidates without mock fields.
+
+## Curated Talks and calendar visibility
+
+Talks bypasses the mock resolver and rejects isMock. The calendar writer still
+requires supplied offset-aware start/end times and preserves archive ICS routes.
+Calendar actions are hidden in initial HTML, then checked against the browser clock
+before display. Tests cover future, exact start, ongoing and past events; Singapore
+conversion; page restore/focus/visibility refresh; and open-menu closure at start.
+Use independent fixtures for temporal edge cases rather than requiring live demo
+events. Retained examples in other collections keep their flags and source data.

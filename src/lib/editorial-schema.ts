@@ -24,15 +24,15 @@ export const TALK_TYPES = ["Seminar", "Conference talk", "Workshop", "Tutorial"]
 const timeZone = z.string().refine((value) => {
   try { new Intl.DateTimeFormat("en", { timeZone: value }); return true; } catch { return false; }
 }, "Use a valid IANA time zone");
-export const talksSchema = z.object({
+export const talksSchema = z.strictObject({
   id: contentId, title: text,
   speaker: z.object({ name: text.optional(), personId: contentId.optional() }).refine((speaker) => speaker.name || speaker.personId, "A speaker needs a name or personId"),
   date: z.iso.datetime({ offset: true }), endDate: z.iso.datetime({ offset: true }).optional(),
   timeZone: timeZone.default("Europe/Luxembourg"),
   event: text, type: z.enum(TALK_TYPES).default("Seminar"), location: text, abstract: text,
   relatedPublications: z.array(contentId).default([]), slides: materialUrl.optional(),
-  video: externalUrl.optional(), eventWebsite: externalUrl.optional(), isMock: z.boolean().default(false),
-}).refine((talk) => !talk.endDate || Date.parse(talk.endDate) > Date.parse(talk.date), "A talk must end after it starts");
+  video: externalUrl.optional(), eventWebsite: externalUrl.optional(),
+}).refine((talk) => !talk.endDate || Date.parse(talk.endDate) > Date.parse(talk.date), "A timed talk must end after it starts");
 
 const authorSchema = z.object({ name: text.optional(), personId: contentId.optional() })
   .refine((author) => author.name || author.personId, "An author needs a name or personId");

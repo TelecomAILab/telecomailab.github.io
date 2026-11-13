@@ -8,7 +8,7 @@ for (const root of document.querySelectorAll<HTMLElement>("[data-editorial-list]
     const query = (search?.value ?? "").trim().toLowerCase();
     let visible = 0;
     for (const card of cards) {
-      const period = card.dataset.end ? (Date.parse(card.dataset.end) < Date.now() ? "past" : "upcoming") : "";
+      const period = card.dataset.end ? (Date.parse(card.dataset.end) <= Date.now() ? "past" : "upcoming") : "";
       const matches = filters.every((filter) => filter.value === "all" || (filter.dataset.editorialFilter === "tag" ? (JSON.parse(card.dataset.tag ?? "[]") as string[]).includes(filter.value) : filter.dataset.editorialFilter === "period" ? period === filter.value : card.dataset[filter.dataset.editorialFilter!] === filter.value));
       card.hidden = !(matches && (card.dataset.search ?? "").includes(query));
       if (!card.hidden) visible++;

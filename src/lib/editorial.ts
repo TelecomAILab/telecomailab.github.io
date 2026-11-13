@@ -4,7 +4,8 @@ import { isPublishedArticle } from "./editorial-schema";
 
 export const formatDate = (date: string) => new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(date));
 export const formatTalkTime = (date: string, timeZone = "Europe/Luxembourg") => new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone, timeZoneName: "short" }).format(new Date(date));
-export const talkHasEnded = (talk: { date: string; endDate?: string }, now = Date.now()) => Date.parse(talk.endDate ?? talk.date) < now;
+
+export const talkHasEnded = (talk: { date: string; endDate?: string }, now = Date.now()) => Date.parse(talk.endDate ?? talk.date) <= now;
 
 export async function getEditorialContext() {
   const [people, publications] = await Promise.all([getCollection("people"), getCollection("publications")]);

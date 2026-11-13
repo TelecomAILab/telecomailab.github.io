@@ -12,7 +12,7 @@ export interface ScheduledTalk {
 
 const utc = (value: string | Date) => new Date(value).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
 export function calendarEvent(talk: ScheduledTalk, speaker: string) {
-  if (!talk.endDate || !Number.isFinite(Date.parse(talk.date)) || !Number.isFinite(Date.parse(talk.endDate)) || Date.parse(talk.endDate) <= Date.parse(talk.date)) return undefined;
+  if (!talk.date.includes("T") || !talk.endDate || !Number.isFinite(Date.parse(talk.date)) || !Number.isFinite(Date.parse(talk.endDate)) || Date.parse(talk.endDate) <= Date.parse(talk.date)) return undefined;
   const timeZone = talk.timeZone ?? "Europe/Luxembourg";
   const description = [`Speaker: ${speaker}`, `Event: ${talk.event}`, `Time zone: ${timeZone}`, "", talk.abstract, ...(talk.eventWebsite ? ["", talk.eventWebsite] : [])].join("\n");
   const google = new URL("https://calendar.google.com/calendar/render");

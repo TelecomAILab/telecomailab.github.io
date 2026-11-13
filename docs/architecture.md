@@ -38,7 +38,7 @@ it. Current, former, and alumni profiles show all associated papers without a ca
 Group order comes from `PERSON_GROUPS`, then numeric member `order`; status does not
 replace that ordering. The curated roster was deliberately rekeyed to 100–112
 (order 1–13); all explicit references were migrated together. These IDs now define
-profile URLs; future edits must not renumber them. People/Publications/Research/News reject `isMock`;
+profile URLs; future edits must not renumber them. People/Publications/Research/News/Talks reject `isMock`;
 other collections retain labeled examples and their mock-reference resolver.
 
 Structured member data stays in JSON; Markdown-only biographies resolve through
@@ -151,7 +151,11 @@ UTC instants preserve event times. ICS uses stable UIDs, DTSTAMP, escaping, CRLF
 and Unicode-safe 75-octet folding per [RFC 5545](https://www.rfc-editor.org/rfc/rfc5545).
 Import creates a copy, not a subscription; provider links depend on visitor accounts,
 with ICS as the portable fallback. Period filters use the current browser clock;
-initial HTML remains static.
+initial HTML remains static. Calendar menus start hidden and are enabled only before
+the event start by the browser clock. Start-time checks run on load, restored-page
+navigation, focus/visibility changes and once per second while open. Started/past
+menus are hidden and closed; future events still require a supplied positive duration.
+Archive ICS URLs remain available for events with valid supplied times.
 
 `integrations/search-index.mjs` indexes rendered public HTML at `astro:build:done`,
 including direct Astro builds in Actions. Output is `dist/pagefind/` (or isolated

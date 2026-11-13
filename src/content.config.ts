@@ -27,9 +27,6 @@ const referenceDirectory = {
 };
 validateGalleryRecords(galleryData, referenceDirectory.people, path => isFile(new URL(path, new URL("src/data/gallery.json", root))));
 const resolve = (input: unknown) => resolveMockReferences(input, referenceDirectory, "content collections");
-// The parser transforms only the loaded view; JSON/Markdown remains authoritative.
-const referenceParser = (text: string) => (JSON.parse(text) as Record<string, unknown>[]).map((record) =>
-  resolveMockReferences(record, referenceDirectory, `JSON record ${record.id}`) as Record<string, unknown>);
 const researchRecords = z.array(researchSchema).parse(researchData);
 if (new Set(researchRecords.map((area) => area.id)).size !== researchRecords.length) throw new Error("Duplicate research area IDs");
 const validatedPeople = validatePeopleRecords(peopleData, {
@@ -53,7 +50,7 @@ for (const item of hardware) {
 const editorialPeople = new Set(validatedPeople.map((person) => person.id));
 const editorialPublications = new Set(publicationData.map((paper) => String(paper.id)));
 const newsRecords = z.array(newsSchema).parse(newsData);
-const talkRecords = z.array(talksSchema).parse(talksData.map(resolve));
+const talkRecords = z.array(talksSchema).parse(talksData);
 validateEditorialReferences(newsRecords, editorialPeople, editorialPublications);
 validateEditorialReferences(talkRecords, editorialPeople, editorialPublications);
 for (const item of newsRecords) {
@@ -139,7 +136,7 @@ const news = defineCollection({
 });
 
 const talks = defineCollection({
-  loader: file("src/data/talks.json", { parser: referenceParser }),
+  loader: file("src/data/talks.json"),
   schema: talksSchema,
 });
 

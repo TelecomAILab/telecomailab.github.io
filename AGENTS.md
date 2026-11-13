@@ -14,7 +14,7 @@
 
 ## Content contracts
 
-- People, Publications, Research, and News contain curated records only; their strict schemas reject
+- People, Publications, Research, News, and Talks contain curated records only; their strict schemas reject
   `isMock`. Other retained samples remain visible in normal local development with
   `isMock` and record-specific labels. Do not restore global banners or hide samples
   behind fixture mode. Never present invented academic information as verified.

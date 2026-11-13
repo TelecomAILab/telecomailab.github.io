@@ -39,7 +39,7 @@ publication/project reference: a valid ID is not proof that its displayed name i
 the intended researcher. Correct uncertain mappings manually, never by fuzzy matching.
 
 People/Publications now contain 13 curated members and 43 curated papers; their
-strict schemas reject `isMock`. Research and News are also curated-only. Funding, Materials, Talks, Blog and
+strict schemas reject `isMock`. Research, News and Talks are also curated-only. Funding, Materials, Blog and
 Notes retain record-specific labeled examples and their mock flags. Do not remove
 these examples during People/Publications edits or hide them behind fixture mode.
 Lab Life uses three real event albums with nine uploaded photos from 2025/2026.
@@ -403,7 +403,7 @@ Workshop, or Tutorial. Optional `endDate` must be strictly later than start;
 timestamps: `2026-12-03T14:00:00+01:00`, `2026-07-03T14:00:00+02:00`.
 
 Optional `relatedPublications`, `slides` (HTTP(S) or `/files/…`), `video`,
-`eventWebsite` (HTTP(S)), and `isMock` complete the record. Search covers title,
+`eventWebsite` (HTTP(S)) complete the record. Talks uses a strict schema and rejects `isMock`. Search covers title,
 speaker, event, location, abstract; period/type/year filters combine with search and
 newest/oldest sorting. Period switches after end, or start when no end is supplied.
 Calendar actions require supplied duration; see [architecture](architecture.md).
@@ -430,11 +430,27 @@ An optional News image is accepted but not shown by the current text feed. Featu
 does not change the six-latest homepage rule. Future dates stay hidden until a rebuild
 on/after their UTC publication day. Run build/check and `npm run test:editorial`.
 
-Minimal fictional Talk object for `src/data/talks.json`:
+Minimal structural Talk example (replace placeholders with confirmed information):
 
 ```json
-{"id":900001,"title":"[Fictional example] Seminar","speaker":{"name":"Fictional External Speaker"},"date":"2026-12-03T14:00:00+01:00","endDate":"2026-12-03T15:00:00+01:00","timeZone":"Europe/Luxembourg","event":"Fictional seminar series","location":"Online","abstract":"Fictional event description.","isMock":true}
+{"id":900001,"title":"<Confirmed seminar title>","speaker":{"name":"<Confirmed speaker>"},"date":"2026-12-03T14:00:00+01:00","endDate":"2026-12-03T15:00:00+01:00","timeZone":"Europe/Luxembourg","event":"<Confirmed event>","location":"<Confirmed location>","abstract":"<Supplied abstract>"}
 ```
+
+The curated Talks update removes seven demonstration records and retains the real
+16 October 2026 seminar (ID 1). Its unrelated paper reference was corrected to
+`van2026resilient` and its mock slide download removed. Five supplied events use
+new IDs 908–912, leaving retired mock anchors unassigned. Four upcoming seminars
+run 14:00–15:00 Europe/Luxembourg; November/December/January use +01:00 and June
+uses +02:00. PIMRC is 4 September 2026, 16:00–18:10 Asia/Singapore (+08:00).
+Dinh-Hieu Tran's speaker ID 104 and all times were confirmed by the curator.
+Huruy's title/abstract are explicitly to be announced. Ons's and Dinh-Hieu's papers
+have no current publication records, so their relatedPublications arrays stay empty;
+no new publication metadata or DOI was invented to satisfy a link.
+
+Calendar buttons are available only before the supplied start. They are hidden
+until a browser-clock check and close/hide when the event starts, including cached
+pages restored later. ICS archive routes remain valid even after an event; keeping
+these files does not expose an Add to calendar button for past events.
 
 Combine CSV date and 24-hour time using the named zone, then verify the start and
 end offsets separately with a timezone-aware tool. Luxembourg winter is usually
