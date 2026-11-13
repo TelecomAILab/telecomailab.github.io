@@ -1,14 +1,14 @@
 [
   {
     "id": 100,
-    "name": "Dr. Vu Ha",
-    "displayName": "Vu Nguyen Ha",
+    "name": "Vu Nguyen HA",
+    "displayName": "Dr. Vu Nguyen Ha",
     "status": "current",
     "group": "Lab Leadership",
-    "role": "Lab Head & Principal Investigator",
+    "role": "Research Scientist",
     "publicationRole": "pi",
-    "title": "Lab Head & Principal Investigator",
-    "affiliation": "TelecomAI Lab; SigCOM, SnT, University of Luxembourg",
+    "title": "Head of TelecomAI Lab",
+    "affiliation": "SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
       "Radio resource management",
       "Machine learning and deep learning for wireless networks",
@@ -34,14 +34,14 @@
   },
   {
     "id": 101,
-    "name": "Prof. Symeon Chatzinotas",
-    "displayName": "Symeon Chatzinotas",
+    "name": "Symeon Chatzinotas",
+    "displayName": "Prof. Symeon Chatzinotas",
     "status": "current",
     "group": "Lab Leadership",
     "role": "Full Professor / Chief Scientist I",
     "publicationRole": "senior",
     "title": "Head of the SIGCOM Research Group",
-    "affiliation": "SigCOM, SnT, University of Luxembourg",
+    "affiliation": "SnT, University of Luxembourg",
     "researchInterests": [
       "Wireless and satellite communications",
       "5G/6G networks",
@@ -57,7 +57,8 @@
     "links": {
       "email": "symeon.chatzinotas@uni.lu",
       "website": "https://sites.google.com/view/symeonchatzinotas/home",
-      "scholar": "https://scholar.google.com/citations?user=6jeAUkoAAAAJ&hl=en"
+      "scholar": "https://scholar.google.com/citations?user=6jeAUkoAAAAJ&hl=en",
+      "linkedin": "https://www.linkedin.com/in/symeonchatzinotas/"
     },
     "order": 2,
     "featured": false
@@ -65,15 +66,16 @@
   {
     "id": 102,
     "order": 3,
-    "name": "Dr. Ti Ti Nguyen",
-    "displayName": "Ti Ti Nguyen",
+    "name": "Ti Ti Nguyen",
+    "displayName": "Dr. Ti Ti Nguyen",
     "status": "current",
     "group": "Researchers",
     "role": "Research Scientist",
-    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "affiliation": "TelecomAI Lab, SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
       "Satellite communications",
-      "Non-terrestrial networks"
+      "Non-terrestrial networks",
+      "Machine Learning and Optimization"
     ],
     "sourceUrls": [
       "https://www.uni.lu/snt-en/people/ti-ti-nguyen/"
@@ -83,19 +85,22 @@
     "links": {
       "email": "titi.nguyen@uni.lu",
       "website": "https://www.uni.lu/snt-en/people/ti-ti-nguyen/",
-      "scholar": "https://scholar.google.com/citations?user=dAFArEYAAAAJ"
+      "scholar": "https://scholar.google.com/citations?user=dAFArEYAAAAJ",
+      "github": "https://github.com/mnguyentiti",
+      "linkedin": "https://www.linkedin.com/in/ti-ti-nguyen-8737a6358/",
+      "orcid": "https://orcid.org/0000-0003-3933-2486"
     },
     "featured": false
   },
   {
     "id": 103,
     "order": 4,
-    "name": "Dr. Duc-Dung Tran",
-    "displayName": "Duc-Dung Tran",
+    "name": "Duc-Dung Tran",
+    "displayName": "Dr. Duc-Dung Tran",
     "status": "current",
     "group": "Researchers",
     "role": "Research Associate",
-    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "affiliation": "TelecomAI Lab, SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
       "5G and beyond wireless networks",
       "Ultra-reliable low-latency communications",
@@ -111,20 +116,22 @@
     "links": {
       "email": "duc-dung.tran@uni.lu",
       "website": "https://www.uni.lu/snt-en/people/duc-dung-tran/",
-      "scholar": "https://scholar.google.com/citations?user=CIt5qdMAAAAJ"
+      "scholar": "https://scholar.google.com/citations?user=CIt5qdMAAAAJ",
+      "github": "https://github.com/DucDungTran",
+      "linkedin": "https://www.linkedin.com/in/tranducdung277/"
     },
     "featured": false
   },
   {
     "id": 104,
     "order": 5,
-    "name": "Dr. Dinh-Hieu Tran",
-    "displayName": "Dinh-Hieu Tran",
+    "name": "Dinh-Hieu Tran",
+    "displayName": "Dr. Dinh-Hieu Tran",
     "status": "current",
     "group": "Researchers",
     "role": "Research Associate",
     "title": "Postdoctoral Researcher",
-    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "affiliation": "TelecomAI Lab, SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
       "6G and beyond wireless networks",
       "Network digital twin",
@@ -139,20 +146,22 @@
     "links": {
       "email": "hieu.tran-dinh@uni.lu",
       "website": "https://www.uni.lu/snt-en/people/hieu-tran-dinh/",
-      "scholar": "https://scholar.google.com/citations?user=zh-uSUYAAAAJ"
+      "scholar": "https://scholar.google.com/citations?user=zh-uSUYAAAAJ",
+      "github": "https://github.com/trandinhhieu1989",
+      "linkedin": "https://www.linkedin.com/in/dinh-hieu-tran-81700351/"
     },
     "featured": false
   },
   {
     "id": 105,
     "order": 6,
-    "name": "Dr. Ons Aouedi",
-    "displayName": "Ons Aouedi",
+    "name": "Ons Aouedi",
+    "displayName": "Dr. Ons Aouedi",
     "status": "current",
     "group": "Researchers",
     "role": "Research Associate",
     "title": "Postdoctoral Researcher",
-    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "affiliation": "TelecomAI Lab, SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
       "Wireless communication",
       "Machine learning",
@@ -166,20 +175,22 @@
     "links": {
       "email": "ons.aouedi@uni.lu",
       "website": "https://www.uni.lu/snt-en/people/ons-aouedi/",
-      "scholar": "https://scholar.google.com/citations?user=JMOBDusAAAAJ"
+      "scholar": "https://scholar.google.com/citations?user=JMOBDusAAAAJ",
+      "github": "https://github.com/aouedions11",
+      "linkedin": "https://www.linkedin.com/in/aouedi-ons/"
     },
     "featured": false
   },
   {
     "id": 106,
     "order": 7,
-    "name": "Dr. Muhammad Awais",
-    "displayName": "Muhammad Awais",
+    "name": "Muhammad Awais",
+    "displayName": "Dr. Muhammad Awais",
     "status": "current",
     "group": "Researchers",
     "role": "Research Associate",
     "title": "Postdoctoral Researcher",
-    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "affiliation": "TelecomAI Lab, SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
       "Wireless communication",
       "Machine learning",
@@ -200,13 +211,13 @@
   {
     "id": 107,
     "order": 8,
-    "name": "Dr. Suleima Briseno Ramirez",
-    "displayName": "Suleima Briseno Ramirez",
+    "name": "Suleima Briseno Ramirez",
+    "displayName": "Dr. Suleima Briseno Ramirez",
     "status": "current",
     "group": "Researchers",
     "role": "Research Associate",
     "title": "Postdoctoral Researcher",
-    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "affiliation": "TelecomAI Lab, SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
       "Wireless communication",
       "Machine learning",
@@ -229,10 +240,10 @@
     "displayName": "Van Thieu NGUYEN",
     "status": "current",
     "group": "PhD Students",
-    "role": "PhD Researcher",
+    "role": "Doctoral researcher",
     "publicationRole": "mentee",
-    "title": "PhD Researcher",
-    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "title": "PhD Student",
+    "affiliation": "TelecomAI Lab, SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
       "Machine Learning",
       "Deep Learning",
@@ -251,7 +262,9 @@
       "email": "van.thieu.nguyen@uni.lu",
       "website": "https://thieu1995.github.io/",
       "scholar": "https://scholar.google.com/citations?user=nsTbdhgAAAAJ&hl=en",
-      "github": "https://github.com/thieu1995"
+      "github": "https://github.com/thieu1995",
+      "linkedin": "https://www.linkedin.com/in/thieu1995/",
+      "orcid": "https://orcid.org/0000-0001-9994-8747"
     },
     "featured": false
   },
@@ -262,18 +275,15 @@
     "displayName": "Huruy ZERIHUN",
     "status": "current",
     "group": "PhD Students",
-    "role": "PhD Researcher",
+    "role": "Doctoral researcher",
     "publicationRole": "mentee",
-    "title": "PhD Researcher",
-    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "title": "PhD Student",
+    "affiliation": "TelecomAI Lab, SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
-      "Machine Learning",
-      "Deep Learning",
-      "Federated Learning",
-      "Split Learning",
-      "Optimization",
-      "Edge and Cloud Computing",
-      "Distributed Learning"
+      "Machine Learning and Deep Learning",
+      "Federated and Split Learning",
+      "Distributed Edge Intelligence for AI-Native 6G Networks",
+      "Blockchain-Enabled Resource Marketplaces"
     ],
     "headshot": "../assets/people/huruy-zerihun.png",
     "sourceUrls": [
@@ -281,18 +291,20 @@
     ],
     "links": {
       "email": "huruy.zerihun@uni.lu",
-      "website": "https://www.uni.lu/snt-en/people/huruy-zerihun/"
+      "website": "https://www.uni.lu/snt-en/people/huruy-zerihun/",
+      "linkedin": "https://www.linkedin.com/in/hunez/"
     },
     "featured": false
   },
   {
     "id": 110,
-    "name": "Prof. Bjorn Ottersten",
+    "name": "Bjorn Ottersten",
+    "displayName": "Prof. Bjorn Ottersten",
     "status": "current",
     "group": "Collaborators",
     "role": "Full Professor / Chief Scientist I",
     "publicationRole": "senior",
-    "title": "Full Professor / Chief Scientist I",
+    "title": "Founding Director SnT",
     "affiliation": "SnT, University of Luxembourg",
     "researchInterests": [
       "Electrical Engineering",
@@ -305,7 +317,8 @@
     "links": {
       "website": "https://www.kth.se/profile/otterste",
       "scholar": "https://scholar.google.ca/citations?user=OAWYhh0AAAAJ",
-      "orcid": "https://orcid.org/0000-0003-2298-6774"
+      "orcid": "https://orcid.org/0000-0003-2298-6774",
+      "linkedin": "https://www.linkedin.com/in/bj%C3%B6rn-ottersten-b51b2a7/"
     },
     "order": 11,
     "featured": false
@@ -313,11 +326,12 @@
   {
     "id": 111,
     "name": "Thanh-Dung Le",
+    "displayName": "Dr. Thanh-Dung Le",
     "status": "alumni",
     "group": "Former Members",
-    "role": "Former Postdoctoral Researcher",
+    "role": "Former Research Associate",
     "publicationRole": "senior",
-    "title": "Former Postdoctoral Researcher",
+    "title": "Postdoctoral Researcher",
     "affiliation": "Texas A&M University-Corpus Christi",
     "researchInterests": [
       "Numerical simulation and modeling",
@@ -338,14 +352,14 @@
   {
     "id": 112,
     "order": 13,
-    "name": "Dr. Kha Hung Nguyen",
-    "displayName": "Kha Hung Nguyen",
+    "name": "Kha Hung Nguyen",
+    "displayName": "Dr. Kha Hung Nguyen",
     "status": "alumni",
     "group": "Alumni",
     "role": "PhD Alumna",
     "publicationRole": "mentee",
-    "title": "PhD Alumna",
-    "affiliation": "TelecomAI Lab, SiGCOM, SnT, University of Luxembourg",
+    "title": "Postdoctoral Researcher",
+    "affiliation": "TelecomAI Lab, SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
       "5G and beyond wireless networks",
       "Ultra-reliable low-latency communications",
@@ -357,20 +371,22 @@
     "links": {
       "email": "kha-hung.nguyen@uni.lu",
       "website": "https://www.uni.lu/snt-en/people/kha-hung-nguyen/",
-      "scholar": "https://scholar.google.com/citations?user=LB0oybwAAAAJ"
+      "scholar": "https://scholar.google.com/citations?user=LB0oybwAAAAJ",
+      "github": "https://github.com/hungnkha",
+      "linkedin": "https://www.linkedin.com/in/hungnkha/"
     },
     "featured": false
   },
   {
     "id": 113,
-    "name": "Assistant Prof. Eva Lagunas",
-    "displayName": "Eva Lagunas",
+    "name": "Eva Lagunas",
+    "displayName": "Assist. Prof. Eva Lagunas",
     "status": "current",
     "group": "Collaborators",
-    "role": "Deputy-Head of SIGCOM",
+    "role": "Assistant Professor",
     "publicationRole": "senior",
-    "title": "Assistant Professor",
-    "affiliation": "SigCOM, SnT, University of Luxembourg",
+    "title": "Deputy-Head of SIGCOM",
+    "affiliation": "SnT, University of Luxembourg",
     "researchInterests": [
       "5G/6G Communications",
       "Design and Optimization of NTN networks",
@@ -389,14 +405,13 @@
   },
   {
     "id": 114,
-    "name": "Dr. Konstantinos NTONTIN",
-    "displayName": "Konstantinos NTONTIN",
+    "name": "Konstantinos NTONTIN",
+    "displayName": "Dr. Konstantinos NTONTIN",
     "status": "current",
     "group": "Collaborators",
     "role": "Research Scientist",
     "publicationRole": "senior",
-    "title": "Research Scientist",
-    "affiliation": "SigCOM, SnT, University of Luxembourg",
+    "affiliation": "SIGCOM, SnT, University of Luxembourg",
     "researchInterests": [
       "5G/6G Communications",
       "Design and Optimization of NTN networks",
