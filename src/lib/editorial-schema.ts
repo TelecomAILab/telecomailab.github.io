@@ -13,11 +13,11 @@ const relations = {
   relatedPublications: z.array(contentId).default([]),
 };
 
-export const newsSchema = z.object({
+export const newsSchema = z.strictObject({
   id: contentId, title: text, date: z.iso.date(), summary: text, category: text,
   image: text.optional(), imageAlt: text.optional(), externalLink: externalUrl.optional(),
   links: z.array(contentLink).default([]),
-  ...relations, featured: z.boolean().default(false), isMock: z.boolean().default(false),
+  ...relations, featured: z.boolean().default(false),
 });
 
 export const TALK_TYPES = ["Seminar", "Conference talk", "Workshop", "Tutorial"] as const;

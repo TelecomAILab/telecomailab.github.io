@@ -201,3 +201,12 @@ Funding examples keep their mock labels but use current area IDs; Materials taxo
 tags were updated without changing downloads or deleting examples. Rendered tests
 derive Research counts/images from JSON, rather than the former eight-section demo.
 Publication fixtures use canonical topic IDs while historical archives remain intact.
+
+## Curated News checks
+
+News is curated-only and bypasses the mock-reference resolver. Its strict schema
+rejects isMock; missing explicit member/publication IDs still fail validation.
+Rendered tests cover day/month/year dates on both Home and News, chronological
+selection, valid profile/paper anchors and absence of demo announcements. Search
+counts follow eligible source records rather than the old ten-entry example feed.
+The read-only CSV planner emits News candidates without mock fields.

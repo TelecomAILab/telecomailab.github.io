@@ -174,7 +174,7 @@ export function preparePiImport(root = resolve(fileURLToPath(new URL("../", impo
         } else if (file === "news") {
           const records = [...current.news, ...candidates.news], title = get("Headline"), date = get("Date");
           if (records.some((item) => normalize(item.title) === normalize(title) && item.date === date)) { entry.status = "duplicate"; entry.reason = "Existing headline/date"; continue; }
-          candidates.news.push(newsSchema.parse(compact({ id: nextNamedId(records, "pi-news"), title, date, category: get("Category"), summary: get("Short Announcement"), externalLink: get("External URL"), links: list(get("Additional Links")).map((url) => ({label: new URL(url).hostname, url})), featured: boolean(get("Featured")), isMock: false })));
+          candidates.news.push(newsSchema.parse(compact({ id: nextNamedId(records, "pi-news"), title, date, category: get("Category"), summary: get("Short Announcement"), externalLink: get("External URL"), links: list(get("Additional Links")).map((url) => ({label: new URL(url).hostname, url})), featured: boolean(get("Featured")) })));
         } else if (file === "equipment") {
           const records = [...current.hardware, ...candidates.hardware];
           const title = get("Equipment Name"), model = get("Model"), specifications = get("Specifications as Reported");

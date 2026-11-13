@@ -52,7 +52,7 @@ for (const item of hardware) {
 }
 const editorialPeople = new Set(validatedPeople.map((person) => person.id));
 const editorialPublications = new Set(publicationData.map((paper) => String(paper.id)));
-const newsRecords = z.array(newsSchema).parse(newsData.map(resolve));
+const newsRecords = z.array(newsSchema).parse(newsData);
 const talkRecords = z.array(talksSchema).parse(talksData.map(resolve));
 validateEditorialReferences(newsRecords, editorialPeople, editorialPublications);
 validateEditorialReferences(talkRecords, editorialPeople, editorialPublications);
@@ -130,7 +130,7 @@ const gallery = defineCollection({
 });
 
 const news = defineCollection({
-  loader: file("src/data/news.json", { parser: referenceParser }),
+  loader: file("src/data/news.json"),
   schema: ({ image }) => newsSchema.extend({
     image: image().optional(),
     relatedMembers: z.array(reference("people")).default([]),

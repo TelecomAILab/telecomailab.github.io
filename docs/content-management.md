@@ -39,7 +39,7 @@ publication/project reference: a valid ID is not proof that its displayed name i
 the intended researcher. Correct uncertain mappings manually, never by fuzzy matching.
 
 People/Publications now contain 13 curated members and 43 curated papers; their
-strict schemas reject `isMock`. Research is also curated-only. Funding, Materials, News, Talks, Blog and
+strict schemas reject `isMock`. Research and News are also curated-only. Funding, Materials, Talks, Blog and
 Notes retain record-specific labeled examples and their mock flags. Do not remove
 these examples during People/Publications edits or hide them behind fixture mode.
 Lab Life uses three real event albums with nine uploaded photos from 2025/2026.
@@ -391,7 +391,7 @@ News requires unique `id`, `title`, ISO date `YYYY-MM-DD`, `summary`, and `categ
 Optional `image`/`imageAlt` are validated assets, though the compact feed displays
 text; `externalLink` is HTTP(S), and `links` is a `{label,url}` array supporting local
 pages/anchors or HTTP(S). `relatedMembers` and `relatedPublications` store IDs;
-`featured`/`isMock` default false. Listings are chronological: homepage always shows
+`featured` defaults false; the strict News schema rejects `isMock`. Listings are chronological: homepage always shows
 six newest eligible items, without an old featured item displacing recent news.
 Future dates are hidden using UTC at build time.
 
@@ -408,13 +408,24 @@ speaker, event, location, abstract; period/type/year filters combine with search
 newest/oldest sorting. Period switches after end, or start when no end is supplied.
 Calendar actions require supplied duration; see [architecture](architecture.md).
 
-Minimal fictional News object for `src/data/news.json`:
+Minimal structural News example (replace placeholders with supplied information):
 
 ```json
-{"id":900001,"title":"[Fictional example] Seminar announced","date":"2026-11-10","summary":"A fictional short announcement.","category":"Events","isMock":true}
+{"id":900001,"title":"<Approved announcement>","date":"2026-11-10","summary":"<Approved summary>","category":"Events"}
 ```
 
 Append/update by stable ID, resolve related people/papers, and check linked targets.
+Dates are stored as ISO days and displayed as e.g. `29 Oct 2026` in UTC on Home and
+News; never shorten announcements to month/year. The compact feed displays `title`,
+so include the complete public announcement there; `summary` remains required
+metadata. Use explicit existing publication/member IDs, not copied profile data.
+The curated update retained CLAIRE/BrainSat and added 15 supplied announcements;
+eight demo entries were removed. Acceptance dates are announcement dates, not
+publication dates. Internal submission numbers and congratulatory email boilerplate
+are omitted. The GLOBECOM acceptance-rate statement is retained in its summary with
+attribution to the supplied acceptance notification. The AFR amount remains
+`up to $180,000` exactly as supplied; confirm the currency before changing it to EUR.
+No publication metadata, dates or citation counts are overwritten by news imports.
 An optional News image is accepted but not shown by the current text feed. Featured
 does not change the six-latest homepage rule. Future dates stay hidden until a rebuild
 on/after their UTC publication day. Run build/check and `npm run test:editorial`.

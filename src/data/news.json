@@ -1,109 +1,159 @@
 [
   {
-    "id": 801,
-    "title": "[Demo] A paper on wireless scheduling has been accepted at an example conference.",
-    "date": "2026-11-06",
-    "category": "Research",
-    "summary": "[Demo] A paper on wireless scheduling has been accepted at an example conference.",
+    "id": 809,
+    "title": "“Privacy-Preserving Solutions for UAV-aided Uplink Massive MIMO Systems” accepted at IEEE Transactions on Wireless Communications.",
+    "date": "2026-10-29",
+    "summary": "“Privacy-Preserving Solutions for UAV-aided Uplink Massive MIMO Systems” accepted at IEEE Transactions on Wireless Communications.",
+    "category": "Publications",
     "relatedMembers": [],
-    "relatedPublications": [],
-    "featured": true,
-    "isMock": true
+    "relatedPublications": [
+      "nguyen2026privacy"
+    ],
+    "featured": false
   },
   {
-    "id": 802,
-    "title": "[Demo] A new PhD researcher has joined the wireless intelligence team.",
-    "date": "2026-10-22",
-    "category": "People",
-    "summary": "[Demo] A new PhD researcher has joined the wireless intelligence team.",
+    "id": 810,
+    "title": "“An Optimization-Ready Semantic-Performance Model for DJSCC-based Image Transmission over Wireless Channels” accepted at IEEE Open Journal of the Communications Society.",
+    "date": "2026-10-26",
+    "summary": "“An Optimization-Ready Semantic-Performance Model for DJSCC-based Image Transmission over Wireless Channels” accepted at IEEE Open Journal of the Communications Society.",
+    "category": "Publications",
     "relatedMembers": [],
-    "relatedPublications": [],
-    "featured": true,
-    "isMock": true
+    "relatedPublications": [
+      "nguyen2026optimization"
+    ],
+    "featured": false
   },
   {
-    "id": 803,
-    "title": "[Demo] A visiting scholar will give a seminar on edge learning.",
-    "date": "2026-10-08",
-    "category": "Events",
-    "summary": "[Demo] A visiting scholar will give a seminar on edge learning.",
+    "id": 811,
+    "title": "Collaboration: “Multi-satellite multi-stream beamspace massive MIMO transmission” accepted at IEEE Transactions on Communications.",
+    "date": "2026-10-13",
+    "summary": "Collaboration: “Multi-satellite multi-stream beamspace massive MIMO transmission” accepted at IEEE Transactions on Communications.",
+    "category": "Collaborations",
     "relatedMembers": [],
-    "relatedPublications": [],
-    "featured": false,
-    "isMock": true,
-    "links": [
-      {
-        "label": "Seminar details",
-        "url": "/talks#talk-901"
-      }
-    ]
+    "relatedPublications": [
+      "wang2026multi"
+    ],
+    "featured": false
   },
   {
-    "id": 804,
-    "title": "[Demo] A doctoral researcher has received an example research fellowship.",
-    "date": "2026-09-18",
-    "category": "Resources",
-    "summary": "[Demo] A doctoral researcher has received an example research fellowship.",
+    "id": 812,
+    "title": "“Onboard satellite image classification for earth observation: A comparative study of ViT models” accepted at IEEE Transactions on Geoscience and Remote Sensing.",
+    "date": "2026-09-01",
+    "summary": "“Onboard satellite image classification for earth observation: A comparative study of ViT models” accepted at IEEE Transactions on Geoscience and Remote Sensing.",
+    "category": "Publications",
     "relatedMembers": [],
-    "relatedPublications": [],
-    "featured": true,
-    "isMock": true
+    "relatedPublications": [
+      "le2026onboard"
+    ],
+    "featured": false
   },
   {
-    "id": 805,
-    "title": "[Demo] An example project has received funding for energy-aware networks.",
-    "date": "2026-08-28",
-    "category": "People",
-    "summary": "[Demo] An example project has received funding for energy-aware networks.",
+    "id": 819,
+    "title": "“Resilient Decentralized Wireless Federated Learning via Gradient Tracking with AdamW” accepted for presentation at IEEE GLOBECOM 2026, IoT and Sensor Networks symposium.",
+    "date": "2026-07-31",
+    "summary": "“Resilient Decentralized Wireless Federated Learning via Gradient Tracking with AdamW” accepted for presentation at IEEE GLOBECOM 2026, IoT and Sensor Networks symposium. The acceptance notification reported an overall acceptance rate below 40% for IEEE GLOBECOM 2026.",
+    "category": "Publications",
     "relatedMembers": [],
-    "relatedPublications": [],
-    "featured": false,
-    "isMock": true,
-    "links": [
-      {
-        "label": "Project overview",
-        "url": "/funding#project-701"
-      }
-    ]
+    "relatedPublications": [
+      "van2026resilient"
+    ],
+    "featured": false
   },
   {
-    "id": 806,
-    "title": "[Demo] A lab member has received an example early-career research award.",
+    "id": 813,
+    "title": "“GLUSE: Enhanced channel-wise adaptive gated linear units SE for onboard satellite earth observation image classification” accepted at IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing.",
+    "date": "2026-07-24",
+    "summary": "“GLUSE: Enhanced channel-wise adaptive gated linear units SE for onboard satellite earth observation image classification” accepted at IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing.",
+    "category": "Publications",
+    "relatedMembers": [],
+    "relatedPublications": [
+      "le2026gluse"
+    ],
+    "featured": false
+  },
+  {
+    "id": 814,
+    "title": "“Digital-Twin-Aided Dynamic Spectrum Sharing and Resource Management in Integrated Satellite–Terrestrial Networks” accepted at IEEE Transactions on Wireless Communications.",
     "date": "2026-07-16",
-    "category": "Events",
-    "summary": "[Demo] A lab member has received an example early-career research award.",
+    "summary": "“Digital-Twin-Aided Dynamic Spectrum Sharing and Resource Management in Integrated Satellite–Terrestrial Networks” accepted at IEEE Transactions on Wireless Communications.",
+    "category": "Publications",
     "relatedMembers": [],
-    "relatedPublications": [],
-    "featured": false,
-    "isMock": true
+    "relatedPublications": [
+      "nguyen2026digital"
+    ],
+    "featured": false
   },
   {
-    "id": 807,
-    "title": "[Demo] Two visiting researchers have joined the lab for a short exchange.",
-    "date": "2026-05-20",
-    "category": "Research",
-    "summary": "[Demo] Two visiting researchers have joined the lab for a short exchange.",
+    "id": 820,
+    "title": "“FedQoS: Federated QoS-Risk Learning for Heterogeneous Indoor-Outdoor Access Selection” accepted for an oral presentation at IEEE PIMRC 2026, workshop PIMRC26-WS9.",
+    "date": "2026-07-08",
+    "summary": "“FedQoS: Federated QoS-Risk Learning for Heterogeneous Indoor-Outdoor Access Selection” accepted for an oral presentation at IEEE PIMRC 2026, workshop PIMRC26-WS9.",
+    "category": "Publications",
     "relatedMembers": [],
-    "relatedPublications": [],
-    "featured": false,
-    "isMock": true
+    "relatedPublications": [
+      "van2026fedqos"
+    ],
+    "featured": false
   },
   {
-    "id": 808,
-    "title": "[Demo] Registration is open for an example research software workshop.",
-    "date": "2026-03-12",
-    "category": "Resources",
-    "summary": "[Demo] Registration is open for an example research software workshop.",
-    "relatedMembers": [],
+    "id": 821,
+    "title": "Van Thieu Nguyen awarded funding through the FNR AFR PhD Individual Call 2026 in Luxembourg, supporting 3 years and 5 months of doctoral research with funding of up to 180,000EUR.",
+    "date": "2026-07-02",
+    "summary": "Van Thieu Nguyen awarded funding through the FNR AFR PhD Individual Call 2026 in Luxembourg, supporting 3 years and 5 months of doctoral research with funding of up to 180,000EUR.",
+    "category": "Funding",
+    "relatedMembers": [
+      108
+    ],
     "relatedPublications": [],
-    "featured": false,
-    "isMock": true,
-    "links": [
-      {
-        "label": "Workshop information",
-        "url": "/talks#talk-907"
-      }
-    ]
+    "featured": false
+  },
+  {
+    "id": 815,
+    "title": "Collaboration: “Closed-Form SINR Expression of Precoding Techniques in Cell-Free Massive MIMO over Rician Fading Channels” accepted at IEEE Open Journal of the Communications Society.",
+    "date": "2026-05-29",
+    "summary": "Collaboration: “Closed-Form SINR Expression of Precoding Techniques in Cell-Free Massive MIMO over Rician Fading Channels” accepted at IEEE Open Journal of the Communications Society.",
+    "category": "Collaborations",
+    "relatedMembers": [],
+    "relatedPublications": [
+      "zaeem2026closed"
+    ],
+    "featured": false
+  },
+  {
+    "id": 816,
+    "title": "Collaboration: “Secure Task Offloading and Resource Allocation Design for Multi-Layer Non-Terrestrial Networks” accepted at IEEE INFOCOM 2026 – IEEE Conference on Computer Communications.",
+    "date": "2026-05-18",
+    "summary": "Collaboration: “Secure Task Offloading and Resource Allocation Design for Multi-Layer Non-Terrestrial Networks” accepted at IEEE INFOCOM 2026 – IEEE Conference on Computer Communications.",
+    "category": "Collaborations",
+    "relatedMembers": [],
+    "relatedPublications": [
+      "flores2026secure"
+    ],
+    "featured": false
+  },
+  {
+    "id": 817,
+    "title": "Collaboration: “Distributed Precoding Design for LEO Satellite Swarms: A Robust Approach to Phase Error Uncertainty” accepted at IEEE Open Journal of the Communications Society.",
+    "date": "2026-04-30",
+    "summary": "Collaboration: “Distributed Precoding Design for LEO Satellite Swarms: A Robust Approach to Phase Error Uncertainty” accepted at IEEE Open Journal of the Communications Society.",
+    "category": "Collaborations",
+    "relatedMembers": [],
+    "relatedPublications": [
+      "tamiru2026distributed"
+    ],
+    "featured": false
+  },
+  {
+    "id": 818,
+    "title": "“A Joint JSCC–Resource Allocation Framework for QoS-Aware Semantic Communication in LEO Satellite-based EO Missions” accepted at ICC 2026 – IEEE International Conference on Communications.",
+    "date": "2026-04-25",
+    "summary": "“A Joint JSCC–Resource Allocation Framework for QoS-Aware Semantic Communication in LEO Satellite-based EO Missions” accepted at ICC 2026 – IEEE International Conference on Communications.",
+    "category": "Publications",
+    "relatedMembers": [],
+    "relatedPublications": [
+      "nguyen2026joint"
+    ],
+    "featured": false
   },
   {
     "id": "pi-news-9",
@@ -120,8 +170,34 @@
     ],
     "relatedMembers": [],
     "relatedPublications": [],
-    "featured": true,
-    "isMock": false
+    "featured": true
+  },
+  {
+    "id": 822,
+    "title": "Huruy Zerihun joins SigCOM at SnT, University of Luxembourg, as a PhD researcher and joins TelecomAI Lab under the supervision of Vu Nguyen Ha and Eva Lagunas.",
+    "date": "2025-11-01",
+    "summary": "Huruy Zerihun joins SigCOM at SnT, University of Luxembourg, as a PhD researcher and joins TelecomAI Lab under the supervision of Vu Nguyen Ha and Eva Lagunas.",
+    "category": "People",
+    "relatedMembers": [
+      109,
+      100,
+      113
+    ],
+    "relatedPublications": [],
+    "featured": false
+  },
+  {
+    "id": 823,
+    "title": "Van Thieu Nguyen joins SigCOM at SnT, University of Luxembourg, as a PhD researcher and joins TelecomAI Lab under the supervision of Vu Nguyen Ha.",
+    "date": "2025-08-30",
+    "summary": "Van Thieu Nguyen joins SigCOM at SnT, University of Luxembourg, as a PhD researcher and joins TelecomAI Lab under the supervision of Vu Nguyen Ha.",
+    "category": "People",
+    "relatedMembers": [
+      108,
+      100
+    ],
+    "relatedPublications": [],
+    "featured": false
   },
   {
     "id": "pi-news-10",
@@ -138,7 +214,6 @@
     ],
     "relatedMembers": [],
     "relatedPublications": [],
-    "featured": false,
-    "isMock": false
+    "featured": false
   }
 ]

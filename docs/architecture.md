@@ -38,7 +38,7 @@ it. Current, former, and alumni profiles show all associated papers without a ca
 Group order comes from `PERSON_GROUPS`, then numeric member `order`; status does not
 replace that ordering. The curated roster was deliberately rekeyed to 100–112
 (order 1–13); all explicit references were migrated together. These IDs now define
-profile URLs; future edits must not renumber them. People/Publications/Research reject `isMock`;
+profile URLs; future edits must not renumber them. People/Publications/Research/News reject `isMock`;
 other collections retain labeled examples and their mock-reference resolver.
 
 Structured member data stays in JSON; Markdown-only biographies resolve through
@@ -118,7 +118,9 @@ Research images use intrinsic proportions (full width, automatic height), a neut
 border and surface, and native Astro optimization. They have no forced aspect ratio,
 colored letterboxing, distortion or crop.
 
-Home shows the six latest dated News items and shared Research summaries. Research
+Home shows the six latest dated News items and shared Research summaries. News uses
+the shared UTC day/month/year formatter on both Home and the yearly News archive;
+its strict schema rejects mock flags and validates explicit member/paper references. Research
 uses image/text descriptions from JSON without paper lists. About uses one BaseLayout,
 `ContactSection` then `LabLifeSection`, stable anchors, an accessible h1, h2 section
 headers, and h3 gallery titles. `PageHeader` defaults to h1 elsewhere and accepts

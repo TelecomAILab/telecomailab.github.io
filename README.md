@@ -15,7 +15,7 @@ npm run dev
 
 Open [localhost:4321](http://localhost:4321). Normal development displays the current
 lab records together with retained fictional examples in other sections. People, Publications,
-and Research now contain curated records only. Keep record-specific demo labels on
+Research, and News now contain curated records only. Keep record-specific demo labels on
 remaining examples. Removing sample records does not require restoring the
 original sample counts; missing relationships on retained examples are reported at
 build time and omitted only from the rendered links, without editing source data.
